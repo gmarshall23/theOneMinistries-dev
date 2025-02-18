@@ -9,7 +9,7 @@ const Living = () => {
 
 	const [scrips, setScrips] = useState([]);
 	const getData = async () => {
-		const resp = await fetch('http://localhost:4000/get_scriptures');
+		const resp = await fetch('http://localhost:4040/get_scriptures');
 		const data = await resp.json();
 		setScrips(data)
 	}

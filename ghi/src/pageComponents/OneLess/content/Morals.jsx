@@ -36,7 +36,7 @@ const Morals = ({ user, setUser, scrips }) => {
             const newInventory = { "morals": inventory };
             const token = localStorage.getItem('accessToken'); // Ensure the token is stored in localStorage
             console.log('Token:', token); // Log the token to verify it's being retrieved
-            const response = await axios.put(`http://localhost:4000/update_user/${userId}`, newInventory, {
+            const response = await axios.put(`http://localhost:4040/update_user/${userId}`, newInventory, {
                 headers: {
                     'Content-Type': 'application/json',
                     'Authorization': `Bearer ${token}` // Include the access token
@@ -54,7 +54,7 @@ const Morals = ({ user, setUser, scrips }) => {
 
     const handleDelete = async (e) => {
         e.preventDefault();
-        // const resp = await fetch(`http://localhost:4000/delete_moral/${user._id}/${e.target.id}`, {
+        // const resp = await fetch(`http://localhost:4040/delete_moral/${user._id}/${e.target.id}`, {
         //   method: 'DELETE',
         //   headers: {
         //     "Content-Type": 'application/json'

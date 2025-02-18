@@ -17,16 +17,16 @@ const WalkWord = () => {
   const handleSelect = async (eventKey, e) => {
     console.log(`e`, eventKey);
     await setStudySelected(eventKey);
-    console.log(`studySelected`, studySelected);
-    setCurrentStudy(studies.filter(item => item.title === e.target.eventKey));;
 
+    setCurrentStudy(studies.filter(item => item.title === e.target.eventKey));;
+    console.log(`studySelected`, studySelected);
   }
 
   //  end configuration for Dropdown options
 
   const getData = async () => {
     console.log(" getdata accessed")
-    const resp = await axios.get('http://localhost:4000/get_studies')
+    const resp = await axios.get('http://localhost:4040/get_studies')
     const data = resp.data
     setStudies(data)
   }

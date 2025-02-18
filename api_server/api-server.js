@@ -15,7 +15,7 @@ require("./database/mongoose-connection.js");
 // for environment variables
 dotenv.config();
 const app = express();
-const PORT = process.env.API_PORT || 4000;
+const PORT = process.env.API_PORT || 4040;
 const ACCESS_TOKEN_SECRET = process.env.ACCESS_TOKEN_SECRET;
 const REFRESH_TOKEN_SECRET = process.env.REFRESH_TOKEN_SECRET;
 

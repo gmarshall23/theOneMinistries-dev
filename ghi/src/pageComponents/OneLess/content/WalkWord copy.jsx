@@ -16,7 +16,7 @@ const WalkWord = () => {
 
   const getData = async () => {
     console.log(" getdata accessed")
-    const resp = await fetch('http://localhost:4000/get_studies')
+    const resp = await fetch('http://localhost:4040/get_studies')
     const data = await resp.json()
     setStudies(data)
   }

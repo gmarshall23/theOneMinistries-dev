@@ -13,6 +13,7 @@ const Menu = ({user}) => {
   const handleToggle = () => setExpanded(!expanded);
   const handleLinkClick = () => setExpanded(false);
   const handleLogout = () => {
+    // ******* Check this line of code ********
     axios.get('/api/logout');
     localStorage.removeItem('user');
     window.location.href = '/';

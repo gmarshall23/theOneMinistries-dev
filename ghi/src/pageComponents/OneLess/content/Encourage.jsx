@@ -1,20 +1,26 @@
 /* eslint-disable react/no-unescaped-entities */
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import 'react-tooltip/dist/react-tooltip.css'
 import { Tooltip } from 'react-tooltip';
+import { Modal, Button } from 'react-bootstrap';
 import axios from 'axios';
 import moralStruggle from './one-less-assets/moralStruggle.jpeg';
 // import { List } from './List';
 
 const Encourage = () => {
 
-  // Get's Topics for encourage Modals //
-
+  // setup for encourage Modals //
   const [encourage, setEncourage] = useState([]);
   const [struggleArea, setstruggleArea] = useState({});
+  const [showEncourage, setShowEncourage] = useState(false);
+  const contentRef = useRef(null); // Create a ref for encourage-content
+
+  const handleClose = () => setShowEncourage(false);
+  const handleShow = () => setShowEncourage(true);
+
   const getData = async () => {
-    axios.get('http://localhost:4000/get_encourage')
+    axios.get('http://localhost:4040/get_encourage')
       .then(response => setEncourage(response.data))
       .then(console.log('Encourage topics:', encourage))
       .catch(error => console.error('Error fetching encourage topics:', error));
@@ -22,6 +28,7 @@ const Encourage = () => {
   const handleStruggleArea = (e) => {
     const area = encourage.filter(item => item.text === e.target.value)
     setstruggleArea(area[0])
+    handleShow();
   }
   useEffect(() => {
     getData();
@@ -32,7 +39,7 @@ const Encourage = () => {
       <div className='content-header'>
         <h2>Encourage Me</h2>
       </div>
-      <div className='encourage-content'>
+      <div className='encourage-content' ref={contentRef}>
         <div>
           <img className="w-50 p-3" src={moralStruggle} alt="moral struggle image" />
           <p className="white">You find yourself at this page because something in your 'present day', something in your 'right now' has you discouraged which is one of the three tactics used by the enemy (discourage, distract, deceive). Assuming true, it's not easy to look toward your tomorrow let alone your next hour. But, be encouraged, as I need you to think about THE past with God and then YOUR past with God and look forward to your exciting future with God.</p>
@@ -43,6 +50,7 @@ const Encourage = () => {
             2. Receiving a gift from God that you do not deserve.
             For Example see Romans 11:5-6.">grace</u>.</p>
         </div>
+        <div className="">
         <p>I'm struggling in the area of <span>
           <select value={struggleArea.text} onChange={handleStruggleArea}>
             <option value="">Select a topic...</option>
@@ -54,20 +62,12 @@ const Encourage = () => {
           </select>
         </span>. Please encourage me...
         </p>
-        <blockquote>
-          <p className='border text-start p-2' ><b>Encouragement for:</b> {struggleArea.text}</p>
-          <p className='border text-start p-2'><b>Quote:</b> {struggleArea.quote}</p>
-          <p className='border text-start p-2'><b>Scripture</b>: {struggleArea.scripture}</p>
-          <p className='border text-start p-2'><b>Prayer</b>: {struggleArea.prayer}</p>
-
-        </blockquote>
-        <div>
-          <p className="white"><u className="define point vocab" data-tooltip-id="tooltip" data-html="true" data-tooltip-content="MEDITATE:
-        1. Reading
-        2. Believing
-        3. Absorbing (Thinking over and over again)
-        4. Applying
-        5. Obeying">Meditate</u> on these truths in your struggle and be encouraged that God will never leave you or
+          <p className="white"><u className="" data-tooltip-id="tooltip" data-html="true" data-tooltip-content="MEDITATE:
+          1. Reading
+          2. Believing
+          3. Absorbing (Thinking over and over again)
+          4. Applying
+          5. Obeying">Meditate</u> on these truths in your struggle and be encouraged that God will never leave you or
             forsake you in your time of need.</p>
           <p className="white">If you feel a greater need for help please click <Link className="purple" to="/hotline">Hotline<span className="pix10 rojo">(Placeholder)</span></Link> to
             get to an actual person for deeper intervention.</p>
@@ -79,6 +79,27 @@ const Encourage = () => {
             If you want to pray more specifically, go to <Link className="purple" to="/prayer" >Prayer Request</Link> and we would love to pray with you right now.
           </h5>
         </div>
+        <Modal show={showEncourage}
+              onHide={handleClose}
+              container={contentRef.current}
+              dialogClassName='custom-modal'>
+          <Modal.Header closeButton>
+            <Modal.Title>Encouragement for: {struggleArea.text}</Modal.Title>
+          </Modal.Header>
+          <Modal.Body>
+            <blockquote>
+              <p className='border text-start '><b>Quote:</b> {struggleArea.quote}</p>
+              <p className='border text-start p-2'><b>Scripture</b>: {struggleArea.scripture}</p>
+              <p className='border text-start p-2'><b>Prayer</b>: {struggleArea.prayer}</p>
+
+            </blockquote>
+          </Modal.Body>
+          <Modal.Footer>
+            <Button variant="secondary" onClick={handleClose}>
+              Close
+            </Button>
+          </Modal.Footer>
+        </Modal>
       </div>
 
       <ol className="darkBlue pix10">
@@ -115,6 +136,7 @@ const Encourage = () => {
           padding: '10px',
           textAlign: 'left',
         }} />
+
     </section>
   )
 }

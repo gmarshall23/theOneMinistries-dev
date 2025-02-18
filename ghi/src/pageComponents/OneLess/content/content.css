@@ -115,6 +115,7 @@ ul {
     margin: 0;
     /* height: 250px; */
     /* display: flex; */
+    position: relative;
 }
 
 .confessAnimator {
@@ -172,18 +173,19 @@ ul {
     display: flex;
     justify-content: center;
     align-items: center;
-    overflow: hidden;
+    /* overflow: hidden; */
     width: 200px;
     height: 200px;
     background-color: black;
-    transition: left 5s linear;
-    transition: background-color .5s linear;
+    z-index: 500;
+    /* transition: left 5s linear; */
+    /* transition: background-color .5s linear; */
 
 }
 
 .cleanseSins {
-    animation: moveAcross 3s linear 1;
-    background-color: red !important;
+    /* animation: moveAcross 3s linear 1; */
+    /* background-color: red !important; */
 }
 
 #crossEnd {
@@ -237,6 +239,35 @@ ul {
     /* animation: moveAcross 5s linear infinite; */
 }
 
+/* Ensure the container of the cross is positioned (if not already) */
+.confess-content {
+  position: relative;
+}
+
+/* Make sure crossStart is absolutely positioned */
+#crossStart {
+  position: absolute;
+  /* The starting position remains as rendered initially */
+}
+
+/* The class to trigger the arc animation */
+#crossStart.float-arc {
+  /* animation: floatArc 3s cubic-bezier(0.45, 0, 0.55, 1); */
+  animation: floatArc 5s linear;
+}
+
+/* Define the arc animation using the custom properties */
+@keyframes floatArc {
+    0% {
+      transform: translate(-50%, 0);
+    }
+    50% {
+      transform: translate(calc(-50% + var(--delta-x) / 2), calc(var(--delta-y) / 2 - 45px));
+    }
+    100% {
+      transform: translate(calc(-50% + var(--delta-x)), var(--delta-y));
+    }
+  }
 /* +++++++++++++  Oneliners.jsx  +++++++++++++ */
 .oneLiner {
     border: 2px groove black;
@@ -281,5 +312,32 @@ ul {
 
 /* +++++++++++++  Encourage.jsx  +++++++++++++ */
 .encourage-content {
-    padding: 3rem 0;
+    border: 2px solid red;
+    width: 100% !important;
+    /* padding: 3rem 0; */
+}
+.encourage-content2 {
+}
+.custom-modal, .custom-modal .modal-dialog {
+    width: 900px !important;
+    max-width: 900px !important;
+    padding: 0 !important;
+
+    /* max-height: 50%; */
+}
+.modal-content {
+    top: 15vh !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    z-index: 5000 !important;
+    max-height: 80vh !important;
+    overflow: scroll !important;
+    box-sizing: border-box;
+    background-color: white !important;
+    /* height: 50% !important; */
+
+}
+.modal-content p {
+    color: red;
+    font-size: 1rem !important;
 }

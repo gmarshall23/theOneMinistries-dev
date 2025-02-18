@@ -23,7 +23,7 @@ const Login = ({setUser}) => {
     console.log('attempting login');
     console.log('username:', username);
     try {
-      const response = await axios.post('http://localhost:4000/login', { username, password }, { withCredentials: true });
+      const response = await axios.post('http://localhost:4040/login', { username, password }, { withCredentials: true });
       localStorage.setItem('accessToken', response.data.accessToken);
       localStorage.setItem('user', JSON.stringify(response.data.user)); // Store user information in local storage
       setUser(response.data.user);

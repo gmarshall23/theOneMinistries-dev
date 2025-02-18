@@ -13,8 +13,8 @@ import axios from 'axios';
 const Morals = () => {
   const [scrips, setScrips] = useState([]);
   const getData = async () => {
-    const response = await axios.get('http://localhost:4000/get_scriptures');
-    // const resp = await fetch('http://localhost:4000/get_scriptures')
+    const response = await axios.get('http://localhost:4040/get_scriptures');
+    // const resp = await fetch('http://localhost:4040/get_scriptures')
     const data = await response.data
     setScrips(data)
     console.log('data is: ', data)
@@ -33,7 +33,7 @@ const Morals = () => {
     //   return true
     // }
     // let obj = { moral: newItem }
-    // const resp = await fetch(`http://localhost:4000/add_moral/${user._id}`,
+    // const resp = await fetch(`http://localhost:4040/add_moral/${user._id}`,
     //   {
     //     method: 'PUT',
     //     headers: { 'Content-Type': 'application/json' },
@@ -45,7 +45,7 @@ const Morals = () => {
   }
   const handleDelete = async (e) => {
     e.preventDefault();
-    // const resp = await fetch(`http://localhost:4000/delete_moral/${user._id}/${e.target.id}`, {
+    // const resp = await fetch(`http://localhost:4040/delete_moral/${user._id}/${e.target.id}`, {
     //   method: 'DELETE',
     //   headers: {
     //     "Content-Type": 'application/json'

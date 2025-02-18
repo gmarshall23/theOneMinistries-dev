@@ -33,7 +33,7 @@ const Subscribe = () => {
     e.preventDefault();
     // Handle form submission securely
     console.log('Form submitted', formData);
-    axios.post('http://localhost:4000/subscribe', formData)
+    axios.post('http://localhost:4040/subscribe', formData)
       .then((response) => {
         console.log('response', response);
       })

@@ -17,7 +17,7 @@ const ConfessSins = () => {
   const forgiveTextRef = useRef(null); // Create a ref for the element with id='crossStart'
 
   const getData = async () => {
-    const resp = await fetch('http://localhost:4000/get_scriptures')
+    const resp = await fetch('http://localhost:4040/get_scriptures')
     const data = await resp.json()
     setScrips(data)
   }
@@ -35,19 +35,23 @@ const ConfessSins = () => {
     setSin('');
   }
   const cleanseSins = () => {
-    if (crossStartRef.current) {
-      crossStartRef.current.classList.add('cleanseSins'); // Add the class to the element
+    if (crossStartRef.current && crossEndRef.current) {
+      // Calculate the difference between the two elements
+      const startRect = crossStartRef.current.getBoundingClientRect();
+      const endRect = crossEndRef.current.getBoundingClientRect();
+      const deltaX = endRect.left - startRect.left;
+      const deltaY = endRect.top - startRect.top;
+      // Set CSS custom properties to be used in the keyframes
+      crossStartRef.current.style.setProperty('--delta-x', `${deltaX}px`);
+      crossStartRef.current.style.setProperty('--delta-y', `${deltaY}px`);
+      // Add the class to trigger the animation
+      crossStartRef.current.classList.add('float-arc');
+      // Optionally remove the class after the animation is done (3s in this example)
       setTimeout(() => {
-        crossStartRef.current.classList.remove('cleanseSins'); // Remove the class after 1 second
-        crossEndRef.current.classList.add('crossEnd'); // Add the class to the element
-        // setSinList([]);
-      }, 3000);
-      setTimeout(() => {
-        // remove the d-none class from the forgiveText div
-        forgiveTextRef.current.classList.remove('d-none');
-      }, 4500);
+        crossStartRef.current.classList.remove('float-arc');
+      }, 5000);
     }
-  }
+  };
 
   return (
     <div className="confess-content">
@@ -76,11 +80,11 @@ const ConfessSins = () => {
       </div>
       <div className="confessAnimator">
         <section className="sinCross1 sinCross">
-          <div className='' ref={crossStartRef} id='crossStart'>
+          <div className='border' ref={crossStartRef} id='crossStart'>
             <div className='sins text-white p-4'>
               <h6 className=''>{sinList && sinList.map((item, idx) => <p className='text-center' key={idx}>{item}</p>)}</h6>
             </div>
-            <img src={crossStart} />
+            {/* <img src={crossStart} alt="Cross start"/> */}
           </div>
           <div></div>
 
@@ -98,7 +102,7 @@ const ConfessSins = () => {
           </div>
         </section>
         <section className="sinCross2 sinCross">
-          <div ref={crossEndRef} className='' id='crossEnd'><img src={finish} /></div>
+          <div ref={crossEndRef} className='border' id='crossEnd'><img src={finish} alt="Cross finish"/></div>
           <div></div>
           <div ref={forgiveTextRef} className='d-none forgiveText text-white'>
 

@@ -6,7 +6,6 @@
   "scripts": {
     "start": "nodemon api-server.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "seed": "mongosh competency --eval 'printjson(db.dropDatabase())' && mongoimport --db=competency --collection=scriptures --file=seed/scrip_seed.json && mongoimport --db=competency --collection=encourages --file=seed/encourage_seed.json && mongoimport --db=competency --collection=users --file=seed/user_seed.json && mongoimport --db=competency --collection=studies --file=seed/study_seed.json && mongoimport --db=competency --collection=charities --file=seed/charity_seed.json",
     "loadData": "node seed-arrays/load-data.js"
   },
   "author": "",

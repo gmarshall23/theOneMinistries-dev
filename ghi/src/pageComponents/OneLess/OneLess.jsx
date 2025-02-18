@@ -28,8 +28,8 @@ const OneLess = ({user, setUser}) => {
 
   }, [lesson]);
   const getData = async () => {
-    const response = await axios.get('http://localhost:4000/get_scriptures');
-    // const resp = await fetch('http://localhost:4000/get_scriptures')
+    const response = await axios.get('http://localhost:4040/get_scriptures');
+    // const resp = await fetch('http://localhost:4040/get_scriptures')
     const data = response.data
     setScrips(data)
     console.log('data is: ', data)

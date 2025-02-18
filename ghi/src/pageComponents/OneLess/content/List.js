@@ -45,7 +45,7 @@ const Support = ({ title, charArr, thanksMsg, setMsg, user}) => {
 
         // make server call fetch...
         const token = JSON.parse(localStorage.getItem('token'))
-        const resp = await fetch('http://localhost:4000/contribution', {
+        const resp = await fetch('http://localhost:4040/contribution', {
             method: 'POST',
             headers: {
                 "Content-Type": 'application/json',

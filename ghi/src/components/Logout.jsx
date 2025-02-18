@@ -13,7 +13,7 @@ const Logout = () => {
     const handleLogout = async () => {
 
         console.log('Logging out')
-        const response = await axios.post('http://localhost:4000/logout', {}, { withCredentials: true })
+        const response = await axios.post('http://localhost:4040/logout', {}, { withCredentials: true })
         console.log(response.data)
         // return to the landing page
         navigate('/')
