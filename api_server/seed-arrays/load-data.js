@@ -15,17 +15,18 @@ const userData = require('./user_seed.json');
 const charityData = require('./charity_seed.json');
 const encourageData = require('./encourage_seed.json');
 
-const db = mongoose.connect('mongodb://127.0.0.1:27017/competency', {})
+const db = mongoose.connect('mongodb://127.0.0.1:27017/the-one-ministries-db', {})
   .then(() => {
-    console.log('Connected!')}
-);
+    console.log('Connected!')
+  }
+  );
 
 module.exports = mongoose.connection.on('open', () => {
-  console.log(`Connected to competency collection`);
+  console.log(`Connected to the-one-ministries-db collection`);
   listCollections();
 });
 module.exports = mongoose.connection.on('close', () => {
-  console.log(`DisConnected from collection`);
+  console.log(`Disconnected from collection`);
 });
 // mongoose.disconnect(); // Disconnect from the database
 
@@ -66,6 +67,19 @@ async function listCollections() {
         console.log('All Script documents added to the scripts collection:');
       } else if (collName === 'users') {
         console.log('users collection found');
+        // *** will be added for initial users added. Hash passwords using bcrypt
+        // const bcrypt = require('bcryptjs');
+        // const password = '56789'; // Replace with your desired password
+        // const saltRounds = 10;
+
+        // bcrypt.hash(password, saltRounds, (err, hash) => {
+        //   if (err) {
+        //     console.error('Error hashing password:', err);
+        //   } else {
+        //     console.log('Hashed password:', hash);
+        //   }
+        // });
+
         userData.forEach(async (user) => {
           await User.create(user);
           console.log('A User document added to the users collection:', user);

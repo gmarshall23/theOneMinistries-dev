@@ -9,7 +9,7 @@ const Living = () => {
 
 	const [scrips, setScrips] = useState([]);
 	const getData = async () => {
-		const resp = await fetch('http://localhost:4000/get_scriptures');
+		const resp = await fetch('http://localhost:4040/get_scriptures');
 		const data = await resp.json();
 		setScrips(data)
 	}
@@ -26,11 +26,11 @@ const Living = () => {
 	return (
 		<>
 			<div className='border content-header'>
-				<h1>Living a Christian Life</h1>
-				<h4 className=""><b>CONGRATULATIONS NEW CHRISTIAN. WELCOME TO THE FAMILY</b></h4>
+				<h2><b>Living a Christian Life</b></h2>
+				<h4 className="">CONGRATULATIONS NEW CHRISTIAN. WELCOME TO THE FAMILY</h4>
 			</div>
-			<p className="border">LOL... I'm sure you are asking "Now What? what Happens Next? How do you become as much like Jesus as possible? What does it mean to be saved?</p>
-			<div className='border'>
+			<p className="">LOL... I'm sure you are asking "Now What? what Happens Next? How do you become as much like Jesus as possible? What does it mean to be saved?</p>
+			<div className=''>
 				<div className='p-3'>
 					<img className='img img-fluid col-5' src={cross} alt='cross' />
 				</div>
@@ -64,7 +64,7 @@ const Living = () => {
 				</ol>
 				</div>
 			</div>
-			<div className='border'>
+			<div className=''>
 				<p className="">There is a song that says, "What a wonderful change in my life has been wrought since Jesus Christ." I think the words are beautiful in that you can check yourself regularly to see if your heart has really changed. Better stated by Jesus in {scripObj['John 3:5-7']} where he says that you must be "born again". The way you are cannot serve or please God and being "born again" means God gives you a new heart, a new soul, a new way of thinking, and his Holy Spirit. Please realize this desire to change should be relatively instant as you truly accept God's love and gift of <u className="" data-tooltip-id="tooltip" data-tooltip-content="Salvation - The Gift of Eternal Life after Death through:
             1. Atonement - the covering of your sins.
             2. Reconciliation - bringing you together mutually with your creator.
@@ -84,7 +84,7 @@ const Living = () => {
 				</ol>
 
 			</div>
-			<div className='border'>
+			<div className=''>
 				<p className=""><b>Never Forget these Truths regarding Your Purpose:</b></p>
 				<p className="">1. You are created for a purpose<br />2. Your purpose is connected to God's purpose. You are created-selected-gifted to fulfil God's purpose not yours.<br /> 3. Your purpose is to be centered in church. a. every christian is to be involved in ministry ({scripObj['Ephesians 4:11-12']}) b. Therefore, your gifts (Rom 12) + passion ({scripObj['Philippians 2:13']}) + needs (God's, others, community, church) = YOUR MINISTRY.</p>
 				<p className="">In my personal testimony, know that I got lost for too long a period of time because I trusted in my own way above God's way and paid huge penalties. Please learn from my mistakes. God's word leads to the

@@ -1,18 +1,20 @@
+/* eslint-disable react/prop-types */
 import './Header.css'
 import Menu from '../Menu'
-import title from './TheOneMinistries.gif'; // Import the image using ES6 import
+import title from './tomGif.gif'; // Import the image using ES6 import
+import { useEffect } from 'react';
 
 
-const Header = () => {
+const Header = ({ user }) => {
+    useEffect(() => {
+        console.log('Header user:', user)
+    }, [user]);
     return (
-        <header className="p-4 app-header">
-            <div className='header-group'>
-            <img src={title} alt='title' height='100vh' className=' p-0 m-0 header-title' />
-            {/* <h1 className='header-title'>The One Ministries</h1> */}
-            {/* <h5>Training Center</h5> */}
+        <header className="w-100 d-flex justify-content-between">
+            <div className='col-6'>
+                <img src={title} alt='title' className='img img-fluid' />
             </div>
-
-            <Menu />
+            <Menu user={user} className='header-menu'/>
         </header>
     )
 }

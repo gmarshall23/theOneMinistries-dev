@@ -1,0 +1,15 @@
+/* Custom CSS for Subscribe component */
+.subscribe {
+    border: 2px groove whitesmoke;
+    background-color: rgba(255, 235, 205, 0.625);
+    padding: 2rem;
+}
+.subscribe .form-group {
+    display: flex;
+    align-items: center;
+  }
+
+  .subscribe .form-label {
+    margin-right: 10px;
+    white-space: nowrap;
+  }

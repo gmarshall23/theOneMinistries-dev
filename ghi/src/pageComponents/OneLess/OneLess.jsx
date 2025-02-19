@@ -1,30 +1,39 @@
+/* eslint-disable react/prop-types */
 
 import { useEffect, useState, useRef } from 'react';
-// import axios from 'axios';
+import axios from 'axios';
 import './one-less.css';
 import './content/content.css'
 import MeetGod from './content/MeetGod';
 import Salvation from './content/Salvation';
 import Living from './content/Living';
-// import Morals from './content/Morals';
+import Morals from './content/Morals';
 import ConfessSins from './content/ConfessSins';
 import EternallySecure from './content/EternallySecure';
 import WalkWord from './content/WalkWord';
 import Encourage from './content/Encourage';
 import Introduction from './content/Introduction';
-// import Oneliners from './content/Oneliners';
+import Oneliners from './content/Oneliners';
 
-const OneLess = () => {
+const OneLess = ({user, setUser}) => {
   // const [data, setData] = useState(null);
   // const [loading, setLoading] = useState(true);
   // const [error, setError] = useState(null);
+  const [scrips, setScrips] = useState([]);
   const [lesson, setLesson] = useState('Introduction');
   const buttonsRef = useRef([]);
   useEffect(() => {
     console.log('OneLess component mounted');
+    getData();
 
   }, [lesson]);
-
+  const getData = async () => {
+    const response = await axios.get('http://localhost:4040/get_scriptures');
+    // const resp = await fetch('http://localhost:4040/get_scriptures')
+    const data = response.data
+    setScrips(data)
+    console.log('data is: ', data)
+  }
   function handleClick(e) {
     // Set the lesson state to the clicked button's text content
     setLesson(e.target.textContent);
@@ -44,18 +53,18 @@ const OneLess = () => {
       case 'Meet God':
         return <MeetGod />;
       case 'Salvation':
-        return <Salvation />;
+        return <Salvation user={user} scrips={scrips}/>;
       case 'Living':
         return <Living />;
       case 'Morals':
-        return <p>Will fix jquery in Morals.jsx</p>;
+        return <Morals user={user} setUser={setUser} scrips={scrips}/>;
       case 'Confess My Sins':
         return <ConfessSins />;
       case 'Eternally Secure':
         return <EternallySecure />;
       case 'One Liners for meditation (words of Wisdom)':
-        return <p>Will fix issue in Oneliners.jsx</p>;
-      case 'A Walk in The Word (Bible Study)':
+        return <Oneliners />;
+      case 'A Walk':
         return <WalkWord />;
       case 'Encourage Me':
         return <Encourage />;
@@ -86,7 +95,7 @@ const OneLess = () => {
               <button ref={el => buttonsRef.current[5] = el} onClick={handleClick}>Confess My Sins</button>
               <button ref={el => buttonsRef.current[6] = el} onClick={handleClick}>Eternally Secure</button>
               <button ref={el => buttonsRef.current[7] = el} onClick={handleClick}>One Liners for meditation (words of Wisdom)</button>
-              <button ref={el => buttonsRef.current[8] = el} onClick={handleClick}>A Walk in The Word (Bible Study)</button>
+              <button ref={el => buttonsRef.current[8] = el} onClick={handleClick}>A Walk</button>
             </li>
             <li><h4>Sharing With Christians</h4>
               <button ref={el => buttonsRef.current[9] = el} onClick={handleClick}>Encourage Me</button>

@@ -1,12 +1,12 @@
 .one-less {
     display: flex;
     align-items: flex-start;
-    width: 100%;
+    width: 100vw;
     min-height: 80vh;
     background-color: #fff;
 
 }
-.one-less p {
+.one-less p, .one-less li{
   text-align: left;
   font-size: 1.25rem !important;
 }
@@ -122,10 +122,10 @@ button:hover {
     visibility: visible;
     opacity: 1;
 } */
-.tipText:hover, .testHover:hover{
+/* .tipText:hover, .testHover:hover{
     background-color: aqua;
     cursor: pointer !important;
 }
 .tipText {
   color: rgb(55, 131, 55);
-}
+} */

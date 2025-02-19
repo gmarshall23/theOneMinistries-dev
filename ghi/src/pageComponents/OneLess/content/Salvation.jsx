@@ -1,38 +1,30 @@
-import { useState, useEffect } from 'react';
+/* eslint-disable react/prop-types */
+import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import 'react-tooltip/dist/react-tooltip.css'
 import { Tooltip } from 'react-tooltip';
 import cross from './one-less-assets/cross.jpeg'; // Import the image using ES6 import
 
 // This component is the Salvation page content
-const Salvation = () => {
-
-	const [scrips, setScrips] = useState([]);
-	const getData = async () => {
-		// Get Scriptures from database and Put scriptures on the page //
-		const resp = await fetch('http://localhost:4000/get_scriptures')
-		const data = await resp.json()
-		setScrips(data)
-	}
+const Salvation = ({user, scrips}) => {
 	useEffect(() => {
-		getData()
-	}, [])
+		console.log('Salvation component mounted');
+	}, []);
 	// build object of scriptures to add tooltips to the quotes
-	const scripObj = {}
+	const scripObj = {};
 	for (let s of scrips) {
 		scripObj[s.quote] = <span className='tipText' data-tooltip-id="tooltip" data-tooltip-content={s.scripture}>{s.quote}</span>
-		// scripObj[s.quote] = <span data-tip="tooltip" className="testHover" href="#" data-tooltip-content={s.scripture}>{s.quote}</span>
 	}
 
 	return (
 		<div className="salvation-content">
-			<div className='border content-header'>
-				<h1>Plan of Salvation</h1>
-				<h2>Why Should God Let You Into Heaven?</h2>
+			<div className='content-header'>
+				<h2><b>Plan of Salvation</b></h2>
+				<h3>Why Should God Let You Into Heaven?</h3>
 			</div>
-			<div className='border'>
+			<div className=''>
 				<ol className='p-3'>
-					<li className='border'><p >Do you declare that YOU have sinned and fallen short of the glory of God? ({scripObj['Romans 3:23']})</p></li>
+					<li className=''><p >Do you declare that YOU have sinned and fallen short of the glory of God? ({scripObj['Romans 3:23']})</p></li>
 					<li><p >Do you agree that the wages of YOUR sin is death and that the gift of God is eternal life;
 						understanding that wages are worked for and gifts cannot be earned? ({scripObj['Romans 6:23']})</p></li>
 					<li><p >Do you believe that God has the power to gift you salvation?  ({scripObj['Romans 1:16']})</p></li>
@@ -40,8 +32,8 @@ const Salvation = () => {
 				</ol>
 				<p ><b>After considering the questions, if you are in agreement then continue...</b></p>
 			</div>
-			<div className='border row p-0 m-0 sec2'>
-				<div className='col-5'><img className='' src={cross} alt='cross' width={'100%'}/></div>
+			<div className='row p-0 m-0 sec2'>
+				<div className='col-5'><img className='img' src={cross} alt='cross' width={'100%'}/></div>
 				<div className='col-7'>
 					<p >Romans 10:9-13 says: If you declare with
 						your mouth, &quot;Jesus is Lord,&quot; and believe in your heart that God
@@ -62,18 +54,18 @@ const Salvation = () => {
 					3. Taking God at his Word (the bible).
 					4. Hope with expectations">faith</u> -- and this is not from yourselves, it is the gift of God -- not by works, so that no one can boast.</p>
 					<p >Pray the prayer out loud from Romans 10 sincerely.</p>
-					<p ><u className="tipText" data-tooltip-id="tooltip" data-tooltip-content="Confess - CONFESS YOUR SINS -
-				1. To freely agree or acknowledge that you violated God's law by your willful act.
-				2. Display real sorrow over your sin.
-				3. Ask God to cover your sin with the blood of Jesus and forgive you.
-				4. Faithfully believe that God has heard you and will restore you.">Confess</u> that you are a sinner.</p>
+					<p ><u className="tipText" data-tooltip-id="tooltip" data-tooltip-content="Confess - CONFESS YOUR SINS:
+					1. To freely agree or acknowledge that you violated God's law by your willful act.
+					2. Display real sorrow over your sin.
+					3. Ask God to cover your sin with the blood of Jesus and forgive you.
+					4. Faithfully believe that God has heard you and will restore you" >Confess</u> that you are a sinner.</p>
 					<p >Believe in your heart that Jesus is the son of God.</p>
 					<p >Beleive in your heart that Jesus died on the cross for your sins.</p>
 					<p >Believe in your heart that God <u className="tipText" data-tooltip-id="tooltip" data-tooltip-content="Ressurection - RESSURECT / RESSURECTED / RESSURECTION - To bring One back to life from death NEVER to die again. Jesus Christ is the only One ever resurrected. All others brought back to life from death have died again permanently.">ressurected</u> Jesus from the dead.</p>
 				</div>
 			</div>
 
-			<div className='border'>
+			<div className=''>
 				<p ><b>Welcome my brother or sister. <em>YOU ARE SAVED. You have just accomplished the first act of
 					obedience to the Lord.</em></b></p>
 				<br />
@@ -88,15 +80,12 @@ const Salvation = () => {
 					<li>{scripObj['Ephesians 1:13']}</li>
 				</ol>
 			</div>
-
-
-			<p >Next, go the <Link className="text-primary testHover" to="/Living">Living</Link> page to discover what your next steps should be after giving your life to Jesus Christ.</p>
+			<p >Next, go the <Link className="text-primary" to="/Living">Living</Link> page to discover what your next steps should be after giving your life to Jesus Christ.</p>
+			{/* react-bootstrap ToolTip component used for scriptures and definitions */}
 			<Tooltip className='' id="tooltip" place="right"
 				style={{
 					fontSize: '1.25rem',
 					maxWidth: '30rem',
-					// minWidth: '200px',
-					// maxWidth: '400px',
 					whiteSpace: 'pre-line',
 					color: 'red',
 					backgroundColor: '#333',

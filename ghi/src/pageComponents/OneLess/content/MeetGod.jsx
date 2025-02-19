@@ -9,7 +9,7 @@ const MeetGod = () => {
     ,[]);
     return (
       <>
-          <h1>Hello it&apos;s GOD, Good to Meet You</h1>
+          <h2>Hello it&apos;s GOD, Good to Meet You</h2>
           <p className="white">True Story...Years ago, I moved into a neighborhood with my wife and three kids. I was not new to the city, but I was not familiar with the neighborhood and did not know anyone. I suppose it was a two or three days after moving in that the doorbell rang and it was the woman from across the street. She handed me a cake and a note and quickly walked away before I could even get a word out. My wife and I read the note that simply said &quot;welcome to the neighborhood&quot; and then upon my insistence, I threw the cake away. I thought, &quot;Lady, I don&#39;t know you and why do you think I want anything from you let alone eat something from you?&quot; And I had several other &quot;why&quot; questions after that. The root of my position came from a place of distrust and concern of the unknown.</p><p className="pink">This is how many of us approach our relationship with God. We are  skeptical of receiving a free gift from an unknown entity or perhaps, in a moment of emotion, we accept the gift  of salvation only to realize that you have made a lifetime decision to serve a God that you don&#39;t really know or  trust.</p><p className="white">That&#39;s ok, its perfectly human and perfectly normal. God wants you to  know him just as well as he already knows you and the cool part is that it is absolutely possible. Everyone is wired differently but I am pretty sure you fall into one or more of the following categories:</p>
           <ol>
             <p className="purple">NOTE: create links to these 3 items and explain them in the link</p>

@@ -1,5 +1,6 @@
 [
 {
+    "catagory": "Themes",
     "title": "Need For The New Life",
     "topics": [
         {"name": "Holiness of God - Isaiah 6:3"},
@@ -8,6 +9,7 @@
     ]
 },
 {
+    "catagory": "Themes",
     "title": "Sharing Our Faith",
     "topics": [
         {"name": "Sharing our Faith: Why? - Matthew 28:19"},
@@ -18,6 +20,7 @@
     ]
 },
 {
+    "catagory": "Themes",
     "title": "Suffering",
     "topics": [
         {"name": "Kinds of Suffering - I Peter 3:17"},
@@ -27,6 +30,7 @@
     ]
 },
 {
+    "catagory": "Themes",
     "title": "Human Government",
     "topics": [
         {"name": "The Origin of Human Government - Genesis 9:5"},

@@ -1,16 +1,16 @@
 .nav1 {
     /* flex: 1; */
     /* border: 2px solid green !important; */
-    color: green !important;
-    font-size: 1.5rem !important;
-    font-weight: 400;
+    color: red !important;
+    font-size: 1.25rem !important;
+    font-weight:600;
     z-index: 1000;
     /* background-color: transparent !important; */
 }
 nav2 {
     /* border: 2px solid blue !important; */
     color: green !important;
-    font-size: 1.5rem !important;
+    font-size: 1rem !important;
     font-weight: 400;
     /* background-color: transparent !important; */
 

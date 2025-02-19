@@ -8,7 +8,9 @@
     /* justify-content: center; */
     align-items: center;
     min-height: 80vh;
-    /* background-color: #f5f5f5; */
+    width: 100vw;
+    overflow: auto;
+    background-color: transparent;
 
 }
 a {
@@ -16,12 +18,10 @@ a {
     color: black;
 }
 .app {
-    background: url('../../assets/images/bible2.jpg');
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
+
 
 }
+
 .landing-section {
     flex: 1;
     width: 100%;
@@ -51,6 +51,13 @@ a {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    overflow: hidden;
+}
+.landing-thoughts {
+    background-image: url('../../assets/images/thoughtOfDay.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 .script {
     flex: 1 1 0;
@@ -80,4 +87,8 @@ a {
     border: 2px solid black;
     border-radius: 1rem;
     background-color: rgba(210, 194, 194,.5);
+    white-space: normal; /* Allow text to wrap */
+    word-wrap: break-word; /* Ensure long words wrap */
+    overflow-wrap: break-word; /* Ensure long words wrap */
+
 }

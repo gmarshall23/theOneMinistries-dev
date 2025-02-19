@@ -1,10 +1,13 @@
+/* eslint-disable react/prop-types */
 import { useEffect, useState } from 'react';
 import './Landing.css'
-import scriptArray from './scriptArray.json';
+// import {scriptures as scriptArray} from '../../assets/Statements'
+import scriptArray from './scriptArray.json'
 import Welcome from '../../components/Welcome/'
 import Footer from '../../components/Footer'
 import { Link } from 'react-router';
-function Landing() {
+import thoughtOfDay from '../../assets/images/thoughtOfDay.png'
+function Landing({user}) {
     const [scripture, setScripture] = useState(0);
     useEffect(() => {
         console.log("scripts", scriptArray)
@@ -14,18 +17,19 @@ function Landing() {
         }, 5000)
     }, [])
     return (
-        <>
-            <main className="landing">
+        <div className="landing">
+            <main >
+            <div>{user&&<h3>Welcome {user.firstName}</h3>}</div>
                 <section className='landing-section'>
                     <div className='news-thoughts-div'>
                         <section className='landing-news border'>
                             <Link to='/news'>
                                 <h2>News Story Headlines</h2>
                             </Link>
-
                         </section>
                         <section className='landing-thoughts border'>
-                            <h2>Thoughts for the Week</h2>
+                            {/* <h2>Thoughts for the Week</h2> */}
+                            {/* <img className='w-100' src={thoughtOfDay} alt='placeholder' /> */}
                         </section>
                     </div>
 
@@ -42,7 +46,7 @@ function Landing() {
             </main>
             <Footer />
 
-        </>
+        </div>
 
     )
 }

@@ -1,45 +1,82 @@
-import { useState, useEffect } from 'react';
-import { loadStatement, oneLiners } from './Statements';
+import { useState} from 'react';
+import 'react-tooltip/dist/react-tooltip.css'
+import { Tooltip } from 'react-tooltip';
+import axios from 'axios';
+import { Button, Dropdown, DropdownButton } from 'react-bootstrap';
+import statementsData from '../../../assets/Statements';
+import cross from './one-less-assets/cross.jpeg';
 
 const Oneliners = () => {
 
     const sticky = { className: 'sticky-top sticky', onClick: () => window.refresh() }
-
+    const [oneLiner, setOneLiner] = useState(null)
     const [showOne, setShowOne] = useState(false)
-    const [showAll, setShowAll] = useState(false)
+    const [showAll, setShowAll] = useState(true)
+    const [selectedStatement, setSelectedStatement] = useState('');
 
-    const handleClickOne = (e) => {
+    const handleSelect = (eventKey) => {
+        setSelectedStatement(statementsData.oneliners[eventKey]);
+      };
+    const handleShowOne = (e) => {
         e.preventDefault();
-        const oneline = loadStatement()
-        console.log(oneline)
-        setShowOne(oneline)
+        const randNumber = Math.floor(Math.random() * statementsData.oneLiners.length);
+        setOneLiner(statementsData.oneLiners[randNumber])
+        console.log(statementsData.oneLiners[randNumber])
+        setShowOne(true)
     }
 
     const handleClickAll = (e) => {
         e.preventDefault();
         const randNumber = `The Entire List of Meditation Topics:`;
-        setShowAll(!showAll)
+        // setShowAll(!showAll)
     }
 
     return (
-        <div>
-            <div className="sticky-top">
-                <p className="pix10 sticky"><u>Back to Top</u></p>
+        <div className="">
+            <h2><b>One Liners for the Day</b></h2>
+
+            <div className="shootPics row justify-content-between m-0 p-2">
+                <img className="col-md-4 p-4 img cloud " src={cross} alt="church" />
+                <img className="col-md-4 p-4 img cloud " src={cross} alt="church" />
+                <img className="col-md-4 p-4 img cloud " src={cross} alt="church" />
             </div>
-            <h3>One Liners for the Day</h3>
-            <br />
-            <p></p>
-            <div className="shootPics">
-                <img className="cloud img-thumbnail" src="../images/cross.jpeg" alt="church"></img><img className="cloud img-thumbnail" src="../images/cross.jpeg" alt="church"></img><img className="cloud img-thumbnail" src="../images/cross.jpeg" alt="church"></img>
-            </div>
-            <p className="rndm pix20">Psalms 19 asks that the meditation of our heart be pleasing in the sight of the Lord. Pick a One Liner or "Post-it-Note" for your <u className="define point vocab" data-toggle="tooltip" data-html="true" title="MEDITATE 1. Reading 2. Believing 3. Absorbing (Thinking over and over again) 4. Applying 5. Obeying">Meditation</u> Thoughts today.</p>
+            <p className="rndm pix20">Psalms 19 asks that the meditation of our heart be pleasing in the sight of the Lord. Pick a One Liner or "Post-it-Note" for your <u className="toolTipHover" data-tooltip-id="tooltip" data-html="true" data-tooltip-content="MEDITATE 1. Reading 2. Believing 3. Absorbing (Thinking over and over again) 4. Applying 5. Obeying">Meditation</u> Thoughts today.</p>
             <p className="white">There are over 150 to choose from. Click until one speaks to your spirit.</p>
             <p className="rojo pix15">NOTE: PLACEHOLDER, this feature works but is not yet fully functional.</p>
-            <button className="rand" id="click" onClick={handleClickOne} >Click for One</button>
-            <button className="rand" id="click" onClick={handleClickAll} >Click for All</button>
-            <p></p>
-            <p className={`showOneText white ${showOne ? "frame" : ""}`}>{showOne ? showOne : null}</p>
-            {showAll ? oneLiners.map((item, idx) => <p key={idx} className="purple">{idx + 1} {item}</p>) : null}
+
+            {/* <div>
+                {statementsData.statements.map((statement, index) => (
+                    <div key={index} dangerouslySetInnerHTML={{ __html: statement }} />
+                ))}
+            </div> */}
+            <div className="">
+                <Button className="rand" id="click" onClick={handleShowOne} >See a oneliner</Button>
+                <blockquote className='oneLiner' dangerouslySetInnerHTML={{ __html: oneLiner }} />
+            </div>
+
+            <div  >
+                <DropdownButton
+                    id="dropdown-basic-button"
+                    className = "custom-dropdown"
+                    data-tooltip-content="Click for All"
+                    onSelect={handleSelect}
+                >
+                    {statementsData.oneLiners.map((statement, index) => (
+
+                        <Dropdown.Item className ='' key={index} dangerouslySetInnerHTML={{ __html: statement }} eventKey={index} />
+                    ))}
+                </DropdownButton>
+
+                {/* {selectedStatement && (
+                    <div className="mt-3">
+                        <div dangerouslySetInnerHTML={{ __html: selectedStatement }} />
+                    </div>
+                )} */}
+            </div>
+            <Tooltip className='tooltipComponent' id="tooltip" place="right"
+                style={{
+
+                }} />
         </div>
     )
 }
