@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import './Header.css'
+import './header.css'
 import Menu from '../Menu'
 import title from './tomGif.gif'; // Import the image using ES6 import
 import { useEffect } from 'react';
