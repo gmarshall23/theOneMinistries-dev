@@ -6,7 +6,7 @@ const WalkWord = () => {
   const [newEntry, setNewEntry] = useState([]);
   const [journalEntry, setJournalEntry] = useState([]);
   const [studies, setStudies] = useState([]);
-  const [currentStudy, setCurrentStudy] = useState(null);
+  const [currentStudy, setCurrentStudy] = useState({});
 
   const [topics, setTopics] = useState([]);
   // let logCount = 0;
@@ -15,11 +15,14 @@ const WalkWord = () => {
   const [studySelected, setStudySelected] = useState('Choose an option');
 
   const handleSelect = async (eventKey, e) => {
+    e.preventDefault();
     console.log(`e`, eventKey);
     await setStudySelected(eventKey);
-
-    setCurrentStudy(studies.filter(item => item.title === e.target.eventKey));;
-    console.log(`studySelected`, studySelected);
+    const myStudy = studies.filter(item => item.title === eventKey);
+    console.log(`myStudy`, myStudy[0]);
+    await setCurrentStudy(myStudy[0]);
+    // setCurrentStudy(studies.filter(item => item.title === e.target.eventKey));;
+    console.log(`study data`, currentStudy);
   }
 
   //  end configuration for Dropdown options
@@ -53,6 +56,9 @@ const WalkWord = () => {
   const handleTopics = async (e) => {
     e.preventDefault();
     console.log(`e`, e.target.eventKey);
+    const myStudy = studies.filter(item => item.title === e.target.eventKey);
+    console.log(`myStudy`, myStudy);
+    setCurrentStudy(myStudy);
     setCurrentStudy(studies.filter(item => item.title === e.target.eventKey));
   }
   // const lis = studies.map((item, idx) => (<li id={idx} key={item._id} className="point" onClick={handleTopics}>{item.title}</li>))
@@ -156,14 +162,7 @@ const WalkWord = () => {
         </div>
       </div>
       <div className='mt-2 studies border border-primary border-4 rounded'>
-        <h2>Studies</h2>
-        {currentStudy || <h3>Select a Study</h3>}
-        {currentStudy && currentStudy.map(item => (
-          <div key={item._id} className="currStudy">
-            <h3 className="pix25">Current Study: {item.title}</h3>
-            {item.topics.map((topic, idx) => <p key={idx}>{topic.name}</p>)}
-          </div>
-        ))}
+        {currentStudy?<h3>{currentStudy.title}</h3>:<h3>Select a Study</h3>}
       </div>
 
       <div>

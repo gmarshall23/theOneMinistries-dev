@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 import { useEffect, useState } from 'react';
-import './Landing.css'
+import './landing.css'
 // import {scriptures as scriptArray} from '../../assets/Statements'
 import scriptArray from './scriptArray.json'
 import Welcome from '../../components/Welcome/'
