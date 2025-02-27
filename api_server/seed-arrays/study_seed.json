@@ -1,41 +1,87 @@
 [
-{
-    "catagory": "Themes",
-    "title": "Need For The New Life",
-    "topics": [
-        {"name": "Holiness of God - Isaiah 6:3"},
-        {"name": "Adam's Sin - Genesis 3:6-7"},
-        {"name": "Individual Sin - Ecclesiates 7:20"}
-    ]
-},
-{
-    "catagory": "Themes",
-    "title": "Sharing Our Faith",
-    "topics": [
-        {"name": "Sharing our Faith: Why? - Matthew 28:19"},
-        {"name": "Sharing our Faith: What? - I Corinthians 15:3-4"},
-        {"name": "Sharing our Faith: How to Prepare - Ezra 7:10"},
-        {"name": "Sharing our Faith: How to Do It - I Thesselonians 1:5"},
-        {"name": "Sharing our Faith: When? - II Timothy 4:2"}
-    ]
-},
-{
-    "catagory": "Themes",
-    "title": "Suffering",
-    "topics": [
-        {"name": "Kinds of Suffering - I Peter 3:17"},
-        {"name": "Purposes of Suffering - Job 2:7"},
-        {"name": "Responses to Suffering - Job 1:21"},
-        {"name": "Examples of Suffering - Jeremiah 37:15"}
-    ]
-},
-{
-    "catagory": "Themes",
-    "title": "Human Government",
-    "topics": [
-        {"name": "The Origin of Human Government - Genesis 9:5"},
-        {"name": "The Function of Human Government - Romans 13:1-4"},
-        {"name": "Our Responsibility to Human Government - I Peter 2:13-17"}
-    ]
-}
+    {
+        "catagory": "Theme",
+        "title": "Need For The New Life",
+        "content": {
+            "topics": [
+                {
+                    "name": "Holiness of God - Isaiah 6:3"
+                },
+                {
+                    "name": "Adam's Sin - Genesis 3:6-7"
+                },
+                {
+                    "name": "Individual Sin - Ecclesiates 7:20"
+                }
+            ]
+        }
+    },
+    {
+        "catagory": "Theme",
+        "title": "Sharing Our Faith",
+        "content": {
+            "topics": [
+                {
+                    "name": "Sharing our Faith: Why? - Matthew 28:19"
+                },
+                {
+                    "name": "Sharing our Faith: What? - I Corinthians 15:3-4"
+                },
+                {
+                    "name": "Sharing our Faith: How to Prepare - Ezra 7:10"
+                },
+                {
+                    "name": "Sharing our Faith: How to Do It - I Thesselonians 1:5"
+                },
+                {
+                    "name": "Sharing our Faith: When? - II Timothy 4:2"
+                }
+            ]
+        }
+    },
+    {
+        "catagory": "Theme",
+        "title": "Suffering",
+        "content": {
+            "topics": [
+                {
+                    "name": "Kinds of Suffering - I Peter 3:17"
+                },
+                {
+                    "name": "Purposes of Suffering - Job 2:7"
+                },
+                {
+                    "name": "Responses to Suffering - Job 1:21"
+                },
+                {
+                    "name": "Examples of Suffering - Jeremiah 37:15"
+                }
+            ]
+        }
+    },
+    {
+        "catagory": "Theme",
+        "title": "Human Government",
+        "content": {
+            "topics": [
+                {
+                    "name": "The Origin of Human Government - Genesis 9:5"
+                },
+                {
+                    "name": "The Function of Human Government - Romans 13:1-4"
+                },
+                {
+                    "name": "Our Responsibility to Human Government - I Peter 2:13-17"
+                }
+            ]
+        }
+    },
+    {
+        "catagory": "Study Guide",
+        "title": "Small Bite",
+        "content": {
+            "info": []
+        }
+    }
+
 ]

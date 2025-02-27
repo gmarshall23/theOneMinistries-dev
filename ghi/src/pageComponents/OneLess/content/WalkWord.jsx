@@ -1,41 +1,46 @@
 import { useState, useEffect } from 'react';
 import { Button, Dropdown, Form } from 'react-bootstrap';
 import axios from 'axios';
+import WordStudy from './WordStudy';
 const WalkWord = () => {
-
+  // variable to hold the study items
+  const [studies, setStudies] = useState([]);
+  // vairiable for study journal entries
   const [newEntry, setNewEntry] = useState([]);
   const [journalEntry, setJournalEntry] = useState([]);
-  const [studies, setStudies] = useState([]);
-  const [currentStudy, setCurrentStudy] = useState({});
 
-  const [topics, setTopics] = useState([]);
   // let logCount = 0;
 
   //  configuration for Dropdown options
-  const [studySelected, setStudySelected] = useState('Choose an option');
+  const [studyTitle, setStudyTitle] = useState('Choose an option');
+  const [currentStudy, setCurrentStudy] = useState(null);
 
-  const handleSelect = async (eventKey, e) => {
+  const handleSelect = async (eventKey, e, parentId) => {
+    // handleSelect will assign catagory and title(eventKey) to be passed to WordStudy component
     e.preventDefault();
-    console.log(`e`, eventKey);
-    await setStudySelected(eventKey);
-    const myStudy = studies.filter(item => item.title === eventKey);
-    console.log(`myStudy`, myStudy[0]);
+    console.log(`parentId: catagory`, parentId);
+    console.log(`eventKey: title`, eventKey);
+    const myStudy = await studies.filter(item => item.title === eventKey);
+    // set study selected to display on page
+    setStudyTitle(eventKey);
     await setCurrentStudy(myStudy[0]);
-    // setCurrentStudy(studies.filter(item => item.title === e.target.eventKey));;
     console.log(`study data`, currentStudy);
   }
 
   //  end configuration for Dropdown options
 
   const getData = async () => {
-    console.log(" getdata accessed")
-    const resp = await axios.get('http://localhost:4040/get_studies')
-    const data = resp.data
-    setStudies(data)
+    // Get study items from database and puts them on the page: Note: this may be removed later if too large//
+    console.log(" getdata accessed");
+    const resp = await axios.get('http://localhost:4040/get_studies');
+    // const data = resp.data;
+    await setStudies(resp.data);
+    console.log(`Studies data to have access to:`, studies);
+
   }
   useEffect(() => {
     console.log("WalkWord component mounted")
-    // Get study items from database and puts them on the page //
+    // Get study items from database //
     getData()
   }, [])
 
@@ -52,24 +57,6 @@ const WalkWord = () => {
 
     // setNewEntry(entryArrCopy)
   }
-
-  const handleTopics = async (e) => {
-    e.preventDefault();
-    console.log(`e`, e.target.eventKey);
-    const myStudy = studies.filter(item => item.title === e.target.eventKey);
-    console.log(`myStudy`, myStudy);
-    setCurrentStudy(myStudy);
-    setCurrentStudy(studies.filter(item => item.title === e.target.eventKey));
-  }
-  // const lis = studies.map((item, idx) => (<li id={idx} key={item._id} className="point" onClick={handleTopics}>{item.title}</li>))
-
-  // const studyEl = currentStudy.map(item => (
-  //   <div key={item._id} className="currStudy">
-  //     <h3 className="pix25">{item.title}</h3>
-  //     {item.topics.map((topic, idx) => <p key={idx}>{topic.name}</p>)}
-  //   </div>
-  // ))
-
   const journalEntries = newEntry.map((item, idx) => <p key={idx}>{item.entry} {item.date}</p>)
 
   return (
@@ -80,17 +67,15 @@ const WalkWord = () => {
       </div>
 
       <div className='study-menu'>
-        <p>Study By: {studySelected} selected</p>
+        <p>Study By: {studyTitle} selected</p>
         <div className='row'>
-          <Dropdown onSelect={handleSelect} id={'prophet'} className='col-2'>
+          <Dropdown onSelect={(eventKey, e)=>handleSelect(eventKey,e,'Study Group')} id={'study-group'} className='col-2'>
             <Dropdown.Toggle variant="primary" id="dropdown-basic">
               Study Group
             </Dropdown.Toggle>
-
             <Dropdown.Menu className='scrollable-menu'>
-
-              <Dropdown.Item eventKey="small-bite">Small Bite (one verse)</Dropdown.Item>
-              <Dropdown.Item eventKey="big-bite">One Passage of Cohesive Scripture</Dropdown.Item>
+              <Dropdown.Item eventKey="Small Bite">Small Bite (one verse)</Dropdown.Item>
+              <Dropdown.Item eventKey="Big Bite">One Passage of Cohesive Scripture</Dropdown.Item>
             </Dropdown.Menu>
           </Dropdown>
           <Dropdown onSelect={handleSelect} id={'bible'} className='col-2'>
@@ -104,7 +89,7 @@ const WalkWord = () => {
               <Dropdown.Item eventKey="New Testement" >New Testement</Dropdown.Item>
             </Dropdown.Menu>
           </Dropdown>
-          <Dropdown onSelect={handleSelect} id={'theme'} className='col-2'>
+          <Dropdown onSelect={(eventKey, e)=>handleSelect(eventKey,e,'Theme')} id={'theme'} className='col-2'>
             <Dropdown.Toggle variant="primary" id="dropdown-basic">
               By Theme
             </Dropdown.Toggle>
@@ -162,7 +147,8 @@ const WalkWord = () => {
         </div>
       </div>
       <div className='mt-2 studies border border-primary border-4 rounded'>
-        {currentStudy?<h3>{currentStudy.title}</h3>:<h3>Select a Study</h3>}
+        {currentStudy ? <h3>{currentStudy.title}</h3> : <h3>Select a Study</h3>}
+        <WordStudy content={currentStudy} />
       </div>
 
       <div>

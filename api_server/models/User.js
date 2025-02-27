@@ -16,7 +16,8 @@ const userSchema = new mongoose.Schema(
         },
         morals: Array,
         history: Array,
-        password: String
+        password: String,
+        studyStartDate: String
     }
 )
 

@@ -9,6 +9,7 @@ import NewsStories from './pageComponents/NewsStories';
 import Subscribe from './pageComponents/Subscribe/Subscribe';
 import Login from './components/Login';
 import Logout from './components/Logout';
+import StudyForm from './pageComponents/OneLess/forms/AddStudy';
 
 function App() {
   const [user, setUser] = useState(null);
@@ -33,6 +34,7 @@ function App() {
           <Route exact path='/subscribe' element={<Subscribe />} />
           <Route exact path="/login" element={<Login user={user} setUser={setUser} />} />
           <Route exact path="/logout" element={<Logout setUser={setUser} />} />
+          <Route exact path="/study-form" element={<StudyForm setUser={setUser} />} />
           {/* Add other routes here */}
         </Routes>
       </div>

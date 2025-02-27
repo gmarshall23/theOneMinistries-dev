@@ -81,3 +81,8 @@ main {
 .read-the-docs {
   color: #888;
 }
+.add-study {
+  height: 80vh;
+  overflow:auto;
+  background-color: rgba(136, 136, 136, 0.498);
+}

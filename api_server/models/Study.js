@@ -4,19 +4,13 @@ const studySchema = new mongoose.Schema(
     {
         catagory: String,
         title: String,
-        topics: Array,
-        studyStart: Date,
-        content: String,
-        asset: {
-            docId: String,
-            link: String,
-            calander: Number
-         }
+        content: {
+            type: mongoose.Schema.Types.Mixed,
+            default: {}
+        }
 
     }
-)
+);
 
-
-const Study = mongoose.model('study', studySchema)
-
+const Study = mongoose.model('study', studySchema);
 module.exports = Study;

@@ -27,6 +27,7 @@ const Menu = ({user}) => {
           {location.pathname !== '/' &&
           <Nav.Link as={Link} to="/" onClick={handleLinkClick}>Home</Nav.Link>}
           <Nav.Link as={Link} to="/about" onClick={handleLinkClick}>About</Nav.Link>
+          <Nav.Link as={Link} to="/study-form" onClick={handleLinkClick}>Study Form</Nav.Link>
           <Nav.Link as={Link} to="/one-less" onClick={handleLinkClick}>One Less</Nav.Link>
           <Nav.Link as={Link} to="/news-stories" onClick={handleLinkClick}>News Stories</Nav.Link>
           <Nav.Link as={Link} to="/subscribe" onClick={handleLinkClick}>Subscribe</Nav.Link>

@@ -8,9 +8,9 @@ const Subscribe = () => {
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
-    email: '',
     username: '',
-    password: ''
+    password: '',
+    studyStartDate: ''
   });
 
   useEffect(() => {
@@ -77,15 +77,15 @@ const Subscribe = () => {
             </Form.Group>
           </Col>
         </Row>
-        <Form.Group controlId="formEmail">
-          <Form.Label>Email</Form.Label>
+        <Form.Group controlId="formStudyStartDate">
+          <Form.Label>Date to Start Study</Form.Label>
           <Form.Control
-            type="email"
-            name="email"
-            value={formData.email}
+            type="date"
+            name="studyStartDate"
+            value={formData.studyStartDate}
             onChange={handleChange}
-            onClick={() => handleClick('Email')}
-            placeholder="Enter your email"
+            onClick={() => handleClick('studyStartDate')}
+            placeholder="start study date"
             required
           />
         </Form.Group>

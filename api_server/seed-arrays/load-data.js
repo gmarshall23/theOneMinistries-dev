@@ -11,7 +11,7 @@ const Charity = require('../models/Charity');
 // const Encourage = require('../models/Encourage');
 const studyData = require('./study_seed.json');
 const scriptData = require('./scrip_seed.json');
-const userData = require('./user_seed.json');
+// const userData = require('./user_seed.json');
 const charityData = require('./charity_seed.json');
 const encourageData = require('./encourage_seed.json');
 
@@ -80,11 +80,11 @@ async function listCollections() {
         //   }
         // });
 
-        userData.forEach(async (user) => {
-          await User.create(user);
-          console.log('A User document added to the users collection:', user);
-        });
-        console.log('All User documents added to the users collection:');
+        // userData.forEach(async (user) => {
+        //   await User.create(user);
+        //   console.log('A User document added to the users collection:', user);
+        // });
+        console.log('No User documents added to the users collection:');
       } else if (collName === 'charities') {
         console.log('charities collection found');
         charityData.forEach(async (charity) => {
