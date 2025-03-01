@@ -29,7 +29,7 @@ const AddStudy = () => {
             calendar: studyData.calendar,
             lesson: studyData.lesson
         }
-        axios.post('http://localhost:4040/study_info', newInfo)
+        axios.put('http://localhost:4040/add_study_info', newInfo)
             .then(response => {
                 console.log('Response:', response.data);
             }).then(() => {

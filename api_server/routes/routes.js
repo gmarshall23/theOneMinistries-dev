@@ -29,7 +29,7 @@ app.get('/get_studies', study_Controller.getStudies)
 app.get('/study_content', study_Controller.getStudyContent)
 app.post('/create_study', study_Controller.createStudy)
 app.put('/update_study/:id', study_Controller.updateStudy)
-app.post('/study_info', study_Controller.addStudyInfo)
+app.put('/add_study_info', study_Controller.addStudyInfo)
 // app.delete('/delete_study/:id', study_Controller.deleteStudy)
 
 // app.post('/create_user', user_Controller.createUser);

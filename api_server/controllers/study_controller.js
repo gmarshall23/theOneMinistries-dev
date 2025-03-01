@@ -31,28 +31,18 @@ module.exports = {
             })
     },
     addStudyInfo(req, res) {
-        const newInfoObj = req.body.newInfo;
+    const newInfoObj = req.body.newInfo;
     console.log('Object to add in newInfoObj', newInfoObj);
 
-    Study.findOne({ title: 'Small Bite' })
-        .then(doc => {
-            if (!doc) {
-                return res.status(404).json({ error: 'Document not found' });
-            }
-            // Ensure doc.content is an object and that info is an array
-            if (!doc.content || !Array.isArray(doc.content.info)) {
-                doc.content = { ...doc.content, info: [] };
-            }
-            doc.content.info.push(newInfoObj);
-            return doc.save();
-        })
+    Study.findOneAndUpdate({ title: 'Small Bite' }, { $push: { 'content.info': newInfoObj } }, { new: true })
         .then(resp => {
-            res.json(resp);
+            res.json(resp)
         })
         .catch(e => {
-            console.log(e);
-            res.json(e);
-        });
+            console.log(e)
+            res.json(e)
+        })
+
     },
     getStudies(req, res) {
         Study.find()
