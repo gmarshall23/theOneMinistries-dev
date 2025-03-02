@@ -83,6 +83,11 @@ button:hover {
     background-color: red;
     border: 1px solid black;
 }
+.a-walk-header {
+display: flex;
+justify-content: space-between;
+align-items: center;
+}
 /* .tooltips {
     position: relative;
     display: inline-block;

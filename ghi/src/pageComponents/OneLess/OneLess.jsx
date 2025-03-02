@@ -21,26 +21,40 @@ const OneLess = ({user, setUser}) => {
   // const [error, setError] = useState(null);
   const [scrips, setScrips] = useState([]);
   const [lesson, setLesson] = useState('Introduction');
+  const [studyDate, setStudyDate] = useState('');
+  const [studyDay, setStudyDay] = useState(0);
   const buttonsRef = useRef([]);
   useEffect(() => {
     console.log('OneLess component mounted');
     getData();
+    days(user.studyStartDate);
 
-  }, [lesson]);
+  }, []);
+  // get data from the server
   const getData = async () => {
     const response = await axios.get('http://localhost:4040/get_scriptures');
-    // const resp = await fetch('http://localhost:4040/get_scriptures')
     const data = response.data
     setScrips(data)
     console.log('data is: ', data)
+    console.log('user info: ', user)
+
+  }
+  // get the number of days since the user started studying
+  const days = async (date) => {
+    // convert date to day of the year
+    const startDate = new Date(date).getTime();
+    const today = new Date().getTime();
+    const day =Math.floor(((((today - startDate)/1000)/60)/60)/24);
+    console.log(`study day info : ${date}, ${startDate}, ${today}, ${day}`);
+    const formattedDate = new Date(user.studyStartDate).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
+    setStudyDate(formattedDate);
+    setStudyDay(day);
   }
   function handleClick(e) {
     // Set the lesson state to the clicked button's text content
     setLesson(e.target.textContent);
-
     // Remove 'active-btn' class from all buttons
     buttonsRef.current.forEach(button => button.classList.remove('active-btn'));
-
     // Add 'active-btn' class to the clicked button
     e.target.classList.add('active-btn');
   };
@@ -65,7 +79,7 @@ const OneLess = ({user, setUser}) => {
       case 'One Liners for meditation (words of Wisdom)':
         return <Oneliners />;
       case 'A Walk':
-        return <WalkWord />;
+        return <WalkWord user={user} studyDay={studyDay}/>;
       case 'Encourage Me':
         return <Encourage />;
       case 'One Less Event':
@@ -108,8 +122,13 @@ const OneLess = ({user, setUser}) => {
         </aside>
         <section className='one-less-section'>
           <div className='one-less-header'>
+            {lesson === 'A Walk' ?
+            <div className='a-walk-header'>
+              <p>Lesson: {lesson}</p>
+              {user.studyStartDate&&<p>Study date: {studyDate} (day: {studyDay})</p>}
+            </div> :
             <h3>Lesson: {lesson}
-            </h3>
+            </h3>}
           </div>
           <div className='one-less-content'>
             {getComponent()}

@@ -88,7 +88,8 @@ app.post('/login', async (req, res) => {
       lastName: user.lastName,
       email: user.email,
       history: user.history,
-      morals: user.morals
+      morals: user.morals,
+      studyStartDate: user.studyStartDate
     }
   });
 });

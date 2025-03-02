@@ -42,7 +42,7 @@ module.exports = {
         //   }
         // });
 
-        // password hashing is performed in the User model
+        // password hashing is performed in the User model with 'pre' middleware
         try {
             const newUser = await User.create(req.body);
             console.log('newUser:', newUser);

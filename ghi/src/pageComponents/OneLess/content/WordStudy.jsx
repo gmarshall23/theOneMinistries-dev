@@ -8,7 +8,7 @@ const WordStudy = ({ content }) => {
     const pdfUrl = "http://localhost:4040/study_content";
     const dataFunc = async () => {
         console.log('dataFunc accessed');
-        await setWordStudy(content.content);
+        content && await setWordStudy(content.content);
 
         // const resp = await axios.get('http://localhost:4040/study_content', { responseType: 'blob' });
         // const fileURL = URL.createObjectURL(resp.data);

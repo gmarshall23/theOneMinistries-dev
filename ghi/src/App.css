@@ -86,3 +86,10 @@ main {
   overflow:auto;
   background-color: rgba(136, 136, 136, 0.498);
 }
+/* for all modals */
+.modal-backdrop {
+  z-index: 1050 !important;
+}
+.modal {
+  z-index: 1060 !important;
+}

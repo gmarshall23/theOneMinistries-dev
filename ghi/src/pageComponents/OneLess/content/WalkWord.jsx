@@ -1,15 +1,17 @@
+/* eslint-disable react/prop-types */
 import { useState, useEffect } from 'react';
 import { Button, Dropdown, Form } from 'react-bootstrap';
 import axios from 'axios';
 import WordStudy from './WordStudy';
-const WalkWord = () => {
+const WalkWord = ({user, studyDay}) => {
   // variable to hold the study items
   const [studies, setStudies] = useState([]);
+
   // vairiable for study journal entries
   const [newEntry, setNewEntry] = useState([]);
   const [journalEntry, setJournalEntry] = useState([]);
 
-  // let logCount = 0;
+
 
   //  configuration for Dropdown options
   const [studyTitle, setStudyTitle] = useState('Choose an option');
