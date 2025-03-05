@@ -31,10 +31,10 @@ module.exports = {
             })
     },
     addStudyInfo(req, res) {
-    const newInfoObj = req.body.newInfo;
-    console.log('Object to add in newInfoObj', newInfoObj);
+    const newInfoObj = req.body.newSudy;
 
-    Study.findOneAndUpdate({ title: 'Small Bite' }, { $push: { 'content.info': newInfoObj } }, { new: true })
+    console.log('Object to add in newInfoObj', newInfoObj);
+    Study.findOneAndUpdate({ title: newInfoObj.title}, { $push: { 'content.info': newInfoObj.newInfo } }, { new: true })
         .then(resp => {
             res.json(resp)
         })

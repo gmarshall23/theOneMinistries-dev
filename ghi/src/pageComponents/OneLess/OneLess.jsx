@@ -27,9 +27,12 @@ const OneLess = ({user, setUser}) => {
   useEffect(() => {
     console.log('OneLess component mounted');
     getData();
-    days(user.studyStartDate);
-
   }, []);
+  useEffect(()=>{
+    if(user && user.studyStartDate){
+      days(user.studyStartDate);
+    }
+  }, [user]) // will run this effect only when the user change.
   // get data from the server
   const getData = async () => {
     const response = await axios.get('http://localhost:4040/get_scriptures');
