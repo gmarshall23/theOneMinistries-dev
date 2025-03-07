@@ -90,27 +90,27 @@ const AddStudy = () => {
 
     return (
         <div className='container border border-primary rounded add-study'>
-            <form onSubmit={handleSubmit} className="container mt-5 w-50">
+            <form onSubmit={handleSubmit} className="container mt-5 w-75">
                 <div className='row align-items-center'>
                     <div className="col-6">
                         <div className="row align-items-center">
-                            <label htmlFor="catagory" className="border p-1  col-5">Catagory</label>
+                            <label htmlFor="catagory" className="border p-1 m-1 col-5">Catagory</label>
                             <input
                                 type="text"
                                 name="catagory"
                                 id="catagory"
-                                className="p-1  col-5"
+                                className="p-1 m-1 col-5"
                                 value={studyData.catagory}
                                 onChange={handleChange}
                             />
                         </div>
                         <div className="row m-0 p-0 aligb-items-center">
-                            <label htmlFor="docId" className="p-1  col-5">Doc ID</label>
+                            <label htmlFor="docId" className="p-1 m-1 col-5">Doc ID</label>
                             <input
                                 type="text"
                                 name="docId"
                                 id="docId"
-                                className="p-1  col-5"
+                                className="p-1 m-1 col-5"
                                 value={studyData.docId}
                                 onChange={handleChange}
                             />
@@ -121,7 +121,7 @@ const AddStudy = () => {
                                 type="text"
                                 name="title"
                                 id="title"
-                                className="p-1  col-5"
+                                className="p-1 m-1 col-5"
                                 value={studyData.title}
                                 onChange={handleChange}
                             />
@@ -129,34 +129,34 @@ const AddStudy = () => {
                     </div>
                     <div className="col-6">
                         <div className="row m-0 p-0 aligb-items-center">
-                            <label htmlFor="docTitle" className="p-1  col-5">Doc Title</label>
+                            <label htmlFor="docTitle" className="p-1 m-1 col-5">Doc Title</label>
                             <input
                                 type="text"
                                 name="docTitle"
                                 id="docTitle"
-                                className="p-1  col-5"
+                                className="p-1 m-1 col-5"
                                 value={studyData.docTitle}
                                 onChange={handleChange}
                             />
                         </div>
                         <div className="row m-0 p-0 aligb-items-center">
-                            <label htmlFor="docType" className="p-1  col-5">Doc Type</label>
+                            <label htmlFor="docType" className="p-1 m-1 col-5">Doc Type</label>
                             <input
                                 type="text"
                                 name="docType"
                                 id="docType"
-                                className="p-1  col-5"
+                                className="p-1 m-1 col-5"
                                 value={studyData.docType}
                                 onChange={handleChange}
                             />
                         </div>
                         <div className="row m-0 p-0 aligb-items-center">
-                            <label htmlFor="calendar" className="p-1  col-5">Calendar</label>
+                            <label htmlFor="calendar" className="p-1 m-1 col-5">Calendar</label>
                             <input
                                 type="text"
                                 name="calendar"
                                 id="calendar"
-                                className="p-1  col-5"
+                                className="p-1 m-1 col-5"
                                 value={studyData.calendar}
                                 onChange={handleChange}
                             />
@@ -174,7 +174,7 @@ const AddStudy = () => {
                         onChange={handleChange}
                     ></textarea>
                 </div> */}
-                <div>
+                <div >
                 <label htmlFor="lesson" className="form-label">Study Text</label>
                     <ReactQuill
                         name="lesson"
@@ -184,6 +184,7 @@ const AddStudy = () => {
                         value={studyData.lesson}
                         onChange={handleQuillChange}
                         placeholder="Enter your study text with formatting..."
+                        style={{ width: '100%', height: '300px' }}
                     />
                 </div>
                 <button type="submit" className="btn btn-primary">Submit</button>
