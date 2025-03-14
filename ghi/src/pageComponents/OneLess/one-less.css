@@ -88,6 +88,11 @@ display: flex;
 justify-content: space-between;
 align-items: center;
 }
+.add-study label{
+  font-weight: bolder;
+  font-size: 1.25rem;
+  text-align: end;
+}
 /* .tooltips {
     position: relative;
     display: inline-block;

@@ -1,6 +1,6 @@
 [
     {
-        "catagory": "Theme",
+        "category": "Theme",
         "title": "Need For The New Life",
         "content": {
             "topics": [
@@ -17,7 +17,7 @@
         }
     },
     {
-        "catagory": "Theme",
+        "category": "Theme",
         "title": "Sharing Our Faith",
         "content": {
             "topics": [
@@ -40,7 +40,7 @@
         }
     },
     {
-        "catagory": "Theme",
+        "category": "Theme",
         "title": "Suffering",
         "content": {
             "topics": [
@@ -60,7 +60,7 @@
         }
     },
     {
-        "catagory": "Theme",
+        "category": "Theme",
         "title": "Human Government",
         "content": {
             "topics": [
@@ -77,8 +77,15 @@
         }
     },
     {
-        "catagory": "Study Guide",
+        "category": "Study Guide",
         "title": "Small Bite",
+        "content": {
+            "info": []
+        }
+    },
+    {
+        "category": "Study Guide",
+        "title": "Big Bite",
         "content": {
             "info": []
         }

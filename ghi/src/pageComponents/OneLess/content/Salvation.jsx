@@ -6,7 +6,7 @@ import { Tooltip } from 'react-tooltip';
 import cross from './one-less-assets/cross.jpeg'; // Import the image using ES6 import
 
 // This component is the Salvation page content
-const Salvation = ({user, scrips}) => {
+const Salvation = ({ user, scrips }) => {
 	useEffect(() => {
 		console.log('Salvation component mounted');
 	}, []);
@@ -23,7 +23,15 @@ const Salvation = ({user, scrips}) => {
 				<h3>Why Should God Let You Into Heaven?</h3>
 			</div>
 			<div className=''>
-				<ol className='p-3'>
+				<blockquote className='p-3'>
+					<p className='text-center'>
+						My Friend, I am glad you parked on this page. I say this without drama or exaggeration, but this is the most important question you will ever consider, “Why should God let you into Heaven?” It is also  the most important decision you will ever make as it has everything to do with where you will spend eternity. Please consider it carefully and soberly as this needs to be more than an emotional decision. If you are unsure or want to know more about who God is, click here: Meet God and get to know Him better. Understand just how much He loves you (John 3:16) and that He created you (Gen 1:26-27, Jer 1:5) and that He loved you first (I John 4:19). Truthfully, God is the literal definition of love (1 John 4:8,16). OK, so if you are ready, walk through the list of questions below…And yes, God is excited and ready for you also.
+					</p>
+					<p className='text-center py-2 px-4 mx-5'><b>OK, so if you are ready, walk through the list of questions below…And yes, God is excited and ready for you also.</b></p>
+				</blockquote>
+			</div>
+			<div className=''>
+				<ol className='px-3'>
 					<li className=''><p >Do you declare that YOU have sinned and fallen short of the glory of God? ({scripObj['Romans 3:23']})</p></li>
 					<li><p >Do you agree that the wages of YOUR sin is death and that the gift of God is eternal life;
 						understanding that wages are worked for and gifts cannot be earned? ({scripObj['Romans 6:23']})</p></li>
@@ -33,7 +41,7 @@ const Salvation = ({user, scrips}) => {
 				<p ><b>After considering the questions, if you are in agreement then continue...</b></p>
 			</div>
 			<div className='row p-0 m-0 sec2'>
-				<div className='col-5'><img className='img' src={cross} alt='cross' width={'100%'}/></div>
+				<div className='col-5'><img className='img' src={cross} alt='cross' width={'100%'} /></div>
 				<div className='col-7'>
 					<p >Romans 10:9-13 says: If you declare with
 						your mouth, &quot;Jesus is Lord,&quot; and believe in your heart that God
@@ -48,7 +56,7 @@ const Salvation = ({user, scrips}) => {
 					<p >Ephesians 2:8-9 says: For it is by <u className="tipText" data-tooltip-id="tooltip" data-tooltip-content="Grace:
 					1. God's unmerited favor.
 					2. Receiving a gift from God that you do not deserve. For Example see Romans 11:5-6.">grace</u>  you have been saved, through <u className="tipText"
-						data-tooltip-id="tooltip" data-tooltip-content="Faith:
+							data-tooltip-id="tooltip" data-tooltip-content="Faith:
 					1. The substance of things hoped for and the evidence of things not seen (Eph 2:8-9)
 					2. Believing without seeing.
 					3. Taking God at his Word (the bible).

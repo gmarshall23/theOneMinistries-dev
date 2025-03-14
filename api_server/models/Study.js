@@ -1,4 +1,3 @@
-// This file defines the schema for the Study model.
 const mongoose = require('mongoose');
 
 const studySchema = new mongoose.Schema(

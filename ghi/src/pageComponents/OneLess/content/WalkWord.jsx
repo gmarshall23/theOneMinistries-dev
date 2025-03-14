@@ -7,6 +7,8 @@ const WalkWord = ({user, studyDay}) => {
   // variable to hold the study items
   const [studies, setStudies] = useState([]);
 
+  //variable to hold delta for quill
+
   // vairiable for study journal entries
   const [newEntry, setNewEntry] = useState([]);
   const [journalEntry, setJournalEntry] = useState([]);
@@ -15,43 +17,51 @@ const WalkWord = ({user, studyDay}) => {
 
   //  configuration for Dropdown options
   const [studyTitle, setStudyTitle] = useState('Choose an option');
-  const [currentStudy, setCurrentStudy] = useState(null);
+  const [currentStudy, setCurrentStudy] = useState({});
 
   const handleSelect = async (eventKey, e, parentId) => {
     // handleSelect will assign catagory and title(eventKey) to be passed to WordStudy component
     e.preventDefault();
-    console.log(`parentId: catagory`, parentId);
-    console.log(`eventKey: title`, eventKey);
-    const myStudy = await studies.filter(item => item.title === eventKey);
-    // set study selected to display on page
-    setStudyTitle(eventKey);
-    await setCurrentStudy(myStudy[0]);
-    console.log(`study data`, currentStudy);
+    const study = await studies.filter(item => item.title === eventKey);
+    setCurrentStudy(study[0]);
+    await setStudyTitle(eventKey);
+    if (parentId === 'Study Group') {
+      if (eventKey === 'Small Bite') {
+        // const currentStudy = await studies.filter(item => item.category === eventKey);
+        // set study selected to display on page
+        console.log(`Study Group data to send to WordStudy`, study[0]);
+      }
+    } else if (parentId === 'Theme') {
+      // set study selected to display on page
+      console.log(`Theme data to send to WordStudy`, study[0]);
+
+    } else {
+    console.log(`study data`, study);
+    }
   }
 
   //  end configuration for Dropdown options
 
   const getData = async () => {
     // Get study items from database and puts them on the page: Note: this may be removed later if too large//
-    console.log(" getdata accessed");
     const resp = await axios.get('http://localhost:4040/get_studies');
-    // const data = resp.data;
-    await setStudies(resp.data);
-    console.log(`Studies data to have access to:`, studies);
-
+    const data = resp.data;
+    setStudies(data);
   }
+
   useEffect(() => {
     console.log("WalkWord component mounted")
+    console.log('Study Day is', studyDay);
     // Get study items from database //
-    getData()
-  }, [])
+    studies.length<1&&getData();
+  }, [studies]);
 
   const submit = event => {
 
     // Adds user entries into their journal //
 
     event.preventDefault();
-    let entryArrCopy = deepcopy(newEntry);
+    // let entryArrCopy = deepcopy(newEntry);
     entryArrCopy.unshift({
       entry: event.target.elements[0].value,
       date: new Date().toLocaleString()
@@ -149,8 +159,8 @@ const WalkWord = ({user, studyDay}) => {
         </div>
       </div>
       <div className='mt-2 studies border border-primary border-4 rounded'>
-        {currentStudy ? <h3>{currentStudy.title}</h3> : <h3>Select a Study</h3>}
-        <WordStudy content={currentStudy} />
+        {!currentStudy&&<h3>Select a Study</h3>}
+        <WordStudy content={currentStudy} studyDay={studyDay}/>
       </div>
 
       <div>
