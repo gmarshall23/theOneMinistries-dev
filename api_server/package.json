@@ -6,7 +6,8 @@
   "scripts": {
     "start": "nodemon api-server.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "loadData": "node seed-arrays/load-data.js"
+    "loadData": "node seed-arrays/load-data.js",
+    "oldServer": "node oneless-server.js"
   },
   "author": "",
   "license": "ISC",

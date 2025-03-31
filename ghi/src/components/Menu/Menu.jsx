@@ -30,7 +30,7 @@ const Menu = ({user}) => {
           <Nav.Link as={Link} to="/study-form" onClick={handleLinkClick}>Study Form</Nav.Link>
           <Nav.Link as={Link} to="/one-less" onClick={handleLinkClick}>One Less</Nav.Link>
           <Nav.Link as={Link} to="/news-stories" onClick={handleLinkClick}>News Stories</Nav.Link>
-          <Nav.Link as={Link} to="/subscribe" onClick={handleLinkClick}>Subscribe</Nav.Link>
+          <Nav.Link as={Link} to="/subscribe" onClick={handleLinkClick}>Support Us</Nav.Link>
           {user?<Nav.Link as={Link} to="/logout" onClick={handleLogout}>Log Out</Nav.Link>:<Nav.Link as={Link} to="/login" onClick={handleLinkClick}>Log In</Nav.Link>}
         </Nav>
       </Navbar.Collapse>

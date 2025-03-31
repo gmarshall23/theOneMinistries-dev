@@ -39,7 +39,10 @@ app.put('/add_study_info', study_Controller.addStudyInfo)
 // ******** user routes *********//
 app.post('/subscribe', user_Controller.subscribe);
 
-app.get('/get_charity', charity_Controller.getCharity)
+// ******** charity routes *********//
+app.post('/create_charity', charity_Controller.createCharity);
+app.put('/update_charity/:id', charity_Controller.updateCharity)
+app.get('/get-charities', charity_Controller.getCharities)
 app.get('/get_scriptures', scrip_Controller.getScriptures)
 app.get('/get_encourage', encourage_Controller.getEncourage)
 

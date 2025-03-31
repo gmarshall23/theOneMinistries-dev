@@ -15,6 +15,9 @@ const userSchema = new mongoose.Schema(
             type: String,
             unique: true
         },
+        giftType: String,
+        giftAmount: String,
+        charities: Array,
         morals: Array,
         history: Array,
         password: String,
