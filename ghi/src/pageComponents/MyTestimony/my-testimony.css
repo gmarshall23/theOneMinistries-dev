@@ -1,0 +1,55 @@
+.my-testimony-container{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+    min-height: 80vh;
+    width: 100vw;
+    overflow: auto;
+    background-color: transparent;
+}
+.my-testimony {
+  background-color: rgba(240, 240, 240, 0.635);
+  height: fit-content;
+  width: 80%;
+  margin: 5rem auto;
+  padding: 5rem !important;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  /* overflow: auto; */
+}
+.my-testimony ul {
+  list-style-type: none !important;
+}
+.my-testimony p {
+  font-size: 1.2rem;
+  line-height: 1.5;
+  text-align: left;
+}
+.my-testimony h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.my-testimony li {
+  margin: 0.5rem 0;
+}
+.my-testimony li::before {
+  content: "•";
+  color: #007bff; /* Change this to your desired color */
+  font-weight: bold;
+  display: inline-block;
+  width: 1rem; /* Adjust the width to create space for the bullet */
+  margin-left: -1rem; /* Adjust this to align the text properly */
+}
+.my-testimony .testimony {
+  background-color: #f8f9fa;
+  border-radius: 5px;
+  padding: 1rem;
+  margin: 1rem 0;
+}
+.my-testimony .testimony h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}

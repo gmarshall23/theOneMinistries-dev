@@ -29,7 +29,7 @@ const Living = () => {
 				<h2><b>Living a Christian Life</b></h2>
 				<h4 className="">CONGRATULATIONS NEW CHRISTIAN. WELCOME TO THE FAMILY</h4>
 			</div>
-			<p className="">LOL... I'm sure you are asking "Now What? what Happens Next? How do you become as much like Jesus as possible? What does it mean to be saved?</p>
+			<p className="">LOL... I'm sure you are asking "Now What? what Happens Next? What does it mean to be saved? How do you become as much like Jesus as possible?</p>
 			<div className=''>
 				<div className='p-3'>
 					<img className='img img-fluid col-5' src={cross} alt='cross' />
