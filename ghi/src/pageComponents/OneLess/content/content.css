@@ -21,6 +21,13 @@
     background-color: yellow;
 }
 /* MeetGod */
+.myCarousel {
+    width: 32rem;
+    height: 18rem;
+    border: 2px solid black;
+    margin:  auto;
+    padding: 10px;
+}
 /* Salvation */
 .salvation-content p {
     text-align: left;

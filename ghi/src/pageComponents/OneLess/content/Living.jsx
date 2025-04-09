@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import 'react-tooltip/dist/react-tooltip.css'
