@@ -167,6 +167,7 @@ const MeetGod = () => {
         </ul>
       </Tab>
     </Tabs>
+    <h3><b>Or this style below?</b></h3>
     <Tab.Container id="left-tabs-example" defaultActiveKey="first">
       <Row>
         <Col sm={3}>
