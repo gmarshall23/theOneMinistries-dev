@@ -1,17 +1,27 @@
 /* eslint-disable react/no-unescaped-entities */
-import { useEffect } from 'react';
-import { Carousel, Accordion, Tabs, Tab, Row, Col, Nav } from 'react-bootstrap';
+import React, { useEffect, useRef, useState } from 'react';
+import { Carousel, Accordion, Tabs, Tab } from 'react-bootstrap';
 import { slides } from './meetGodData.js'; // Assuming you have a JSON file with slide data
-import './content.css'
-
+import './content.css';
 
 const MeetGod = () => {
-  // const slides = Array.from({ length: 10 }, (_, i) => i + 1);
-  // const [slides, setSlides] = useState([1,2,3,4,5,6,7,8,9,10]);
+  const carouselRef = useRef(null);
+  const [isCarouselVisible, setIsCarouselVisible] = useState(false);
+
   useEffect(() => {
     console.log('MeetGod component mounted');
-  }
-    , []);
+    const observer = new IntersectionObserver(
+      ([entry]) => setIsCarouselVisible(entry.isIntersecting),
+      { threshold: 0.5 }
+    );
+    if (carouselRef.current) {
+      observer.observe(carouselRef.current);
+    }
+    return () => {
+      if (carouselRef.current) observer.unobserve(carouselRef.current);
+    };
+  }, []);
+
   return (
     <div className='meetGod'>
       <h2>Hello it&apos;s GOD, Good to Meet You</h2>
@@ -23,7 +33,7 @@ const MeetGod = () => {
         <br /><br />God's attributes are merely words we use to describe how God is and how he acts toward us. Among these attributes are love, holiness, constancy, justice, truth, eternalness, omniscience (all-knowing), omnipresence (all-presence), and omnipotence (all-powerful). The fact that we can grasp and understand this much about God is evidence of God's desire that all people may know him.
       </p>
       <h3 className="p-2 text-start">Here is why we are in pursuit to get to know our Creator</h3>
-      <ol className='border border-2 border-dark rounded p-2'>
+      <ol className='p-2'>
         <li>Before you make a lifetime decision, you need to get to know who God is</li>
         <li>Before you make a lifetime decision, you need to know why choose God</li>
         <li>Before you make a lifetime decision, you need to know what God will do
@@ -35,35 +45,38 @@ const MeetGod = () => {
           </ul>
         </li>
       </ol>
-      <h3 className="p-2 text-start">Initially, I would ask that you focus on a few specific things as you meet our creator.</h3>
-      <p className='p-4'><b><em> First, look at what He says in his own words about Himself.</em></b></p>
-      <div className='myCarousel border border-2 border-dark rounded'>
 
-        <Carousel interval={10000} fade className='border border-2 border-dark rounded'>
-          {slides.map((slide, idx) => (
-            <Carousel.Item key={idx}>
-              <img
-                className="d-block w-100"
-                src={slide.img}
-                alt={`Slide`}
-              />
-              <Carousel.Caption>
-                <h3>Slide {idx}</h3>
-                <p>{slide.text}</p>
-              </Carousel.Caption>
-            </Carousel.Item>
-          ))}
-        </Carousel>
+      <h3 className="p-2 text-start">Initially, I would ask that you focus on a few specific things as you meet our creator.</h3>
+      <div className='border border-2 border-dark rounded'>
+        <p className='p-4'><b><em> First, look at what He says in his own words about Himself.</em></b></p>
+        <div className='myCarousel border border-2 border-dark rounded' ref={carouselRef}>
+          <Carousel interval={isCarouselVisible ? 1000 : null} fade className='border border-2 border-dark rounded'>
+            {slides.map((slide, idx) => (
+              <Carousel.Item key={idx} className='carousel-item'>
+                <img
+                  className="d-block w-100"
+                  src={slide.img}
+                  alt={`Slide ${idx}`}
+                />
+                <Carousel.Caption>
+                  <h3>Slide {idx}</h3>
+                  <p className='slide-caption'>{slide.text}</p>
+                </Carousel.Caption>
+              </Carousel.Item>
+            ))}
+          </Carousel>
+        </div>
       </div>
+
       <div className='my-4 border border-2 border-dark rounded'>
         <p className='p-4'><b><em>Second, Let's better identify the perspective from which you are coming from which is likely one or more of these…</em></b></p>
         <Accordion className='my-2'>
           <Accordion.Item eventKey="0">
             <Accordion.Header><p className='px-4'>1. Before I make a lifetime commitment, I want to know God on an intellectual level, How do I know he really exists? (Rom 1:20)</p></Accordion.Header>
             <Accordion.Body><p className='px-5'><b>a.</b> FACT: Every modern day metric like archaeology and the dead sea scrolls, only prove the existence of God. Conversely, nothing refutes His existence.</p>
-            <div className='px-5'>
-              <p className='px-5'><b>1.</b> Romans 1:20 - For since the creation of the world God's invisible qualities—his eternal power and divine nature—have been clearly seen, being understood from what has been made,  so that people are without excuse.</p>
-            </div>
+              <div className='px-5'>
+                <p className='px-5'><b>1.</b> Romans 1:20 - For since the creation of the world God's invisible qualities—his eternal power and divine nature—have been clearly seen, being understood from what has been made,  so that people are without excuse.</p>
+              </div>
             </Accordion.Body>
           </Accordion.Item>
           <Accordion.Item eventKey="1">
@@ -84,114 +97,91 @@ const MeetGod = () => {
             <Accordion.Body>
               <p className='px-5'><b>a.</b> FACT: To trust in God is to believe in His reliability, strength, and ability.</p>
               <div className='px-5'>
-              <ol className='px-5  bold-marker'>
-                <li>Psalms 111:7 - The works of his hands are faithful and just; all his precepts are trustworthy.</li>
-                <li>Proverbs 3:5 - Trust in the Lord with all your heart and lean not on your own understanding;</li>
-                <li>Romans 8:28 - And we know that in all things God works for the good of those who love him, who have been called according to his purpose. (love and trust are synonymous)</li>
-                <li>Deut 31:8 - The Lord himself goes before you and will be with you; he will never leave you nor forsake you. Do not be afraid; do not be discouraged.</li>
-              </ol>
+                <ol className='px-5  bold-marker'>
+                  <li>Psalms 111:7 - The works of his hands are faithful and just; all his precepts are trustworthy.</li>
+                  <li>Proverbs 3:5 - Trust in the Lord with all your heart and lean not on your own understanding;</li>
+                  <li>Romans 8:28 - And we know that in all things God works for the good of those who love him, who have been called according to his purpose. (love and trust are synonymous)</li>
+                  <li>Deut 31:8 - The Lord himself goes before you and will be with you; he will never leave you nor forsake you. Do not be afraid; do not be discouraged.</li>
+                </ol>
               </div>
             </Accordion.Body>
           </Accordion.Item>
         </Accordion>
       </div>
-      <div>
-        <p className='my-4'>Finally, I think it is important to see and understand many of the promises of God to His people. There are many and some are conditional as well as some are unconditional. But God truly wants you to know what you can expect while on your Christian journey. I cannot choose  for you but when I understood that God really does all these things for His people and that He has a perfect track record… I was ALL IN!</p>
+      <div className='border border-2 border-dark rounded'>
+        <p className='p-4'><b><em>Finally, I think it is important to see and understand many of the promises of God to His people. There are many and some are conditional as well as some are unconditional. But God truly wants you to know what you can expect while on your Christian journey. I cannot choose  for you but when I understood that God really does all these things for His people and that He has a perfect track record… I was ALL IN!</em></b></p>
+
+        <h3 className="p-2 ">Gods Promises</h3>
+        <Tabs
+          id="fill-tab"
+          className="mb-3"
+          fill
+        >
+          <Tab eventKey="gods-presence" title="God's Presence">
+            <ul>
+              <li>“Never will I leave you; never will I forsake you.” Hebrews 13:5</li>
+              <li>“So do not fear, for I am with you; do not be dismayed, for I am your God. I will strengthen you and help you; I will uphold you with my righteous right hand.” Isaiah 41:10</li>
+            </ul>
+          </Tab>
+          <Tab eventKey="salvation" title="Salvation & Eternal Life">
+            <ul>
+              <li>“For God so loved the world that he gave his one and only Son, that whoever believes in him shall not perish but have eternal life.” John 3:16</li>
+              <li>“Everyone who calls on the name of the Lord will be saved.” Romans 10:13</li>
+            </ul>
+          </Tab>
+          <Tab eventKey="forgiveness" title="Forgiveness of Sins">
+            <ul>
+              <li>“If we confess our sins, he is faithful and just and will forgive us our sins and purify us from all unrighteousness.” 1 John 1:9</li>
+              <li>-“As far as the east is from the west, so far has he removed our transgressions from us.” Psalm 103:12</li>
+            </ul>
+          </Tab>
+          <Tab eventKey="strength" title="Strength & Help in Difficult Times" >
+            <ul>
+              <li>“I can do all this through him who gives me strength.” Philippians 4:13</li>
+              <li>“God is our refuge and strength, an ever-present help in trouble.” Psalm 46:1</li>
+            </ul>
+          </Tab>
+          <Tab eventKey="peace" title="Peace">
+            <ul>
+              <li>“And the peace of God, which transcends all understanding, will guard your hearts and your minds in Christ Jesus.” Philippians 4:7</li>
+              <li>-“You will keep in perfect peace those whose minds are steadfast, because they trust in you.”Isaiah  26:3</li>
+            </ul>
+          </Tab>
+          <Tab eventKey="provision" title="Provision">
+            <ul>
+              <li>“And my God will meet all your needs according to the riches of his glory in Christ Jesus.” Philippians 4:19</li>
+              <li>“The Lord is my shepherd, I lack nothing.” Psalm 23:1</li>
+            </ul>
+          </Tab>
+          <Tab eventKey="wisdom" title="Wisdom & Guidance">
+            <ul>
+              <li>“If any of you lacks wisdom, you should ask God, who gives generously to all without finding fault, and it will be given to you.” James 1:5</li>
+              <li>“Trust in the Lord with all your heart and lean not on your own understanding; in all your ways submit to him, and he will make your paths straight.” Proverbs 3:5-6</li>
+            </ul>
+          </Tab>
+          <Tab eventKey="healing" title="Healing" >
+            <ul>
+              <li>“He heals the brokenhearted and binds up their wounds.” Psalm 147:3</li>
+              <li>“But he was pierced for our transgressions, he was crushed for our iniquities; the punishment that brought us peace was on him, and by his wounds we are healed.” Isaiah 53:5</li>
+            </ul>
+          </Tab>
+          <Tab eventKey="victory" title="Victory Over Evil">
+            <ul>
+              <li>“Submit yourselves, then, to God. Resist the devil, and he will flee from you.” James 4:7</li>
+              <li>“No weapon forged against you will prevail, and you will refute every tongue that accuses you. This is the heritage of the servants of the Lord, and this is their vindication from me,” declares the Lord.” Isaiah 54:17</li>
+            </ul>
+          </Tab>
+          <Tab eventKey="eternal-reward" title="Eternal Reward & Heaven" >
+            <ul>
+              <li>“My Father's house has many rooms; if that were not so, would I have told you that I am going there to prepare a place for you? And if I go and prepare a place for you, I will come back and take you to be with me that you also may be where I am.” John 14:2-3</li>
+              <li>“Be faithful, even to the point of death, and I will give you life as your victor''s crown.” Revelation 2:10</li>
+            </ul>
+          </Tab>
+        </Tabs>
+
       </div>
-<div className='my-4'>
-  <h3 className="p-2 ">Gods Promises</h3>
-    <Tabs
-
-      id="fill-tab-example"
-      className="mb-3"
-      fill
-    >
-      <Tab eventKey="home" title="God’s Presence">
-        <ul>
-        <li>“Never will I leave you; never will I forsake you.” Hebrews 13:5</li>
-        <li>“So do not fear, for I am with you; do not be dismayed, for I am your God. I will strengthen you and help you; I will uphold you with my righteous right hand.” Isaiah 41:10</li>
-        </ul>
-      </Tab>
-      <Tab eventKey="profile" title="Salvation & Eternal Life">
-        <ul>
-        <li>“For God so loved the world that he gave his one and only Son, that whoever believes in him shall not perish but have eternal life.” John 3:16</li>
-        <li>“Everyone who calls on the name of the Lord will be saved.” Romans 10:13</li>
-        </ul>
-      </Tab>
-      <Tab eventKey="longer-tab" title="Forgiveness of Sins">
-        <ul>
-        <li>“If we confess our sins, he is faithful and just and will forgive us our sins and purify us from all unrighteousness.” 1 John 1:9</li>
-        <li>-“As far as the east is from the west, so far has he removed our transgressions from us.” Psalm 103:12</li>
-        </ul>
-      </Tab>
-      <Tab eventKey="contact" title="Strength & Help in Difficult Times" >
-          <ul>
-            <li>“I can do all this through him who gives me strength.” Philippians 4:13</li>
-            <li>“God is our refuge and strength, an ever-present help in trouble.” Psalm 46:1</li>
-          </ul>
-      </Tab>
-      <Tab eventKey="home1" title="Peace">
-        <ul>
-          <li>“And the peace of God, which transcends all understanding, will guard your hearts and your minds in Christ Jesus.” Philippians 4:7</li>
-          <li>-“You will keep in perfect peace those whose minds are steadfast, because they trust in you.”Isaiah  26:3</li>
-        </ul>
-      </Tab>
-      <Tab eventKey="profile1" title="Provision">
-        <ul>
-          <li>“And my God will meet all your needs according to the riches of his glory in Christ Jesus.” Philippians 4:19</li>
-          <li>“The Lord is my shepherd, I lack nothing.” Psalm 23:1</li>
-        </ul>
-      </Tab>
-      <Tab eventKey="longer-tab1" title="Wisdom & Guidance">
-        <ul>
-          <li>“If any of you lacks wisdom, you should ask God, who gives generously to all without finding fault, and it will be given to you.” James 1:5</li>
-          <li>“Trust in the Lord with all your heart and lean not on your own understanding; in all your ways submit to him, and he will make your paths straight.” Proverbs 3:5-6</li>
-        </ul>
-      </Tab>
-      <Tab eventKey="contact1" title="Healing" >
-        <ul>
-          <li>“He heals the brokenhearted and binds up their wounds.” Psalm 147:3</li>
-          <li>“But he was pierced for our transgressions, he was crushed for our iniquities; the punishment that brought us peace was on him, and by his wounds we are healed.” Isaiah 53:5</li>
-        </ul>
-      </Tab>
-      <Tab eventKey="longer-tab1" title="Victory Over Evil">
-        <ul>
-          <li>“Submit yourselves, then, to God. Resist the devil, and he will flee from you.” James 4:7</li>
-          <li>“No weapon forged against you will prevail, and you will refute every tongue that accuses you. This is the heritage of the servants of the Lord, and this is their vindication from me,” declares the Lord.” Isaiah 54:17</li>
-        </ul>
-      </Tab>
-      <Tab eventKey="contact1" title="Eternal Reward & Heaven" >
-        <ul>
-          <li>“My Father's house has many rooms; if that were not so, would I have told you that I am going there to prepare a place for you? And if I go and prepare a place for you, I will come back and take you to be with me that you also may be where I am.” John 14:2-3</li>
-          <li>“Be faithful, even to the point of death, and I will give you life as your victor''s crown.” Revelation 2:10</li>
-        </ul>
-      </Tab>
-    </Tabs>
-    <h3><b>Or this style below?</b></h3>
-    <Tab.Container id="left-tabs-example" defaultActiveKey="first">
-      <Row>
-        <Col sm={3}>
-          <Nav variant="pills" className="flex-column">
-            <Nav.Item>
-              <Nav.Link eventKey="first">Tab 1</Nav.Link>
-            </Nav.Item>
-            <Nav.Item>
-              <Nav.Link eventKey="second">Tab 2</Nav.Link>
-            </Nav.Item>
-          </Nav>
-        </Col>
-        <Col sm={9}>
-          <Tab.Content>
-            <Tab.Pane eventKey="first">First tab content</Tab.Pane>
-            <Tab.Pane eventKey="second">Second tab content</Tab.Pane>
-          </Tab.Content>
-        </Col>
-      </Row>
-    </Tab.Container>
     </div>
-    </div>
-  )
-}
+  );
+};
 
-
-export default MeetGod
+export default MeetGod;

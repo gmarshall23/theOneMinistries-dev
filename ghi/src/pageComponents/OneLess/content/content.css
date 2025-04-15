@@ -26,11 +26,29 @@ ol, ul {
 }
 /* MeetGod */
 .myCarousel {
-    width: 42rem;
+    width: 75%;
     height: auto;
+    /* overflow: auto; */
     border: 2px solid black;
     margin:  20px auto;
+    position: relative;
     /* padding: 20px !important; */
+}
+carousel-item {
+    /* height: 100% !important; */
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+    /* position: relative; */
+    padding: 0 !important;
+}
+.slide-caption {
+
+    background-color: rgba(139, 48, 145, 0.4);
+    border-radius: 5px;
+    padding: 10px !important;
+
 }
 .meetGod .ol-lettered {
     list-style-type: lower-alpha !important;
@@ -41,7 +59,7 @@ ol, ul {
   }
 
 .meetGod .tab-content {
-    min-height: 20rem;
+    min-height: 15rem;
     text-align: left !important;
     font-size: 1.5rem;
     background-color: #9b8ced; /* light grey background */
