@@ -25,6 +25,18 @@ ol, ul {
     background-color: yellow;
 }
 /* MeetGod */
+.meetGod {
+    padding: 3rem 0 !important;
+    /* border: 2px solid black; */
+    /* display: flex; */
+    /* justify-content: center; */
+    /* align-items: center; */
+    /* flex-direction: column; */
+}
+.meetGod .ol-lettered {
+    list-style-type: lower-alpha !important;
+
+  }
 .myCarousel {
     width: 75%;
     height: auto;
@@ -50,10 +62,7 @@ carousel-item {
     padding: 10px !important;
 
 }
-.meetGod .ol-lettered {
-    list-style-type: lower-alpha !important;
 
-  }
 .bold-marker li::marker {
     font-weight: bold;
   }
