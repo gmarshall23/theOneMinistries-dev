@@ -30,7 +30,7 @@ export const slides = [
         img: mg3
     },
     {
-        text: `text:Even to your old age and gray hairs I am he, I am he who will sustain you. I have made you and I will carry you; I will sustain you and I will rescue you. (Isa 46:4)`,
+        text: `Even to your old age and gray hairs I am he, I am he who will sustain you. I have made you and I will carry you; I will sustain you and I will rescue you. (Isa 46:4)`,
         img: mg4
     },
     {
