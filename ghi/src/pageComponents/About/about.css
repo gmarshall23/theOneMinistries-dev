@@ -1,0 +1,25 @@
+.about-main {
+    border: 2px solid #ccc !important;
+    padding: 80px !important;
+    overflow: auto;
+}
+
+.about-section h1 {
+    padding-bottom: 5rem;
+}
+.about-section blockquote {
+    width: 90%;
+    padding: 3rem;
+    text-align: center !important;
+}
+.about-section p {
+    font-size: 1.5rem;
+    line-height: 1.6;
+    text-align: center;
+}
+.about-section ul, .about-section ol {
+    font-size: 1.5rem;
+    padding: 1rem 10rem;
+    text-align: left;
+    margin: 0;
+}

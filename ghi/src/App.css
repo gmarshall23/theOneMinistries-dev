@@ -10,6 +10,9 @@
   /* padding: 10px; */
   text-align: center;
 }
+.text-indent {
+  text-indent: 2em; /* adjust as needed */
+}
 ul {
   list-style-position: inside;
   margin-left: '0';
@@ -26,16 +29,18 @@ ul {
   /* min-height: 100vh; */
   /* font-size: calc(10px + 2vmin); */
   color: #333;
-  background: url('./assets/images/bible2.jpg') !important;
+  /* background: url('./assets/images/bible2.jpg') !important;
     background-repeat: no-repeat !important;
     background-position: top !important;
-    background-size: 100% auto!important;
+    background-size: 100% auto!important; */
 }
 header {
   z-index: 100;
 }
 main {
   z-index: 10;
+  overflow: auto;
+
 }
 .app-main {
   /* border: 1px solid blue; */

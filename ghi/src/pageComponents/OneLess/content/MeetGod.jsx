@@ -1,5 +1,5 @@
 /* eslint-disable react/no-unescaped-entities */
-import React, { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Carousel, Accordion, Tabs, Tab } from 'react-bootstrap';
 import { slides } from './meetGodData.js'; // Assuming you have a JSON file with slide data
 import './content.css';
@@ -10,15 +10,16 @@ const MeetGod = () => {
 
   useEffect(() => {
     console.log('MeetGod component mounted');
+    const carouselElement = carouselRef.current;
     const observer = new IntersectionObserver(
       ([entry]) => setIsCarouselVisible(entry.isIntersecting),
       { threshold: 0.5 }
     );
     if (carouselRef.current) {
-      observer.observe(carouselRef.current);
+      observer.observe(carouselElement);
     }
     return () => {
-      if (carouselRef.current) observer.unobserve(carouselRef.current);
+      if (carouselElement) observer.unobserve(carouselElement);
     };
   }, []);
 
