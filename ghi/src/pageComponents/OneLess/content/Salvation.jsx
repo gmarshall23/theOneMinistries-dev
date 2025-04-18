@@ -24,19 +24,20 @@ const Salvation = ({ user, scrips }) => {
 			</div>
 			<div className=''>
 				<blockquote className='p-3'>
-					<p className='text-center'>
+					<p className=''>
 						My Friend, I am glad you parked on this page. I say this without drama or exaggeration, but this is the most important question you will ever consider, “Why should God let you into Heaven?” It is also  the most important decision you will ever make as it has everything to do with where you will spend eternity. Please consider it carefully and soberly as this needs to be more than an emotional decision. If you are unsure or want to know more about who God is, click here: Meet God and get to know Him better. Understand just how much He loves you (John 3:16) and that He created you (Gen 1:26-27, Jer 1:5) and that He loved you first (I John 4:19). Truthfully, God is the literal definition of love (1 John 4:8,16). OK, so if you are ready, walk through the list of questions below…And yes, God is excited and ready for you also.
 					</p>
-					<p className='text-center py-2 px-4 mx-5'><b>OK, so if you are ready, walk through the list of questions below…And yes, God is excited and ready for you also.</b></p>
+
 				</blockquote>
+				<p className='py-2'><b>OK, so if you are ready, walk through the list of questions below…And yes, God is excited and ready for you also.</b></p>
 			</div>
 			<div className=''>
 				<ol className='px-3'>
-					<li className=''><p >Do you declare that YOU have sinned and fallen short of the glory of God? ({scripObj['Romans 3:23']})</p></li>
-					<li><p >Do you agree that the wages of YOUR sin is death and that the gift of God is eternal life;
-						understanding that wages are worked for and gifts cannot be earned? ({scripObj['Romans 6:23']})</p></li>
-					<li><p >Do you believe that God has the power to gift you salvation?  ({scripObj['Romans 1:16']})</p></li>
-					<li><p >Do you believe that Jesus Christ died for your sins? ({scripObj['1 Corinthians 15:3-5']}, {scripObj['Romans 5:8']})</p></li>
+					<li className=''>Do you declare that YOU have sinned and fallen short of the glory of God? ({scripObj['Romans 3:23']})</li>
+					<li>Do you agree that the wages of YOUR sin is death and that the gift of God is eternal life;
+						understanding that wages are worked for and gifts cannot be earned? ({scripObj['Romans 6:23']})</li>
+					<li>Do you believe that God has the power to gift you salvation?  ({scripObj['Romans 1:16']})</li>
+					<li>Do you believe that Jesus Christ died for your sins? ({scripObj['1 Corinthians 15:3-5']}, {scripObj['Romans 5:8']})</li>
 				</ol>
 				<p ><b>After considering the questions, if you are in agreement then continue...</b></p>
 			</div>
