@@ -24,15 +24,7 @@ const OneLess = ({user, setUser}) => {
   const [studyDate, setStudyDate] = useState('');
   const [studyDay, setStudyDay] = useState(0);
   const buttonsRef = useRef([]);
-  useEffect(() => {
-    console.log('OneLess component mounted');
-    getData();
-  }, []);
-  useEffect(()=>{
-    if(user && user.studyStartDate){
-      days(user.studyStartDate);
-    }
-  }, [user]) // will run this effect only when the user change.
+  const lessonRef = useRef(null);
   // get data from the server
   const getData = async () => {
     const response = await axios.get('http://localhost:4040/get_scriptures');
@@ -42,7 +34,6 @@ const OneLess = ({user, setUser}) => {
     console.log('user info: ', user)
 
   }
-  // get the number of days since the user started studying
   const days = async (date) => {
     // convert date to day of the year
     const startDate = new Date(date).getTime();
@@ -53,6 +44,28 @@ const OneLess = ({user, setUser}) => {
     setStudyDate(formattedDate);
     setStudyDay(day);
   }
+  // useEffect(() => {
+  //   console.log('OneLess component mounted');
+  //   getData();
+  // }, []);
+  useEffect(()=>{
+    console.log('OneLess component mounted');
+    getData();
+    if(user && user.studyStartDate){
+      days(user.studyStartDate);
+    }
+  }, [user]); // will run this effect only when the user change.
+  useEffect(() => {
+    const refLesson = lessonRef.current;
+    if (refLesson) {
+      refLesson.scrollTo({ top: 0, behavior: 'smooth' });
+      // Alternatively, use: contentRef.current.scrollTop = 0;
+    }
+    // window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, [lesson]);
+
+  // get the number of days since the user started studying
+
   function handleClick(e) {
     // Set the lesson state to the clicked button's text content
     setLesson(e.target.textContent);
@@ -123,7 +136,7 @@ const OneLess = ({user, setUser}) => {
             <li><h4>Support Us!</h4></li>
           </ul>
         </aside>
-        <section className='one-less-section'>
+        <section className='one-less-section' ref={lessonRef}>
           <div className='one-less-header'>
             {lesson === 'A Walk' ?
             <div className='a-walk-header'>
@@ -133,7 +146,7 @@ const OneLess = ({user, setUser}) => {
             <h3>Lesson: {lesson}
             </h3>}
           </div>
-          <div className='one-less-content'>
+          <div className='one-less-content' >
             {getComponent()}
           </div>
         </section>

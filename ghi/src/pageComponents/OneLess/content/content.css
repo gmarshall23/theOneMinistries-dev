@@ -102,11 +102,12 @@ carousel-item {
 }
 
 /* Living */
-ul {
+.living ul {
     list-style-type: disc;
     padding: 0;
     text-align: left;
 }
+
 
 /* Morlas */
 .morals-content {
