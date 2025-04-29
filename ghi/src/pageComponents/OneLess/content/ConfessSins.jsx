@@ -11,7 +11,7 @@ const ConfessSins = () => {
   // Allow scriptures to  display 'onHover'
   const [scrips, setScrips] = useState([]);
   const [sin, setSin] = useState('');
-  const [sinList, setSinList] = useState(["Lust"]);
+  const [sinList, setSinList] = useState([""]);
   const crossStartRef = useRef(null); // Create a ref for the element with id='crossStart'
   const crossEndRef = useRef(null); // Create a ref for the element with id='crossStart'
   const forgiveTextRef = useRef(null); // Create a ref for the element with id='crossStart'
@@ -35,10 +35,12 @@ const ConfessSins = () => {
     setSin('');
   }
   const cleanseSins = () => {
-    if (crossStartRef.current && crossEndRef.current) {
+    const startAnimation = crossStartRef.current;
+    const endAnimation = crossEndRef.current;
+    if (startAnimation && endAnimation) {
       // Calculate the difference between the two elements
       const startRect = crossStartRef.current.getBoundingClientRect();
-      const endRect = crossEndRef.current.getBoundingClientRect();
+      const endRect = endAnimation.getBoundingClientRect();
       const deltaX = endRect.left - startRect.left;
       const deltaY = endRect.top - startRect.top;
       // Set CSS custom properties to be used in the keyframes
@@ -48,8 +50,24 @@ const ConfessSins = () => {
       crossStartRef.current.classList.add('float-arc');
       // Optionally remove the class after the animation is done (3s in this example)
       setTimeout(() => {
-        crossStartRef.current.classList.remove('float-arc');
+        // crossStartRef.current.classList.remove('float-arc');
+        crossStartRef.current.classList.add('crossFade');
+        crossEndRef.current.classList.add('crossEnd');
+        // endAnimation.classList.remove('d-none');
+
       }, 5000);
+      // Show the text after the animation
+      setTimeout(() => {
+
+        forgiveTextRef.current.classList.remove('d-none');
+        forgiveTextRef.current.classList.add('fadeIn');
+      }, 8000);
+      // Hide the sins after the animation
+      // setTimeout(() => {
+      //   crossStartRef.current.classList.add('d-none');
+      //   endAnimation.classList.remove('d-none');
+      //   endAnimation.classList.add('fadeIn');
+      // }, 5000);
     }
   };
 
@@ -97,8 +115,8 @@ const ConfessSins = () => {
               value={sin}
               onChange={(e) => setSin(e.target.value)}
             />
-            <Button onClick={addSin}>Send to Cross</Button>
-            <Button onClick={cleanseSins}>Cleanse Sins</Button>
+            <Button onClick={addSin}>Add sin</Button>
+            <Button onClick={cleanseSins}>Send sins to Cross</Button>
           </div>
         </section>
         <section className="sinCross2 sinCross">

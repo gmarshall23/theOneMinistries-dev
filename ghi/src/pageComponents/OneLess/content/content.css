@@ -274,6 +274,19 @@ carousel-item {
     transform: none !important;
     z-index: 150;
     overflow: hidden !important;
+    transition: all 3s linear;
+}
+.crossFade {
+    /* background-color: red !important; */
+    opacity: 0 !important;
+    transition: all 1s linear;
+    z-index: 100;
+}
+.crossFade img {
+    width: 100%;
+    height: 100%;
+    border-radius: 0 !important;
+    /* opacity: 0 !important; */
     transition: all 1s linear;
 }
 .forgiveText {
@@ -313,9 +326,9 @@ carousel-item {
 }
 
 /* The class to trigger the arc animation */
-#crossStart.float-arc {
+.float-arc {
   /* animation: floatArc 3s cubic-bezier(0.45, 0, 0.55, 1); */
-  animation: floatArc 5s linear;
+  animation: floatArc 5s forwards;
 }
 
 /* Define the arc animation using the custom properties */
