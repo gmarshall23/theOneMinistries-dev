@@ -279,6 +279,7 @@ carousel-item {
 .crossFade {
     /* background-color: red !important; */
     opacity: 0 !important;
+
     transition: all 1s linear;
     z-index: 100;
 }
@@ -300,6 +301,7 @@ carousel-item {
 
     to {
         left: 75%;
+        background-color: red;
     }
 }
 
@@ -341,6 +343,7 @@ carousel-item {
     }
     100% {
       transform: translate(calc(-50% + var(--delta-x)), var(--delta-y));
+      background-color: red;
     }
   }
 /* +++++++++++++  Oneliners.jsx  +++++++++++++ */

@@ -1,15 +1,20 @@
+/* eslint-disable react/prop-types */
 /* eslint-disable react/no-unescaped-entities */
 import { useEffect, useRef, useState } from 'react';
+import 'react-tooltip/dist/react-tooltip.css'
+import { Tooltip } from 'react-tooltip';
 import { Carousel, Accordion, Tabs, Tab } from 'react-bootstrap';
 import { slides } from './meetGodData.js'; // Assuming you have a JSON file with slide data
 import './content.css';
 
-const MeetGod = () => {
+const MeetGod = ({scrips}) => {
   const carouselRef = useRef(null);
   const [isCarouselVisible, setIsCarouselVisible] = useState(false);
 
+  console.log('scrips:', scrips);
   useEffect(() => {
     console.log('MeetGod component mounted');
+
     const carouselElement = carouselRef.current;
     const observer = new IntersectionObserver(
       ([entry]) => setIsCarouselVisible(entry.isIntersecting),
@@ -22,15 +27,18 @@ const MeetGod = () => {
       if (carouselElement) observer.unobserve(carouselElement);
     };
   }, []);
-
+  const scripObj = {};
+	for (let s of scrips) {
+		scripObj[s.quote] = <span className='tipText' data-tooltip-id="tooltip" data-tooltip-content={s.scripture}>{s.quote}</span>
+	}
   return (
     <div className='meetGod'>
       <h2>Hello it&apos;s GOD, Good to Meet You</h2>
       <p >
         True Story...Years ago, I moved into a neighborhood with my wife and three kids. I was not new to the city, but I was not familiar with the neighborhood and did not know anyone. I suppose it was a two or three days after moving in that the doorbell rang and it was the woman from across the street. She handed me a cake and a note and quickly walked away before I could even get a word out. My wife and I read the note that simply said "welcome to the neighborhood" and then upon my insistence, we threw the cake away. I thought, "Lady, I don't know you and why do you think I want anything from you let alone eat something from you?" And I had several other "why" questions after that. The root of my position came from a place of distrust and concern of the unknown.
         <br /><br />This is how many of us approach our relationship with God. We are skeptical of receiving a free gift from an unknown entity or perhaps, in a moment of emotion, we accept the gift of salvation only to realize that you have made a lifetime decision to serve a God that you don't really know or trust.
-        <br /><br />That's ok, its perfectly human and perfectly normal. God wants you to know him just as well as he already knows you (Psalms 139:13-16)  and the cool part is that it is absolutely possible.
-        <br /><br />The Bible reveals the nature of God as a spirit, unity, and trinity. He is a spirit--a personal, infinite being (John 4:24); He is one--one in substance or nature and incapable of being divided into parts (Deuteronomy 6:4); and he is three--eternally existing in three coequal persons (Matthew 28:19). While great mystery surrounds God's nature, it is reassuring to know that our God is sovereign and above us.
+        <br /><br />That's ok, its perfectly human and perfectly normal. God wants you to know him just as well as he already knows you ({scripObj['Psalms 139:13-16']}) and the cool part is that it is absolutely possible.
+        <br /><br />The Bible reveals the nature of God as a spirit, unity, and trinity. He is a spirit--a personal, infinite being {scripObj['John 4:24']}(); He is one--one in substance or nature and incapable of being divided into parts (Deuteronomy 6:4); and he is three--eternally existing in three coequal persons {scripObj['Matthew 28:19']}(). While great mystery surrounds God's nature, it is reassuring to know that our God is sovereign and above us.
         <br /><br />God's attributes are merely words we use to describe how God is and how he acts toward us. Among these attributes are love, holiness, constancy, justice, truth, eternalness, omniscience (all-knowing), omnipresence (all-presence), and omnipotence (all-powerful). The fact that we can grasp and understand this much about God is evidence of God's desire that all people may know him.
       </p>
       <h3 className="p-2 text-start">Here is why we are in pursuit to get to know our Creator</h3>
@@ -39,10 +47,10 @@ const MeetGod = () => {
         <li>Before you make a lifetime decision, you need to know why choose God</li>
         <li>Before you make a lifetime decision, you need to know what God will do
           <ul className='px-4'>
-            <li>John 4:24 - God is a spirit</li>
-            <li>Deut 6:4, 1 Cor 8:4-6 - There is one God</li>
-            <li>Rom 3:10, Rom 3:23 - We are all lost</li>
-            <li>Acts 4:12, 2 Pet 3:9, 1 Tim 2:4 - God desires to save all people</li>
+            <li>{scripObj['John 4:24']} - God is a spirit</li>
+            <li>{scripObj['Deut 6:4']}, {scripObj['1 Cor 8:4-6']} - There is one God</li>
+            <li>{scripObj['Rom 3:10']}, {scripObj['Rom 3:23']} - We are all lost</li>
+            <li>{scripObj['Acts 4:12']}, {scripObj['2 Pet 3:9']}, {scripObj['1 Tim 2:4']} - God desires to save all people</li>
           </ul>
         </li>
       </ol>
@@ -181,6 +189,18 @@ const MeetGod = () => {
         </Tabs>
 
       </div>
+      {/* react-bootstrap ToolTip component used for scriptures and definitions */}
+			<Tooltip className='' id="tooltip" place="right"
+				style={{
+					fontSize: '1.25rem',
+					maxWidth: '30rem',
+					whiteSpace: 'pre-line',
+					color: 'red',
+					backgroundColor: '#333',
+					borderRadius: '8px',
+					padding: '10px',
+					textAlign: 'left',
+				}} />
     </div>
   );
 };

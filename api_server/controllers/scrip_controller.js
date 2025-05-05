@@ -1,9 +1,9 @@
-const Scrip = require("../models/Scrip")
+const Script = require("../models/Script")
 
 module.exports = {
-    // Scrips on multiple pages //
+    // Scripts on multiple pages //
     getScriptures (req, res) {
-        Scrip.find()
+        Script.find()
         .then(scrips => {
             res.json(scrips)
         })

@@ -5,7 +5,7 @@ require('../database/mongoose-connection.js');
 const mongoose = require('mongoose');
 const Encourage = require('../models/Encourage');
 const Study = require('../models/Study');
-const Script = require('../models/Scrip');
+const Script = require('../models/Script');
 const User = require('../models/User');
 const Charity = require('../models/Charity');
 // const Encourage = require('../models/Encourage');
@@ -39,15 +39,15 @@ async function listCollections() {
     // });
 
     // Get the database connection object
-    const db = mongoose.connection.db;
+    // const db = mongoose.connection.db;
 
     // List all collections in the database
     const collections = await db.listCollections().toArray();
 
     console.log('Collections:');
-    collections.forEach((collection) => {
-      console.log(collection.name);
-    });
+    // collections.forEach((collection) => {
+    //   console.log(collection.name);
+    // });
     console.log('Add documents to Collections:');
     collections.forEach((collection) => {
       console.log(collection.name);

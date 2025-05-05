@@ -7,6 +7,6 @@ const scriptureSchema = new mongoose.Schema(
     }
 )
 
-const Scrip = mongoose.model('scripture', scriptureSchema)
+const Script = mongoose.model('scripture', scriptureSchema)
 
-module.exports = Scrip;
+module.exports = Script;

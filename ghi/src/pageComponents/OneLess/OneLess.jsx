@@ -81,7 +81,7 @@ const OneLess = ({user, setUser}) => {
       case 'Introduction':
         return <Introduction />;
       case 'Meet God':
-        return <MeetGod />;
+        return <MeetGod scrips={scrips}/>;
       case 'Salvation':
         return <Salvation user={user} scrips={scrips}/>;
       case 'Living':
