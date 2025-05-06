@@ -1,23 +1,16 @@
+/* eslint-disable react/prop-types */
 /* eslint-disable react/no-unescaped-entities */
-import { useState, useEffect } from 'react';
+import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import 'react-tooltip/dist/react-tooltip.css'
 import { Tooltip } from 'react-tooltip';
 import cross from './one-less-assets/cross.jpeg'; // Import the image using ES6 import
 
 
-const Living = () => {
+const Living = ({scrips}) => {
 
-	const [scrips, setScrips] = useState([]);
-	const getData = async () => {
-		const resp = await fetch('http://localhost:4040/get_scriptures');
-		const data = await resp.json();
-		setScrips(data)
-	}
 	useEffect(() => {
-
-		// Get scriptures from database and put them on the page //
-		getData()
+		console.log('Living component mounted');
 	}, [])
 
 	let scripObj = {}
@@ -36,7 +29,7 @@ const Living = () => {
 					<img className='img img-fluid col-5' src={cross} alt='cross' />
 				</div>
 				<div>
-					<p className="">Relax and breathe. God is patient and knows you are new in the faith. My strong suggestion is that you develop an immediate mindset of discipline and simplicity. You likely need to push a reset button on your life and habits; this also requires a mindset of toughness because Satan, the enemy, will try to attack in many ways to influence you to return to your old mindset and old activities and old friends, all of which are likely not  amenable to helping you live a Christian life (1 Pet 5:8). Here is a list of many of the things I have found to be necessary for living as a new Christian.
+					<p className="">Relax and breathe. God is patient and knows you are new in the faith. My strong suggestion is that you develop an immediate mindset of discipline and simplicity. You likely need to push a reset button on your life and habits; this also requires a mindset of toughness because Satan, the enemy, will try to attack in many ways to influence you to return to your old mindset and old activities and old friends, all of which are likely not  amenable to helping you live a Christian life ({scripObj['1 Peter 5:8']}). Here is a list of many of the things I have found to be necessary for living as a new Christian.
 					</p>
 					<ul className="p-3">
 						<li>Read the word EVERYDAY (see <Link className="text-primary testHover" to="/walkWord">A Walk in the Word</Link> for suggestions), start with Romans 12 which gives explicit instructions to all believers on how to live in the faith. I suggest that you next read the Gospels in this order (John, Matthew, Mark, Luke) followed by the books of Romans and Hebrews to learn about the righteousness of Jesus and the life of Jesus and the new covenant of <u className="tipText" data-tooltip-id="tooltip" data-tooltip-content="Grace - 1. God's unmerited favor. 2. Receiving a gift from God that you do not deserve. For Example see Romans 11:5-6.">grace.</u> Discover who Jesus is, what he did for you, and what he wants to do with your life.
