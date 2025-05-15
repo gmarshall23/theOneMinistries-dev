@@ -142,3 +142,12 @@ align-items: center;
 .tipText {
   color: rgb(55, 131, 55);
 } */
+.verse-span {
+  color: blue;
+  cursor: pointer;
+}
+
+.verse-span:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}

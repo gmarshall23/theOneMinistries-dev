@@ -68,13 +68,10 @@ const Morals = ({ user, setUser, scrips }) => {
         setShowModal(false); // Hide the modal
     };
 
-    const scripObj = {}
-    for (let s of scrips) {
-        scripObj[s.quote] = <span data-tooltip-id="tooltip" className="testHover" data-tooltip-content={s.scripture}>{s.quote}</span>
-    }
-    console.log('scripObj'
-        , scripObj
-    )
+    const scripObj = {};
+	for (let s of scrips) {
+		scripObj[s.quote] = <span className='tipText' data-tooltip-id="tooltip" data-tooltip-content={s.scripture}>{s.quote}</span>
+	}
     return (
         <div className="morals-content">
             <div className='border content-header'>
@@ -152,24 +149,22 @@ const Morals = ({ user, setUser, scrips }) => {
                 </section>
             </div>
             <Tooltip className='' id="tooltip" place="right"
-                style={{
-                    fontSize: '1.25rem',
-                    maxWidth: '30rem',
-                    // minWidth: '200px',
-                    // maxWidth: '400px',
-                    whiteSpace: 'pre-line',
-                    color: 'red',
-                    backgroundColor: '#333',
-                    borderRadius: '8px',
-                    padding: '10px',
-                    textAlign: 'left',
-                }} />
+				style={{
+					fontSize: '1.25rem',
+					maxWidth: '30rem',
+					whiteSpace: 'pre-line',
+					color: 'red',
+					backgroundColor: '#333',
+					borderRadius: '8px',
+					padding: '10px',
+					textAlign: 'left',
+				}} />
             {/* Modal */}
             {showModal && (
                 <div className="modal">
-                    <div className="modal-content">
+                    <div className="modal-content w-50">
                         <span className="close" onClick={closeModal}>&times;</span>
-                        <p>List has been saved successfully!</p>
+                        <p >List has been saved successfully!</p>
                     </div>
                 </div>
             )}

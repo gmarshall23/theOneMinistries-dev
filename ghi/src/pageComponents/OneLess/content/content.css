@@ -18,7 +18,11 @@ ol, ul {
     z-index: 1000 !important;
 }
 .tipText {
-    color: red;
+    color: red !important;
+}
+span[data-verse] {
+    background-color: green !important;
+    border: 3px solid red !important;
 }
 .tipText:hover {
     cursor:pointer !important;
@@ -418,4 +422,13 @@ carousel-item {
 .modal-content p {
     color: red;
     font-size: 1rem !important;
+}
+.verse-span {
+  color: blue;
+  cursor: pointer;
+}
+
+.verse-span:hover {
+  text-decoration: underline;
+  cursor: pointer;
 }
