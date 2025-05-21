@@ -7,6 +7,8 @@ import { Carousel, Accordion, Tabs, Tab } from 'react-bootstrap';
 import { slides } from './meetGodData.js'; // Assuming you have a JSON file with slide data
 import './content.css';
 
+// Ensure your verse mapping is built correctly:
+const verseMap = {};
 const MeetGod = ({scrips}) => {
   const carouselRef = useRef(null);
   const [isCarouselVisible, setIsCarouselVisible] = useState(false);
@@ -27,6 +29,9 @@ const MeetGod = ({scrips}) => {
       if (carouselElement) observer.unobserve(carouselElement);
     };
   }, []);
+	for (let s of scrips) {
+		verseMap[s.quote] = s.scripture;
+	}
   const scripObj = {};
 	for (let s of scrips) {
 		scripObj[s.quote] = <span className='tipText' data-tooltip-id="tooltip" data-tooltip-content={s.scripture}>{s.quote}</span>

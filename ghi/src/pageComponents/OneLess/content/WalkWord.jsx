@@ -8,13 +8,9 @@ const WalkWord = ({ user, studyDay, scrips }) => {
   // variable to hold the study items
   const [studies, setStudies] = useState([]);
 
-  //variable to hold delta for quill
-
   // vairiable for study journal entries
   const [newEntry, setNewEntry] = useState([]);
   const [journalEntry, setJournalEntry] = useState([]);
-
-
 
   //  configuration for Dropdown options
   const [studyTitle, setStudyTitle] = useState('Choose an option');
@@ -24,8 +20,10 @@ const WalkWord = ({ user, studyDay, scrips }) => {
     // handleSelect will assign catagory and title(eventKey) to be passed to WordStudy component
     e.preventDefault();
     const study = await studies.filter(item => item.title === eventKey);
-    setCurrentStudy(study[0]);
-    await setStudyTitle(eventKey);
+    console.log('Study selected', study);
+      // setCurrentStudy(study[0]);
+      // await setStudyTitle(eventKey);
+    // check for category and title to determine which study to display
     if (parentId === 'Study Group') {
       if (eventKey === 'Small Bite') {
         // const currentStudy = await studies.filter(item => item.category === eventKey);
@@ -48,26 +46,7 @@ const WalkWord = ({ user, studyDay, scrips }) => {
     const resp = await axios.get('http://localhost:4040/get_studies');
     const data = resp.data;
     setStudies(data);
-  }
-  const checkTest = () => {
-    // check if test is working
-    console.log('test', test);
-    console.log('test.text', test.text);
-    const scrips = [];
-    for (let i = 0; i < test.text.length; i++) {
-      let verse = '';
-      if (test.text[i] === '(') {
-        let j = i + 1;
-        while (test.text[j] !== ')') {
-          verse += test.text[j];
-          j++;
-        }
-        scrips.push(verse.trim());
-        // instead of pushing verse, replace with tooltip version
-        i = j;
-      }
-    }
-    console.log('scrips', scrips);
+    console.log('Studies from database', data);
   }
   useEffect(() => {
     console.log("WalkWord component mounted")
@@ -207,11 +186,5 @@ const WalkWord = ({ user, studyDay, scrips }) => {
     </div>
   )
 }
-const test = {
-  title: 'SAY IT WITH YOUR CHEST',
-  category: 'Small Bite',
-  scripture: "Esther 7:6 - Esther said, 'An adversary and enemy! This vile human!'",
-  Observation: 'John 3:16',
-  text: "Application/Analysis: You absolutely matter!! Know this, Accept this as fact regardless of any feeling or mood and regardless of whatever you may have done. God says that we are fearfully and wonderfully made (Ps 139:14 ). He says that he knew us before we were formed in the womb ( Jer 1:5 ). He says even though today we rate slightly below the angels, one day we will be judge over them.  If that is the case, You and I must internalize that you matter, I matter, all humans matter.  We are God's treasure and as Jesus said,  'where your treasure is, there your heart will be also (Matt 6:21 ).' So knowing all this means we know God loves us and we know he loved us first (1 John 4:19 ). Therefore, we need also love one another without condition or qualification or status or earning. Yes, the parent, the sibling, the spouse, the addict, the  homeless, the rich, the poor, the other race, the  LGBTQ+, the sinner, the saint … all get our love above pets, possessions, and the planet. Lives matter above all else and love is the nexus, the binder that connects us all. We need to allow God's love to flow through us to each other in action and in deeds.",
-}
+
 export default WalkWord

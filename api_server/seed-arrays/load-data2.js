@@ -5,7 +5,7 @@ const Encourage = require('../models/Encourage');
 const Study = require('../models/Study');
 const Script = require('../models/Script.js');
 const Charity = require('../models/Charity');
-const studyData = require('./studiesData.json');
+const studyData = require('./study_seed.json');
 const scriptData = require('./scrip_seed.json');
 const charityData = require('./charity_seed.json');
 const encourageData = require('./encourage_seed.json');
@@ -22,6 +22,8 @@ mongoose.connect('mongodb://localhost:27017/the-one-ministries-db', {
 
   // Upsert for the Study collection
   for (let obj of studyData) {
+    // use unique update for Study Group collection
+
     const p = Study.findOneAndUpdate(
       { title: obj.title }, // filter by a unique field
       obj,                  // update document with the new data

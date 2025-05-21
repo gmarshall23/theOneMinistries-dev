@@ -11,7 +11,13 @@ const studySchema = new mongoose.Schema(
       required: true
     },
     content: {
-      // This will store the Quill Delta object.
+      // The lesson will store the Quill Delta object.
+      // docId: '',
+      //     docTitle: '',
+      //     docType: '',
+      //     calendar: '',
+      //     lesson: {
+      //       ops: []
       type: mongoose.Schema.Types.Mixed,
       default: {}
     }

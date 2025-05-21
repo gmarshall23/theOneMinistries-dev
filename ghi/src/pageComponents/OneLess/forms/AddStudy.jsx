@@ -21,7 +21,9 @@ const AddStudy = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        const newInfo = {
+        const category = studyData.category;
+        const title = studyData.title;
+        const content = {
             docId: studyData.docId,
             docTitle: studyData.docTitle,
             docType: studyData.docType,
@@ -32,26 +34,36 @@ const AddStudy = () => {
         //     title: studyData.title,
         //     newInfo: newInfo
         // }
-        console.log('newStudy data ready to submit:', {
-            title: studyData.title,
-            newInfo: newInfo
-        });
-        axios.put('http://localhost:4040/add_study_info', {
-            newSudy: {
-                title: studyData.title,
-                newInfo: newInfo
-            }
-        })
+        const newStudy = {
+            category: category,
+            title: title,
+            content: content
+        }
+        console.log('newStudy data ready to submit:', newStudy);
+        axios.post('http://localhost:4040/create_study',
+            {
+                title: title,
+                content: content,
+                category: category
+            })
             .then(response => {
                 console.log('Response:', response.data);
             }).then(() => {
-                setStudyData({})
+                setStudyData({
+                    category: '',
+                    title: '',
+                    docId: '',
+                    docTitle: '',
+                    docType: '',
+                    calendar: '',
+                    lesson: {}
+                })
                 // window.location.href = '/one-less';
             })
             .catch(error => {
                 console.error('Error:', error);
             });
-        console.log('Submitted data:', newInfo);
+        console.log('Submitted data:', newStudy);
     }
 
     // quill options
@@ -90,13 +102,13 @@ const AddStudy = () => {
                 <div className='row align-items-center'>
                     <div className="col-6">
                         <div className="row align-items-center">
-                            <label htmlFor="catagory" className="p-0 m-1 col-4">Catagory:</label>
+                            <label htmlFor="category" className="p-0 m-1 col-4">category:</label>
                             <input
                                 type="text"
-                                name="catagory"
-                                id="catagory"
+                                name="category"
+                                id="category"
                                 className="p-1 m-1 col-5 border rounded"
-                                value={studyData.catagory}
+                                value={studyData.category}
                                 onChange={handleChange}
                             />
                         </div>

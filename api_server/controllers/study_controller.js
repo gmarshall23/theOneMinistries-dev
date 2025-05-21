@@ -3,21 +3,37 @@ const path = require('path');
 
 module.exports = {
     // For walkWord //
+
     createStudy(req, res) {
+        console.log('req.body', req.body)
         const newStudy = new Study({
             title: req.body.title,
             content: req.body.content,
             category: req.body.category,
-            date: req.body.date
         })
-        newStudy.save()
+        // create a new study
+        console.log('newStudy', newStudy)
+        // newStudy.content = req.body.content
+        // newStudy.category = req.body.category
+        // newStudy.title = req.body.title
+        Study.create(newStudy)
             .then(resp => {
+                console.log('resp', resp)
                 res.json(resp)
             })
             .catch(e => {
                 console.log(e)
                 res.json(e)
             })
+
+        // newStudy.save()
+        //     .then(resp => {
+        //         res.json(resp)
+        //     })
+        //     .catch(e => {
+        //         console.log(e)
+        //         res.json(e)
+        //     })
     },
     updateStudy(req, res) {
         Study.findByIdAndUpdate

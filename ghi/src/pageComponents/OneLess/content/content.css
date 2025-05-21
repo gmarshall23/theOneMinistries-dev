@@ -423,12 +423,3 @@ carousel-item {
     color: red;
     font-size: 1rem !important;
 }
-.verse-span {
-  color: blue;
-  cursor: pointer;
-}
-
-.verse-span:hover {
-  text-decoration: underline;
-  cursor: pointer;
-}

@@ -75,21 +75,5 @@
                 }
             ]
         }
-    },
-    {
-        "category": "Study Guide",
-        "title": "Small Bite",
-        "content": {
-            "info": []
-        }
-    },
-    {
-        "category": "Study Guide",
-        "title": "Big Bite",
-        "content": {
-            "info": []
-        }
     }
-
-
 ]
