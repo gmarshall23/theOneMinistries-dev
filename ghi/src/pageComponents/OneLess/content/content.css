@@ -423,3 +423,9 @@ carousel-item {
     color: red;
     font-size: 1rem !important;
 }
+.ql-align-center {
+    text-align: center !important;
+}
+.ql-align-center>strong {
+    font-size: 2rem !important;
+}

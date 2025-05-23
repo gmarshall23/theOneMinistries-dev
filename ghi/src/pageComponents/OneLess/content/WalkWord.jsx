@@ -21,18 +21,19 @@ const WalkWord = ({ user, studyDay, scrips }) => {
     e.preventDefault();
     const study = await studies.filter(item => item.title === eventKey);
     console.log('Study selected', study);
-      // setCurrentStudy(study[0]);
+
       // await setStudyTitle(eventKey);
     // check for category and title to determine which study to display
     if (parentId === 'Study Group') {
       if (eventKey === 'Small Bite') {
-        // const currentStudy = await studies.filter(item => item.category === eventKey);
+        const studyByDay = await study.filter(item => item.content.calendar == studyDay);
         // set study selected to display on page
-        console.log(`Study Group data to send to WordStudy`, study[0]);
+        console.log(`Study Group data to send to WordStudy`, currentStudy);
+        setCurrentStudy(studyByDay[0]);
       }
     } else if (parentId === 'Theme') {
       // set study selected to display on page
-      console.log(`Theme data to send to WordStudy`, study[0]);
+      console.log(`Theme data to send to WordStudy`, study);
 
     } else {
       console.log(`study data`, study);
@@ -55,6 +56,10 @@ const WalkWord = ({ user, studyDay, scrips }) => {
     // Get study items from database //
     studies.length < 1 && getData();
   }, [studies]);
+  // useEffect for when currentStudy changes
+  useEffect(() => {
+    console.log('Current Study', currentStudy);
+  }, [currentStudy]);
 
   const submit = event => {
 
@@ -160,7 +165,7 @@ const WalkWord = ({ user, studyDay, scrips }) => {
       </div>
       <div className='mt-2 studies border border-primary border-4 rounded'>
         {!currentStudy && <h3>Select a Study</h3>}
-        <WordStudy content={currentStudy} studyDay={studyDay} scrips={scrips}/>
+        <WordStudy content={currentStudy} studyDay={studyDay} scrips={scrips} studies={studies}/>
       </div>
 
       <div>

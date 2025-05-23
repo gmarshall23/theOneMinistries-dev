@@ -4,28 +4,33 @@ import { Dropdown } from 'react-bootstrap';
 import { Tooltip } from 'react-tooltip';
 import 'react-tooltip/dist/react-tooltip.css';
 import { QuillDeltaToHtmlConverter } from 'quill-delta-to-html';
+import 'quill/dist/quill.snow.css';
+import 'quill/dist/quill.bubble.css';
 
 
 // assume `delta` and `scrips` come in via props
-const WordStudy = ({ content, studyDay, scrips }) => {
-    const [delta, setDelta] = useState({});
-  const data = content ? content.content : {};
+const WordStudy = ({ content, studyDay, scrips, studies }) => {
+  console.log('WordStudy loaded', content);
+  const [delta, setDelta] = useState({});
+  const data = content.content?content.content:{};
 
   // Process the content data and update state.
   const dataFunc = async () => {
     if (content.title === 'Small Bite' || content.title === 'Big Bite') {
-      let deltaLesson = data.info[0].lesson;
+      let deltaLesson = data.lesson;
       setDelta(deltaLesson);
       console.log('Delta', deltaLesson);
     } else if (content.category === 'Theme') {
       // Process topics if needed.
-      console.log('Topics ready to display', data.topics);
+      console.log('Topics ready to display', data);
     }
-    console.log('Content to be displayed in WordStudy', data);
+    console.log('Content to be displayed in WordStudy', studies);
   };
   const selectStudyItem = async (e) => {
-    console.log ('list of study items', data.info)
+    console.log ('list of study items', studies)
     console.log ('Study item selected', e.target.id);
+    const newStudy = await studies.filter(item => item.content.docTitle === e.target.id);
+    setDelta(newStudy[0].content.lesson);
 
   }
   useEffect(() => {
@@ -57,22 +62,22 @@ const WordStudy = ({ content, studyDay, scrips }) => {
   }, [delta, scripMap]);
 
   return (
+
     <div id="wordStudyContainer" style={{ height: '100vh' }}>
-    {data?.info && (
+    {data.lesson&& (
         <div className="quillHeader">
           <Dropdown className="w-50 text-start">
             <Dropdown.Toggle variant="primary" id="dropdown-info">
               Select another Small Bite Document
             </Dropdown.Toggle>
             <Dropdown.Menu>
-              {data.info.map((item,idx) => (
-                <Dropdown.Item key={idx} id={item.docTitle} onClick={selectStudyItem}>{item.docTitle}</Dropdown.Item>
+              {studies.map((item,idx) => (
+                <Dropdown.Item key={idx} id={item.content.docTitle} onClick={selectStudyItem}>{item.content.docTitle}</Dropdown.Item>
               ))}
             </Dropdown.Menu>
           </Dropdown>
         </div>
       )}
-      {content ? <h2>{content.title}</h2> : <h2>Nothing to display</h2>}
       <div
         className="quill-viewer"
         dangerouslySetInnerHTML={{ __html: html }}
@@ -92,9 +97,6 @@ const WordStudy = ({ content, studyDay, scrips }) => {
           textAlign: 'left'
         }}
       />
-
-      {/* inject your processed HTML */}
-
     </div>
   );
 };
