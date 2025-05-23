@@ -6,7 +6,7 @@ const Study = require('../models/Study');
 const Script = require('../models/Script.js');
 const Charity = require('../models/Charity');
 const studyData = require('./study_seed.json');
-const scriptData = require('./scrip_seed.json');
+const scriptData = require('./studies10.json');
 const charityData = require('./charity_seed.json');
 const encourageData = require('./encourage_seed.json');
 

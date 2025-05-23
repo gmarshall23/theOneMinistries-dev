@@ -188,6 +188,7 @@ const AddStudy = () => {
                 </div>
                 <div className="row align-items-center justify-content-center">
                     <button type="submit" className="text-center w-25 btn btn-primary">Submit</button>
+                    <button type="button" onClick={()=>console.log('prepare to update')} className="text-center w-25 btn btn-primary">Update</button>
                 </div>
             </form>
         </div>

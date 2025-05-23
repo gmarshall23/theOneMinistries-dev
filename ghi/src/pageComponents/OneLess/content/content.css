@@ -391,6 +391,9 @@ carousel-item {
     height: 50vh;
     overflow: auto;
 }
+.quillHeader {
+    border: 3px solid black !important;
+}
 
 /* +++++++++++++  Encourage.jsx  +++++++++++++ */
 .encourage-content {

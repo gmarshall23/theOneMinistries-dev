@@ -6,12 +6,15 @@ import 'react-tooltip/dist/react-tooltip.css';
 import { QuillDeltaToHtmlConverter } from 'quill-delta-to-html';
 import 'quill/dist/quill.snow.css';
 import 'quill/dist/quill.bubble.css';
+import './content.css'
 
 
 // assume `delta` and `scrips` come in via props
 const WordStudy = ({ content, studyDay, scrips, studies }) => {
   console.log('WordStudy loaded', content);
   const [delta, setDelta] = useState({});
+  const [displayedContent, setDisplayedContent] = useState({});
+
   const data = content.content?content.content:{};
 
   // Process the content data and update state.
@@ -19,6 +22,7 @@ const WordStudy = ({ content, studyDay, scrips, studies }) => {
     if (content.title === 'Small Bite' || content.title === 'Big Bite') {
       let deltaLesson = data.lesson;
       setDelta(deltaLesson);
+      setDisplayedContent(content)
       console.log('Delta', deltaLesson);
     } else if (content.category === 'Theme') {
       // Process topics if needed.
@@ -31,6 +35,7 @@ const WordStudy = ({ content, studyDay, scrips, studies }) => {
     console.log ('Study item selected', e.target.id);
     const newStudy = await studies.filter(item => item.content.docTitle === e.target.id);
     setDelta(newStudy[0].content.lesson);
+    setDisplayedContent(newStudy[0].content);
 
   }
   useEffect(() => {
@@ -63,10 +68,10 @@ const WordStudy = ({ content, studyDay, scrips, studies }) => {
 
   return (
 
-    <div id="wordStudyContainer" style={{ height: '100vh' }}>
+    <div id="wordStudyContainer" >
     {data.lesson&& (
-        <div className="quillHeader">
-          <Dropdown className="w-50 text-start">
+        <div className="row justify-content-between quillHeader ">
+          <Dropdown className="col-lg-6 text-start">
             <Dropdown.Toggle variant="primary" id="dropdown-info">
               Select another Small Bite Document
             </Dropdown.Toggle>
@@ -76,6 +81,9 @@ const WordStudy = ({ content, studyDay, scrips, studies }) => {
               ))}
             </Dropdown.Menu>
           </Dropdown>
+          <div className=" col-lg-4 quillTitle">
+            <p className='border text-end'>current study day: {displayedContent.calendar|| studyDay}</p>
+            </div>
         </div>
       )}
       <div
