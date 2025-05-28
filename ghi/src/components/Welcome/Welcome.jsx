@@ -8,8 +8,6 @@ const Welcome = () => {
     return (
         <>
             <section className='container landing-section welcome'>
-                <h2>Welcome</h2>
-
                 <div>
                     <blockquote>Hello and welcome to THE ONE MINISTRIES. This is a faith based website primarily for baptized believers of any denomination. It is also a great tool for people curious and interested about making a decision to become a follower of Jesus Christ.
                     </blockquote>

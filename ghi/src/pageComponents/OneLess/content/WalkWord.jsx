@@ -14,29 +14,31 @@ const WalkWord = ({ user, studyDay, scrips }) => {
 
   //  configuration for Dropdown options
   const [studyTitle, setStudyTitle] = useState('Choose an option');
+  const [studiesGroup, setStudiesGroup] = useState([]);
   const [currentStudy, setCurrentStudy] = useState({});
 
   const handleSelect = async (eventKey, e, parentId) => {
     // handleSelect will assign catagory and title(eventKey) to be passed to WordStudy component
     e.preventDefault();
-    const study = await studies.filter(item => item.title === eventKey);
-    console.log('Study selected', study);
+    const studyGroup = await studies.filter(item => item.title === eventKey);
+    console.log('Study selected', studyGroup);
 
       // await setStudyTitle(eventKey);
     // check for category and title to determine which study to display
     if (parentId === 'Study Group') {
-      if (eventKey === 'Small Bite') {
-        const studyByDay = await study.filter(item => item.content.calendar == studyDay);
+        const studyByDay = await studyGroup.filter(item => item.content.calendar == studyDay && item.title === eventKey);
+
         // set study selected to display on page
         console.log(`Study Group data to send to WordStudy`, currentStudy);
-        setCurrentStudy(studyByDay[0]);
-      }
+        setStudiesGroup(studyGroup);
+        setStudyTitle(eventKey);
+        setCurrentStudy(studyByDay[0] || studyGroup[0]);
     } else if (parentId === 'Theme') {
       // set study selected to display on page
-      console.log(`Theme data to send to WordStudy`, study);
+      console.log(`Theme data to send to WordStudy`, studyGroup);
 
     } else {
-      console.log(`study data`, study);
+      console.log(`study data`, studyGroup);
     }
   }
 

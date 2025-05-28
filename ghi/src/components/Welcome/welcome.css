@@ -2,9 +2,8 @@
   padding: 5rem;
   margin: 0;
   font-size: 1.5rem;
-
   font-style: italic;
-  color: rgb(224, 222, 222);
+  /* color: rgb(224, 222, 222); */
   text-align: center;
   max-height: 75vh;
   overflow: auto;

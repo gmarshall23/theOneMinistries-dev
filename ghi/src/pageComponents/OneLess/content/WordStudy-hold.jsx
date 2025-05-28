@@ -97,7 +97,7 @@ const WordStudy = ({ content, studyDay, scrips }) => {
                 </Dropdown>
             </div>}
             {content ? <h2>{content.title}</h2> : <h2>Nothing to display</h2>}
-            <div>
+            <div >
                 {data?.info ? (
                     <ReactQuill
                         value={generateHtmlFromDelta(deltaInfo)}

@@ -68,7 +68,7 @@ const WordStudy = ({ content, studyDay, scrips, studies }) => {
 
   return (
 
-    <div id="wordStudyContainer" >
+    <div className= '' id="wordStudyContainer" >
     {data.lesson&& (
         <div className="row justify-content-between quillHeader ">
           <Dropdown className="col-lg-6 text-start">
@@ -87,7 +87,7 @@ const WordStudy = ({ content, studyDay, scrips, studies }) => {
         </div>
       )}
       <div
-        className="quill-viewer"
+        className="quill-viewer p-4"
         dangerouslySetInnerHTML={{ __html: html }}
       />
       {/* only one Tooltip needed */}
