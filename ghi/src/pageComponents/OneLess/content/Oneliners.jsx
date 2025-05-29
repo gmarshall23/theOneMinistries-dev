@@ -1,28 +1,22 @@
+/* eslint-disable react/no-unescaped-entities */
 import { useState} from 'react';
 import 'react-tooltip/dist/react-tooltip.css'
 import { Tooltip } from 'react-tooltip';
-import axios from 'axios';
 import { Button, Dropdown, DropdownButton } from 'react-bootstrap';
-import statementsData from '../../../assets/Statements';
+import {loadStatement, oneLiners} from './one-less-assets/one-liners.js'
 import cross from './one-less-assets/cross.jpeg';
 
 const Oneliners = () => {
-
-    const sticky = { className: 'sticky-top sticky', onClick: () => window.refresh() }
-    const [oneLiner, setOneLiner] = useState(null)
-    const [showOne, setShowOne] = useState(false)
-    const [showAll, setShowAll] = useState(true)
-    const [selectedStatement, setSelectedStatement] = useState('');
-
-    const handleSelect = (eventKey) => {
-        setSelectedStatement(statementsData.oneliners[eventKey]);
+    const [oneLiner, setOneLiner] = useState(loadStatement())
+    const handleSelect = (eventkey) => {
+        console.log('Selected statement:', oneLiners[eventkey]);
+        setOneLiner(oneLiners[eventkey]);
       };
     const handleShowOne = (e) => {
         e.preventDefault();
-        const randNumber = Math.floor(Math.random() * statementsData.oneLiners.length);
-        setOneLiner(statementsData.oneLiners[randNumber])
-        console.log(statementsData.oneLiners[randNumber])
-        setShowOne(true)
+        const randNumber = Math.floor(Math.random() * oneLiners.length);
+        setOneLiner(oneLiners[randNumber])
+        console.log(oneLiners[randNumber])
     }
 
     const handleClickAll = (e) => {
@@ -32,7 +26,7 @@ const Oneliners = () => {
     }
 
     return (
-        <div className="">
+        <div className="p-4">
             <h2><b>One Liners for the Day</b></h2>
 
             <div className="shootPics row justify-content-between m-0 p-2">
@@ -49,9 +43,10 @@ const Oneliners = () => {
                     <div key={index} dangerouslySetInnerHTML={{ __html: statement }} />
                 ))}
             </div> */}
-            <div className="">
-                <Button className="rand" id="click" onClick={handleShowOne} >See a oneliner</Button>
+            <div className="p-4">
                 <blockquote className='oneLiner' dangerouslySetInnerHTML={{ __html: oneLiner }} />
+                <Button className="rand w-50" id="click" onClick={handleShowOne} >See another oneliner</Button>
+
             </div>
 
             <div  >
@@ -60,10 +55,16 @@ const Oneliners = () => {
                     className = "custom-dropdown"
                     data-tooltip-content="Click for All"
                     onSelect={handleSelect}
+                    title="See All One Liners"
                 >
-                    {statementsData.oneLiners.map((statement, index) => (
+                    {oneLiners.map((statement, index) => (
 
-                        <Dropdown.Item className ='' key={index} dangerouslySetInnerHTML={{ __html: statement }} eventKey={index} />
+                        <Dropdown.Item
+                        className =''
+                        key={index}
+                        dangerouslySetInnerHTML={{ __html: statement }}
+                        eventKey={index}
+                        onClick={(handleSelect)}/>
                     ))}
                 </DropdownButton>
 

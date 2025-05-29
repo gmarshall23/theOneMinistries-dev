@@ -11,7 +11,7 @@ import thoughtOfDay from '../../assets/images/thoughtOfDay.png'
 import Card from 'react-bootstrap/Card';
 import img100 from '../../assets/images/testimonyImg2.png';
 import { SwitchTransition, CSSTransition } from 'react-transition-group';
-import './Landing.css'; // make sure to import the CSS
+import './landing.css'; // make sure to import the CSS
 
 function Landing({ user }) {
   const randomScriptures = scriptArray.scriptures;
