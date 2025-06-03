@@ -54,10 +54,10 @@ async function listCollections() {
       collName = collection.name;
       if (collName === 'studies') {
         console.log('studies collection found');
-        studyData.forEach(async (study) => {
-          await Study.create(study);
-          console.log('A study document added to the studies collection:', study);
-        });
+        // studyData.forEach(async (study) => {
+        //   await Study.create(study);
+        //   console.log('A study document added to the studies collection:', study);
+        // });
         console.log('All study documents added to the studies collection:');
       } else if (collName === 'scriptures') {
         scriptData.forEach(async (script) => {

@@ -1,0 +1,443 @@
+[
+    {
+        "category": "Study Group",
+        "title": "Small Bite",
+        "content": {
+            "docId": "b5-314-052924",
+            "docTitle": "YOU MATTER",
+            "docType": "quill",
+            "calendar": "1",
+            "lesson": {
+                "ops": [
+                    {
+                        "attributes": {
+                            "background": "transparent",
+                            "color": "#000000",
+                            "bold": true
+                        },
+                        "insert": "YOU MATTER"
+                    },
+                    {
+                        "attributes": {
+                            "background": "transparent",
+                            "color": "#000000"
+                        },
+                        "insert": ""
+                    },
+                    {
+                        "attributes": {
+                            "align": "center"
+                        },
+                        "insert": "\n"
+                    },
+                    {
+                        "insert": "\n"
+                    },
+                    {
+                        "attributes": {
+                            "background": "transparent",
+                            "color": "#000000",
+                            "bold": true
+                        },
+                        "insert": "Scripture:"
+                    },
+                    {
+                        "attributes": {
+                            "background": "transparent",
+                            "color": "#000000"
+                        },
+                        "insert": " Psalms 8:4 - What is mankind that you are mindful of them, human beings that you care for them?"
+                    },
+                    {
+                        "insert": "\n\n"
+                    },
+                    {
+                        "attributes": {
+                            "background": "transparent",
+                            "color": "#000000",
+                            "bold": true
+                        },
+                        "insert": "Observation"
+                    },
+                    {
+                        "attributes": {
+                            "background": "transparent",
+                            "color": "#000000"
+                        },
+                        "insert": ": David is praising God as our Creator and praising him that he cares for us amongst all things he created."
+                    },
+                    {
+                        "insert": "\n\n"
+                    },
+                    {
+                        "attributes": {
+                            "background": "transparent",
+                            "color": "#000000",
+                            "bold": true
+                        },
+                        "insert": "Application/Analysis:"
+                    },
+                    {
+                        "attributes": {
+                            "background": "transparent",
+                            "color": "#000000"
+                        },
+                        "insert": " You absolutely matter!! Know this, Accept this as fact regardless of any feeling or mood and regardless of whatever you may have done. God says that we are fearfully and wonderfully made ("
+                    },
+                    {
+                        "attributes": {
+                            "background": "#ffff00",
+                            "color": "#000000"
+                        },
+                        "insert": "Ps 139:14"
+                    },
+                    {
+                        "attributes": {
+                            "background": "transparent",
+                            "color": "#000000"
+                        },
+                        "insert": " ). He says that he knew us before we were formed in the womb ( "
+                    },
+                    {
+                        "attributes": {
+                            "background": "#ffff00",
+                            "color": "#000000"
+                        },
+                        "insert": "Jer 1:5"
+                    },
+                    {
+                        "attributes": {
+                            "background": "transparent",
+                            "color": "#000000"
+                        },
+                        "insert": " ). He says even though today we rate slightly below the angels, one day we will be judge over them. If that is the case, You and I must internalize that you matter, I matter, all humans matter. We are God's treasure and as Jesus said, “where your treasure is, there your heart will be also ("
+                    },
+                    {
+                        "attributes": {
+                            "background": "#ffff00",
+                            "color": "#000000"
+                        },
+                        "insert": "Matt 6:21"
+                    },
+                    {
+                        "attributes": {
+                            "background": "transparent",
+                            "color": "#000000"
+                        },
+                        "insert": " ).” So knowing all this means we know God loves us and we know he loved us first ("
+                    },
+                    {
+                        "attributes": {
+                            "background": "#ffff00",
+                            "color": "#000000"
+                        },
+                        "insert": "1 John 4:19"
+                    },
+                    {
+                        "attributes": {
+                            "background": "transparent",
+                            "color": "#000000"
+                        },
+                        "insert": " ). Therefore, we need also love one another without condition or qualification or status or earning. Yes, the parent, the sibling, the spouse, the addict, the homeless, the rich, the poor, the other race, the LGBTQ+, the sinner, the saint … all get our love above pets, possessions, and the planet. Lives matter above all else and love is the nexus, the binder that connects us all. We need to allow God's love to flow through us to each other in action and in deeds."
+                    },
+                    {
+                        "insert": "\n\n"
+                    },
+                    {
+                        "attributes": {
+                            "background": "transparent",
+                            "color": "#000000",
+                            "bold": true
+                        },
+                        "insert": "Prayer:"
+                    },
+                    {
+                        "attributes": {
+                            "background": "transparent",
+                            "color": "#000000"
+                        },
+                        "insert": " Father in Heaven, thank you for creating us and loving us first. Teach us to love as you do and may we serve you and others with the priority that you set as you demonstrate you love to us in action. In Jesus Name - AMEN!"
+                    },
+                    {
+                        "insert": "\n\n"
+                    },
+                    {
+                        "attributes": {
+                            "background": "transparent",
+                            "color": "#000000",
+                            "bold": true
+                        },
+                        "insert": "Takeaway:"
+                    },
+                    {
+                        "attributes": {
+                            "background": "transparent",
+                            "color": "#000000"
+                        },
+                        "insert": " Love is an action word. Be a Christ-like example and lead with love and kindness in all that you do."
+                    },
+                    {
+                        "insert": "\n"
+                    }
+                ]
+            }
+        },
+        "createdAt": {
+            "$date": "2025-05-21T06:55:26.946Z"
+        },
+        "updatedAt": {
+            "$date": "2025-05-21T06:55:26.946Z"
+        },
+        "__v": 0
+    },
+    {
+        "category": "Study Group",
+        "title": "Small Bite",
+        "content": {
+            "docId": "b5-315-053024",
+            "docTitle": "SAY IT WITH YOUR CHEST",
+            "docType": "quill",
+            "calendar": "2",
+            "lesson": {
+                "ops": [
+                    {
+                        "attributes": {
+                            "background": "transparent",
+                            "color": "#000000",
+                            "bold": true
+                        },
+                        "insert": "SAY IT WITH YOUR CHEST"
+                    },
+                    {
+                        "attributes": {
+                            "align": "center"
+                        },
+                        "insert": "\n"
+                    },
+                    {
+                        "insert": "\n"
+                    },
+                    {
+                        "attributes": {
+                            "background": "transparent",
+                            "color": "#000000",
+                            "bold": true
+                        },
+                        "insert": "Scripture:"
+                    },
+                    {
+                        "attributes": {
+                            "background": "transparent",
+                            "color": "#000000"
+                        },
+                        "insert": " Esther 7:6 - Esther said, “An adversary and enemy! This vile human!”"
+                    },
+                    {
+                        "insert": "\n\n"
+                    },
+                    {
+                        "attributes": {
+                            "background": "transparent",
+                            "color": "#000000",
+                            "bold": true
+                        },
+                        "insert": "Observation:"
+                    },
+                    {
+                        "attributes": {
+                            "background": "transparent",
+                            "color": "#000000"
+                        },
+                        "insert": " Esther screams at King Xerxes, who is the source of the great injustice being done to the people of Israel."
+                    },
+                    {
+                        "insert": "\n\n"
+                    },
+                    {
+                        "attributes": {
+                            "background": "transparent",
+                            "color": "#000000"
+                        },
+                        "insert": "Application/Analysis: Such a valuable and powerful exclamation from someone who considered herself and her voice insignificant. Yet, when prompted she screamed and was heard because she spoke the sincere truth about a big wrong being done to an entire nation of people. God hates injustice and it engenders his anger and judgement and of course, as only he can, he delivers timely justice. What are you angry about? Are you witness to injustice? Are you screaming to be heard so as to invoke change as God would want it? We are not here to be meek as believers in the face of wrong. We are to take a shout at abortion, poverty, homelessness, LGBTQ+ laws, school curriculums, etc. because if policy is successful against God's obvious will, word, and desire and we do not shout, then the blame falls on us who knew “right” in the first place. Evil will thrive if Christians stay silent. Scripture says to resist the devil and he will flee ("
+                    },
+                    {
+                        "attributes": {
+                            "background": "#ffff00",
+                            "color": "#000000"
+                        },
+                        "insert": "Jam 4:7 "
+                    },
+                    {
+                        "attributes": {
+                            "background": "transparent",
+                            "color": "#000000"
+                        },
+                        "insert": "). It's time to shout back at evil and see how fast it can run away!"
+                    },
+                    {
+                        "insert": "\n\n"
+                    },
+                    {
+                        "attributes": {
+                            "background": "transparent",
+                            "color": "#000000",
+                            "bold": true
+                        },
+                        "insert": "Prayer:"
+                    },
+                    {
+                        "attributes": {
+                            "background": "transparent",
+                            "color": "#000000"
+                        },
+                        "insert": " Lord, thank you for the examples of your people doing right any you supporting them by producing an outcome according to your will. Father, it takes courage to do the right thing, for the right reasons, at the right time. Fill us with holy boldness n our Christian walk, Lord. In Jesus name - AMEN!"
+                    },
+                    {
+                        "insert": "\n\n"
+                    },
+                    {
+                        "attributes": {
+                            "background": "transparent",
+                            "color": "#000000",
+                            "bold": true
+                        },
+                        "insert": "Takeaway:"
+                    },
+                    {
+                        "attributes": {
+                            "background": "transparent",
+                            "color": "#000000"
+                        },
+                        "insert": " As believers, God calls us to make a stand for Christian principles when we see clear injustices done. We are called to be holy, which is set apart, and willing to accept whatever comes with it knowing with all faith and confidence that God will see us through."
+                    },
+                    {
+                        "insert": "\n"
+                    }
+                ]
+            }
+        },
+        "createdAt": {
+            "$date": "2025-05-21T06:57:08.345Z"
+        },
+        "updatedAt": {
+            "$date": "2025-05-21T06:57:08.345Z"
+        },
+        "__v": 0
+    },
+    {
+        "category": "Study Group",
+        "title": "Small Bite",
+        "content": {
+            "docId": "b6-1-111924",
+            "docTitle": "THE TWO KINGDOMS",
+            "docType": "quill",
+            "calendar": "3",
+            "lesson": {
+                "ops": [
+                    {
+                        "attributes": {
+                            "background": "transparent",
+                            "color": "#000000",
+                            "bold": true
+                        },
+                        "insert": "THE TWO KINGDOMS"
+                    },
+                    {
+                        "attributes": {
+                            "align": "center"
+                        },
+                        "insert": "\n"
+                    },
+                    {
+                        "insert": "\n\n"
+                    },
+                    {
+                        "attributes": {
+                            "background": "transparent",
+                            "color": "#000000"
+                        },
+                        "insert": "Scripture: Matthew 6:10 - Your kingdom come, your will be done, on earth as it is in Heaven."
+                    },
+                    {
+                        "insert": "\n\n"
+                    },
+                    {
+                        "attributes": {
+                            "background": "transparent",
+                            "color": "#000000"
+                        },
+                        "insert": "Observation: Jesus is teaching and/or reminding everyone how to pray."
+                    },
+                    {
+                        "insert": "\n\n"
+                    },
+                    {
+                        "attributes": {
+                            "background": "transparent",
+                            "color": "#000000"
+                        },
+                        "insert": "Application/Analysis: As we pray for the kingdom to come it is important to realize that there are two kingdoms for which we must pray. The obvious one is when Jesus returns to begin the Millennial Reign and Satan is bound and we finally get the peace that our heart instinctively longs for. God places in our nature the desire to seek love, peace, kindness, joy as these are the only things that give us true satisfaction. We fight like crazy to get them but only when God is the source of them, do we have true and meaningful peace, etc. The second kingdom that we must pray for is the kingdom in our own heart. This is where we place Jesus on our inward throne and allow his gift of grace to be released through us. This is the source of our light from within that shines for the world to see who Jesus is through us ("
+                    },
+                    {
+                        "attributes": {
+                            "background": "#ffff00",
+                            "color": "#000000"
+                        },
+                        "insert": "2 Cor 4:6"
+                    },
+                    {
+                        "attributes": {
+                            "background": "transparent",
+                            "color": "#000000"
+                        },
+                        "insert": "). God's grace is synonymous with his earthly kingdom that he wants to establish, which is why we don't look for a kingdom in the sense of physical location; but rather, we own the fact that we are God's kingdom and He is in our midst at all times ("
+                    },
+                    {
+                        "attributes": {
+                            "background": "#ffff00",
+                            "color": "#000000"
+                        },
+                        "insert": "Luke 17:21"
+                    },
+                    {
+                        "attributes": {
+                            "background": "transparent",
+                            "color": "#000000"
+                        },
+                        "insert": ") Hallelujah! So this is why we pray - To maintain grace flowing through us. And this is how we pray - asking God to release his wonderful light through us for all the world to see Him and be thankful that He is God."
+                    },
+                    {
+                        "insert": "\n\n"
+                    },
+                    {
+                        "attributes": {
+                            "background": "transparent",
+                            "color": "#000000"
+                        },
+                        "insert": "Prayer: Father, thank you for both kingdoms. Thank you that you rule now in us and over the world on earth and also in times to come. In Jesus name - AMEN!"
+                    },
+                    {
+                        "insert": "\n\n"
+                    },
+                    {
+                        "attributes": {
+                            "background": "transparent",
+                            "color": "#000000"
+                        },
+                        "insert": "Takeaway: Pray God's grace shines through you today for others to see and encounter and pray Jesus returns quickly that we may share eternity in his presence and enjoy everlasting peace and joy."
+                    },
+                    {
+                        "insert": "\n\n\n"
+                    }
+                ]
+            }
+        },
+        "createdAt": {
+            "$date": "2025-05-21T06:58:19.706Z"
+        },
+        "updatedAt": {
+            "$date": "2025-05-21T06:58:19.706Z"
+        },
+        "__v": 0
+    }
+]
