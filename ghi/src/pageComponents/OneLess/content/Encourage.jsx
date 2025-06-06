@@ -101,26 +101,25 @@ const Encourage = () => {
           </Modal.Footer>
         </Modal>
       </div>
-
-      <ol className="darkBlue pix10">
-        <p>** Need to pick the best 5 or 6 from the list below **</p>
-        <ul><span className="purple">Remember:</span> God created the Heavens and the Earth. (Genesis 1)</ul>
-        <ul><span className="purple">Remember:</span> God parted the Red Sea and set his people free. (Exodus 14)</ul>
-        <ul><span className="purple">Remember:</span> God was with Daniel in the Lions Den. (Daniel 5)</ul>
-        <ul><span className="purple">Remember:</span> God gave his only son Jesus to die so that you may have eternal life. (John 3)</ul>
-        <ul><span className="purple">Remember:</span> God made a new covenant of Grace that covers you and all your needs. (Hebrews 8)</ul>
-        <ul><span className="purple">Remember:</span> Something from your PAST with God.</ul>
+      <h3 className="darkBlue p-2">Remember...</h3>
+      <ol className="darkBlue pix10 p-2">
+        <li><span className="purple">Remember:</span> God created the Heavens and the Earth. (Genesis 1)</li>
+        <li><span className="purple">Remember:</span> God parted the Red Sea and set his people free. (Exodus 14)</li>
+        <li><span className="purple">Remember:</span> God was with Daniel in the Lions Den. (Daniel 5)</li>
+        <li><span className="purple">Remember:</span> God gave his only son Jesus to die so that you may have eternal life. (John 3)</li>
+        <li><span className="purple">Remember:</span> God made a new covenant of Grace that covers you and all your needs. (Hebrews 8)</li>
+        <li><span className="purple">Remember:</span> Something from your PAST with God.</li>
       </ol>
-      <ol className="darkBlue pix10">
-        <ul><span className="purple">Remember:</span> God's promises, like the rainbow after the Flood, are eternal and unbroken. (Life of Noah)</ul>
-        <ul><span className="purple">Remember:</span> Jesus made a safe place for us at the cross, but you must accept His gift of Hope. (Life of Noah)</ul>
-        <ul><span className="purple">Remember:</span> God is revealed best during the storms of life. It is there you will understand how is working in your situation. (Life of Job)</ul>
-        <ul><span className="purple">Remember:</span> God is in the business of restoration to include your homes, families, friendships and your life. (Life of Job)</ul>
-        <ul><span className="purple">Remember:</span> God cares about restoration and he will bring healing into your life. (Life of Jacob)</ul>
-        <ul><span className="purple">Remember:</span> God can always use your situation to accomplish his good purposes. (Life of Jacob)</ul>
-        <ul><span className="purple">Remember:</span> You don't have to be perfect in order to be a person after God's own heart. (Life of David)</ul>
-        <ul><span className="purple">Remember:</span> When you are cut off and in a lonely place, it is then the enemy will tempt you to seek refuge and comfort in things other than God. (Life of David)</ul>
-      </ol>
+      {/* <ol className="darkBlue pix10">
+        <li><span className="purple">Remember:</span> God's promises, like the rainbow after the Flood, are eternal and unbroken. (Life of Noah)</li>
+        <li><span className="purple">Remember:</span> Jesus made a safe place for us at the cross, but you must accept His gift of Hope. (Life of Noah)</li>
+        <li><span className="purple">Remember:</span> God is revealed best during the storms of life. It is there you will understand how is working in your situation. (Life of Job)</li>
+        <li><span className="purple">Remember:</span> God is in the business of restoration to include your homes, families, friendships and your life. (Life of Job)</li>
+        <li><span className="purple">Remember:</span> God cares about restoration and he will bring healing into your life. (Life of Jacob)</li>
+        <li><span className="purple">Remember:</span> God can always use your situation to accomplish his good purposes. (Life of Jacob)</li>
+        <li><span className="purple">Remember:</span> You don't have to be perfect in order to be a person after God's own heart. (Life of David)</li>
+        <li><span className="purple">Remember:</span> When you are cut off and in a lonely place, it is then the enemy will tempt you to seek refuge and comfort in things other than God. (Life of David)</li>
+      </ol> */}
 
       {/* tooltip */}
       <Tooltip className='' id="tooltip" place="right"

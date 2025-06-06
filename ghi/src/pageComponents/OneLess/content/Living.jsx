@@ -18,7 +18,7 @@ const Living = ({scrips}) => {
 		scripObj[s.quote] = <span className='tipText' data-tooltip-id="tooltip" data-tooltip-content={s.scripture}>{s.quote}</span>
 	}
 	return (
-		<main className='living'>
+		<div className='living'>
 			<div className='content-header'>
 				<h2><b>Living a Christian Life</b></h2>
 				<h4 className="">CONGRATULATIONS NEW CHRISTIAN. WELCOME TO THE FAMILY</h4>
@@ -92,7 +92,7 @@ const Living = ({scrips}) => {
 					padding: '10px',
 					textAlign: 'left',
 				}} />
-		</main>
+		</div>
 	)
 }
 

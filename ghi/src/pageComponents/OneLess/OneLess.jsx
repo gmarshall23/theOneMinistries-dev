@@ -14,6 +14,7 @@ import WalkWord from './content/WalkWord';
 import Encourage from './content/Encourage';
 import Introduction from './content/Introduction';
 import Oneliners from './content/Oneliners';
+import Events from './content/Events';
 
 const OneLess = ({user, setUser}) => {
   // const [data, setData] = useState(null);
@@ -36,6 +37,7 @@ const OneLess = ({user, setUser}) => {
   }
   const days = async (date) => {
     // convert date to day of the year
+    user?console.log("user studyDate: "+user?.studyStartDate):console.log('user is not defined');
     const startDate = new Date(date).getTime();
     const today = new Date().getTime();
     const day =Math.floor(((((today - startDate)/1000)/60)/60)/24);
@@ -99,7 +101,7 @@ const OneLess = ({user, setUser}) => {
       case 'Encourage Me':
         return <Encourage />;
       case 'One Less Event':
-        return <h1>{lesson}</h1>;
+        return <Events user={user} />;
       case 'Prayer Requests':
         return <h1>{lesson}</h1>;
       case 'Questions and AnswersAsk The Bible':

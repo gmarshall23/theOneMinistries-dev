@@ -7,7 +7,8 @@ const scrip_Controller = require('../controllers/scrip_controller.js')
 const encourage_Controller = require('../controllers/encourage_controller')
 const charity_Controller = require('../controllers/charity_controller')
 const contirbution_Controller = require('../controllers/contribution_controller')
-const study_Controller = require('../controllers/study_controller')
+const study_Controller = require('../controllers/study_controller');
+const events_Controller = require('../controllers/events_controller');
 
 // const authenticateToken = require('../helper/authMiddleware');
 
@@ -43,8 +44,16 @@ app.post('/subscribe', user_Controller.subscribe);
 app.post('/create_charity', charity_Controller.createCharity);
 app.put('/update_charity/:id', charity_Controller.updateCharity)
 app.get('/get-charities', charity_Controller.getCharities)
+// ******** scripture routes *********//
 app.get('/get_scriptures', scrip_Controller.getScriptures)
+// ******** encourage routes *********//
 app.get('/get_encourage', encourage_Controller.getEncourage)
+// ******** Events routes *********//
+app.post('/create_event',events_Controller.createEvent);
+app.get('/get_events', events_Controller.getEvents);
+// app.put('/update_event/:id', events_Controller.updateEvent);
+// app.delete('/delete_event/:id', events_Controller.deleteEvent);
+
 
 // app.get('/get_user/:id', user_Controller.getUser)
 // app.get('/get_contribution/:id', contirbution_Controller.getContribution)
