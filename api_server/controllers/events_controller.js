@@ -17,8 +17,8 @@ module.exports = {
 
     // Create a new event
     createEvent(req, res) {
-        const { name, date, description } = req.body;
-        const newEvent = new Event({ name, date, description });
+        const { name, city, description, createdBy } = req.body;
+        const newEvent = new Event({ name, city, description, createdBy });
 
         newEvent.save()
             .then(event => {
@@ -31,8 +31,8 @@ module.exports = {
     },
     updateEvent (req, res) {
         const { id } = req.params;
-        const { name, date, description } = req.body;
-        Event.findByIdAndUpdate(id, { name, date, description }, { new: true })
+        const { name, city, description, createdBy } = req.body;
+        Event.findByIdAndUpdate(id, { name, city, description, createdBy }, { new: true })
             .then(event => {
                 if (!event) {
                     return res.status(404).json({ error: "Event not found" });

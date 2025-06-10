@@ -30,10 +30,7 @@ const OneLess = ({user, setUser}) => {
   const getData = async () => {
     const response = await axios.get('http://localhost:4040/get_scriptures');
     const data = response.data
-    setScrips(data)
-    console.log('data is: ', data)
-    console.log('user info: ', user)
-
+    setScrips(data);
   }
   const days = async (date) => {
     // convert date to day of the year
@@ -63,7 +60,6 @@ const OneLess = ({user, setUser}) => {
       refLesson.scrollTo({ top: 0, behavior: 'smooth' });
       // Alternatively, use: contentRef.current.scrollTop = 0;
     }
-    // window.scrollTo({ top: 0, behavior: 'smooth' });
   }, [lesson]);
 
   // get the number of days since the user started studying

@@ -15,14 +15,13 @@ import './landing.css'; // make sure to import the CSS
 
 function Landing({ user }) {
   const randomScriptures = scriptArray.scriptures;
-  console.log("randomScriptures", randomScriptures[1]);
   const [scripture, setScripture] = useState(0);
 
   useEffect(() => {
     console.log("scripts", randomScriptures);
     const intervalId = setInterval(() => {
       const newIndex = Math.floor(Math.random() * randomScriptures.length);
-      console.log("Updating scripture index to:", newIndex);
+      // Updating scripture index to a random value
       setScripture(newIndex);
     }, 7000);
     return () => clearInterval(intervalId);

@@ -2,9 +2,9 @@
 const mongoose = require('mongoose');
 const eventsSchema = new mongoose.Schema(
     {
-        title: String,
+        name: String,
+        city: String,
         description: String,
-        date: Date,
         createdBy: String, // User ID or username of the creator
         createdAt: { type: Date, default: Date.now }
     }

@@ -433,3 +433,11 @@ carousel-item {
 .ql-align-center>strong {
     font-size: 2rem !important;
 }
+/* +++++++++++++  Encourage.jsx  +++++++++++++ */
+.event-item {
+
+}
+.events-list .event-item:nth-child(odd) {
+  background-color: #333; /* Dark background */
+  color: #fff;            /* Light text */
+}
