@@ -112,9 +112,9 @@ useEffect(() => {
       {events?events.length>1?<h3><span className='bg-info px-2'>{events.length}</span>Current Events</h3>:<h3><span className='bg-info px-2'>{events.length}</span>Current Event</h3>:<h3>Current Events</h3>}
 
         <div className="row event-header">
-            <h4 className='text-start col-lg-3'>Name: {event.name}</h4>
-            <h4 className='text-start col-lg-3'>City: {event.city}</h4>
-            <h4 className='text-start col-lg-5'>Event: {event.description}</h4>
+            <h4 className='text-start col-lg-3'>Name: </h4>
+            <h4 className='text-start col-lg-3'>City: </h4>
+            <h4 className='text-start col-lg-5'>Event: </h4>
           </div>
           <div className="events-list">
         {events.map((event, index) => (
