@@ -15,6 +15,7 @@ import Encourage from './content/Encourage';
 import Introduction from './content/Introduction';
 import Oneliners from './content/Oneliners';
 import Events from './content/Events';
+import Prayers from './content/Prayers';
 
 const OneLess = ({user, setUser}) => {
   // const [data, setData] = useState(null);
@@ -99,7 +100,7 @@ const OneLess = ({user, setUser}) => {
       case 'One Less Event':
         return <Events user={user} />;
       case 'Prayer Requests':
-        return <h1>{lesson}</h1>;
+        return <Prayers user={user} />;
       case 'Questions and AnswersAsk The Bible':
         return <h1>{lesson}</h1>;
       default:

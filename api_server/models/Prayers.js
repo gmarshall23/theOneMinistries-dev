@@ -2,10 +2,11 @@
 const mongoose = require('mongoose');
 const prayersSchema = new mongoose.Schema(
     {
-        title: String,
-        description: String,
-        date: { type: Date, default: Date.now },
+        name: String,
+        subject: String,
+        prayer: String,
         createdBy: String, // User ID or username of the creator
+        createdAt: { type: Date, default: Date.now },
         answered: {
             type: Boolean,
             default: false

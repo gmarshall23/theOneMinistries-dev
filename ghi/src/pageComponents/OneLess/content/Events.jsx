@@ -86,7 +86,7 @@ useEffect(() => {
             />
           </Form.Group>
 
-          <Form.Group controlId="eventDate">
+          <Form.Group controlId="eventCity">
             <Form.Label>Your city</Form.Label>
             <Form.Control
               type="city"
