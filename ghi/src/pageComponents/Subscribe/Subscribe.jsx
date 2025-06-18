@@ -12,6 +12,7 @@ const Subscribe = () => {
     lastName: '',
     username: '',
     password: '',
+    role: 'user', // Default role
     studyStartDate: '',
     giftType: '',
     giftAmount: 0,
@@ -87,10 +88,7 @@ const Subscribe = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // add user data to user collection
-
     // add charity data to charity collection
-
     console.log('charityChecked', charityChecked);
     console.log('charityAmount', charityAmount);
     for (const char in charityChecked) {
@@ -98,10 +96,14 @@ const Subscribe = () => {
         formData.charities.push({ [char]: charityAmount[char + 'Amount'] });
       }
     }
-    console.log('Charity data', formData.charities);
     // add contribution data to contribution collection ** Maybe **
-    console.log('Subscribe Form ready to submit', formData);
-    axios.post('http://localhost:4040/subscribe', formData)
+    // assign username to email and role to user
+    console.log('Form data before submission:', formData);
+    const data = {...formData}
+    data.email = formData.username.toLowerCase();
+    data.role = 'user'; // Ensure role is set to user
+    console.log('Subscribe Form ready to submit', data);
+    axios.post('http://localhost:4040/create_user', data)
       .then((response) => {
         console.log('response', response);
         setModalContent(JSON.stringify(response.data, null, 2));

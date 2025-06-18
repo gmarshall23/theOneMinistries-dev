@@ -68,24 +68,8 @@ const AddStudy = () => {
                 lesson: result[0].content?.lesson.ops || { ops: [{ insert: "\n" }] } // ensure lesson is a delta
 
             };
-            // titleRef.current.value = flatStudyData.title;
-            // docIdRef.current.value = flatStudyData.docId;
-            // docTitleRef.current.value = flatStudyData.docTitle;
-            // docTypeRef.current.value = flatStudyData.docType;
-            // calendarRef.current.value = flatStudyData.calendar;
-            // categoryRef.current.value = flatStudyData.category;
-            // lessonRef.current.value = flatStudyData.lesson;
-            // set the state with the flat study data
-            setStudyData({ ...flatStudyData});
-            // titleRef.current.value = flatStudyData.title;
-            // docIdRef.current.value = flatStudyData.docId;
-            // docTitleRef.current.value = flatStudyData.docTitle;
-            // docTypeRef.current.value = flatStudyData.docType;
-            // calendarRef.current.value = flatStudyData.calendar;
-            // categoryRef.current.value = flatStudyData.category;
-            // lessonRef.current.value = flatStudyData.lesson;
-            // set the state with the flat study data
 
+            setStudyData({ ...flatStudyData});
             setResultId(result[0]._id);
         }
     }
@@ -186,6 +170,7 @@ const AddStudy = () => {
                     calendar: '',
 
                 })
+                fetchStudies();
                 // window.location.href = '/one-less';
             })
             .catch(error => {
