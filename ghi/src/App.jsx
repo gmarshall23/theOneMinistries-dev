@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import Landing from './pageComponents/Landing';
 import OneLess from './pageComponents/OneLess';
+import Admin from './pageComponents/Admin';
 import Header from './components/Header';
 import About from './pageComponents/About/About';
 import './App.css';
@@ -39,6 +40,7 @@ function App() {
           <Route exact path="/logout" element={<Logout setUser={setUser} />} />
           <Route exact path="/study-form" element={<StudyForm setUser={setUser} />} />
           <Route exact path="/my-testimony" element={<MyTestimony />} />
+          <Route exact path="/admin" element={<Admin user={user} setUser={setUser}/>} />
           {/* Add other routes here */}
           <Route path="/one-less" element={<OneLess />}>
             <Route path="living" element={<Living />} />

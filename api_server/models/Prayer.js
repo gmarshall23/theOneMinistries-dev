@@ -1,6 +1,6 @@
-// Model for Prayers
+// Model for Prayer
 const mongoose = require('mongoose');
-const prayersSchema = new mongoose.Schema(
+const prayerSchema = new mongoose.Schema(
     {
         name: String,
         subject: String,
@@ -13,5 +13,5 @@ const prayersSchema = new mongoose.Schema(
         }
     }
 );
-const Prayers = mongoose.model('Prayers', prayersSchema);
-module.exports = Prayers;
+const Prayer = mongoose.model('Prayers', prayerSchema);
+module.exports = Prayer;

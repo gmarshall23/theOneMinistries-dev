@@ -15,6 +15,11 @@ const userSchema = new mongoose.Schema(
             type: String,
             unique: true
         },
+        role: {
+            type: String,
+            enum: ['user', 'admin'],
+            default: 'user'
+        },
         giftType: String,
         giftAmount: String,
         charities: Array,

@@ -56,15 +56,15 @@ const Subscribe = () => {
     const { name, checked } = e.target;
     setChecked(prev => ({ ...prev, [name]: checked }));
     setCharityChecked(prev => ({ ...prev, [name]: checked }));
-    checked&&setCharityAmount(prev => ({ ...prev, [name+'Amount']: '' }));
-    console.log('name, checked', name,checked);
+    checked && setCharityAmount(prev => ({ ...prev, [name + 'Amount']: '' }));
+    console.log('name, checked', name, checked);
     console.log('charityChecked', charityChecked);
 
   }
   const handleCharityAmountChange = (e) => {
     const { name, value } = e.target;
 
-    setCharityAmount({...charityAmount,[name]: value });
+    setCharityAmount({ ...charityAmount, [name]: value });
     console.log('charityAmount', charityAmount);
   }
 
@@ -93,9 +93,9 @@ const Subscribe = () => {
 
     console.log('charityChecked', charityChecked);
     console.log('charityAmount', charityAmount);
-    for(const char in charityChecked){
-      if(charityChecked[char]){
-        formData.charities.push({[char]: charityAmount[char+'Amount']});
+    for (const char in charityChecked) {
+      if (charityChecked[char]) {
+        formData.charities.push({ [char]: charityAmount[char + 'Amount'] });
       }
     }
     console.log('Charity data', formData.charities);
@@ -194,14 +194,14 @@ const Subscribe = () => {
             </Form.Group>
           </Col>
           <Col md={6}>
-          <h5 className='text-start'>Choose a Gift Type</h5>
+            <h5 className='text-start'>Choose a Gift Type</h5>
             <Form.Check
               className='border-primary text-start'
               type="radio"
               label="Single Usage. (Suggest: $1.00 to $5.00)"
               name="giftType"
               id="singleGift"
-              onClick={() => handleGiftType("single-gift")}
+              onClick={() => handleGiftType("Single-gift")}
             />
             <Form.Check
               className="border-primary text-start"
@@ -222,19 +222,19 @@ const Subscribe = () => {
 
             />
 
-<Form.Group controlId="giftAmount" className="d-flex align-items-center ">
+            <Form.Group controlId="giftAmount" className="d-flex align-items-center ">
 
-            <Form.Label className='border-primary text-start'>Gift Amount: ?</Form.Label>
-            <Form.Control
-                    className='border-primary w-25'
-                    type="number"
-                    name='giftAmount'
-                    value={formData.giftAmount}
-                    placeholder="Enter your gift amount"
-                    onChange={handleChange}
-                    required
-                  />
-                  </Form.Group>
+              <Form.Label className='border-primary text-start'>Gift Amount: ?</Form.Label>
+              <Form.Control
+                className='border-primary w-25'
+                type="number"
+                name='giftAmount'
+                value={formData.giftAmount}
+                placeholder="Enter your gift amount"
+                onChange={handleChange}
+                required
+              />
+            </Form.Group>
           </Col>
         </Row>
         <Row className='border border-warning p-0 m-0'>
