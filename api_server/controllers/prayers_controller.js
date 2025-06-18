@@ -1,4 +1,4 @@
-const Prayer = require('../models/prayer.js');
+const Prayer = require('../models/Prayer.js');
 
 const express = require('express');
 const router = express.Router();
