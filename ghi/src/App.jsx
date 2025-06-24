@@ -12,11 +12,23 @@ import Login from './components/Login';
 import Logout from './components/Logout';
 import StudyForm from './pageComponents/OneLess/forms/AddStudy';
 import MyTestimony from './pageComponents/MyTestimony';
-import Living from './pageComponents/OneLess/content/Living';
-import Oneliners from './pageComponents/OneLess/content/Oneliners';
+import OneWay from './pageComponents/OneWay/OneWay';
+import Introduction from './pageComponents/OneWay/content/Introduction';
+import Living from './pageComponents/OneWay/content/Living';
+import Oneliners from './pageComponents/OneWay/content/Oneliners';
+import MeetGod from './pageComponents/OneLess/content/MeetGod';
+import Salvation from './pageComponents/OneLess/content/Salvation';
+import Morals from './pageComponents/OneLess/content/Morals';
+import ConfessSins from './pageComponents/OneLess/content/ConfessSins';
+import WalkWord from './pageComponents/OneLess/content/WalkWord';
+import Encourage from './pageComponents/OneLess/content/Encourage';
+import Events from './pageComponents/OneLess/content/Events';
+import Prayers from './pageComponents/OneLess/content/Prayers';
+import EternallySecure from './pageComponents/OneLess/content/EternallySecure';
 
 function App() {
   const [user, setUser] = useState(null);
+  const [scrips, setScrips] = useState([]);
   useEffect(() => {
     // Retrieve user information from local storage on component mount
     // need to use this useEffect to get user info from DB and store in local storage to insure user info is up to date at render
@@ -33,7 +45,7 @@ function App() {
         <Routes>
           <Route exact path="/" element={<Landing user={user} />} />
           <Route exact path="/about" element={<About />} />
-          <Route exact path="/one-less" element={<OneLess user={user} setUser={setUser} />} />
+          {/* <Route exact path="/one-less" element={<OneLess user={user} setUser={setUser} scrips={scrips} setScrips={setScrips}/>} /> */}
           <Route exact path="/news-stories" element={<NewsStories />} />
           <Route exact path='/subscribe' element={<Subscribe />} />
           <Route exact path="/login" element={<Login user={user} setUser={setUser} />} />
@@ -42,9 +54,21 @@ function App() {
           <Route exact path="/my-testimony" element={<MyTestimony />} />
           <Route exact path="/admin" element={<Admin user={user} setUser={setUser}/>} />
           {/* Add other routes here */}
-          <Route path="/one-less" element={<OneLess />}>
-            <Route path="living" element={<Living />} />
-            <Route path="oneliners" element={Oneliners} />
+          <Route path="/one-way" element={<OneWay user={user} setUser={setUser} scrips={scrips} setScrips={setScrips}/>}></Route>
+          <Route path="/one-less" element={<OneLess user={user} setUser={setUser} scrips={scrips} setScrips={setScrips}/>}>
+            <Route path="introduction" element={<Introduction />} />
+            <Route path="meet-god" element={<MeetGod scrips={scrips} />} />
+            <Route path="salvation" element={<Salvation scrips={scrips} />} />
+            <Route path="morals" element={<Morals scrips={scrips} />} />
+            <Route path="confess-sins" element={<ConfessSins scrips={scrips} />} />
+            <Route path="walk-word" element={<WalkWord scrips={scrips} />} />
+            <Route path="encourage" element={<Encourage scrips={scrips} />} />
+            <Route path="events" element={<Events scrips={scrips} />} />
+            <Route path="living" element={<Living scrips={scrips} />} />
+            <Route path="oneliners" element={<Oneliners />} />
+            <Route path="introduction" element={<Introduction />} />
+            <Route path="prayers" element={<Prayers scrips={scrips} />} />
+            <Route path="eternal-security" element={<EternallySecure scrips={scrips} />} />
           </Route>
         </Routes>
       </div>

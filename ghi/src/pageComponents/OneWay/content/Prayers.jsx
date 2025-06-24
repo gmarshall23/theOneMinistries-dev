@@ -1,6 +1,5 @@
 /* eslint-disable react/prop-types */
 import { useEffect, useState } from "react"
-import { Link } from "react-router-dom"
 import axios from "axios"
 import { Form } from "react-bootstrap"
 
@@ -63,7 +62,7 @@ const Prayers = ({user}) => {
                 </Form.Group>
                 <button type="submit" className="btn btn-primary">Submit</button>
             </Form>
-            <h4>As God answers your prayers, Please add your prayers to <span>One Less Events</span>Please also visit our <Link to="/one-less/living">Living</Link> to receive some helpful words regarding your prayer request</h4>
+            <h4>As God answers your prayers, Please add your prayers to <span>One Less Events</span>Please also visit our <span>Encourage page</span> to receive some helpful words regarding your prayer request</h4>
 
         </>
     )
