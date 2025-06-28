@@ -5,6 +5,7 @@ import { Outlet, Link } from 'react-router-dom';
 import axios from 'axios';
 import './one-less.css';
 import './content/content.css'
+import Menu from '../../components/Menu/'
 import MeetGod from './content/MeetGod';
 import Salvation from './content/Salvation';
 import Living from './content/Living';
@@ -111,6 +112,9 @@ const OneLess = ({ user, setUser, scrips, setScrips }) => {
   };
   return (
     <>
+    <header>
+      <Menu user={user} setUser={setUser} />
+    </header>
       <main className='one-less'>
         <aside className='one-less-aside'>
           <h3>One Less Lessons</h3>

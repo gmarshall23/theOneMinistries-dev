@@ -10,14 +10,12 @@ import NewsStories from './pageComponents/NewsStories';
 import Subscribe from './pageComponents/Subscribe/Subscribe';
 import Login from './components/Login';
 import Logout from './components/Logout';
-import StudyForm from './pageComponents/OneLess/forms/AddStudy';
 import MyTestimony from './pageComponents/MyTestimony';
-import OneWay from './pageComponents/OneWay/OneWay';
 import Introduction from './pageComponents/OneWay/content/Introduction';
-import Living from './pageComponents/OneWay/content/Living';
 import Oneliners from './pageComponents/OneWay/content/Oneliners';
 import MeetGod from './pageComponents/OneLess/content/MeetGod';
 import Salvation from './pageComponents/OneLess/content/Salvation';
+import Living from './pageComponents/OneLess/content/Living';
 import Morals from './pageComponents/OneLess/content/Morals';
 import ConfessSins from './pageComponents/OneLess/content/ConfessSins';
 import WalkWord from './pageComponents/OneLess/content/WalkWord';
@@ -41,20 +39,18 @@ function App() {
   return (
     <Router>
       <div className="app container-fluid justify-content-start">
-        <Header user={user} />
+
         <Routes>
           <Route exact path="/" element={<Landing user={user} />} />
-          <Route exact path="/about" element={<About />} />
+          <Route exact path="/about" element={<About user={user}/>} />
           {/* <Route exact path="/one-less" element={<OneLess user={user} setUser={setUser} scrips={scrips} setScrips={setScrips}/>} /> */}
           <Route exact path="/news-stories" element={<NewsStories />} />
           <Route exact path='/subscribe' element={<Subscribe />} />
           <Route exact path="/login" element={<Login user={user} setUser={setUser} />} />
           <Route exact path="/logout" element={<Logout setUser={setUser} />} />
-          <Route exact path="/study-form" element={<StudyForm setUser={setUser} />} />
           <Route exact path="/my-testimony" element={<MyTestimony />} />
-          <Route exact path="/admin" element={<Admin user={user} setUser={setUser}/>} />
+          <Route exact path="/admin/*" element={<Admin user={user} setUser={setUser}/>} />
           {/* Add other routes here */}
-          <Route path="/one-way" element={<OneWay user={user} setUser={setUser} scrips={scrips} setScrips={setScrips}/>}></Route>
           <Route path="/one-less" element={<OneLess user={user} setUser={setUser} scrips={scrips} setScrips={setScrips}/>}>
             <Route path="introduction" element={<Introduction />} />
             <Route path="meet-god" element={<MeetGod scrips={scrips} />} />
@@ -63,7 +59,7 @@ function App() {
             <Route path="confess-sins" element={<ConfessSins scrips={scrips} />} />
             <Route path="walk-word" element={<WalkWord scrips={scrips} />} />
             <Route path="encourage" element={<Encourage scrips={scrips} />} />
-            <Route path="events" element={<Events scrips={scrips} />} />
+            <Route path="events" element={<Events scrips={scrips} user={user} />} />
             <Route path="living" element={<Living scrips={scrips} />} />
             <Route path="oneliners" element={<Oneliners />} />
             <Route path="introduction" element={<Introduction />} />

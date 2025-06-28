@@ -1,4 +1,7 @@
 .admin-page {
-    background-color: #ebd535;
-  padding: 20px;
+  background-color: #ebd535;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 80vh;
 }

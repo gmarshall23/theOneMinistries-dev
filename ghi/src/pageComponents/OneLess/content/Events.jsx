@@ -6,13 +6,15 @@ import { Form } from 'react-bootstrap'
 
 
 const Events = ({ user }) => {
+
   const [loading, setLoading] = useState(true);
   const [currentDate, setCurrentDate] = useState('');
   const [events, setEvents] = useState([]);
    const [event, setEvent] = useState({
     name: '',
     city: '',
-    description: ''
+    description: '',
+    createdBy: user.username
   });
   const [updateOnSubmit, setUpdateOnSubmit] = useState(false);
   const eventsRef = useRef(events);
@@ -40,7 +42,9 @@ const Events = ({ user }) => {
     return `${year}-${month}-${day}`;
   }
   const handleSubmit = (e) => {
+
   e.preventDefault();
+  console.log('User in Events component:', user.username);
   if (!event.name || !event.city || !event.description) {
     alert('Please fill in all fields');
     return;
@@ -49,7 +53,7 @@ const Events = ({ user }) => {
     name: event.name,
     city: event.city,
     description: event.description,
-    createdBy: user?.username
+    createdBy: event.createdBy
   })
   .then((response) => {
     console.log('Event created successfully:', response.data);

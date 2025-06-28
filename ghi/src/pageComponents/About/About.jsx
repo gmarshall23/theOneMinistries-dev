@@ -1,9 +1,14 @@
+/* eslint-disable react/prop-types */
 /* eslint-disable react/no-unescaped-entities */
 import './about.css'
+import Header from '../../components/Header'
 
-const About = () => {
+const About = ({ user }) => {
   return (
     <>
+    <header>
+        <Header user={user} />
+      </header>
       <main className='about-section about-main'>
         <h1 >About The One Ministries</h1>
         <h2 className='text-start'>The One Ministries Mission Statement</h2>
