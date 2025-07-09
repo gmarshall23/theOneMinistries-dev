@@ -23,6 +23,7 @@ import Encourage from './pageComponents/OneLess/content/Encourage';
 import Events from './pageComponents/OneLess/content/Events';
 import Prayers from './pageComponents/OneLess/content/Prayers';
 import EternallySecure from './pageComponents/OneLess/content/EternallySecure';
+import Questions from './pageComponents/OneLess/content/Questions';
 
 function App() {
   const [user, setUser] = useState(null);
@@ -46,7 +47,7 @@ function App() {
           {/* <Route exact path="/one-less" element={<OneLess user={user} setUser={setUser} scrips={scrips} setScrips={setScrips}/>} /> */}
           <Route exact path="/news-stories" element={<NewsStories />} />
           <Route exact path='/subscribe' element={<Subscribe />} />
-          <Route exact path="/login" element={<Login user={user} setUser={setUser} />} />
+          <Route exact path="/login" element={<Login setUser={setUser} />} />
           <Route exact path="/logout" element={<Logout setUser={setUser} />} />
           <Route exact path="/my-testimony" element={<MyTestimony />} />
           <Route exact path="/admin/*" element={<Admin user={user} setUser={setUser}/>} />
@@ -65,6 +66,7 @@ function App() {
             <Route path="introduction" element={<Introduction />} />
             <Route path="prayers" element={<Prayers scrips={scrips} />} />
             <Route path="eternal-security" element={<EternallySecure scrips={scrips} />} />
+            <Route path="questions" element={<Questions scrips={scrips} user={user} />} />
           </Route>
         </Routes>
       </div>

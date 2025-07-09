@@ -10,7 +10,8 @@ const Users = () => {
 
   return (
     <>
-      <Form className="row g-3">
+        <div><h4 className='text-center'>USERS</h4></div>
+      <Form className="row m-0 p-0 g-3 border">
         <div className="col-lg-6 border">
           <Form.Group as={Row} controlId="formFirstName">
             <Form.Label column sm="5">

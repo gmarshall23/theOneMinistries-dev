@@ -171,8 +171,8 @@ const OneLess = ({ user, setUser, scrips, setScrips }) => {
               </Link>
             </li>
             <li>
-              <Link to="questions-and-answers">
-                <button ref={el => buttonsRef.current[12] = el} onClick={handleClick}>Questions and AnswersAsk The Bible</button>
+              <Link to="questions">
+                <button ref={el => buttonsRef.current[12] = el} onClick={handleClick}>Questions and Answers: Ask The Bible</button>
               </Link>
             </li>
             <h4>Support Us!</h4>

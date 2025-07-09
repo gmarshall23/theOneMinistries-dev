@@ -25,7 +25,6 @@ const corsOptions = {
   credentials: true, // Allow cookies to be sent
 };
 app.use(cors(corsOptions));
-
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 app.use(cookieParser());
@@ -84,6 +83,7 @@ app.post('/login', async (req, res) => {
     user: {
       id: user._id,
       username: user.username,
+      role: user.role,
       firstName: user.firstName,
       lastName: user.lastName,
       email: user.email,

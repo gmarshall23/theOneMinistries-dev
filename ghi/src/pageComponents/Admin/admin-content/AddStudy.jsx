@@ -36,6 +36,21 @@ const AddStudy = () => {
             console.error('Error fetching studies:', error);
         }
     };
+    const clearSearch = async() => {
+        setSearch('');
+        setSearchCategory('');
+        setStudyData({
+            title: '',
+            category: '',
+            docTitle: '',
+            docId: '',
+            docType: '',
+            calendar: '',
+            lesson: { ops: [{ insert: "\n" }] } // reset lesson to empty delta
+        });
+        setResultId('');
+        fetchStudies()
+    }
     const searchData = async () => {
         console.log('searching for:', searchCategory, search);
         console.log('studies to search:', allStudies);
@@ -69,24 +84,22 @@ const AddStudy = () => {
 
             };
 
-            setStudyData({ ...flatStudyData});
+            setStudyData({ ...flatStudyData });
             setResultId(result[0]._id);
         }
     }
     const updateDocument = async () => {
-
-
         axios.put(`http://localhost:4040/update_study/${resultId}`, {
-                title: studyData.title,
-                content: {
-                    docId: studyData.docId,
-                    docTitle: studyData.docTitle,
-                    docType: studyData.docType,
-                    calendar: studyData.calendar,
-                    lesson: studyData.lesson
-                },
-                category: studyData.category
-            })
+            title: studyData.title,
+            content: {
+                docId: studyData.docId,
+                docTitle: studyData.docTitle,
+                docType: studyData.docType,
+                calendar: studyData.calendar,
+                lesson: studyData.lesson
+            },
+            category: studyData.category
+        })
             .then(response => {
                 console.log('Response:', response.data);
             }).then(() => {
@@ -210,11 +223,12 @@ const AddStudy = () => {
     ];
 
     return (
-        <div className='container-fluid border border-primary rounded add-study m-4 p-4'>
-            <div className='row border m-0 p-0 align-items-center justify-content-center'>
+        <>
+            <div><h4 className='text-center'>Add Study</h4></div>
+            <div className='row w-100 border-bottom m-0 p-0 align-items-center justify-content-center'>
                 <p className='col-lg-2 m-0 text-end p-2'><b>Search by:</b></p>
                 <select
-                    className="col-lg-3 p-2"
+                    className="col-lg-2 p-2"
                     aria-label="Default select example"
                     value={searchCategory}
                     onChange={(e) => setSearchCategory(e.target.value)}
@@ -228,11 +242,14 @@ const AddStudy = () => {
                     type="text"
                     name="search"
                     id="search"
-                    className="p-2 m-1 col-4 border rounded"
+                    className="p-2 m-1 col-lg-2 border rounded"
                     value={search}
                     onChange={(e) => setSearch(e.target.value)}
                 />
-                <button type="button" onClick={searchData} className="text-center w-25 btn btn-warning">Search</button>
+                <div className='col-lg-4 d-flex align-items-center'>
+                    <button type="button" onClick={searchData} className="text-center col-3 btn btn-warning mx-2">Search</button>
+                    <button type="button" onClick={clearSearch} className="text-center col-3 btn btn-warning">Clear</button>
+                </div>
             </div>
             <form onSubmit={handleSubmit} className="container-fluid mt-5">
                 <div className='row align-items-center'>
@@ -328,12 +345,12 @@ const AddStudy = () => {
                         style={{ width: '100%', height: '100%' }}
                     />
                 </div>
-                <div className="row align-items-center justify-content-center">
-                    <button type="submit" className="text-center w-25 btn btn-primary">Submit</button>
-                    <button type="button" onClick={updateDocument} className="text-center w-25 btn btn-primary">Update</button>
+                <div className="row g-3 align-items-center justify-content-center">
+                    <div className="col-lg-2"><button type="submit" className="text-center  btn btn-primary">Submit</button></div>
+                    <div className="col-lg-2"><button type="button" onClick={updateDocument} className="text-center  btn btn-primary">Update</button></div>
                 </div>
             </form>
-        </div>
+        </>
     );
 };
 

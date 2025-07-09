@@ -1,21 +1,18 @@
 import { Link, Routes, Route } from 'react-router-dom';
 import { Menu as AntdMenu} from 'antd';
-import Users from './admin-content/Users';
+import Users from './admin-content/AdminUsers';
 import AdminEvents from './admin-content/AdminEvents';
 import AdminPrayers from './admin-content/AdminPrayers';
 import StudyForm from './admin-content/AddStudy';
-import Questions from './admin-content/Questions';
+import Questions from './admin-content/AdminQuestions';
 import './admin.css';
 
 
 const Admin = ({ user, setUser }) => {
   return (
-    <>
-      <header>
+    <div className='container-fluid admin-page'>
+      <header className='admin-header'>
         <h2>This page for Admin tasks</h2>
-      </header>
-      <main className='admin-page'>
-
         <nav>
           <AntdMenu mode="horizontal" style={{ width: '80vw' }} className="border">
             <AntdMenu.Item key="users">
@@ -38,18 +35,17 @@ const Admin = ({ user, setUser }) => {
             </AntdMenu.Item>
           </AntdMenu>
         </nav>
-
-        <section className='admin-content'>
+      </header>
+      <main className='admin-main'>
           <Routes>
             <Route path="admin-users" element={<Users />} />
             <Route path="admin-events" element={<AdminEvents />} />
-            <Route path="admin-prayers" element={<AdminPrayers />} />
+            <Route path="admin-prayers" element={<AdminPrayers user={user}/>} />
             <Route path="admin-studies" element={<StudyForm  />} />
-            <Route path="admin-q-and-a" element={<Questions />} />
+            <Route path="admin-q-and-a" element={<Questions user={user} />} />
           </Routes>
-        </section>
       </main>
-    </>
+    </div>
   );
 };
 

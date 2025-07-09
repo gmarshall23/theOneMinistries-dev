@@ -1,7 +1,29 @@
 .admin-page {
-  background-color: #ebd535;
+  margin: 0 !important;
+ background-color: #ebd535;
+  min-height: 100vh;
+  width: 100vw;
+  padding: 5rem !important;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.add-study label{
+  font-weight: bolder;
+  font-size: 1.25rem;
+  text-align: end;
+}
+.admin-header {
+  height: 15vh;
+  border: 2px solid black;
+}
+.admin-main {
   display: flex;
   flex-direction: column;
   align-items: center;
   min-height: 80vh;
+  overflow: auto;
+  width: 100%;
 }

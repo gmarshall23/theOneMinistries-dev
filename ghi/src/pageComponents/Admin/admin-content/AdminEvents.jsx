@@ -22,7 +22,7 @@ const AdminEvents = () => {
 
   return (
   <>
-    <div>AdminEvents</div>
+    <div><h4 className='text-center'>EVENTS</h4></div>
     <Table striped bordered hover>
       <thead>
         <tr>

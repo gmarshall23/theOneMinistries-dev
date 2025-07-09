@@ -1,5 +1,6 @@
 const express = require('express');
 const router = express.Router();
+
 const user_Controller = require('../controllers/user_controller')
 const scrip_Controller = require('../controllers/scrip_controller.js')
 const encourage_Controller = require('../controllers/encourage_controller')
@@ -8,6 +9,7 @@ const contirbution_Controller = require('../controllers/contribution_controller'
 const study_Controller = require('../controllers/study_controller');
 const events_Controller = require('../controllers/events_controller');
 const prayers_controller = require('../controllers/prayers_controller');
+const questions_controller = require('../controllers/questions_controller');
 
 module.exports = (app) => {
 
@@ -23,8 +25,6 @@ app.put('/update_study/:id', study_Controller.updateStudy)
 app.put('/add_study_info', study_Controller.addStudyInfo)
 // app.delete('/delete_study/:id', study_Controller.deleteStudy)
 
-// app.post('/create_user', user_Controller.createUser);
-// app.post('/login', user_Controller.login);
 // app.post('/contribution', authenticateToken,contirbution_Controller.createContribution);
 
 // ******** charity routes *********//
@@ -48,10 +48,14 @@ app.get('/get_events', events_Controller.getEvents);
 app.post('/create_prayer', prayers_controller.createPrayer);
 app.get('/get_prayers', prayers_controller.getPrayers);
 
-// app.get('/get_user/:id', user_Controller.getUser)
-// app.get('/get_contribution/:id', contirbution_Controller.getContribution)
+// ******** Questions routes *********//
+app.post('/create_question', questions_controller.createQuestion);
+app.get('/get_questions', questions_controller.getQuestions);
+app.get('/get_question/:id', questions_controller.getQuestionById);
+app.put('/update_question/:id', questions_controller.updateQuestion);
+app.delete('/delete_question/:id', questions_controller.deleteQuestion);
 
-// app.put('/updateUser/:id', user_Controller.updateUserData)
+// app.get('/get_contribution/:id', contirbution_Controller.getContribution)
 
 // app.put('/add_moral/:id', user_Controller.addMoral)
 
