@@ -1,7 +1,16 @@
 import { useState, useEffect, useRef } from 'react';
 import axios from 'axios';
-import ReactQuill from 'react-quill';
+import ReactQuill, { Quill } from 'react-quill';
+import { Modal, Button } from 'react-bootstrap';
 import 'react-quill/dist/quill.snow.css';
+
+// Manually import and register the table module
+// This is necessary because the standard Quill build used by react-quill
+// does not include the table module by default.
+import Table from 'quill/modules/table';
+Quill.register({
+    'modules/table': Table,
+}, true);
 
 const AddStudy = () => {
     const [studyData, setStudyData] = useState({
@@ -17,6 +26,8 @@ const AddStudy = () => {
     const [searchCategory, setSearchCategory] = useState('');
     const [search, setSearch] = useState('');
     const [resultId, setResultId] = useState('');
+    const [showSuccessModal, setShowSuccessModal] = useState(false);
+    const [modalMessage, setModalMessage] = useState('');
     // refs
     const docTitleRef = useRef();
     const docIdRef = useRef();
@@ -26,7 +37,7 @@ const AddStudy = () => {
     const calendarRef = useRef();
     const lessonRef = useRef();
 
-
+    const handleCloseModal = () => setShowSuccessModal(false);
 
     const fetchStudies = async () => {
         try {
@@ -102,7 +113,8 @@ const AddStudy = () => {
         })
             .then(response => {
                 console.log('Response:', response.data);
-            }).then(() => {
+                setModalMessage('Study updated successfully!');
+                setShowSuccessModal(true);
                 setStudyData({
                     category: '',
                     title: '',
@@ -110,16 +122,13 @@ const AddStudy = () => {
                     docTitle: '',
                     docType: '',
                     calendar: '',
-
-                })
-            })
-            .then(() => {
+                    lesson: { ops: [{ insert: "\n" }] }
+                });
                 fetchStudies();
             })
             .catch(error => {
                 console.error('Error:', error);
             });
-        console.log('Updated data:', studyData);
     }
     useEffect(() => {
         fetchStudies();
@@ -173,7 +182,8 @@ const AddStudy = () => {
             })
             .then(response => {
                 console.log('Response:', response.data);
-            }).then(() => {
+                setModalMessage('Study created successfully!');
+                setShowSuccessModal(true);
                 setStudyData({
                     category: '',
                     title: '',
@@ -181,12 +191,10 @@ const AddStudy = () => {
                     docTitle: '',
                     docType: '',
                     calendar: '',
-
-                })
+                    lesson: { ops: [{ insert: "\n" }] }
+                });
                 fetchStudies();
-                // window.location.href = '/one-less';
-            })
-            .catch(error => {
+            }).catch(error => {
                 console.error('Error:', error);
             });
         console.log('Submitted data:', newStudy);
@@ -204,14 +212,15 @@ const AddStudy = () => {
             // List and indentation
             [{ list: 'ordered' }, { list: 'bullet' }, { indent: '-1' }, { indent: '+1' }],
             // Links, images, and videos
-            ['link', 'image', 'video'],
+            ['link', 'image', 'video', 'table'],
             // Color and background color
             [{ color: [] }, { background: [] }],
             // Text align
             [{ align: [] }],
             // Remove formatting button
             ['clean']
-        ]
+        ],
+
     };
 
     const formats = [
@@ -219,13 +228,14 @@ const AddStudy = () => {
         'bold', 'italic', 'underline', 'strike', 'blockquote',
         'list', 'bullet', 'indent',
         'link', 'image', 'video',
-        'color', 'background', 'align'
+        'color', 'background', 'align',
+        'table', 'tr', 'td' // Whitelist table-related formats
     ];
 
     return (
         <>
             <div><h4 className='text-center'>Add Study</h4></div>
-            <div className='row w-100 border-bottom m-0 p-0 align-items-center justify-content-center'>
+            <div className='row border-bottom m-0 p-0 align-items-center justify-content-center'>
                 <p className='col-lg-2 m-0 text-end p-2'><b>Search by:</b></p>
                 <select
                     className="col-lg-2 p-2"
@@ -251,6 +261,7 @@ const AddStudy = () => {
                     <button type="button" onClick={clearSearch} className="text-center col-3 btn btn-warning">Clear</button>
                 </div>
             </div>
+            <div>
             <form onSubmit={handleSubmit} className="container-fluid mt-5">
                 <div className='row align-items-center'>
                     <div className="col-6">
@@ -350,6 +361,19 @@ const AddStudy = () => {
                     <div className="col-lg-2"><button type="button" onClick={updateDocument} className="text-center  btn btn-primary">Update</button></div>
                 </div>
             </form>
+            </div>
+
+            <Modal show={showSuccessModal} onHide={handleCloseModal}>
+                <Modal.Header closeButton>
+                    <Modal.Title>Success</Modal.Title>
+                </Modal.Header>
+                <Modal.Body>{modalMessage}</Modal.Body>
+                <Modal.Footer>
+                    <Button variant="secondary" onClick={handleCloseModal}>
+                        Close
+                    </Button>
+                </Modal.Footer>
+            </Modal>
         </>
     );
 };

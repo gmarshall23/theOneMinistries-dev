@@ -441,3 +441,11 @@ carousel-item {
   background-color: #333; /* Dark background */
   color: #fff;            /* Light text */
 }
+.encourage-list li {
+    color: navy;
+
+}
+.encourage-list li:hover {
+    color: red;
+    cursor: pointer;
+}

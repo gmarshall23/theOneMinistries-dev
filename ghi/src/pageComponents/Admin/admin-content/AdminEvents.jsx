@@ -23,6 +23,7 @@ const AdminEvents = () => {
   return (
   <>
     <div><h4 className='text-center'>EVENTS</h4></div>
+    <div>
     <Table striped bordered hover>
       <thead>
         <tr>
@@ -55,6 +56,7 @@ const AdminEvents = () => {
         </tr>
       </tbody>
     </Table>
+    </div>
     </>
   )
 }

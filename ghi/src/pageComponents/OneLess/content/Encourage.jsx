@@ -11,7 +11,7 @@ import moralStruggle from './one-less-assets/moralStruggle.jpeg';
 const Encourage = () => {
 
   // setup for encourage Modals //
-  const [encourage, setEncourage] = useState([]);
+  const [encourages, setEncourages] = useState([]);
   const [struggleArea, setstruggleArea] = useState({});
   const [showEncourage, setShowEncourage] = useState(false);
   const contentRef = useRef(null); // Create a ref for encourage-content
@@ -21,12 +21,17 @@ const Encourage = () => {
 
   const getData = async () => {
     axios.get('http://localhost:4040/get_encourage')
-      .then(response => setEncourage(response.data))
-      .then(console.log('Encourage topics:', encourage))
+      .then(response => setEncourages(response.data))
+      .then(console.log('Encourage topics:', encourages))
       .catch(error => console.error('Error fetching encourage topics:', error));
   }
   const handleStruggleArea = (e) => {
-    const area = encourage.filter(item => item.text === e.target.value)
+    const area = encourages.filter(item => item.text === e.target.value)
+    setstruggleArea(area[0])
+    handleShow();
+  }
+  const handleStruggleArea2 = (e) => {
+    const area = encourages.filter(item => item.text === e.target.id)
     setstruggleArea(area[0])
     handleShow();
   }
@@ -54,7 +59,7 @@ const Encourage = () => {
         <p>I'm struggling in the area of <span>
           <select value={struggleArea.text} onChange={handleStruggleArea}>
             <option value="">Select a topic...</option>
-            {encourage.map((item, index) => (
+            {encourages.map((item, index) => (
               <option key={index} value={item.text}>
                 {item.text}
               </option>
@@ -62,6 +67,11 @@ const Encourage = () => {
           </select>
         </span>. Please encourage me...
         </p>
+        <ul className="encourage-list">
+          {encourages.map((item, index) => (
+            <li key={index} id={item.text} onClick={handleStruggleArea2}>{item.text}</li>
+          ))}
+        </ul>
           <p className="white"><u className="" data-tooltip-id="tooltip" data-html="true" data-tooltip-content="MEDITATE:
           1. Reading
           2. Believing
@@ -69,7 +79,7 @@ const Encourage = () => {
           4. Applying
           5. Obeying">Meditate</u> on these truths in your struggle and be encouraged that God will never leave you or
             forsake you in your time of need.</p>
-          <p className="white">If you feel a greater need for help please click <Link className="purple" to="/hotline">Hotline<span className="pix10 rojo">(Placeholder)</span></Link> to
+          <p className="white">If you feel a greater need for help please click <Link  to="/hotline">Hotline<span >(Placeholder)</span></Link> to
             get to an actual person for deeper intervention.</p>
 
           <h5 className="darkBlue">TOPICS - <span className="purple">Remember:</span> YOU ARE NOT ALONE</h5>
@@ -79,6 +89,7 @@ const Encourage = () => {
             If you want to pray more specifically, go to <Link className="purple" to="/prayer" >Prayer Request</Link> and we would love to pray with you right now.
           </h5>
         </div>
+
         <Modal show={showEncourage}
               onHide={handleClose}
               container={contentRef.current}
@@ -100,6 +111,13 @@ const Encourage = () => {
             </Button>
           </Modal.Footer>
         </Modal>
+      </div>
+      <div>
+        <ul>
+          {encourages.map((item, index) => (
+            <li key={index}>{item.text}</li>
+          ))}
+        </ul>
       </div>
       <h3 className="darkBlue p-2">Remember...</h3>
       <ol className="darkBlue pix10 p-2">

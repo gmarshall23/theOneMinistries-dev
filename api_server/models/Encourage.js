@@ -2,9 +2,9 @@ const mongoose = require('mongoose');
 
 const encourageSchema = new mongoose.Schema(
     {
-        quote: String,
         text: String,
         scripture: String,
+        quote: String,
         prayer: String
     }
 )

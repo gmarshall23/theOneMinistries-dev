@@ -1,12 +1,15 @@
 /* eslint-disable react/prop-types */
 import {useState, useEffect, useMemo} from 'react'
 import axios from 'axios'
-import { Form, Card } from 'react-bootstrap'
+import { Form, Card, Modal, Button } from 'react-bootstrap'
 
 
 const Questions = ({user}) => {
     const [questions, setQuestions] = useState([]);
     const [newQuestion, setNewQuestion] = useState('');
+    const [showModal, setShowModal] = useState(false);
+
+    const handleCloseModal = () => setShowModal(false);
     const handleSubmitQuestion = (e) => {
         e.preventDefault();
         if (!newQuestion) {
@@ -20,6 +23,7 @@ const Questions = ({user}) => {
         axios.post('http://localhost:4040/create_question', questionData)
             .then((response) => {
                 console.log('Question submitted successfully:', response.data);
+                setShowModal(true);
                 setNewQuestion(''); // Reset the input field
                 setQuestions([...questions, response.data]); // Update the questions list
             })
@@ -73,7 +77,7 @@ const Questions = ({user}) => {
 </button>
             </Form>
             <div className="row g-3 mt-3">
-                {questions.length > 0 && questions.map((question, index) => (
+                {questions.length > 0 && (questions.filter((question) => question.answered === true)).map((question, index) => (
                     <div key={index} className="col-4">
                         <Card className="h-100">
                             <Card.Body style={{ maxHeight: '15rem', overflowY: 'auto' }}>
@@ -92,6 +96,19 @@ const Questions = ({user}) => {
                     </div>
                 ))}
             </div>
+            <Modal show={showModal} onHide={handleCloseModal}>
+                <Modal.Header closeButton>
+                    <Modal.Title>Submission Successful</Modal.Title>
+                </Modal.Header>
+                <Modal.Body>
+                    Thank you for your question. Your question has been successfully submitted and will be reviewed and the answer will post within 48 hours”. Please check back here later for your answer
+                </Modal.Body>
+                <Modal.Footer>
+                    <Button variant="secondary" onClick={handleCloseModal}>
+                        Close
+                    </Button>
+                </Modal.Footer>
+            </Modal>
         </>
 
     )

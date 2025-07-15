@@ -89,7 +89,7 @@ const Salvation = ({ user, scrips }) => {
 					<li>{scripObj['Ephesians 1:13']}</li>
 				</ol>
 			</div>
-			<p >Next, go the <Link className="text-primary" to="/Living">Living</Link> page to discover what your next steps should be after giving your life to Jesus Christ.</p>
+			<p >Next, go the <Link className="text-primary" to="/one-less/living">Living</Link> page to discover what your next steps should be after giving your life to Jesus Christ.</p>
 			{/* react-bootstrap ToolTip component used for scriptures and definitions */}
 			<Tooltip className='' id="tooltip" place="right"
 				style={{
