@@ -80,7 +80,7 @@ function Landing({ user }) {
           </section>
         </section>
         <Welcome />
-        <section className='border d-flex justify-content-center align-items-center p-5'>
+        <section className='bg-warning border d-flex justify-content-center align-items-center p-5'>
           <Card className="testimony-card text-center border border-primary p-0 w-75">
             <Card.Title><h3>My Testimony</h3></Card.Title>
             <Card.Body

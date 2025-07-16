@@ -1,7 +1,12 @@
+.about {
+    min-height: 100vh;
+    overflow: auto;
+    background-color: transparent;
+}
 .about-main {
     border: 2px solid #ccc !important;
     padding: 80px !important;
-    overflow: auto;
+
 }
 
 .about-section h1 {

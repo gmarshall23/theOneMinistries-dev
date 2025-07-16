@@ -2,10 +2,12 @@
 /* eslint-disable react/no-unescaped-entities */
 import './about.css'
 import Header from '../../components/Header'
+import Footer from '../../components/Footer'
+
 
 const About = ({ user }) => {
   return (
-    <>
+    <div className="about" >
     <header>
         <Header user={user} />
       </header>
@@ -31,7 +33,8 @@ const About = ({ user }) => {
         </ul>
         <p className='text-start text-indent p-5'><em>By aligning with these mission components, goals, and foundational reasons, THE ONE MINISTRIES seeks to be a beacon for believers and seekers alike, guiding them toward a deeper, more intentional relationship with God.</em></p>
       </main>
-    </>
+      <Footer />
+    </div>
   )
 }
 

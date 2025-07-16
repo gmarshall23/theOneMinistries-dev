@@ -91,7 +91,7 @@ const AddStudy = () => {
                 docId: result[0].content?.docId,
                 docType: result[0].content?.docType,
                 calendar: result[0].content?.calendar,
-                lesson: result[0].content?.lesson.ops || { ops: [{ insert: "\n" }] } // ensure lesson is a delta
+                lesson: result[0].content?.lesson || { ops: [{ insert: "\n" }] } // FIX: Ensure lesson is a valid Delta object
 
             };
 
@@ -115,15 +115,7 @@ const AddStudy = () => {
                 console.log('Response:', response.data);
                 setModalMessage('Study updated successfully!');
                 setShowSuccessModal(true);
-                setStudyData({
-                    category: '',
-                    title: '',
-                    docId: '',
-                    docTitle: '',
-                    docType: '',
-                    calendar: '',
-                    lesson: { ops: [{ insert: "\n" }] }
-                });
+                clearSearch();
                 fetchStudies();
             })
             .catch(error => {
@@ -140,17 +132,18 @@ const AddStudy = () => {
     //     console.log('All studies:', allStudies);
     // }, [allStudies]);
     const handleChange = (e) => {
-
-        setStudyData({
-            ...studyData,
+        // Use functional update to prevent stale state issues
+        setStudyData(prevData => ({
+            ...prevData,
             [e.target.name]: e.target.value
-        });
+        }));
     };
     const handleQuillChange = (content, delta, source, editor) => {
-        setStudyData({
-            ...studyData,
+        // Use functional update to prevent stale state issues
+        setStudyData(prevData => ({
+            ...prevData,
             lesson: editor.getContents()
-        });
+        }));
     };
 
     const handleSubmit = (e) => {
@@ -184,15 +177,7 @@ const AddStudy = () => {
                 console.log('Response:', response.data);
                 setModalMessage('Study created successfully!');
                 setShowSuccessModal(true);
-                setStudyData({
-                    category: '',
-                    title: '',
-                    docId: '',
-                    docTitle: '',
-                    docType: '',
-                    calendar: '',
-                    lesson: { ops: [{ insert: "\n" }] }
-                });
+                clearSearch();
                 fetchStudies();
             }).catch(error => {
                 console.error('Error:', error);
