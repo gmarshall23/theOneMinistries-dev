@@ -376,6 +376,10 @@
         "scripture": "Be devoted to one another in love. Honor one another above yourselves."
     },
     {
+        "quote": "Rom 12:15",
+        "scripture": "Rejoice with those who rejoice; mourn with those who mourn."
+    },
+    {
         "quote": "John 15:30",
         "scripture": "Greater love has no one than this: to lay down one's life for one's friends."
     },
@@ -1829,7 +1833,7 @@
       },
       {
         "quote": "John 14:2-3",
-        "scripture": "My Father’s house has many rooms; if that were not so, would I have told you that I am going there to prepare a place for you? And if I go and prepare a place for you, I will come back and take you to be with me that you also may be where I am."
+        "scripture": "My Father's house has many rooms; if that were not so, would I have told you that I am going there to prepare a place for you? And if I go and prepare a place for you, I will come back and take you to be with me that you also may be where I am."
       },
       {
         "quote": "Romans 10:9-10",
@@ -1837,7 +1841,7 @@
       },
     {
         "quote": "1 Cor 10:23-24 ",
-        "scripture": "'I have the right to do anything,' you say—but not everything is beneficial. ‘I have the right to do anything’—but not everything is constructive. No one should seek their own good, but the good of others. "
+        "scripture": "'I have the right to do anything,' you say—but not everything is beneficial. 'I have the right to do anything'—but not everything is constructive. No one should seek their own good, but the good of others. "
     },
     {
         "quote": "Phil 2:3-4 ",
@@ -1846,6 +1850,850 @@
     {
         "quote": "Prov 3:5-6 ",
         "scripture": "Trust in the Lord with all your heart and lean not on your own understanding; 6 in all your ways submit to him, and he will make your paths straight. "
-    }
+    },
 
+     {
+    "quote": "Matt 19:4-6",
+    "scripture": "'Haven't you read,' he replied, 'that at the beginning the Creator made them male and female,' and said, 'For this reason a man will leave his father and mother and be united to his wife, and the two will become one flesh'? So they are no longer two, but one flesh. Therefore what God has joined together, let no one separate.'"
+  },
+  {
+    "quote": "Ex 20:13",
+    "scripture": "'You shall not murder.'"
+  },
+  {
+    "quote": "1 Pet 5:7",
+    "scripture": "Cast all your anxiety on him because he cares for you."
+  },
+  {
+    "quote": "Ex 20:15",
+    "scripture": "'You shall not steal.'"
+  },
+  {
+    "quote": "Rom 13:9",
+    "scripture": "The commandments, 'You shall not commit adultery,' 'You shall not murder,' 'You shall not steal,' 'You shall not covet,' and whatever other command there may be, are summed up in this one command: 'Love your neighbor as yourself.'"
+  },
+  {
+    "quote": "Eph 4:28",
+    "scripture": "Anyone who has been stealing must steal no longer, but must work, doing something useful with their own hands, that they may have something to share with those in need."
+  },
+  {
+    "quote": "Acts 27:31",
+    "scripture": "Then Paul said to the centurion and the soldiers, 'Unless these men stay with the ship, you cannot be saved.'"
+  },
+  {
+    "quote": "Psalms 46:10",
+    "scripture": "'Be still, and know that I am God; I will be exalted among the nations, I will be exalted in the earth.'"
+  },
+  {
+    "quote": "Jam 1:2-4",
+    "scripture": "Consider it pure joy, my brothers and sisters, whenever you face trials of many kinds, because you know that the testing of your faith produces perseverance. Let perseverance finish its work so that you may be mature and complete, not lacking anything."
+  },
+{
+	"quote": "Ps 139:13-14 ",
+	"scripture": "For you created my inmost being; you knit me together in my mother's womb. I praise you because I am fearfully and wonderfully made; your works are wonderful, I know that full well. "
+},
+{
+	"quote": "Mal 2:16 ",
+	"scripture": "'The man who hates and divorces his wife,' says the Lord, the God of Israel, 'does violence to the one he should protect,' says the Lord Almighty. So be on your guard, and do not be unfaithful."
+},
+{
+    "quote": "Rom 5:8",
+    "scripture": "But God demonstrates his own love for us in this: While we were still sinners, Christ died for us."
+  },
+  {
+    "quote": "1 John 1:9",
+    "scripture": "If we confess our sins, he is faithful and just and will forgive us our sins and purify us from all unrighteousness."
+  },
+  {
+    "quote": "Phil 3:13-14",
+    "scripture": "Brothers and sisters, I do not consider myself yet to have taken hold of it. But one thing I do: Forgetting what is behind and straining toward what is ahead, I press on toward the goal to win the prize for which God has called me heavenward in Christ Jesus."
+  },
+  {
+    "quote": "Rom 8:30-31",
+    "scripture": "And those he predestined, he also called; those he called, he also justified; those he justified, he also glorified. What, then, shall we say in response to these things? If God is for us, who can be against us?"
+  },
+{
+	"quote": "Matt 10:30 ",
+	"scripture": "And even the very hairs of your head are all numbered. "
+},
+{
+	"quote": "Ps 68:19",
+	"scripture": "Praise be to the Lord, to God our Savior, who daily bears our burdens. "
+},
+  {
+    "quote": "John 14:15",
+    "scripture": "If you love me, keep my commands."
+  },
+   {
+    "quote": "Mic 7:18",
+    "scripture": "Who is a God like you, who pardons sin and forgives the transgression of the remnant of his inheritance? You do not stay angry forever but delight to show mercy."
+  },
+  {
+    "quote": "Lam 3:22-23",
+    "scripture": "Because of the Lord's great love we are not consumed, for his compassions never fail. They are new every morning; great is your faithfulness."
+  },
+  {
+    "quote": "Heb 4:16",
+    "scripture": "Let us then approach God's throne of grace with confidence, so that we may receive mercy and find grace to help us in our time of need."
+  },
+  {
+    "quote": "1 Sam 15:22-23",
+    "scripture": "But Samuel replied: 'Does the Lord delight in burnt offerings and sacrifices as much as in obeying the Lord? To obey is better than sacrifice, and to heed is better than the fat of rams. For rebellion is like the sin of divination, and arrogance like the evil of idolatry. Because you have rejected the word of the Lord, he has rejected you as king.'"
+  },
+  {
+    "quote": "Gal 5:16",
+    "scripture": "So I say, walk by the Spirit, and you will not gratify the desires of the flesh."
+  },
+{
+    "quote": "Eph 2:8-9",
+    "scripture": "For it is by grace you have been saved, through faith—and this is not from yourselves, it is the gift of God—not by works, so that no one can boast."
+  },
+  {
+    "quote": "1 Cor 12:12-13",
+    "scripture": "Just as a body, though one, has many parts, but all its many parts form one body, so it is with Christ. For we were all baptized by one Spirit so as to form one body—whether Jews or Gentiles, slave or free—and we were all given the one Spirit to drink."
+  },
+  {
+    "quote": "1 Cor 12:27",
+    "scripture": "Now you are the body of Christ, and each one of you is a part of it."
+  },
+  {
+    "quote": "John 14:16-17",
+    "scripture": "And I will ask the Father, and he will give you another advocate to help you and be with you forever—the Spirit of truth. The world cannot accept him, because it neither sees him nor knows him. But you know him, for he lives with you and will be in you."
+  },
+  {
+    "quote": "John 14:26",
+    "scripture": "But the Advocate, the Holy Spirit, whom the Father will send in my name, will teach you all things and will remind you of everything I have said to you."
+  },
+{
+    "quote": "John 6:35",
+    "scripture": "Then Jesus declared, 'I am the bread of life. Whoever comes to me will never go hungry, and whoever believes in me will never be thirsty.'"
+  },
+  {
+    "quote": "Matthew 14:13-21",
+    "scripture": "Taking the five loaves and the two fish and looking up to heaven, he gave thanks and broke the loaves... They all ate and were satisfied, and the disciples picked up twelve basketfuls of broken pieces that were left over."
+  },
+  {
+    "quote": "Exodus 16:4",
+    "scripture": "Then the Lord said to Moses, 'I will rain down bread from heaven for you. The people are to go out each day and gather enough for that day.'"
+  },
+  {
+    "quote": "Luke 22:19",
+    "scripture": "And he took bread, gave thanks and broke it, and gave it to them, saying, 'This is my body given for you; do this in remembrance of me.'"
+  },
+  {
+    "quote": "Matthew 15:21-28",
+    "scripture": "She said, 'Yes it is, Lord,' she said. 'Even the dogs eat the crumbs that fall from their master's table.'"
+  },
+  {
+    "quote": "Matthew 6:11",
+    "scripture": "Give us today our daily bread."
+  },
+  {
+    "quote": "Deuteronomy 8:3",
+    "scripture": "He humbled you, causing you to hunger and then feeding you with manna... to teach you that man does not live on bread alone but on every word that comes from the mouth of the Lord."
+  },
+  {
+    "quote": "John 6:51",
+    "scripture": "I am the living bread that came down from heaven. Whoever eats this bread will live forever. This bread is my flesh, which I will give for the life of the world."
+  },
+  {
+    "quote": "Isaiah 55:2",
+    "scripture": "Why spend money on what is not bread, and your labor on what does not satisfy? Listen, listen to me, and eat what is good, and you will delight in the richest of fare."
+  },
+  {
+    "quote": "Psalm 78:24",
+    "scripture": "He rained down manna for the people to eat, he gave them the grain of heaven."
+  },
+  {
+    "quote": "Proverbs 30:8",
+    "scripture": "Give me neither poverty nor riches, but give me only my daily bread."
+  },
+  {
+    "quote": "Ecclesiastes 11:1",
+    "scripture": "Ship your grain across the sea; after many days you may receive a return."
+  },
+  {
+    "quote": "Mark 8:14-21",
+    "scripture": "Be careful,' Jesus warned them. 'Watch out for the yeast of the Pharisees and that of Herod.'"
+  },
+  {
+    "quote": "Luke 11:5-13",
+    "scripture": "Suppose you have a friend, and you go to him at midnight and say, 'Friend, lend me three loaves of bread...'"
+  },
+  {
+    "quote": "1 Kings 17:12-16",
+    "scripture": "'As surely as the Lord your God lives,' she replied, 'I don't have any bread—only a handful of flour in a jar and a little olive oil in a jug...'"
+  },
+  {
+    "quote": "Hebrews 9:2",
+    "scripture": "A tabernacle was set up. In its first room were the lampstand and the table with its consecrated bread; this was called the Holy Place."
+  },
+  {
+    "quote": "Matthew 4:4",
+    "scripture": "Jesus answered, 'It is written: Man shall not live on bread alone, but on every word that comes from the mouth of God.'"
+  },
+{
+    "quote": "John 14:27",
+    "scripture": "Peace I leave with you; my peace I give you. I do not give to you as the world gives. Do not let your hearts be troubled and do not be afraid."
+  },
+  {
+    "quote": "Jam 1:2",
+    "scripture": "Consider it pure joy, my brothers and sisters, whenever you face trials of many kinds."
+  },
+  {
+    "quote": "Jam 1:22",
+    "scripture": "Do not merely listen to the word, and so deceive yourselves. Do what it says."
+  },
+  {
+    "quote": "2 Cor 1:7",
+    "scripture": "And our hope for you is firm, because we know that just as you share in our sufferings, so also you share in our comfort."
+  },
+{
+    "quote": "2 Tim 3:15-17",
+    "scripture": "and how from infancy you have known the Holy Scriptures, which are able to make you wise for salvation through faith in Christ Jesus. All Scripture is God-breathed and is useful for teaching, rebuking, correcting and training in righteousness, so that the servant of God may be thoroughly equipped for every good work."
+  },
+  {
+    "quote": "Acts 5:41-42",
+    "scripture": "The apostles left the Sanhedrin, rejoicing because they had been counted worthy of suffering disgrace for the Name. Day after day, in the temple courts and from house to house, they never stopped teaching and proclaiming the good news that Jesus is the Messiah."
+  },
+  {
+    "quote": "Matt 5:12",
+    "scripture": "Rejoice and be glad, because great is your reward in heaven, for in the same way they persecuted the prophets who were before you."
+  },
+  {
+    "quote": "Phil 3:20",
+    "scripture": "But our citizenship is in heaven. And we eagerly await a Savior from there, the Lord Jesus Christ."
+  },
+  {
+    "quote": "2 Cor 5:20",
+    "scripture": "We are therefore Christ's ambassadors, as though God were making his appeal through us. We implore you on Christ's behalf: Be reconciled to God."
+  },
+  {
+    "quote": "Ps 139:13-14",
+    "scripture": "For you created my inmost being; you knit me together in my mother's womb. I praise you because I am fearfully and wonderfully made; your works are wonderful, I know that full well."
+  },
+  {
+    "quote": "Jer 1:5",
+    "scripture": "Before I formed you in the womb I knew you, before you were born I set you apart; I appointed you as a prophet to the nations."
+  },
+  {
+    "quote": "Ecc 3:8",
+    "scripture": "a time to love and a time to hate, a time for war and a time for peace."
+  },
+  {
+    "quote": "Matt 5:9",
+    "scripture": "Blessed are the peacemakers, for they will be called children of God."
+  },
+  {
+    "quote": "Gen 12:2-3",
+    "scripture": "I will make you into a great nation, and I will bless you; I will make your name great, and you will be a blessing. I will bless those who bless you, and whoever curses you I will curse; and all peoples on earth will be blessed through you."
+  },
+  {
+    "quote": "Rom 11:1",
+    "scripture": "I ask then: Did God reject his people? By no means! I am an Israelite myself, a descendant of Abraham, from the tribe of Benjamin."
+  },
+  {
+    "quote": "Rom 13:1",
+    "scripture": "Let everyone be subject to the governing authorities, for there is no authority except that which God has established. The authorities that exist have been established by God."
+  },
+  {
+    "quote": "1 Pet 2:13-14",
+    "scripture": "Submit yourselves for the Lord's sake to every human authority: whether to the emperor, as the supreme authority, or to governors, who are sent by him to punish those who do wrong and to commend those who do right."
+  },
+  {
+    "quote": "Lev 19:34",
+    "scripture": "The foreigner residing among you must be treated as your native-born. Love them as yourself, for you were foreigners in Egypt. I am the Lord your God."
+  },
+  {
+    "quote": "Matt 25:35",
+    "scripture": "For I was hungry and you gave me something to eat, I was thirsty and you gave me something to drink, I was a stranger and you invited me in."
+  },
+  {
+    "quote": "Prov 1:7",
+    "scripture": "The fear of the Lord is the beginning of knowledge, but fools despise wisdom and instruction."
+  },
+  {
+    "quote": "Deut 6:6-7",
+    "scripture": "These commandments that I give you today are to be on your hearts. Impress them on your children. Talk about them when you sit at home and when you walk along the road, when you lie down and when you get up."
+  },
+  {
+    "quote": "Mal 6:8",
+    "scripture": "He has shown you, O mortal, what is good. And what does the Lord require of you? To act justly and to love mercy and to walk humbly with your God."
+  },
+  {
+    "quote": "Isa 1:17",
+    "scripture": "Learn to do right; seek justice. Defend the oppressed. Take up the cause of the fatherless; plead the case of the widow."
+  },
+{
+	"quote": "2 Cor 10:5 ",
+	"scripture": "We demolish arguments and every pretension that sets itself up against the knowledge of God, and we take captive every thought to make it obedient to Christ. "
+},
+  {
+    "quote": "Rev 3:20",
+    "scripture": "Here I am! I stand at the door and knock. If anyone hears my voice and opens the door, I will come in and eat with that person, and they with me."
+  },
+  {
+    "quote": "Jam 2:20",
+    "scripture": "You foolish person, do you want evidence that faith without deeds is useless?"
+  },
+  {
+    "quote": "Jam 2:18",
+    "scripture": "But someone will say, 'You have faith; I have deeds.' Show me your faith without deeds, and I will show you my faith by my deeds."
+  },
+  {
+    "quote": "Gal 5:22",
+    "scripture": "But the fruit of the Spirit is love, joy, peace, forbearance, kindness, goodness, faithfulness,"
+  },
+  {
+    "quote": "Rom 12:2",
+    "scripture": "Do not conform to the pattern of this world, but be transformed by the renewing of your mind. Then you will be able to test and approve what God's will is—his good, pleasing and perfect will."
+  },
+ {
+    "quote": "1 Tim 6:15-16",
+    "scripture": "…God, the blessed and only Ruler, the King of kings and Lord of lords, who alone is immortal and who lives in unapproachable light, whom no one has seen or can see. To him be honor and might forever. Amen."
+  },
+  {
+    "quote": "Gen 2:7",
+    "scripture": "Then the Lord God formed a man from the dust of the ground and breathed into his nostrils the breath of life, and the man became a living being."
+  },
+  {
+    "quote": "Ps 103:14",
+    "scripture": "for he knows how we are formed, he remembers that we are dust."
+  },
+  {
+    "quote": "Ps 139:14",
+    "scripture": "I praise you because I am fearfully and wonderfully made; your works are wonderful, I know that full well."
+  },
+  {
+    "quote": "John 15:5",
+    "scripture": "'I am the vine; you are the branches. If you remain in me and I in you, you will bear much fruit; apart from me you can do nothing.'"
+  },
+  {
+    "quote": "Isa 43:21",
+    "scripture": "'The people I formed for myself that they may proclaim my praise.'"
+  },
+  {
+    "quote": "1 Pet 2:9",
+    "scripture": "But you are a chosen people, a royal priesthood, a holy nation, God's special possession, that you may declare the praises of him who called you out of darkness into his wonderful light."
+  },
+  {
+    "quote": "Rom 8:28",
+    "scripture": "And we know that in all things God works for the good of those who love him, who have been called according to his purpose."
+  },
+  {
+    "quote": "Phil 3:4-7",
+    "scripture": "though I myself have reasons for such confidence. If someone else thinks they have reasons to put confidence in the flesh, I have more: circumcised on the eighth day, of the people of Israel, of the tribe of Benjamin, a Hebrew of Hebrews; in regard to the law, a Pharisee; as for zeal, persecuting the church; as for righteousness based on the law, faultless. But whatever were gains to me I now consider loss for the sake of Christ."
+  },
+  {
+    "quote": "Phil 3:17",
+    "scripture": "Join together in following my example, brothers and sisters, and just as you have us as a model, keep your eyes on those who live as we do."
+  },
+  {
+    "quote": "2 Cor 10:5",
+    "scripture": "We demolish arguments and every pretension that sets itself up against the knowledge of God, and we take captive every thought to make it obedient to Christ."
+  },
+  {
+    "quote": "1 Cor 2:2",
+    "scripture": "For I resolved to know nothing while I was with you except Jesus Christ and him crucified."
+  },
+  {
+    "quote": "Gal 2:20",
+    "scripture": "I have been crucified with Christ and I no longer live, but Christ lives in me. The life I now live in the body, I live by faith in the Son of God, who loved me and gave himself for me."
+  },
+  {
+    "quote": "Isa 45:12",
+    "scripture": "It is I who made the earth and created mankind on it. My own hands stretched out the heavens; I marshaled their starry hosts."
+  },
+ {
+    "quote": "Ps 103:19",
+    "scripture": "The Lord has established his throne in heaven, and his kingdom rules over all."
+  },
+  {
+    "quote": "John 3:16",
+    "scripture": "For God so loved the world that he gave his one and only Son, that whoever believes in him shall not perish but have eternal life."
+  },
+  {
+    "quote": "Rom 5:8",
+    "scripture": "But God demonstrates his own love for us in this: While we were still sinners, Christ died for us."
+  },
+  {
+    "quote": "1 Pet 1:6-7",
+    "scripture": "In all this you greatly rejoice, though now for a little while you may have had to suffer grief in all kinds of trials. These have come so that the proven genuineness of your faith—of greater worth than gold, which perishes even though refined by fire—may result in praise, glory and honor when Jesus Christ is revealed."
+  },
+  {
+    "quote": "Ps 34:19",
+    "scripture": "The righteous person may have many troubles, but the Lord delivers him from them all."
+  },
+  {
+    "quote": "2 Cor 4:8-9",
+    "scripture": "We are hard pressed on every side, but not crushed; perplexed, but not in despair; persecuted, but not abandoned; struck down, but not destroyed."
+  },
+  {
+    "quote": "2 Cor 12:10",
+    "scripture": "That is why, for Christ's sake, I delight in weaknesses, in insults, in hardships, in persecutions, in difficulties. For when I am weak, then I am strong."
+  },
+  {
+    "quote": "Phil 4:13",
+    "scripture": "I can do all this through him who gives me strength."
+  },
+  {
+    "quote": "Rom 3:23",
+    "scripture": "for all have sinned and fall short of the glory of God"
+  },
+  {
+    "quote": "John 3:16",
+    "scripture": "For God so loved the world that he gave his one and only Son, that whoever believes in him shall not perish but have eternal life."
+  },
+  {
+    "quote": "Rom 5:8",
+    "scripture": "But God demonstrates his own love for us in this: While we were still sinners, Christ died for us."
+  },
+  {
+    "quote": "1 Cor 15",
+    "scripture": "Now, brothers and sisters, I want to remind you of the gospel I preached to you... that Christ died for our sins according to the Scriptures, that he was buried, that he was raised on the third day according to the Scriptures."
+  },
+  {
+    "quote": "John 14:16-17",
+    "scripture": "And I will ask the Father, and he will give you another advocate to help you and be with you forever—the Spirit of truth... you know him, for he lives with you and will be in you."
+  },
+  {
+    "quote": "2 Cor 5:21",
+    "scripture": "God made him who had no sin to be sin for us, so that in him we might become the righteousness of God."
+  },
+  {
+    "quote": "Jam 5:16",
+    "scripture": "The prayer of a righteous person is powerful and effective."
+  },
+  {
+    "quote": "1 Thess 5:17",
+    "scripture": "Pray continually."
+  },
+  {
+    "quote": "Ps 34:4",
+    "scripture": "I sought the Lord, and he answered me; he delivered me from all my fears."
+  },
+  {
+    "quote": "Rom 5:8",
+    "scripture": "But God demonstrates his own love for us in this: While we were still sinners, Christ died for us."
+  },
+  {
+    "quote": "Deut 32:4",
+    "scripture": "He is the Rock, his works are perfect, and all his ways are just. A faithful God who does no wrong, upright and just is he."
+  },
+  {
+    "quote": "Ps 46:1",
+    "scripture": "God is our refuge and strength, an ever-present help in trouble."
+  },
+  {
+    "quote": "Ps 3:3",
+    "scripture": "But you, Lord, are a shield around me, my glory, the One who lifts my head high."
+  },
+  {
+    "quote": "Luke 1:69",
+    "scripture": "He has raised up a horn of salvation for us in the house of his servant David."
+  },
+  {
+    "quote": "1 Pet 5:8",
+    "scripture": "Be alert and of sober mind. Your enemy the devil prowls around like a roaring lion looking for someone to devour."
+  },
+  {
+    "quote": "Ps 18:2",
+    "scripture": "The Lord is my rock, my fortress and my deliverer; my God is my rock, in whom I take refuge, my shield and the horn of my salvation, my stronghold."
+  },
+  {
+    "quote": "Isa 43:11",
+    "scripture": "I, even I, am the Lord, and apart from me there is no savior."
+  },
+  {
+    "quote": "2 Tim 2:15",
+    "scripture": "Do your best to present yourself to God as one approved, a worker who does not need to be ashamed and who correctly handles the word of truth."
+  },
+  {
+    "quote": "2 Cor 5:20",
+    "scripture": "We are therefore Christ's ambassadors, as though God were making his appeal through us. We implore you on Christ's behalf: Be reconciled to God."
+  },
+  {
+    "quote": "Matt 23:11-12",
+    "scripture": "The greatest among you will be your servant. For those who exalt themselves will be humbled, and those who humble themselves will be exalted."
+  },
+  {
+    "quote": "Phil 2:5-8",
+    "scripture": "In your relationships with one another, have the same mindset as Christ Jesus: Who, being in very nature God, did not consider equality with God something to be used to his own advantage; rather, he made himself nothing by taking the very nature of a servant, being made in human likeness. And being found in appearance as a man, he humbled himself by becoming obedient to death—even death on a cross!"
+  },
+  {
+    "quote": "Romans 12:3",
+    "scripture": "For by the grace given me I say to every one of you: Do not think of yourself more highly than you ought, but rather think of yourself with sober judgment, in accordance with the faith God has distributed to each of you."
+  },
+  {
+    "quote": "Phil 2:5-8",
+    "scripture": "In your relationships with one another, have the same mindset as Christ Jesus: Who, being in very nature God, did not consider equality with God something to be used to his own advantage; rather, he made himself nothing by taking the very nature of a servant, being made in human likeness. And being found in appearance as a man, he humbled himself by becoming obedient to death—even death on a cross!"
+  },
+  {
+    "quote": "John 5:19",
+    "scripture": "Jesus gave them this answer: 'Very truly I tell you, the Son can do nothing by himself; he can do only what he sees his Father doing, because whatever the Father does the Son also does.'"
+  },
+  {
+    "quote": "Rom 8:28",
+    "scripture": "And we know that in all things God works for the good of those who love him, who have been called according to his purpose."
+  },
+  {
+    "quote": "Matt 25:46",
+    "scripture": "Then they will go away to eternal punishment, but the righteous to eternal life."
+  },
+  {
+    "quote": "Rev 3:20",
+    "scripture": "Here I am! I stand at the door and knock. If anyone hears my voice and opens the door, I will come in and eat with that person, and they with me."
+  },
+  {
+    "quote": "John 1:12",
+    "scripture": "Yet to all who did receive him, to those who believed in his name, he gave the right to become children of God."
+  },
+  {
+    "quote": "Exodus 14:14",
+    "scripture": "The Lord will fight for you; you need only to be still."
+  },
+  {
+    "quote": "Deuteronomy 20:4",
+    "scripture": "For the Lord your God is the one who goes with you to fight for you against your enemies to give you victory."
+  },
+  {
+    "quote": "2 Chronicles 20:15",
+    "scripture": "'Do not be afraid or discouraged because of this vast army. For the battle is not yours, but God's.'"
+  },
+  {
+    "quote": "Isaiah 54:17",
+    "scripture": "No weapon forged against you will prevail, and you will refute every tongue that accuses you. This is the heritage of the servants of the Lord, and this is their vindication from me,' declares the Lord."
+  },
+  {
+    "quote": "Romans 8:37",
+    "scripture": "No, in all these things we are more than conquerors through him who loved us."
+  },
+  {
+    "quote": "1 Corinthians 15:57",
+    "scripture": "But thanks be to God! He gives us the victory through our Lord Jesus Christ."
+  },
+  {
+    "quote": "2 Thessalonians 3:3",
+    "scripture": "But the Lord is faithful, and he will strengthen you and protect you from the evil one."
+  },
+  {
+    "quote": "John 16:33",
+    "scripture": "I have told you these things, so that in me you may have peace. In this world you will have trouble. But take heart! I have overcome the world."
+  },
+  {
+    "quote": "Ephesians 6:10-11",
+    "scripture": "Finally, be strong in the Lord and in his mighty power. Put on the full armor of God, so that you can take your stand against the devil's schemes."
+  },
+  {
+    "quote": "1 Pet 5:8",
+    "scripture": "Be alert and of sober mind. Your enemy the devil prowls around like a roaring lion looking for someone to devour."
+  },
+  {
+    "quote": "Proverbs 6:17",
+    "scripture": "haughty eyes, a lying tongue, hands that shed innocent blood,"
+  },
+  {
+    "quote": "Proverbs 6:17",
+    "scripture": "haughty eyes, a lying tongue, hands that shed innocent blood,"
+  },
+  {
+    "quote": "Zechariah 8:17",
+    "scripture": "do not plot evil against each other, and do not love to swear falsely. I hate all this, declares the LORD."
+  },
+  {
+    "quote": "Proverbs 6:19",
+    "scripture": "a false witness who pours out lies and a person who stirs up conflict in the community."
+  },
+  {
+    "quote": "Malachi 2:16",
+    "scripture": "'The man who hates and divorces his wife,' says the LORD, the God of Israel, 'does violence to the one he should protect,' says the LORD Almighty. So be on your guard, and do not be unfaithful."
+  },
+  {
+    "quote": "Isaiah 61:8",
+    "scripture": "'For I, the LORD, love justice; I hate robbery and wrongdoing. In my faithfulness I will reward my people and make an everlasting covenant with them.'"
+  },
+  {
+    "quote": "Zechariah 8:17",
+    "scripture": "do not plot evil against each other, and do not love to swear falsely. I hate all this, declares the LORD."
+  },
+  {
+    "quote": "Revelation 2:6",
+    "scripture": "But you have this in your favor: You hate the practices of the Nicolaitans, which I also hate."
+  },
+  {
+    "quote": "Revelation 2:15",
+    "scripture": "Likewise, you also have those who hold to the teaching of the Nicolaitans."
+  },
+  {
+    "quote": "Matthew 23:27-28",
+    "scripture": "'Woe to you, teachers of the law and Pharisees, you hypocrites! You are like whitewashed tombs, which look beautiful on the outside but on the inside are full of the bones of the dead and everything unclean. In the same way, on the outside you appear to people as righteous but on the inside you are full of hypocrisy and wickedness.'"
+  },
+  {
+    "quote": "Mark 11:15-17",
+    "scripture": "On reaching Jerusalem, Jesus entered the temple courts and began driving out those who were buying and selling there. He overturned the tables of the money changers and the benches of those selling doves, and would not allow anyone to carry merchandise through the temple courts. And as he taught them, he said, 'Is it not written: My house will be called a house of prayer for all nations? But you have made it a den of robbers.'"
+  },
+  {
+    "quote": "Luke 17:1-2",
+    "scripture": "Jesus said to his disciples: 'Things that cause people to stumble are bound to come, but woe to anyone through whom they come. It would be better for them to be thrown into the sea with a millstone tied around their neck than to cause one of these little ones to stumble.'"
+  },
+  {
+    "quote": "John 15:5",
+    "scripture": "'I am the vine; you are the branches. If you remain in me and I in you, you will bear much fruit; apart from me you can do nothing.'"
+  },
+  {
+    "quote": "John 15:12",
+    "scripture": "'My command is this: Love each other as I have loved you.'"
+  },
+  {
+    "quote": "John 10:15",
+    "scripture": "'just as the Father knows me and I know the Father—and I lay down my life for the sheep.'"
+  },
+  {
+    "quote": "Galatians 5:22",
+    "scripture": "'But the fruit of the Spirit is love, joy, peace, forbearance, kindness, goodness, faithfulness,'"
+  },
+  {
+    "quote": "John 15:1",
+    "scripture": "'I am the true vine, and my Father is the gardener.'"
+  },
+  {
+    "quote": "1 Cor 13:4-8",
+    "scripture": "'Love is patient, love is kind. It does not envy, it does not boast, it is not proud. It does not dishonor others, it is not self-seeking, it is not easily angered, it keeps no record of wrongs. Love does not delight in evil but rejoices with the truth. It always protects, always trusts, always hopes, always perseveres. Love never fails.'"
+  },
+  {
+    "quote": "Ps 51:5",
+    "scripture": "Surely I was sinful at birth, sinful from the time my mother conceived me."
+  },
+  {
+    "quote": "Rom 5:12",
+    "scripture": "Therefore, just as sin entered the world through one man, and death through sin, and in this way death came to all people, because all sinned."
+  },
+  {
+    "quote": "Phil 3:19",
+    "scripture": "Their destiny is destruction, their god is their stomach, and their glory is in their shame. Their mind is set on earthly things."
+  },
+  {
+    "quote": "Eph 2:1-3",
+    "scripture": "As for you, you were dead in your transgressions and sins, in which you used to live when you followed the ways of this world and of the ruler of the kingdom of the air, the spirit who is now at work in those who are disobedient. All of us also lived among them at one time, gratifying the cravings of our flesh and following its desires and thoughts. Like the rest, we were by nature deserving of wrath."
+  },
+  {
+    "quote": "2 Cor 5:21",
+    "scripture": "God made him who had no sin to be sin for us, so that in him we might become the righteousness of God."
+  },
+  {
+    "quote": "Col 2:13-15",
+    "scripture": "When you were dead in your sins and in the uncircumcision of your flesh, God made you alive with Christ. He forgave us all our sins, having canceled the charge of our legal indebtedness, which stood against us and condemned us; he has taken it away, nailing it to the cross. And having disarmed the powers and authorities, he made a public spectacle of them, triumphing over them by the cross."
+  },
+  {
+    "quote": "Eph 2:12-13",
+    "scripture": "remember that at that time you were separate from Christ, excluded from citizenship in Israel and foreigners to the covenants of the promise, without hope and without God in the world. But now in Christ Jesus you who once were far away have been brought near by the blood of Christ."
+  },
+  {
+    "quote": "1 Pet 5:8-9",
+    "scripture": "Be alert and of sober mind. Your enemy the devil prowls around like a roaring lion looking for someone to devour. Resist him, standing firm in the faith, because you know that the family of believers throughout the world is undergoing the same kind of sufferings."
+  },
+  {
+    "quote": "Jam 4:7",
+    "scripture": "Submit yourselves, then, to God. Resist the devil, and he will flee from you."
+  },
+  {
+    "quote": "John 14:26-27",
+    "scripture": "But the Advocate, the Holy Spirit, whom the Father will send in my name, will teach you all things and will remind you of everything I have said to you. Peace I leave with you; my peace I give you. I do not give to you as the world gives. Do not let your hearts be troubled and do not be afraid."
+  },
+  {
+    "quote": "John 16:33",
+    "scripture": "I have told you these things, so that in me you may have peace. In this world you will have trouble. But take heart! I have overcome the world."
+  },
+  {
+    "quote": "Gal 2:20",
+    "scripture": "I have been crucified with Christ and I no longer live, but Christ lives in me. The life I now live in the body, I live by faith in the Son of God, who loved me and gave himself for me."
+  },
+  {
+    "quote": "John 5:24",
+    "scripture": "Very truly I tell you, whoever hears my word and believes him who sent me has eternal life and will not be judged but has crossed over from death to life."
+  },
+  {
+    "quote": "Luke 15:1-2",
+    "scripture": "Now the tax collectors and sinners were all gathering around to hear Jesus. But the Pharisees and the teachers of the law muttered, 'This man welcomes sinners and eats with them.'"
+  },
+  {
+    "quote": "Luke 15:17",
+    "scripture": "When he came to his senses, he said, 'How many of my father's hired servants have food to spare, and here I am starving to death!'"
+  },
+  {
+    "quote": "Luke 15:20",
+    "scripture": "So he got up and went to his father. But while he was still a long way off, his father saw him and was filled with compassion for him; he ran to his son, threw his arms around him and kissed him."
+  },
+  {
+    "quote": "Tit 2:14",
+    "scripture": "Who gave himself for us to redeem us from all wickedness and to purify for himself a people that are his very own, eager to do what is good."
+  },
+  {
+    "quote": "2 Cor 5:21",
+    "scripture": "God made him who had no sin to be sin for us, so that in him we might become the righteousness of God."
+  },
+  {
+    "quote": "Col 2:13-14",
+    "scripture": "When you were dead in your sins and in the uncircumcision of your flesh, God made you alive with Christ. He forgave us all our sins, having canceled the charge of our legal indebtedness, which stood against us and condemned us; he has taken it away, nailing it to the cross."
+  },
+  {
+    "quote": "Ps 103:12",
+    "scripture": "As far as the east is from the west, so far has he removed our transgressions from us."
+  },
+  {
+    "quote": "Luke 15:7",
+    "scripture": "I tell you that in the same way there will be more rejoicing in heaven over one sinner who repents than over ninety-nine righteous persons who do not need to repent."
+  },
+  {
+    "quote": "Luke 15:10",
+    "scripture": "In the same way, I tell you, there is rejoicing in the presence of the angels of God over one sinner who repents."
+  },
+  {
+    "quote": "John 16:33",
+    "scripture": "I have told you these things, so that in me you may have peace. In this world you will have trouble. But take heart! I have overcome the world."
+  },
+  {
+    "quote": "Phil 4:13",
+    "scripture": "I can do all this through him who gives me strength."
+  },
+  {
+    "quote": "1 Pet 5:7",
+    "scripture": "Cast all your anxiety on him because he cares for you."
+  },
+  {
+    "quote": "2 Corinthians 12:9",
+    "scripture": "But he said to me, 'My grace is sufficient for you, for my power is made perfect in weakness.' Therefore I will boast all the more gladly about my weaknesses, so that Christ's power may rest on me."
+  },
+  {
+    "quote": "Matt 5:10-11",
+    "scripture": "Blessed are those who are persecuted because of righteousness, for theirs is the kingdom of heaven. Blessed are you when people insult you, persecute you and falsely say all kinds of evil against you because of me."
+  },
+  {
+    "quote": "Phil 4:19",
+    "scripture": "And my God will meet all your needs according to the riches of his glory in Christ Jesus."
+  },
+  {
+    "quote": "Jam 2:15:16",
+    "scripture": "Suppose a brother or a sister is without clothes and daily food. If one of you says to them, 'Go in peace; keep warm and well fed,' but does nothing about their physical needs, what good is it?"
+  },
+  {
+    "quote": "Matt 25:36",
+    "scripture": "I needed clothes and you clothed me, I was sick and you looked after me, I was in prison and you came to visit me."
+  },
+  {
+    "quote": "Ps 46:1",
+    "scripture": "God is our refuge and strength, an ever-present help in trouble."
+  },
+  {
+    "quote": "Ps 91:1-2",
+    "scripture": "Whoever dwells in the shelter of the Most High will rest in the shadow of the Almighty. I will say of the Lord, 'He is my refuge and my fortress, my God, in whom I trust.'"
+  },
+  {
+    "quote": "2 Tim 4:4-8",
+    "scripture": "They will turn their ears away from the truth and turn aside to myths. But you, keep your head in all situations, endure hardship, do the work of an evangelist, discharge all the duties of your ministry. For I am already being poured out like a drink offering, and the time for my departure is near. I have fought the good fight, I have finished the race, I have kept the faith. Now there is in store for me the crown of righteousness, which the Lord, the righteous Judge, will award to me on that day—and not only to me, but also to all who have longed for his appearing."
+  },
+  {
+    "quote": "Rev 2:10",
+    "scripture": "Do not be afraid of what you are about to suffer. I tell you, the devil will put some of you in prison to test you, and you will suffer persecution for ten days. Be faithful, even to the point of death, and I will give you life as your victor's crown."
+  },
+  {
+    "quote": "John 15:13",
+    "scripture": "Greater love has no one than this: to lay down one's life for one's friends."
+  },
+  {
+    "quote": "Acts 7:59-60",
+    "scripture": "While they were stoning him, Stephen prayed, 'Lord Jesus, receive my spirit.' Then he fell on his knees and cried out, 'Lord, do not hold this sin against them.' When he had said this, he fell asleep."
+  },
+  {
+    "quote": "Rev 2:10",
+    "scripture": "Do not be afraid of what you are about to suffer. I tell you, the devil will put some of you in prison to test you, and you will suffer persecution for ten days. Be faithful, even to the point of death, and I will give you life as your victor's crown."
+  },
+  {
+    "quote": "Phil 2:3-4",
+    "scripture": "Do nothing out of selfish ambition or vain conceit. Rather, in humility value others above yourselves, not looking to your own interests but each of you to the interests of the others."
+  },
+  {
+    "quote": "Deuteronomy 6:4",
+    "scripture": "Hear, O Israel: The Lord our God, the Lord is one."
+  },
+  {
+    "quote": "1 Pet 4:12",
+    "scripture": "Dear friends, do not be surprised at the fiery ordeal that has come on you to test you, as though something strange were happening to you."
+  },
+  {
+    "quote": "Matt 5:45",
+    "scripture": "He causes his sun to rise on the evil and the good, and sends rain on the righteous and the unrighteous."
+  },
+  {
+    "quote": "Ecc 9:2",
+    "scripture": "All share a common destiny—the righteous and the wicked, the good and the bad, the clean and the unclean, those who offer sacrifices and those who do not. As it is with the good, so with the sinful; as it is with those who take oaths, so with those who are afraid to take them."
+  },
+  {
+    "quote": "1 Pet 1:3",
+    "scripture": "Praise be to the God and Father of our Lord Jesus Christ! In his great mercy he has given us new birth into a living hope through the resurrection of Jesus Christ from the dead."
+  },
+  {
+    "quote": "1 Pet 5:8",
+    "scripture": "Be alert and of sober mind. Your enemy the devil prowls around like a roaring lion looking for someone to devour."
+  },
+  {
+    "quote": "2 Cor 12:9-10",
+    "scripture": "But he said to me, 'My grace is sufficient for you, for my power is made perfect in weakness.' Therefore I will boast all the more gladly about my weaknesses, so that Christ's power may rest on me. That is why, for Christ's sake, I delight in weaknesses, in insults, in hardships, in persecutions, in difficulties. For when I am weak, then I am strong."
+  },
+  {
+    "quote": "Rom 8:37-39",
+    "scripture": "No, in all these things we are more than conquerors through him who loved us. For I am convinced that neither death nor life, neither angels nor demons, neither the present nor the future, nor any powers, neither height nor depth, nor anything else in all creation, will be able to separate us from the love of God that is in Christ Jesus our Lord."
+  },
+  {
+    "quote": "Rev 2:10",
+    "scripture": "Do not be afraid of what you are about to suffer. I tell you, the devil will put some of you in prison to test you, and you will suffer persecution for ten days. Be faithful, even to the point of death, and I will give you life as your victor's crown."
+  },
+  {
+    "quote": "John 16:33",
+    "scripture": "'I have told you these things, so that in me you may have peace. In this world you will have trouble. But take heart! I have overcome the world.'"
+  },
+  {
+    "quote": "1 John 4:4",
+    "scripture": "You, dear children, are from God and have overcome them, because the one who is in you is greater than the one who is in the world."
+  },
+{
+    "quote": "2 Cor 4:4-5",
+    "scripture": "The god of this age has blinded the minds of unbelievers, so that they cannot see the light of the gospel that displays the glory of Christ, who is the image of God. 5 For what we preach is not ourselves, but Jesus Christ as Lord, and ourselves as your servants for Jesus' sake."
+  },
+  {
+    "quote": "Deut 6:4-9",
+    "scripture": "Hear, O Israel: The Lord our God, the Lord is one.Love the Lord your God with all your heart and with all your soul and with all your strength. These commandments that I give you today are to be on your hearts. Impress them on your children. Talk about them when you sit at home and when you walk along the road, when you lie down and when you get up. Tie them as symbols on your hands and bind them on your foreheads. Write them on the doorframes of your houses and on your gates."
+  },
+  {
+    "quote": "Rom 12:10",
+    "scripture": "Be devoted to one another in love. Honor one another above yourselves."
+  },
+  {
+    "quote": "John 15:13",
+    "scripture": "Greater love has no one than this: to lay down one's life for one's friends."
+  },
+  {
+    "quote": "John 13:34-35",
+    "scripture": "'A new command I give you: Love one another. As I have loved you, so you must love one another. By this everyone will know that you are my disciples, if you love one another.'"
+  },
+  {
+    "quote": "Rom 12:15",
+    "scripture": "Rejoice with those who rejoice; mourn with those who mourn."
+  },
+  {
+    "quote": "1 Cor 12:12-13",
+    "scripture": "'Just as a body, though one, has many parts, but all its many parts form one body, so it is with Christ. For we were all baptized by one Spirit so as to form one body—whether Jews or Gentiles, slave or free—and we were all given the one Spirit to drink.'"
+  },
+  {
+    "quote": "John 14:6",
+    "scripture": "Jesus answered, 'I am the way and the truth and the life. No one comes to the Father except through me.'"
+  },
+  {
+    "quote": "Acts 4:12",
+    "scripture": "Salvation is found in no one else, for there is no other name under heaven given to mankind by which we must be saved."
+  },
+  {
+    "quote": "1 Timothy 2:5",
+    "scripture": "For there is one God and one mediator between God and mankind, the man Christ Jesus."
+  }
 ]
