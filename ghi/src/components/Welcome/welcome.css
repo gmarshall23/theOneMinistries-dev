@@ -4,6 +4,9 @@
   background-size: cover;
   background-position: center;
   width: 100% !important;
+  color: darkmagenta !important;
+  text-shadow: 0rem 0rem .75px white !important;
+  font-weight: 600;
 }
 .welcome blockquote {
   padding: 5rem;

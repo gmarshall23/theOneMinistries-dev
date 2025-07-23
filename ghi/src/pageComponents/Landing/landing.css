@@ -77,6 +77,14 @@ a {
     font-weight: 700;
     /* color: #e21414; */
 }
+.testimony-section {
+  padding: 3rem;
+  min-height: 80vh !important;
+  background: url('../../assets/images/testimony101.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
 .one-less-link {
     flex: 2 2 0;
     /* width: 100%; */

@@ -17,7 +17,7 @@ const About = ({ user }) => {
         <blockquote>
           <p>"The One Minisitries mission is to empower individuals to cultivate a daily, intentional relationship with God by providing scripturally grounded tools and resources, fostering spiritual growth, and facilitating transformative encounters with the Living God."</p>
         </blockquote>
-        <h2 className='text-start'> MY Goals and Objectives for a YOU</h2>
+        <h2 className='text-start'> MY Goals and Objectives for YOU</h2>
         <ol>
           <li>To Deepen Daily Devotion: Encourage you to engage in daily Bible reading and prayer, enhancing your personal relationship with God.</li>
           <li>To Provide Scriptural Tools: Offer resources such as devotionals, confession guides, and meditation prompts to support you in your spiritual journey.</li>

@@ -28,7 +28,7 @@ const Menu = ({user}) => {
           <Nav.Link as={Link} to="/" onClick={handleLinkClick}>Home</Nav.Link>}
           {user?.role === 'admin' && <Nav.Link as={Link} to="/admin" onClick={handleLinkClick}>Admin</Nav.Link>}
           <Nav.Link as={Link} to="/about" onClick={handleLinkClick}>About</Nav.Link>
-          <Nav.Link as={Link} to="/one-less/meet-god" onClick={handleLinkClick}>One Less</Nav.Link>
+          <Nav.Link as={Link} to="/one-less/meet-god" onClick={handleLinkClick}>One Way</Nav.Link>
           <Nav.Link as={Link} to="/news-stories" onClick={handleLinkClick}>News Stories</Nav.Link>
           <Nav.Link as={Link} to="/subscribe" onClick={handleLinkClick}>Support Us</Nav.Link>
           {user?<Nav.Link as={Link} to="/logout" onClick={handleLogout}>Log Out</Nav.Link>:<Nav.Link as={Link} to="/login" onClick={handleLinkClick}>Log In</Nav.Link>}

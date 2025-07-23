@@ -65,7 +65,7 @@ function Landing({ user }) {
             <Link to='/one-less'>
               <Card className="ol-card text-center border border-primary p-0 m-4">
                 <Card.Body className="bg-primary text-white">
-                  <Card.Title><h3>One Less Lessons</h3></Card.Title>
+                  <Card.Title><h3>One Way Lessons</h3></Card.Title>
                   <Card.Text as='div' className='bg-light text-dark border border-primary rounded p-2'>
                     <h4>Explore our lessons and insights.</h4>
                     <ul style={{ listStylePosition: 'inside', marginLeft: '0', fontFamily: 'cursive', fontSize: '1.2rem', fontWeight: 'bolder' }}>
@@ -80,8 +80,8 @@ function Landing({ user }) {
           </section>
         </section>
         <Welcome />
-        <section className='bg-warning border d-flex justify-content-center align-items-center p-5'>
-          <Card className="testimony-card text-center border border-primary p-0 w-75">
+        <section className='testimony-section d-flex justify-content-center align-items-center'>
+          <Card className="testimony-card text-center border border-primary w-75">
             <Card.Title><h3>My Testimony</h3></Card.Title>
             <Card.Body
               className="bg-primary text-white"

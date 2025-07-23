@@ -10,6 +10,8 @@ const study_Controller = require('../controllers/study_controller');
 const events_Controller = require('../controllers/events_controller');
 const prayers_controller = require('../controllers/prayers_controller');
 const questions_controller = require('../controllers/questions_controller');
+const news_controllers = require('../controllers/news_controllers');
+
 
 module.exports = (app) => {
 
@@ -55,6 +57,9 @@ app.get('/get_question/:id', questions_controller.getQuestionById);
 app.put('/update_question/:id', questions_controller.updateQuestion);
 app.delete('/delete_question/:id', questions_controller.deleteQuestion);
 
+// ******** News Story routes *********//
+app.get('/get_news', news_controllers.getNews)
+app.get('/get_news_file', news_controllers.getNewsFile)
 // app.get('/get_contribution/:id', contirbution_Controller.getContribution)
 
 // app.put('/add_moral/:id', user_Controller.addMoral)
