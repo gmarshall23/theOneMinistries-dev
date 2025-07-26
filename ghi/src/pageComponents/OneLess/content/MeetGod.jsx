@@ -43,7 +43,7 @@ const MeetGod = ({scrips}) => {
         True Story...Years ago, I moved into a neighborhood with my wife and three kids. I was not new to the city, but I was not familiar with the neighborhood and did not know anyone. I suppose it was a two or three days after moving in that the doorbell rang and it was the woman from across the street. She handed me a cake and a note and quickly walked away before I could even get a word out. My wife and I read the note that simply said "welcome to the neighborhood" and then upon my insistence, we threw the cake away. I thought, "Lady, I don't know you and why do you think I want anything from you let alone eat something from you?" And I had several other "why" questions after that. The root of my position came from a place of distrust and concern of the unknown.
         <br /><br />This is how many of us approach our relationship with God. We are skeptical of receiving a free gift from an unknown entity or perhaps, in a moment of emotion, we accept the gift of salvation only to realize that you have made a lifetime decision to serve a God that you don't really know or trust.
         <br /><br />That's ok, its perfectly human and perfectly normal. God wants you to know him just as well as he already knows you ({scripObj['Psalms 139:13-16']}) and the cool part is that it is absolutely possible.
-        <br /><br />The Bible reveals the nature of God as a spirit, unity, and trinity. He is a spirit--a personal, infinite being ({scripObj['John 4:24']}); He is one--one in substance or nature and incapable of being divided into parts (Deuteronomy 6:4); and he is three--eternally existing in three coequal persons ({scripObj['Matthew 28:19']}). While great mystery surrounds God's nature, it is reassuring to know that our God is sovereign and above us.
+        <br /><br />The Bible reveals the nature of God as a spirit, unity, and trinity. He is a spirit--a personal, infinite being ({scripObj['John 4:24']}); He is one--one in substance or nature and incapable of being divided into parts ({scripObj['Deuteronomy 6:4']}); and He is three--eternally existing in three coequal persons ({scripObj['Matthew 28:19']}, {scripObj['2 Corinthians 13:14']}). While great mystery surrounds God's nature, it is reassuring to know that our God is sovereign and above us.
         <br /><br />God's attributes are merely words we use to describe how God is and how he acts toward us. Among these attributes are love, holiness, constancy, justice, truth, eternalness, omniscience (all-knowing), omnipresence (all-presence), and omnipotence (all-powerful). The fact that we can grasp and understand this much about God is evidence of God's desire that all people may know him.
       </p>
       <h3 className="p-2 text-start">Here is why we are in pursuit to get to know our Creator</h3>
@@ -64,7 +64,7 @@ const MeetGod = ({scrips}) => {
       <div className='border border-2 border-dark rounded'>
         <p className='p-4'><b><em> First, look at what He says in his own words about Himself.</em></b></p>
         <div className='myCarousel border border-2 border-dark rounded' ref={carouselRef}>
-          <Carousel interval={isCarouselVisible ? 1000 : null} fade className='border border-2 border-dark rounded'>
+          <Carousel interval={isCarouselVisible ? 10000 : null} fade className='border border-2 border-dark rounded'>
             {slides.map((slide, idx) => (
               <Carousel.Item key={idx} className='carousel-item'>
                 <img
@@ -73,7 +73,6 @@ const MeetGod = ({scrips}) => {
                   alt={`Slide ${idx}`}
                 />
                 <Carousel.Caption>
-                  <h3>Slide {idx}</h3>
                   <p className='slide-caption'>{slide.text}</p>
                 </Carousel.Caption>
               </Carousel.Item>
@@ -128,7 +127,7 @@ const MeetGod = ({scrips}) => {
         <h3 className="p-2 ">Gods Promises</h3>
         <Tabs
           id="fill-tab"
-          className="mb-3"
+          className="mb-3 custom-tabs"
           fill
         >
           <Tab eventKey="gods-presence" title="God's Presence">

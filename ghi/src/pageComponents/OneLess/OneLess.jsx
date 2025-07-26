@@ -100,7 +100,7 @@ const OneLess = ({ user, setUser, scrips, setScrips }) => {
         return <WalkWord user={user} studyDay={studyDay} scrips={scrips} />;
       case 'Encourage Me':
         return <Encourage />;
-      case 'One Less Event':
+      case 'One Way Event':
         return <Events user={user} />;
       case 'Prayer Requests':
         return <Prayers user={user} />;
@@ -117,14 +117,14 @@ const OneLess = ({ user, setUser, scrips, setScrips }) => {
     </header>
       <main className='one-less'>
         <aside className='one-less-aside'>
-          <h3>One Less Lessons</h3>
+          <h3>One Way Lessons</h3>
           <ul>
             <li>
-              <Link to="introduction"><button ref={el => buttonsRef.current[0] = el} onClick={handleClick} id='introduction' className='active-btn intro-title'>Introduction</button></Link>
+              <Link to="introduction"><button ref={el => buttonsRef.current[0] = el} onClick={handleClick} id='introduction' >Introduction</button></Link>
             </li>
             <h4>Becoming Christians</h4>
             <li>
-              <Link to="meet-god"><button ref={el => buttonsRef.current[1] = el} onClick={handleClick} id='meetGod'>Meet God</button></Link>
+              <Link to="meet-god"><button ref={el => buttonsRef.current[1] = el} onClick={handleClick} id='meetGod' className='active-btn intro-title'>Meet God</button></Link>
             </li>
             <li>
               <Link to="salvation"><button ref={el => buttonsRef.current[2] = el} onClick={handleClick} id='salvation'>Salvation</button></Link></li>
@@ -162,7 +162,7 @@ const OneLess = ({ user, setUser, scrips, setScrips }) => {
             </li>
             <li>
               <Link to="events">
-              <button ref={el => buttonsRef.current[10] = el} onClick={handleClick}>One Less Event</button>
+              <button ref={el => buttonsRef.current[10] = el} onClick={handleClick}>One Way Event</button>
               </Link>
             </li>
             <li>

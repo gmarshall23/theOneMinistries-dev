@@ -51,7 +51,7 @@ const NewsStories = () => {
             <Card>
               <Card.Img
                 variant="top"
-                src={story.images.thumbnailProxied}
+                src={story.images?.thumbnailProxied || 'https://via.placeholder.com/400x200.png?text=World+News'}
                 style={{ height: '200px', objectFit: 'cover' }}
               />
               <Card.Body className="d-flex flex-column">
@@ -62,7 +62,7 @@ const NewsStories = () => {
                 </Button>
               </Card.Body>
               <Card.Footer>
-                <small className="text-muted">Source: {story.source}</small>
+                <small className="text-muted">Source: {story.publisher}</small>
               </Card.Footer>
             </Card>
           </Col>

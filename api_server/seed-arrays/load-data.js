@@ -5,10 +5,12 @@ const Encourage = require('../models/Encourage');
 const Study = require('../models/Study');
 const Script = require('../models/Script.js');
 const Charity = require('../models/Charity');
+const User = require('../models/User.js')
 const studyData = require('./studies-data-noId.json');
 const scriptData = require('./scrip_seed.json');
 const charityData = require('./charity_seed.json');
 const encourageData = require('./encourage.json');
+const userData = require('./user_seed.json');
 
 mongoose.connect('mongodb://localhost:27017/the-one-ministries-db', {
   useNewUrlParser: true,
@@ -19,6 +21,24 @@ mongoose.connect('mongodb://localhost:27017/the-one-ministries-db', {
 
   // Array to gather all upsert promises
   const promises = [];
+  // Upsert for the User collection
+  // We must use .save() for new users to trigger the password hashing middleware.
+  const userPromises = userData.map(userObj => {
+    return User.findOne({ username: userObj.username }).then(existingUser => {
+      if (existingUser) {
+        console.log(`User '${userObj.username}' already exists. Skipping.`);
+        return Promise.resolve(); // Resolve immediately, do nothing.
+      }
+      // Create a new user instance and save it. This triggers the 'pre-save' hook.
+      const newUser = new User(userObj);
+      return newUser.save().then(doc => {
+        console.log("User created:", doc.username);
+      });
+    }).catch(err => {
+      console.error(`Error processing user data for ${userObj.username}:`, err);
+    });
+  });
+  promises.push(...userPromises);
 
   // Upsert for the Study collection
   for (let obj of studyData) {

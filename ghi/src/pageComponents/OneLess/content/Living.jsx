@@ -32,7 +32,7 @@ const Living = ({scrips}) => {
 					<p className="">Relax and breathe. God is patient and knows you are new in the faith. My strong suggestion is that you develop an immediate mindset of discipline and simplicity. You likely need to push a reset button on your life and habits; this also requires a mindset of toughness because Satan, the enemy, will try to attack in many ways to influence you to return to your old mindset and old activities and old friends, all of which are likely not  amenable to helping you live a Christian life ({scripObj['1 Peter 5:8']}). Here is a list of many of the things I have found to be necessary for living as a new Christian.
 					</p>
 					<ul className="p-3">
-						<li>Read the word EVERYDAY (see <Link className="text-primary testHover" to="/one-less/walk-word">A Walk in the Word</Link> for suggestions), start with Romans 12 which gives explicit instructions to all believers on how to live in the faith. I suggest that you next read the Gospels in this order (John, Matthew, Mark, Luke) followed by the books of Romans and Hebrews to learn about the righteousness of Jesus and the life of Jesus and the new covenant of <u className="tipText" data-tooltip-id="tooltip" data-tooltip-content="Grace - 1. God's unmerited favor. 2. Receiving a gift from God that you do not deserve. For Example see Romans 11:5-6.">grace.</u> Discover who Jesus is, what he did for you, and what he wants to do with your life.
+						<li>Read the word EVERYDAY (see <Link className="text-primary testHover" to="/one-way/walk-word">A Walk in the Word</Link> for suggestions), start with Romans 12 which gives explicit instructions to all believers on how to live in the faith. I suggest that you next read the Gospels in this order (John, Matthew, Mark, Luke) followed by the books of Romans and Hebrews to learn about the righteousness of Jesus and the life of Jesus and the new covenant of <u className="tipText" data-tooltip-id="tooltip" data-tooltip-content="Grace - 1. God's unmerited favor. 2. Receiving a gift from God that you do not deserve. For Example see Romans 11:5-6.">grace.</u> Discover who Jesus is, what he did for you, and what he wants to do with your life.
 
 							<p className="px-3 mx-3"><b><em>Understand that Jesus died for three(3) reasons</em></b></p>
 							<ol className="p-3 mx-3">
@@ -45,7 +45,7 @@ const Living = ({scrips}) => {
 						<li>Talk to a Christian friend daily if possible or use this website to share how God has impacted your today or yesterday. Just share your experiences, hopes, expectations.
 							<Link className="text-primary testHover" to="/my-testimony" > My Personal Testimony</Link>,
 							<Link className="text-primary testHover" to="oneliners"> One Liners for Meditation</Link>,
-							<Link className="text-primary testHover" to="/oneLessEvent"> One Less Event</Link>,
+							<Link className="text-primary testHover" to="/oneLessEvent"> One Way Event</Link>,
 							<Link className="text-primary testHover" to="/confessSins"> Confess my Sins</Link>,
 							<Link className="text-primary testHover" to="/prayer"> Prayer Requests</Link>,
 							<Link className="text-primary testHover" to="/chatRoom"> Chat Room<span className="pix10 rojo">(placeholder)</span></Link> are all good pages for new Christians to visit regularly.</li>

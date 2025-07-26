@@ -18,6 +18,8 @@ module.exports = (app) => {
 // ********* User routes *********//
 app.post('/create_user', user_Controller.createUser);
 app.get('/get_users', user_Controller.getUsers);
+app.put('/update_user/:username', user_Controller.updateUser);
+
 
 // ******** Study routes *********//
 app.get('/get_studies', study_Controller.getStudies)

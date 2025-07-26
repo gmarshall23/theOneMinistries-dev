@@ -75,7 +75,7 @@ useEffect(() => {
   return (
     <div>
       <div>
-        <h2>Share your One Less Success</h2>
+        <h2>Share your One Way Success</h2>
         <p>Welcome {user?.firstName || 'Guest'}! Today's date is {currentDate}.</p>
       </div>
       <div className="event-form w-50 mx-auto">

@@ -72,5 +72,54 @@ module.exports = {
                     error: err.message
                 });
             });
-    }
+    },
+    async updateUser(req, res) {
+        try {
+            const { username } = req.params;
+            const updateData = req.body;
+
+            // If a new password is provided, hash it before updating.
+            // Otherwise, remove it from the update data to avoid overwriting with null/empty.
+            if (updateData.password && updateData.password.trim() !== '') {
+                updateData.password = await bcrypt.hash(updateData.password, 10);
+            } else {
+                delete updateData.password;
+            }
+
+            const updatedUser = await User.findOneAndUpdate(
+                { username: username },
+                updateData,
+                { new: true, runValidators: true }
+            );
+
+            if (!updatedUser) {
+                return res.status(404).json({
+                    success: false,
+                    message: 'User not found'
+                });
+            }
+
+            // Return a clean user object, without the password, for security
+            res.status(200).json({
+                success: true,
+                message: 'User updated successfully',
+                user: {
+                    id: updatedUser._id,
+                    firstName: updatedUser.firstName,
+                    lastName: updatedUser.lastName,
+                    username: updatedUser.username,
+                    email: updatedUser.email,
+                    role: updatedUser.role
+                }
+            });
+        } catch (err) {
+            console.error('Error updating user:', err);
+            res.status(500).json({
+                success: false,
+                message: 'Error updating user',
+                error: err.message
+            });
+        }
+    },
+
 }

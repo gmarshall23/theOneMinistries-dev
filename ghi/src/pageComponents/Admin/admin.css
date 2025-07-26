@@ -31,3 +31,8 @@
   width:100% !important;
   border: 2px solid red !important;
 }
+.table-user:hover {
+  background-color: red !important;
+  color: white !important;
+  cursor: pointer !important;
+}

@@ -86,6 +86,22 @@ carousel-item {
     /* list-style-position: inside !important; */
     padding: 0 2rem !important;
 }
+/* Custom styles for the Tabs component to make the active tab scarlet */
+.custom-tabs .nav-tabs .nav-link.active,
+.custom-tabs .nav-tabs .nav-item.show .nav-link {
+  background-color: #D2042D !important; /* A common hex for Scarlet Red */
+  color: white !important; /* White text for better contrast */
+  border-color: #D2042D #D2042D white !important;
+}
+/* Optional: A nice hover effect for other tabs */
+.custom-tabs .nav-tabs .nav-link:not(.active):hover {
+  color: #D2042D !important; /* Scarlet text on hover for non-active tabs */
+}
+/* Diagnostic style to test if this CSS file is being applied */
+.custom-tabs .nav-tabs {
+    border: 5px solid limegreen !important;
+}
+
 /* Salvation */
 .salvation-content p {
     text-align: left;

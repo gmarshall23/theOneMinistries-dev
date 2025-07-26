@@ -1,12 +1,10 @@
-
-
 [
-{
-    "firstName": "Greg",
-    "lastName": "Marshall",
-    "email": "gm@gm.com",
-    "morals": [],
-    "username": "gm@gm.com",
-    "password": "232323"
-}
+    {
+        "firstName": "Admin",
+        "lastName": "",
+        "email": "admin@admin.com",
+        "username": "admin",
+        "role": "admin",
+        "password": "admin"
+    }
 ]

@@ -52,7 +52,7 @@ function App() {
           <Route exact path="/my-testimony" element={<MyTestimony />} />
           <Route exact path="/admin/*" element={<Admin user={user} setUser={setUser}/>} />
           {/* Add other routes here */}
-          <Route path="/one-less" element={<OneLess user={user} setUser={setUser} scrips={scrips} setScrips={setScrips}/>}>
+          <Route path="/one-way" element={<OneLess user={user} setUser={setUser} scrips={scrips} setScrips={setScrips}/>}>
             <Route path="introduction" element={<Introduction />} />
             <Route path="meet-god" element={<MeetGod scrips={scrips} />} />
             <Route path="salvation" element={<Salvation scrips={scrips} />} />
