@@ -25,7 +25,7 @@ const Salvation = ({ user, scrips }) => {
 			<div className=''>
 				<blockquote className='p-3'>
 					<p className=''>
-						My Friend, I am glad you parked on this page. I say this without drama or exaggeration, but this is the most important question you will ever consider, “Why should God let you into Heaven?” It is also  the most important decision you will ever make as it has everything to do with where you will spend eternity. Please consider it carefully and soberly as this needs to be more than an emotional decision. If you are unsure or want to know more about who God is, click here: Meet God and get to know Him better. Understand just how much He loves you ({scripObj['John 3:16']}) and that He created you ({scripObj['Gen 1:27']}, {scripObj['Genesis 2:7']}, {scripObj['Psalm 139:13-14']}, {scripObj['Isaiah 44:24']}, {scripObj['Job 33:4']}, {scripObj['Malachi 2:10']}, {scripObj['Ephesians 2:10']}, {scripObj['Jer 1:5']}) and that He loved you first {scripObj['1 John 4:19']}. Truthfully, God is the literal definition of love ({scripObj['1 John 4:8,16']}). OK, so if you are ready, walk through the list of questions below…And yes, God is excited and ready for you also.
+						My Friend, I am glad you parked on this page. I say this without drama or exaggeration, but this is the most important question you will ever consider, “Why should God let you into Heaven?” It is also  the most important decision you will ever make as it has everything to do with where you will spend eternity. Please consider it carefully and soberly as this needs to be more than an emotional decision. If you are unsure or want to know more about who God is, click here: Meet God and get to know Him better. Understand just how much He loves you ({scripObj['John 3:16']}) and that He created you ({scripObj['Gen 1:27']}, {scripObj['Genesis 2:7']}, {scripObj['Psalm 139:13-14']}, {scripObj['Isaiah 44:24']}, {scripObj['Job 33:4']}, {scripObj['Malachi 2:10']}, {scripObj['Ephesians 2:10']}, {scripObj['Jer 1:5']}) and that He loved you first {scripObj['1 John 4:19']}. Truthfully, God is the literal definition of love ({scripObj['1 John 4:8']}, {scripObj['1 John 4:16']}). OK, so if you are ready, walk through the list of questions below…And yes, God is excited and ready for you also.
 					</p>
 
 				</blockquote>
@@ -89,7 +89,7 @@ const Salvation = ({ user, scrips }) => {
 					<li>{scripObj['Ephesians 1:13']}</li>
 				</ol>
 			</div>
-			<p >Next, go the <Link className="text-primary" to="/one-less/living">Living</Link> page to discover what your next steps should be after giving your life to Jesus Christ.</p>
+			<p >Next, go the <Link className="text-primary" to="/one-way/living">Living</Link> page to discover what your next steps should be after giving your life to Jesus Christ.</p>
 			{/* react-bootstrap ToolTip component used for scriptures and definitions */}
 			<Tooltip className='' id="tooltip" place="right"
 				style={{

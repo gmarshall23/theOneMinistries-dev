@@ -12,56 +12,60 @@ import cross from './one-less-assets/cross.jpeg'; // Import the image using ES6 
 
 const Morals = ({ user, setUser, scrips }) => {
     const [moralItem, setMoralItem] = useState('');
-    const [inventory, setInventory] = useState(user ? user.morals : []);
+    const [inventory, setInventory] = useState([]);
     const [showModal, setShowModal] = useState(false); // State variable for modal visibility
 
     useEffect(() => {
-        console.log('Morals component mounted');
-        console.log(inventory)
-        console.log(user)
-    }, [user, inventory]);
+        // This keeps the local inventory state in sync with the user's morals,
+        // especially after the user data is first loaded.
+        if (user && user.morals) {
+            setInventory(user.morals);
+        } else {
+            setInventory([]);
+        }
+    }, [user]);
 
     const handleAddToList = e => {
         e.preventDefault();
+        if (!moralItem.trim()) return; // Prevent adding empty items
         const addInventory = inventory ? [...inventory, moralItem] : [moralItem];
-        setInventory([...addInventory]);
+        setInventory(addInventory);
         setMoralItem('');
     }
 
     const handleSaveList = async e => {
         e.preventDefault();
+        if (!user) {
+            console.error("Cannot save list, user is not logged in.");
+            return; // Guard against trying to save when no user is present
+        }
         try {
-            const userId = user.id; // Get the user ID from the user object
-            console.log('User ID:', userId); // Log the user ID to verify it's being retrieved
+            // The user is identified by the JWT, so no need to send the username in the URL.
             const newInventory = { "morals": inventory };
-            const token = localStorage.getItem('accessToken'); // Ensure the token is stored in localStorage
-            console.log('Token:', token); // Log the token to verify it's being retrieved
-            const response = await axios.put(`http://localhost:4040/update_user/${userId}`, newInventory, {
+            const token = localStorage.getItem('token'); // Ensure the correct token key is used
+            const response = await axios.put(`http://localhost:4040/update_user`, newInventory, {
                 headers: {
                     'Content-Type': 'application/json',
-                    'Authorization': `Bearer ${token}` // Include the access token
+                    'Authorization': `Bearer ${token}`
                 }
             });
-            console.log('new user object to update:', response.data);
+
+            const updatedUser = response.data.user; // The API returns the user inside a 'user' property
+            console.log('User updated successfully:', updatedUser);
             setShowModal(true); // Show the modal after successful save
-            setUser(response.data); // Update the user state with the response data
-            localStorage.setItem('user', JSON.stringify(response.data)); // Update the user object in localStorage
+            setUser(updatedUser); // Update the user state with the correct user object
+            localStorage.setItem('user', JSON.stringify(updatedUser)); // Update the user object in localStorage
 
         } catch (error) {
             console.error('Error updating user:', error);
         }
     }
 
-    const handleDelete = async (e) => {
-        e.preventDefault();
-        // const resp = await fetch(`http://localhost:4040/delete_moral/${user._id}/${e.target.id}`, {
-        //   method: 'DELETE',
-        //   headers: {
-        //     "Content-Type": 'application/json'
-        //   }
-        // });
-        // const data = await resp.json()
-        // setUser(data)
+    const handleDelete = (indexToDelete) => {
+        // This function now updates the local state.
+        // The changes will be persisted when the user clicks "Save List".
+        const updatedInventory = inventory.filter((_, index) => index !== indexToDelete);
+        setInventory(updatedInventory);
     }
 
     const closeModal = () => {
@@ -74,11 +78,11 @@ const Morals = ({ user, setUser, scrips }) => {
 	}
     return (
         <div className="morals-content">
-            <div className='border content-header'>
+            <div className='content-header'>
                 <h3>Moral Inventory</h3>
             </div>
             <div>
-                <img className="cloud tall" src={cross} alt="church" /><p className="">I firmly believe that all believers should check themselves regularly against their own personal Moral Inventory. As the author of this site, I am sharing mine (in no order of importance) as a sample of what I do monthly. I speak to myself in the affirmative, reminding myself who I am in Christ. I am not perfect, as God already knows, and where I fall short, I ask God for help to improve and grow in my spiritual walk. I invite you to  develop your own Moral Inventory below and check yourself against it regularly and trust God to move you forward. Bear in mind that yours, just like mine can and should change as the Holy Spirit guides your thoughts and actions.</p>
+                <img className="cloud tall" src={cross} alt="church" /><p className="py-4">I firmly believe that all believers should check themselves regularly against their own personal Moral Inventory. As the author of this site, I am sharing mine (in no order of importance) as a sample of what I do monthly. I speak to myself in the affirmative, reminding myself who I am in Christ. I am not perfect, as God already knows, and where I fall short, I ask God for help to improve and grow in my spiritual walk. I invite you to  develop your own Moral Inventory below and check yourself against it regularly and trust God to move you forward. Bear in mind that yours, just like mine can and should change as the Holy Spirit guides your thoughts and actions.</p>
             </div>
             <div>
                 <Accordion defaultActiveKey={null}>
@@ -142,8 +146,8 @@ const Morals = ({ user, setUser, scrips }) => {
                         {inventory && inventory.map((item, index) => <li
                         key={index}
                         className="row border-bottom border-dark p-2">
-                            <p className="col-9">{item}</p>
-                            <div className="col-2 p-0 text-center" ><Button id={index} onClick={handleDelete}>Delete</Button></div></li>)}
+                            <p className="col-9 m-0">{item}</p>
+                            <div className="col-2 p-0 text-center" ><Button variant="danger" size="sm" id={index} onClick={() => handleDelete(index)}>Delete</Button></div></li>)}
                     </ol>
                     <button id='saveList' className='button w-25 m-2 text-center' onClick={handleSaveList}>Save List</button>
                 </section>

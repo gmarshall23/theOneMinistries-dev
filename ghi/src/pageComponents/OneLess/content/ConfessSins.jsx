@@ -73,11 +73,11 @@ const ConfessSins = () => {
 
   return (
     <div className="confess-content">
-      <div className='border content-header'>
+      <div className='content-header'>
         <h3>Confess my Sins</h3>
       </div>
 
-      <div className='border confessSin'>
+      <div className='confessSin'>
         <p className="confessSin">Sin is real and something everyone faces on a "many times a day" basis. Accepting that we live in a fallen world and that we all sin and fall short of God's glory ({scripObj['Romans 3:23']}) it is important that we <u className="define point vocab" data-tooltip-id="tooltip" data-tooltip-content="Confess - CONFESS YOUR SINS -
           1. To freely agree or acknowledge that you violated God's law by your willful act.
           2. Display real sorrow over your sin.

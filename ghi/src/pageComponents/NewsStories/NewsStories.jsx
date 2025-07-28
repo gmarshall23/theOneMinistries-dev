@@ -1,18 +1,20 @@
 import { useState, useEffect } from 'react';
+import Header from "../../components/Header";
 import axios from 'axios';
 import { Card, Button, Row, Col } from 'react-bootstrap';
+import "./news-stories.css"
 
 const NewsStories = () => {
   const [stories, setStories] = useState([]);
   const fetchNewsFromFile = async () => {
     axios.get('http://localhost:4040/get_news_file')
-    .then(response => {
-      // console.log('stories to fill:', response.data);
-      setStories(response.data);
-    })
-    .catch(error => {
-      console.error("Error fetching news from file:", error);
-    });
+      .then(response => {
+        // console.log('stories to fill:', response.data);
+        setStories(response.data);
+      })
+      .catch(error => {
+        console.error("Error fetching news from file:", error);
+      });
   }
 
   useEffect(() => {
@@ -42,32 +44,33 @@ const NewsStories = () => {
   }, []); // The empty dependency array ensures this effect runs only once on mount
 
   return (
-    <div className="container mt-4">
-    <main>
-      <h2 className="text-center mb-4">World News</h2>
-      <Row>
-        {stories.map((story, index) => (
-          <Col key={index} md={4} className="mb-4 d-flex align-items-stretch">
-            <Card>
-              <Card.Img
-                variant="top"
-                src={story.images?.thumbnailProxied || 'https://via.placeholder.com/400x200.png?text=World+News'}
-                style={{ height: '200px', objectFit: 'cover' }}
-              />
-              <Card.Body className="d-flex flex-column">
-                <Card.Title>{story.title}</Card.Title>
-                <Card.Text>{story.snippet}</Card.Text>
-                <Button variant="primary" href={story.newsUrl} target="_blank" rel="noopener noreferrer" className="mt-auto">
-                  Read More
-                </Button>
-              </Card.Body>
-              <Card.Footer>
-                <small className="text-muted">Source: {story.publisher}</small>
-              </Card.Footer>
-            </Card>
-          </Col>
-        ))}
-      </Row>
+    <div className="container news-container mt-4">
+      <Header />
+      <main className='news-main'>
+        <h2 className="text-center mb-4">World News</h2>
+        <Row>
+          {stories.map((story, index) => (
+            <Col key={index} md={4} className="mb-4 d-flex align-items-stretch">
+              <Card>
+                <Card.Img
+                  variant="top"
+                  src={story.images?.thumbnailProxied || 'https://via.placeholder.com/400x200.png?text=World+News'}
+                  style={{ height: '200px', objectFit: 'cover' }}
+                />
+                <Card.Body className="d-flex flex-column">
+                  <Card.Title>{story.title}</Card.Title>
+                  <Card.Text>{story.snippet}</Card.Text>
+                  <Button variant="primary" href={story.newsUrl} target="_blank" rel="noopener noreferrer" className="mt-auto">
+                    Read More
+                  </Button>
+                </Card.Body>
+                <Card.Footer>
+                  <small className="text-muted">Source: {story.publisher}</small>
+                </Card.Footer>
+              </Card>
+            </Col>
+          ))}
+        </Row>
       </main>
     </div>
   );

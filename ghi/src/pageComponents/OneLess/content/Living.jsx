@@ -47,9 +47,8 @@ const Living = ({scrips}) => {
 							<Link className="text-primary testHover" to="oneliners"> One Liners for Meditation</Link>,
 							<Link className="text-primary testHover" to="/oneLessEvent"> One Way Event</Link>,
 							<Link className="text-primary testHover" to="/confessSins"> Confess my Sins</Link>,
-							<Link className="text-primary testHover" to="/prayer"> Prayer Requests</Link>,
-							<Link className="text-primary testHover" to="/chatRoom"> Chat Room<span className="pix10 rojo">(placeholder)</span></Link> are all good pages for new Christians to visit regularly.</li>
-						<li>Pray and Pray again. Talk to God about literally everything that crosses your mind ({scripObj['1 Thess 5:17']}). Though he already knows your thoughts, he still wants to hear from you. This also helps establish regular communication with God and your will come to know his voice as he speaks through the HOLY SPIRIT, the CHURCH, the BIBLE, CIRCUMSTANCES AND CONFIRMATION of OTHERS (anything else is not of God) and begin to guide your thoughts and behavior. Pray also for others in your life. Pray for those who support you and for those you want to support you.</li>
+							<Link className="text-primary testHover" to="/prayer"> Prayer Requests</Link>, are all good pages for new Christians to visit regularly.</li>
+						<li>Pray and Pray again. Talk to God about literally everything that crosses your mind ({scripObj['1 Thess 5:17']}). Though he already knows your thoughts, he still wants to hear from you. This also helps establish regular communication with God and your will know his voice as he speaks through the HOLY SPIRIT, the CHURCH, the BIBLE, CIRCUMSTANCES AND CONFIRMATION of OTHERS (anything else is not of God) and begin to guide your thoughts and behavior. Pray also for others in your life. Pray for those who support you and for those you want to support you.</li>
 						<li>Join spiritual recovery groups or mental health counseling if you need to overcome addictions: drugs, alcohol, sex, homosexuality, depression, anger, etc.</li>
 						<li>Begin and commit to the process to reduce or eliminate contact and/or interaction with anyone, including family, who is not in support of your Christian journey. This is the toughness part I mentioned earlier. No relationship should be prioritized above your relationship with Jesus Christ. The point bears repeating, in that associating with people who exhibit bad behavior will ALWAYS corrupt your good morals ({scripObj['Eph 4:17-32']}).</li>
 					</ul>
@@ -66,7 +65,7 @@ const Living = ({scrips}) => {
 					<li>I love the souls of all people</li>
 					<li>I love the pure life</li>
 					<li>I love to talk to God.</li>
-					<p className="">If you don't love all these things, NO WORRIES, but now you know better how to set your thinking and how to pray more specifically for God to change your heart.</p>
+					<p className="py-2">If you don't love all these things, NO WORRIES, but now you know better how to set your thinking and how to pray more specifically for God to change your heart.</p>
 				</ol>
 
 			</div>

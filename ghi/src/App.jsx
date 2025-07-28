@@ -56,7 +56,7 @@ function App() {
             <Route path="introduction" element={<Introduction />} />
             <Route path="meet-god" element={<MeetGod scrips={scrips} />} />
             <Route path="salvation" element={<Salvation scrips={scrips} />} />
-            <Route path="morals" element={<Morals scrips={scrips} />} />
+          <Route path="morals" element={<Morals user={user} setUser={setUser} scrips={scrips} />} />
             <Route path="confess-sins" element={<ConfessSins scrips={scrips} />} />
             <Route path="walk-word" element={<WalkWord scrips={scrips} />} />
             <Route path="encourage" element={<Encourage scrips={scrips} />} />

@@ -60,7 +60,8 @@ module.exports = {
                         studyStartDate: user.studyStartDate,
                         giftType: user.giftType,
                         giftAmount: user.giftAmount,
-                        charities: user.charities
+                        charities: user.charities,
+                        morals: user.morals
                     }))
                 });
             })
@@ -74,42 +75,58 @@ module.exports = {
             });
     },
     async updateUser(req, res) {
+        console.log('Updating user with req.user:', req.user);
         try {
-            const { username } = req.params;
+            const { username } = req.params; // For admin updates
+            const loggedInUserId = req.user?._id; // For self-updates
             const updateData = req.body;
 
+            let query;
+
+            // Scenario 1: Admin is updating a specific user by username.
+            if (username) {
+                // In a production app, an admin-only middleware would protect this route.
+                query = { username: username };
+            }
+            // Scenario 2: A logged-in user is updating their own profile.
+            else if (loggedInUserId) {
+                query = { _id: loggedInUserId };
+            }
+            // Scenario 3: No identifier provided.
+            else {
+                return res.status(401).json({ success: false, message: 'Unauthorized: No user identifier provided.' });
+            }
+
+            // Find the user document first to ensure we can trigger .save() hooks.
+            const userToUpdate = await User.findOne(query);
+
+            if (!userToUpdate) {
+                return res.status(404).json({ success: false, message: 'User not found' });
+            }
+
             // If a new password is provided, hash it before updating.
-            // Otherwise, remove it from the update data to avoid overwriting with null/empty.
-            if (updateData.password && updateData.password.trim() !== '') {
-                updateData.password = await bcrypt.hash(updateData.password, 10);
-            } else {
+            // Otherwise, remove it from the update data to avoid overwriting the existing hash.
+            if (!updateData.password || updateData.password.trim() === '') {
                 delete updateData.password;
             }
 
-            const updatedUser = await User.findOneAndUpdate(
-                { username: username },
-                updateData,
-                { new: true, runValidators: true }
-            );
+            // Apply updates to the document and save it. This triggers the pre-save hook for password hashing.
+            Object.assign(userToUpdate, updateData);
+            const savedUser = await userToUpdate.save();
 
-            if (!updatedUser) {
-                return res.status(404).json({
-                    success: false,
-                    message: 'User not found'
-                });
-            }
-
-            // Return a clean user object, without the password, for security
+            // Return a clean user object for security.
             res.status(200).json({
                 success: true,
                 message: 'User updated successfully',
                 user: {
-                    id: updatedUser._id,
-                    firstName: updatedUser.firstName,
-                    lastName: updatedUser.lastName,
-                    username: updatedUser.username,
-                    email: updatedUser.email,
-                    role: updatedUser.role
+                    id: savedUser._id,
+                    firstName: savedUser.firstName,
+                    lastName: savedUser.lastName,
+                    username: savedUser.username,
+                    email: savedUser.email,
+                    role: savedUser.role,
+                    charities: savedUser.charities,
+                    morals: savedUser.morals
                 }
             });
         } catch (err) {

@@ -39,7 +39,7 @@ function Landing({ user }) {
         <section className="landing-section">
           <div className='news-thoughts-div p-4'>
             <section className='landing-news border'>
-              <Link to='/news'>
+              <Link to='news-stories'>
                 <h2>News Story Headlines</h2>
               </Link>
             </section>
@@ -63,12 +63,12 @@ function Landing({ user }) {
           </section>
           <section className='one-less-link'>
             <Link to='/one-less'>
-              <Card className="ol-card text-center border border-primary p-0 m-4">
-                <Card.Body className="bg-primary text-white">
+              <Card className="ol-card border border-primary p-0 m-4">
+                <Card.Body className="text-white">
                   <Card.Title><h3>One Way Lessons</h3></Card.Title>
                   <Card.Text as='div' className='bg-light text-dark border border-primary rounded p-2'>
                     <h4>Explore our lessons and insights.</h4>
-                    <ul style={{ listStylePosition: 'inside', marginLeft: '0', fontFamily: 'cursive', fontSize: '1.2rem', fontWeight: 'bolder' }}>
+                    <ul style={{ listStylePosition: 'inside', marginLeft: '0', fontFamily: 'cursive', fontSize: '1.2rem', fontWeight: 'bolder', textAlign: 'left' }}>
                       <li>Lesson 1: Becoming Christians</li>
                       <li>Lesson 2: Living As Chrisitians</li>
                       <li>Lesson 3: Sharing with Christians</li>

@@ -180,13 +180,12 @@ const OneLess = ({ user, setUser, scrips, setScrips }) => {
         </aside>
         <section className='one-less-section' ref={lessonRef}>
           <div className='one-less-header'>
-            {lesson === 'A Walk' ?
+            {lesson === 'A Walk' &&
               <div className='a-walk-header'>
-                <p>Lesson: {lesson}</p>
+                {/* <p>Lesson: {lesson}</p> */}
                 {user.studyStartDate && <p>Study date: {studyDate} (day: {studyDay})</p>}
-              </div> :
-              <h3>Lesson: {lesson}
-              </h3>}
+              </div>
+              }
           </div>
           {/* <div className='one-less-content' >
             {getComponent()}
