@@ -5,11 +5,11 @@ module.exports = {
     createUser(req, res) {
         console.log('Preparing to create user with req.body:', req.body);
         // Password hashing is performed in the User model with 'pre' middleware
-        const { firstName, lastName, username, email, role, password, studyStartDate, giftType, giftAmount, charities } = req.body;
-        if (!firstName || !lastName || !username || !email || !password || !studyStartDate || !giftType || !giftAmount || !charities) {
+        const { firstName, lastName, username, email, password, role } = req.body;
+        if (!firstName || !lastName || !username || !email || !password) {
             return res.status(400).json({
                 success: false,
-                message: 'All fields are required',
+                message: 'First name, last name, username, email, and password are required.',
             });
         }
         const newUser = new User({
@@ -19,10 +19,6 @@ module.exports = {
             email,
             role,
             password, // Password will be hashed in the User model
-            studyStartDate,
-            giftType,
-            giftAmount,
-            charities
         });
         newUser.save()
             .then(user => {
@@ -42,6 +38,14 @@ module.exports = {
                         giftAmount: user.giftAmount,
                         charities: user.charities
                     }
+                });
+            })
+            .catch(err => {
+                console.error('Error creating user:', err);
+                res.status(500).json({
+                    success: false,
+                    message: 'Error creating user',
+                    error: err.message
                 });
             })
     },
@@ -78,7 +82,7 @@ module.exports = {
         console.log('Updating user with req.user:', req.user);
         try {
             const { username } = req.params; // For admin updates
-            const loggedInUserId = req.user?._id; // For self-updates
+            const loggedInUserId = req.user?.id; // For self-updates
             const updateData = req.body;
 
             let query;

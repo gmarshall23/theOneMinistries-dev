@@ -1,5 +1,6 @@
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { useState, useEffect } from 'react';
+import axios from 'axios';
 import Landing from './pageComponents/Landing';
 import OneLess from './pageComponents/OneLess';
 import Admin from './pageComponents/Admin';
@@ -29,13 +30,29 @@ function App() {
   const [user, setUser] = useState(null);
   const [scrips, setScrips] = useState([]);
   useEffect(() => {
-    // Retrieve user information from local storage on component mount
-    // need to use this useEffect to get user info from DB and store in local storage to insure user info is up to date at render
-    const storedUser = localStorage.getItem('user');
-    if (storedUser) {
-      setUser(JSON.parse(storedUser));
+    // This effect runs when the app loads to check for an existing session.
+    const verifyUserSession = async () => {
+      const token = localStorage.getItem('token');
+      if (token) {
+        try {
+          // Use the /me route to validate the token and get fresh user data
+          const response = await axios.get('http://localhost:4040/me', {
+            headers: { 'Authorization': `Bearer ${token}` }
+          });
+          // The token is valid, set the user state with the data from the server
+          setUser(response.data);
+          localStorage.setItem('user', JSON.stringify(response.data)); // Also update localStorage
+        } catch (error) {
+          // The token is invalid or expired, clear it from storage
+          console.error("Session validation failed:", error);
+          localStorage.removeItem('token');
+          localStorage.removeItem('user');
+          setUser(null); // Clear the user state on validation failure
+        }
+      }
     }
-  }, [setUser]);
+    // verifyUserSession();
+  }, []);
 
   return (
     <Router>

@@ -33,8 +33,11 @@ const Users = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
     // /update_user/:username
+    const token = localStorage.getItem('token');
     // Handle form submission logic here
-    axios.put(`http://localhost:4040/update_user/${user.username}`, user)
+    axios.put(`http://localhost:4040/update_user/${user.username}`, user, {
+      headers: { 'Authorization': `Bearer ${token}` }
+    })
     .then(response => {
       console.log("User updated successfully:", response.data);
       fetchUsers();
@@ -46,9 +49,8 @@ const Users = () => {
   };
   const handleAddUser = (event) => {
     event.preventDefault();
-    // /add_user
-    // Handle form submission logic here
-    axios.post('http://localhost:4040/add_user', user)
+    // Corrected endpoint from '/add_user' to '/create_user'
+    axios.post('http://localhost:4040/create_user', user)
     .then(response => {
       console.log("User added successfully", response.data);
       fetchUsers();

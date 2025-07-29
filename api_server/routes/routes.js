@@ -13,12 +13,13 @@ const questions_controller = require('../controllers/questions_controller');
 const news_controllers = require('../controllers/news_controllers');
 
 
-module.exports = (app) => {
+module.exports = (app, authenticateToken) => {
 
 // ********* User routes *********//
 app.post('/create_user', user_Controller.createUser);
 app.get('/get_users', user_Controller.getUsers);
-app.put('/update_user/:username', user_Controller.updateUser);
+app.put('/update_user', authenticateToken, user_Controller.updateUser); // For self-updates
+app.put('/update_user/:username', authenticateToken, user_Controller.updateUser); // For admin updates
 
 
 // ******** Study routes *********//

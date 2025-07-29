@@ -16,6 +16,8 @@ require("./database/mongoose-connection.js");
 dotenv.config();
 const app = express();
 const PORT = process.env.API_PORT || 4040;
+// Add this log to verify that the secret key is being loaded from your .env file
+console.log('ACCESS_TOKEN_SECRET loaded:', process.env.ACCESS_TOKEN_SECRET ? '******' : 'NOT FOUND');
 const ACCESS_TOKEN_SECRET = process.env.ACCESS_TOKEN_SECRET;
 const REFRESH_TOKEN_SECRET = process.env.REFRESH_TOKEN_SECRET;
 
@@ -38,10 +40,34 @@ const limiter = rateLimit({
 
 app.use(limiter);
 
+// This is our authentication middleware. It will verify the JWT
+// and attach the user's payload to the request object.
+const authenticateToken = (req, res, next) => {
+  const authHeader = req.headers['authorization'];
+  console.log('Authorization Header Received:', authHeader);
+  const token = authHeader && authHeader.split(' ')[1]; // Bearer TOKEN
+
+  if (token == null) {
+    console.error('Auth Error: No token provided.');
+    return res.sendStatus(401); // Unauthorized - No token provided
+  }
+
+  console.log('Token being verified:', token);
+  jwt.verify(token, ACCESS_TOKEN_SECRET, (err, user) => {
+    if (err) {
+      // Add detailed error logging to see the exact reason for failure
+      console.error('JWT Verification Error:', err.name, '-', err.message);
+      return res.sendStatus(403); // Forbidden - Token is invalid
+    }
+    req.user = user; // Attach user payload to the request
+    next(); // Proceed to the route handler
+  });
+};
+
 let refreshTokens = [];
 // Generate Access Token
 const generateAccessToken = (user) => {
-  return jwt.sign(user, ACCESS_TOKEN_SECRET, { expiresIn: '15m' });
+  return jwt.sign(user, ACCESS_TOKEN_SECRET, { expiresIn: '8h' });
 };
 
 // Generate Refresh Token
@@ -119,27 +145,39 @@ app.post('/logout', (req, res) => {
 });
 
 // Protected route
-app.get('/me', (req, res) => {
-  const token = req.headers['authorization'].split(' ')[1];
+app.get('/me', authenticateToken, async (req, res) => {
+  // The user id is available from the token payload attached by the middleware
+  const userId = req.user.id;
 
-  if (!token) {
-    return res.status(401).send('No token provided');
-  }
+  try {
+    const user = await User.findById(userId).select('-password'); // Find user by ID, exclude password
 
-  jwt.verify(token, ACCESS_TOKEN_SECRET, (err, decoded) => {
-    if (err) {
-      return res.status(403).send('Failed to authenticate token');
+    if (!user) {
+      return res.status(404).json({ success: false, message: 'User not found' });
     }
 
-    res.status(200).send(decoded);
-  });
+    // Send back the user object in a consistent format
+    res.status(200).json({
+      id: user._id,
+      username: user.username,
+      role: user.role,
+      firstName: user.firstName,
+      lastName: user.lastName,
+      email: user.email,
+      history: user.history,
+      morals: user.morals,
+      studyStartDate: user.studyStartDate
+    });
+  } catch (error) {
+    console.error('Error fetching user for /me route:', error);
+    res.status(500).json({ success: false, message: 'Error fetching user data' });
+  }
 });
 
 app.use((req, res, next) => {
   console.log(`incoming ${req.method} request for ${req.url}`);
   next()
 })
-
-routes(app)
+routes(app, authenticateToken)
 
 app.listen(PORT, () => console.log(`App listening on port ${PORT}`))

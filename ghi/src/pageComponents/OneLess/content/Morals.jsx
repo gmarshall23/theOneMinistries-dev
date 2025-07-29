@@ -43,6 +43,7 @@ const Morals = ({ user, setUser, scrips }) => {
             // The user is identified by the JWT, so no need to send the username in the URL.
             const newInventory = { "morals": inventory };
             const token = localStorage.getItem('token'); // Ensure the correct token key is used
+            console.log('Token from localStorage being sent:', token);
             const response = await axios.put(`http://localhost:4040/update_user`, newInventory, {
                 headers: {
                     'Content-Type': 'application/json',

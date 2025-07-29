@@ -62,7 +62,7 @@ function Landing({ user }) {
             </SwitchTransition>
           </section>
           <section className='one-less-link'>
-            <Link to='/one-less'>
+            <Link to='/one-way'>
               <Card className="ol-card border border-primary p-0 m-4">
                 <Card.Body className="text-white">
                   <Card.Title><h3>One Way Lessons</h3></Card.Title>

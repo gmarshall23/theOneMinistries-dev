@@ -25,7 +25,7 @@ const Login = ({setUser}) => {
     axios.post('http://localhost:4040/login', { username, password }, { withCredentials: true })
     .then(response=> {
       console.log('Login response, users stored to localStorage:', response.data.user);
-      localStorage.setItem('accessToken', response.data.accessToken);
+      localStorage.setItem('token', response.data.accessToken);
       localStorage.setItem('user', JSON.stringify(response.data.user)); // Store user information in local storage
       setUser(response.data.user);
       // setMessage(`Login successful. Welcome Mr. ${response.data.user.lastName}`);
