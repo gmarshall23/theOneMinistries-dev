@@ -4,7 +4,7 @@ import axios from 'axios';
 import Landing from './pageComponents/Landing';
 import OneLess from './pageComponents/OneLess';
 import Admin from './pageComponents/Admin';
-import Header from './components/Header';
+// import Header from './components/Header';
 import About from './pageComponents/About/About';
 import './App.css';
 import NewsStories from './pageComponents/NewsStories';
@@ -51,7 +51,7 @@ function App() {
         }
       }
     }
-    // verifyUserSession();
+    verifyUserSession();
   }, []);
 
   return (

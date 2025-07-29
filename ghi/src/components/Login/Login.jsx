@@ -20,31 +20,16 @@ const Login = ({setUser}) => {
   }, []);
 
   const handleLogin = async () => {
-    console.log('attempting login');
-    console.log('username:', username);
-    axios.post('http://localhost:4040/login', { username, password }, { withCredentials: true })
-    .then(response=> {
+    try {
+      const response = await axios.post('http://localhost:4040/login', { username, password }, { withCredentials: true });
       console.log('Login response, users stored to localStorage:', response.data.user);
       localStorage.setItem('token', response.data.accessToken);
       localStorage.setItem('user', JSON.stringify(response.data.user)); // Store user information in local storage
       setUser(response.data.user);
-      // setMessage(`Login successful. Welcome Mr. ${response.data.user.lastName}`);
       navigate('/'); // Redirect to the landing page after successful login
-    })
-    .catch(error => {
+    } catch (error) {
       setMessage('Login failed: ' + error.response.data);
-    });
-    // try {
-    //   const response = await axios.post('http://localhost:4040/login', { username, password }, { withCredentials: true });
-    //   console.log('Login response, users stored to localStorage:', response.data.user);
-    //   localStorage.setItem('accessToken', response.data.accessToken);
-    //   localStorage.setItem('user', JSON.stringify(response.data.user)); // Store user information in local storage
-    //   setUser(response.data.user);
-    //   // setMessage(`Login successful. Welcome Mr. ${response.data.user.lastName}`);
-    //   navigate('/'); // Redirect to the landing page after successful login
-    // } catch (error) {
-    //   setMessage('Login failed: ' + error.response.data);
-    // }
+    }
   };
 
   return (

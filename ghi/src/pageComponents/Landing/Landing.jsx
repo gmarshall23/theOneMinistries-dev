@@ -8,7 +8,7 @@ import Header from '../../components/Header'
 
 import Welcome from '../../components/Welcome/'
 import Footer from '../../components/Footer'
-import { Link } from 'react-router';
+import { Link } from 'react-router-dom';
 import thoughtOfDay from '../../assets/images/thoughtOfDay.png'
 import Card from 'react-bootstrap/Card';
 import img100 from '../../assets/images/testimonyImg2.png';
