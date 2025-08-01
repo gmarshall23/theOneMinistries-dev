@@ -65,7 +65,7 @@ function Landing({ user }) {
             <Link to='/one-way'>
               <Card className="ol-card border border-primary p-0 m-4">
                 <Card.Body className="text-white">
-                  <Card.Title><h3>One Way Lessons</h3></Card.Title>
+                  <Card.Title><h3 className='text-dark'>One Way Lessons</h3></Card.Title>
                   <Card.Text as='div' className='bg-light text-dark border border-primary rounded p-2'>
                     <h4>Explore our lessons and insights.</h4>
                     <ul style={{ listStylePosition: 'inside', marginLeft: '0', fontFamily: 'cursive', fontSize: '1.2rem', fontWeight: 'bolder', textAlign: 'left' }}>

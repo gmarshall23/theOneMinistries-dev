@@ -11,8 +11,7 @@ const Users = () => {
     email: '',
     username: '',
     role: '',
-    password: '',
-    studyStartDate:""
+    password: ''
   });
   const [users, setUsers] = useState([]);
 
@@ -47,20 +46,6 @@ const Users = () => {
     })
 
   };
-  const handleAddUser = (event) => {
-    event.preventDefault();
-    // Corrected endpoint from '/add_user' to '/create_user'
-    axios.post('http://localhost:4040/create_user', user)
-    .then(response => {
-      console.log("User added successfully", response.data);
-      fetchUsers();
-    })
-    .catch(error => {
-      console.error("Error adding user:", error);
-    })
-
-  };
-
   useEffect(() => {
      console.log("Users component mounted");
     // Fetch user data or perform any necessary side effects
@@ -137,19 +122,13 @@ const Users = () => {
               <Form.Control type="password" placeholder="Password"
               value = {user.password}
               onChange={(e) => setUser({...user, password: e.target.value})}
-               />
+              disabled />
             </Col>
           </Form.Group>
         </div>
-        <div>
-<Button variant="primary" type="button" onClick={handleSubmit} className="w-25">
+        <Button variant="primary" type="button" onClick={handleSubmit} className="w-25">
           Submit
         </Button>
-        <Button variant="primary" type="button" onClick={handleAddUser} className="w-25">
-          Add User
-        </Button>
-        </div>
-
       </Form>
       <div>
         <Table striped bordered hover>

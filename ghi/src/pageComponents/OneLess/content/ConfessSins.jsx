@@ -11,7 +11,8 @@ const ConfessSins = () => {
   // Allow scriptures to  display 'onHover'
   const [scrips, setScrips] = useState([]);
   const [sin, setSin] = useState('');
-  const [sinList, setSinList] = useState([""]);
+  const [sinList, setSinList] = useState([]);
+  const [isAnimating, setIsAnimating] = useState(false); // Add state to prevent multiple clicks
   const crossStartRef = useRef(null); // Create a ref for the element with id='crossStart'
   const crossEndRef = useRef(null); // Create a ref for the element with id='crossStart'
   const forgiveTextRef = useRef(null); // Create a ref for the element with id='crossStart'
@@ -26,49 +27,56 @@ const ConfessSins = () => {
   }, [])
 
   let scripObj = {}
-  for (let s of scrips) {
-    scripObj[s.quote] = <span data-tooltip-id="tooltip" className="testHover" data-tooltip-content={s.scripture}>{s.quote}</span>
-  }
+	for (let s of scrips) {
+		scripObj[s.quote] = <span className='tipText' data-tooltip-id="tooltip" data-tooltip-content={s.scripture}>{s.quote}</span>
+	}
   const addSin = () => {
-    const updateList = sinList ? [...sinList, sin] : [sin];
-    sinList ? setSinList(updateList) : setSinList([sin]);
+    // Prevent adding empty strings to the list
+    if (sin.trim()) setSinList([...sinList, sin]);
     setSin('');
   }
-  const cleanseSins = () => {
-    const startAnimation = crossStartRef.current;
-    const endAnimation = crossEndRef.current;
-    if (startAnimation && endAnimation) {
-      // Calculate the difference between the two elements
-      const startRect = crossStartRef.current.getBoundingClientRect();
-      const endRect = endAnimation.getBoundingClientRect();
+
+  // Helper function to pause execution
+  const wait = (ms) => new Promise(resolve => setTimeout(resolve, ms));
+
+  const cleanseSins = async () => {
+    if (isAnimating) return; // Prevent re-triggering if animation is running
+    setIsAnimating(true);
+
+    const startEl = crossStartRef.current;
+    const endEl = crossEndRef.current;
+    const textEl = forgiveTextRef.current;
+
+    if (startEl && endEl && textEl) {
+      // 1. Calculate positions and start the movement animation
+      const startRect = startEl.getBoundingClientRect();
+      const endRect = endEl.getBoundingClientRect();
       const deltaX = endRect.left - startRect.left;
       const deltaY = endRect.top - startRect.top;
-      // Set CSS custom properties to be used in the keyframes
-      crossStartRef.current.style.setProperty('--delta-x', `${deltaX}px`);
-      crossStartRef.current.style.setProperty('--delta-y', `${deltaY}px`);
-      // Add the class to trigger the animation
-      crossStartRef.current.classList.add('float-arc');
-      // Optionally remove the class after the animation is done (3s in this example)
-      setTimeout(() => {
-        // crossStartRef.current.classList.remove('float-arc');
-        crossStartRef.current.classList.add('crossFade');
-        crossEndRef.current.classList.add('crossEnd');
-        // endAnimation.classList.remove('d-none');
 
-      }, 5000);
-      // Show the text after the animation
-      setTimeout(() => {
+      // Set CSS custom properties to be used by the keyframe animation.
+      startEl.style.setProperty('--delta-x', `${deltaX}px`);
+      startEl.style.setProperty('--delta-y', `${deltaY}px`);
+      startEl.classList.add('float-arc');
 
-        forgiveTextRef.current.classList.remove('d-none');
-        forgiveTextRef.current.classList.add('fadeIn');
-      }, 8000);
-      // Hide the sins after the animation
-      // setTimeout(() => {
-      //   crossStartRef.current.classList.add('d-none');
-      //   endAnimation.classList.remove('d-none');
-      //   endAnimation.classList.add('fadeIn');
-      // }, 5000);
+      // 2. Wait for the movement animation to finish (5s)
+      await wait(5000);
+
+      // 3. Dissolve the moving element (sins)
+      startEl.classList.add('crossFade'); // This animation takes 1s
+
+      // 4. Wait for the dissolve to finish, then expand the final image
+      await wait(1000);
+      endEl.classList.add('crossEnd'); // This expansion takes 3s
+
+      // 5. Wait for the expansion to finish, then show the forgiveness text
+      await wait(3000);
+      textEl.classList.remove('d-none');
+      textEl.classList.add('fadeIn');
     }
+    // Reset animation state after it's all done
+    // Total animation time is 5000 + 1000 + 3000 = 9000ms
+    setTimeout(() => setIsAnimating(false), 9000);
   };
 
   return (
@@ -94,7 +102,7 @@ const ConfessSins = () => {
           doing through prayer. Watch as you send your repented sin to the cross how it darkens your blanket and then is
           washed by the blood of Jesus at the cross and returns clean and pure to you representing your status as forgiven and righteous to match your always righteous state.
           Repeat this activity as often as you need or like but remembering that you need to pray sincerely to God for true
-          forgiveness of your sins.</p>
+          forgiveness of your sins({scripObj['1 John 1:9']}).</p>
       </div>
       <div className="confessAnimator">
         <section className="sinCross1 sinCross">
@@ -114,9 +122,12 @@ const ConfessSins = () => {
               placeholder="Enter your sin"
               value={sin}
               onChange={(e) => setSin(e.target.value)}
+              disabled={isAnimating} // Disable input during animation
             />
-            <Button onClick={addSin}>Add sin</Button>
-            <Button onClick={cleanseSins}>Send sins to Cross</Button>
+            <Button onClick={addSin} disabled={isAnimating}>Add sin</Button>
+            <Button onClick={cleanseSins} disabled={isAnimating}>
+              {isAnimating ? 'Cleansing...' : 'Send sins to Cross'}
+            </Button>
           </div>
         </section>
         <section className="sinCross2 sinCross">
@@ -135,17 +146,17 @@ const ConfessSins = () => {
       </div>
       <Tooltip className='' id="tooltip" place="right"
         style={{
-          fontSize: '1.25rem',
-          maxWidth: '30rem',
-          // minWidth: '200px',
-          // maxWidth: '400px',
-          whiteSpace: 'pre-line',
-          color: 'red',
-          backgroundColor: '#333',
-          borderRadius: '8px',
-          padding: '10px',
-          textAlign: 'left',
-        }} />
+					fontSize: '1.25rem',
+					maxWidth: '30rem',
+					// minWidth: '200px',
+					// maxWidth: '400px',
+					whiteSpace: 'pre-line',
+					color: 'red',
+					backgroundColor: '#333',
+					borderRadius: '8px',
+					padding: '10px',
+					textAlign: 'left',
+				}} />
     </div>
   )
 

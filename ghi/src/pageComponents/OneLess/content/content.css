@@ -251,7 +251,7 @@ carousel-item {
     position: absolute;
     top: 2rem;
     left: 25%;
-    transform: translate(-50%);
+    transform: translateX(-50%);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -262,19 +262,13 @@ carousel-item {
     z-index: 500;
     /* transition: left 5s linear; */
     /* transition: background-color .5s linear; */
-
-}
-
-.cleanseSins {
-    /* animation: moveAcross 3s linear 1; */
-    /* background-color: red !important; */
 }
 
 #crossEnd {
     position: absolute;
     top: 2rem;
     left: 75%;
-    transform: translate(-50%);
+    transform: translateX(-50%);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -324,8 +318,25 @@ carousel-item {
         background-color: red;
     }
 }
+/* This class applies the keyframe animation to the element. */
+.float-arc {
+  animation: floatArcAnimation 5s cubic-bezier(0.42, 0, 0.58, 1) forwards;
+}
+@keyframes floatArcAnimation {
 
-
+  /* The key is to combine the initial centering transform with the animation's movement. */
+  /* This prevents the animation from overriding and removing the centering. */
+  from {
+    transform: translateX(-50%) translate(0, 0);
+  }
+  50% {
+    /* Move halfway horizontally, and up vertically to create the arc peak */
+    transform: translateX(-50%) translate(calc(var(--delta-x) / 2), calc(var(--delta-y) / 2 - 150px));
+  }
+  to {
+    transform: translateX(-50%) translate(var(--delta-x), var(--delta-y));
+  }
+}
 #moveCross {
     position: absolute;
     top: 50%;
@@ -336,36 +347,6 @@ carousel-item {
     /* animation: moveAcross 5s linear infinite; */
 }
 
-/* Ensure the container of the cross is positioned (if not already) */
-.confess-content {
-  position: relative;
-}
-
-/* Make sure crossStart is absolutely positioned */
-#crossStart {
-  position: absolute;
-  /* The starting position remains as rendered initially */
-}
-
-/* The class to trigger the arc animation */
-.float-arc {
-  /* animation: floatArc 3s cubic-bezier(0.45, 0, 0.55, 1); */
-  animation: floatArc 5s forwards;
-}
-
-/* Define the arc animation using the custom properties */
-@keyframes floatArc {
-    0% {
-      transform: translate(-50%, 0);
-    }
-    50% {
-      transform: translate(calc(-50% + var(--delta-x) / 2), calc(var(--delta-y) / 2 - 45px));
-    }
-    100% {
-      transform: translate(calc(-50% + var(--delta-x)), var(--delta-y));
-      background-color: red;
-    }
-  }
 /* +++++++++++++  Oneliners.jsx  +++++++++++++ */
 .oneLiner {
     border: 2px groove black;
