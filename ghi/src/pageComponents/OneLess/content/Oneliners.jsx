@@ -35,8 +35,7 @@ const Oneliners = () => {
                 <img className="col-md-4 p-4 img cloud " src={cross} alt="church" />
             </div>
             <p className="">Psalms 19 asks that the meditation of our heart be pleasing in the sight of the Lord. Pick a One Liner or "Post-it-Note" for your <u className="toolTipHover" data-tooltip-id="tooltip" data-html="true" data-tooltip-content="MEDITATE 1. Reading 2. Believing 3. Absorbing (Thinking over and over again) 4. Applying 5. Obeying">Meditation</u> Thoughts today.</p>
-            <p className="white">There are over 150 to choose from. Click until one speaks to your spirit.</p>
-            <p className="rojo pix15">NOTE: PLACEHOLDER, this feature works but is not yet fully functional.</p>
+            <p className="white">There are over 200 to choose from. Click until one speaks to your spirit.</p>
 
             {/* <div>
                 {statementsData.statements.map((statement, index) => (

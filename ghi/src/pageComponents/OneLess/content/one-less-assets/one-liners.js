@@ -60,19 +60,18 @@ const oneLiners = [
 `Never choose preference over obedience`,
 `Use your scars to guide your path to the stars`,
 `Let God turn your mistakes into miracles`,
-`<ul>Cure For Doubt:
-    <li>confess doubt</li>
-    <li>study the evidence for Faith</li>
-    <li>make certain your salvation</li>
-    <li>study the word of God</li>
-    <li>pray earnestly</li>
+`<b>Cure For Doubt:</b>
+<ul>
+    <li>Confess doubt</li>
+    <li>Study the evidence for Faith</li>
+    <li>Make certain your salvation</li>
+    <li>Study the word of God</li>
+    <li>Pray earnestly</li>
 </ul>`,
 `The value of your goal will determine the strength of your persistence
-make certain your salvation<br>
-study the word of God<br>
-pray earnestly`,
-
-
+Make certain your salvation<br>
+Study the word of God<br>
+Pray earnestly`,
 `The value of your goal will determine the strength of your persistence`,
 `Love is a choice to see someone the way God sees them and the choice to treat someone the way God wants them treated`,
 `Who you are is your <b><em>STANDING</em></b>. How you feel is your <b><em>STATE</em></b>.<br>
@@ -97,13 +96,15 @@ pray earnestly`,
     <li>1 Quart of PRAYER</li>
     <li>1 Pint of PRAISE</li>
     <li>1 cup of PATIENCE (waiting)</li>
-</ul><br>
+</ul>
 Mix well. Enjoy !!`,
 `A Person of Pride does not acknowledge God for his Blessings`,
-`It's fine to feel H-A-P-P-Y: H-Having, A-Anotherl, P-Person(s), P-Please, Y-You;<br>
- Happiness is what happens to you<br>
- But live in a state of J-O-Y: J-Jesus, O-Others, Y-Yourself;<br>
- Joy is your job`,
+`It's fine to feel H-A-P-P-Y:<br>
+H-Having, A-Anotherl, P-Person(s), P-Please, Y-You;<br>
+Happiness is what happens to you<br>
+But live in a state of J-O-Y:<br>
+J-Jesus, O-Others, Y-Yourself;<br>
+Joy is your job`,
 `<em>Jesus</em> died to show God Loves you. (Jn 3:16),<br>
  <em>Jesus</em> rose to show God's power. (Rom 1:16),<br>
  <em>Jesus</em> ascended to give us access to God's power. (Acts 1:8)`,
@@ -127,7 +128,7 @@ Mix well. Enjoy !!`,
 `3 P's that get me on my knees: Praise and Petition in Prayer to the Lord`,
 `Grace frees us from fear and allows us to walk freely in obedience.`,
 `There are only two things to do about SIN: Confess IT and Forsake IT !!!`,
-`I AM COVERED<br>
+`<b>I AM COVERED</b><br>
 <ul>
 <li>The Lord walks in front as he leads me</li>
 <li>The Lord walks beside as he guides me</li>
@@ -137,64 +138,112 @@ Mix well. Enjoy !!`,
 `In difficult times where is your FOCUS?<br>
  Focus on your problems is to focus on Fear.<br>
  Focus on God is to focus on your Faith.`,
- 71) We cannot solve our problems with the same thinking we used to create them. Have the mind of God and the Heart of Jesus.
-72) Are you Rich or Poor because a person of Spiritual Poverty CANNOT be of use to the Kingdom.
-73) Here is a Trick Question for you:
- What's more important - To know what is in the word or To know what is not in the word?
-74) Don't be like the Dead Sea... God will flow things to you if he knows things will flow through you.
-75) Use God's word will keep you from wrong thoughts, words, and actions; Otherwise...wrong thoughts, words and actions will keep you from God's word.
-76) God speaks to us in one of FIVE ways ONLY: The Bible, The Church, Confirmation from Others, Circumstances, and The Holy Spirit.
-77) When I am Thanking God, I get "back to better"
- When I am Praising God, I get "back to better"
- When I am Worshiping God, I get "back to better"
-78) Tell me please...Why do Christians throw away their wounded. Think of Peter, David, Jonah, Moses, Jacob, and Paul
- Jesus instructed us to "STRENGTHEN OUR BROTHERS" after they repent.
-79) Get Busy.... Are you called to sit or called to STAND? What did you do for God today??
-80) Learn to say "I Can" (Phil 4:13), because "I can't" (John 5:19) - (deep thought, meditate on it)
-81) Life and Death exist in the Power of the Tongue. Speak Life. Use words to Heal not Hurt.
-82) Your WORDS may be winning the Disagreement while they are most likely LOSING the Agreement.
-83) The Will of God guides you to His House of Grace which is opened by the Key of Faith
-84) Obedience to God is always right but Obedience to God is never easy.
-85) God is very patient...but HIS patience does have an expiration date.
-86) Obedience, simply stated, is to do the "next thing" that God tells you to do.
-87) Disobedience is Rebellion and consequences will definitely come
-88) I AM AFFIRMED
- I am Called: Saved
- I am Righteous: Correct, Straight
- I am Glorified: Honored
- I am Justified: Made Right
- I am Sanctified: Pure
- I am Holy: Set Apart
-89) Jesus sacrificed his life so I could be free, so I could be whole, so I could tell everyone I know. Have you been talking lately?
-90) With Condemnation you will actually sin more. With Conviction you will actually sin less.
-91) Reliance on your feelings alone can change your emotional state endlessly. Remembering God's sacrifice will stabilize your feelings and emotions
-92) Do not let obscure passages of scripture confuse your understanding of clear, straight, direct passages of scripture.
-93) The more you rely on God, the more you glorify God
-94) The tongue is humanly untameable (Jam 1:26) Consider these three before you speak:
- Pause: ask why am I talking? (Jam 1:19)
- Ponder: Think: Is my heart right, Is my mind right before I say this? (Luke 2:35)
- Pray: Would I say it this way in front of the Lord? (Isa 6:5/Ps 19:14)
-95) Put everything else aside, Your desires and plans MUST bend the knee to the will of God.
-96) Your confirmation from God awaits your obedience to God
-
-97) OUT WITH THE OLD...God says: If you do, Then I will do (Ex 21)
- IN WITH THE NEW...God says: We work together, We protect each other, We have a mindset of family (Jer 31/Heb 8)
-98) The way we knew God 5 years ago is not adequate in times such as now. Relationships with God are ever alive and growing.
-99) Share the gospel everyday to everyone you encounter; and when necessary... use words.
-100) Spiritual Maturity Includes:
- Knowing - "waiting" time is not "wasted" time
- Knowing - faith in God is NOT trust in God.
-101) Without God's passion and purpose your Spiritual Gifts will lead down one of two roads. One of Pride (self righteousness) or One of Passivity (self loathing).
-102) IF-THEN statements with God only work this way: "IF" God's word says it, "Then" it will be so.
-103) Have IN-TI-MA-CY with God. It means: He-can-see-into-me because there can be no healing without revealing
-104) God's blessings are not always rewards for past behavior but preparation for future tests
-105) God's great blessings are many times followed by God's great testing
-106) TRUST GOD else you fall victim to disbelief then victim to despair then victim to disobedience then land victimized in disgrace.
-107) God's timing is a way to increase your trust in HIM... Consider then: What is God preparing me for?
-108) The Holy Spirit does not consult your human schedule before he acts and instructs.
+ `We cannot solve our problems with the same thinking we used to create them. Have the mind of God and the Heart of Jesus.`,
+ `Are you Rich or Poor because a person of Spiritual Poverty CANNOT be of use to the Kingdom.`,
+ `Here is a Trick Question for you: What's more important - To know what is in the word or To know what is not in the word?`,
+ `Don't be like the Dead Sea... God will flow things to you if he knows things will flow through you.`,
+ `Use God's word will keep you from wrong thoughts, words, and actions; Otherwise...wrong thoughts, words and actions will keep you from God's word.`,
+`God speaks to us in one of FIVE ways ONLY: The Bible, The Church, Confirmation from Others, Circumstances, and The Holy Spirit.`,
+`When I am Thanking God, I get "back to better"<br>
+ When I am Praising God, I get "back to better"<br>
+ When I am Worshiping God, I get "back to better"`,
+`Tell me please...Why do Christians throw away their wounded. Think of Peter, David, Jonah, Moses, Jacob, and Paul. Jesus instructed us to "STRENGTHEN OUR BROTHERS" after they repent.`,
+`Get Busy.... Are you called to sit or called to STAND? What did you do for God today??`,
+`Learn to say "I Can" (Phil 4:13), because "I can't" (John 5:19) - (deep thought, meditate on it)`,
+`Life and Death exist in the Power of the Tongue. Speak Life. Use words to Heal not Hurt.`,
+`Your <em>WORDS</em> may be winning the Disagreement while they are most likely <em>LOSING</em> the Agreement.`,
+`The Will of God guides you to His House of Grace which is opened by the Key of Faith`,
+`Obedience to God is always right but Obedience to God is never easy.`,
+`God is very patient...but HIS patience does have an expiration date.`,
+`Obedience, simply stated, is to do the "next thing" that God tells you to do.`,
+`Disobedience is Rebellion and consequences will definitely come`,
+`I AM AFFIRMED<br>
+<ul>
+ <li>I am Called: Saved</li>
+ <li>I am Righteous: Correct, Straight</li>
+ <li>I am Glorified: Honored</li>
+ <li>I am Justified: Made Right</li>
+ <li>I am Sanctified: Pure</li>
+ <li>I am Holy: Set Apart</li>
+</ul>`,
+`Jesus sacrificed his life so I could be free, so I could be whole, so I could tell everyone I know. Have you been talking lately?`,
+`With Condemnation you will actually sin more. With Conviction you will actually sin less.`,
+`Reliance on your feelings alone can change your emotional state endlessly. Remembering God's sacrifice will stabilize your feelings and emotions`,
+`Do not let obscure passages of scripture confuse your understanding of clear, straight, direct passages of scripture.`,
+`The more you rely on God, the more you glorify God`,
+`The tongue is humanly untameable (Jam 1:26) Consider these three before you speak:
+<ol>
+ <li>Pause: Ask why am I talking? (Jam 1:19)</li>
+ <li>Ponder: Think: Is my heart right, Is my mind right before I say this? (Luke 2:35)</li>
+ <li>Pray: Would I say it this way in front of the Lord? (Isa 6:5/Ps 19:14)</li>
+</ol>`,
+`Put everything else aside, Your desires and plans MUST bend the knee to the will of God.`,
+`Your confirmation from God awaits your obedience to God`,
+`OUT WITH THE OLD...God says: If you do, Then I will do (Ex 21)<br>
+ IN WITH THE NEW...God says: We work together, We protect each other, We have a mindset of family (Jer 31/Heb 8)`,
+`The way we knew God 5 years ago is not adequate in times such as now.<br> Relationships with God are ever alive and growing.`,
+`Share the gospel everyday to everyone you encounter; and when necessary... use words.`,
+`Spiritual Maturity Includes:<br>
+ Knowing - "waiting" time is not "wasted" time<br>
+ Knowing - faith in God is NOT trust in God.`,
+`Without God's passion and purpose your Spiritual Gifts will lead down one of two roads. One of Pride (self righteousness) or One of Passivity (self loathing).`,
+`IF-THEN statements with God only work this way:<br>
+"IF" God's word says it, "Then" it will be so.`,
+`Have IN-TI-MA-CY with God. It means: He-can-see-into-me because there can be no healing without revealing`,
+`God's blessings are not always rewards for past behavior but preparation for future tests`,
+`God's great blessings are many times followed by God's great testing`,
+`TRUST GOD else you fall victim to disbelief then victim to despair then victim to disobedience then land victimized in disgrace.`,
+`God's timing is a way to increase your trust in HIM... Consider then: What is God preparing me for?`,
+`The Holy Spirit does not consult your human schedule before he acts and instructs.`,
+`THE BAKER'S DOZEN<br>
+ 13 Signs YOU are Growing in your relationship with Christ:
+ <ul>
+ <li>You are more aware of sinfulness and weaknesses,</li>
+ <li>You respond to sin quickly and with genuine repentance,</li>
+ <li>You have spiritual battles that become more intense yet you still have joy,</li>
+ <li>You see your trials and temptations as opportunities for growth,</li>
+ <li>You view service to God as a high honor, not a burden,</li>
+ <li>You are able to view everything as coming from the Lord,</li>
+ <li>You spend more time in worship and praise,</li>
+ <li>You have desire to obey more intensely and sin is less attractive,</li>
+ <li>You are more and more eager to share your faith,</li>
+ <li>You experience an increasing awareness of HIS presence,</li>
+ <li>You LOVE to spend time ALONE with GOD,</li>
+ <li>You want to give more in every way,</li>
+ <li>You Sense and Feel God's LOVE.</li>
+</ul>`,
+`Yes, Obedience will cost you, but disobedience will cost you more.`,
+`I am Transformed and I Won't Go Back.<br>
+ I Won't Go Back - To Negotiate with Evil,<br>
+ I Won't Go Back - To Lower the Standard,<br>
+ I Won't Go Back - To Compromise with Culture,<br>
+ I Won't Go Back - To Accept Less than the Lord`,
+`Trials and tests are God's vote of confidence in you.`,
+`God will never test what's trivial, HE will test your treasure.`,
+`True pleasure comes from God only, Satan only knows amusement.`,
+`Every Blessing comes with a Burden, yet In your Weakness, HE is Strong`,
+`Please Pray and be Patient:<br>
+ I am not there yet because God is not Done yet`,
+`God I want your will, and I want what comes with it.
+ Would you want Rachel if you knew Leah came with it? (deep deep thought, marinate on it)`,
+`Let's Go... You can only get to it if you are willing to go through it!!`,
+`My Test gives me a Testimony so I can Testify`,
+`If you want to beat Satan, you must become as Stubborn as he is.`,
+`Your mind literally thinks 10 thousand thoughts per day.<br>
+ Your mind literally thinks 3.5 million thoughts per year.<br>
+ How many of your thoughts are on Godly things?<br>
+ Renew your mind over and over and be transformed.`,
+`SPOILER ALERT I know how the story ends... WE WIN!!`,
+`Live a good life because of God's Grace and Mercy; not because of duty and responsibility.`,
+`Temptations decrease to you as Grace and Mercy increase in you`,
+`Hurting and Suffering are prerequisite to Healing. God's word is both bitter and sweet.`,
+`You CANNOT condone that which God condemns`,
+`Do Everyday what you would do if you believe God is present with you right now.`,
+`God's mortal man, in the center of God's will, is IMMORTAL, until God is done.`,
+`Think about everyone in your life and ask yourself...<br>
+Do they Push you back? Do they Hold you back? or Do they Have your back?`
 
 ];
-
 export {
     loadStatement,
     oneLiners
