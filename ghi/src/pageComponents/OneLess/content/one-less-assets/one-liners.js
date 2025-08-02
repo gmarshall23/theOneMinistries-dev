@@ -241,8 +241,170 @@ Joy is your job`,
 `Do Everyday what you would do if you believe God is present with you right now.`,
 `God's mortal man, in the center of God's will, is IMMORTAL, until God is done.`,
 `Think about everyone in your life and ask yourself...<br>
-Do they Push you back? Do they Hold you back? or Do they Have your back?`
-
+Do they Push you back? Do they Hold you back? or Do they Have your back?`,
+`There are two kinds of spiritual silence...<br>
+ Yellow Silence (for cowards: Peter before the cock crows)<br>
+ Golden Silence (for Wise Men: Jesus before Pilate)<br>
+ I pray you know the difference.`,
+`GOD DOES NOT GIVE US A SPIRIT OF FEAR...<br>
+ Recognize what is not from God from inside yourself<br>
+ Remove what is not from God from inside yourself`,
+`Jesus came to live the life we cannot live and to die the death He did not deserve.`,
+`Slaves serve because they Have to<br>
+ Employees serve because they need to<br>
+ Christians serve because they want to`,
+`When you truly trust God, you stop asking him for things and start thanking him for doing those things.`,
+`You need to be an ACTIVE part of your church and community. There is a big difference between BEING a part of something and BELONGING to something.`,
+`Having principles without practicing them are powerless`,
+`God has what you don't have<br>
+ God gives what you can't give<br>
+ God does what you can't do<br>
+ God fixes what you can't fix<br>
+ What can God do for you?`,
+`Renounce anything that does not see Christ as Everything`,
+`We are never more like Christ than when we forgive others`,
+`When Satan says never, God says NOW!`,
+`In my timing I get my results, In God's timing I get God's results...think Abraham, Sarah, Hagar, Isaac, Ishmael`,
+`Prayer needs to be your oxygen, not your oxygen mask`,
+`Consider this... Rather than asking God why something terrible happened to you<br>
+ Ask God how that same thing can be used to glorify Him and bring you closer to Him`,
+`My friend, You need to "trust" the Power within you more than "fear" the Power against you`,
+`Listen carefully my friend, Can you hear Jesus whispering from inside or do you hear Satan screaming from the outside. (Jam 4:7)`,
+`You can't hear the voice of God whispering to you because you are focused on Satan screaming at you`,
+`Grace is God's unmerited favor. Grace does God's uplifting of others.`,
+`Disagreement in NOT hate… (deep thought, marinade on it and look to apply it)`,
+`The success you have in doing Jesus' work will be commensurate with the time you spend with Jesus`,
+`The opposite of LOVE is Hell`,
+`Why is it that only Jesus and soldiers volunteer, to the point of death, for their true cause?`,
+`Love is seeking the other persons highest good`,
+`You cannot finish in the flesh that which began in the Spirit`,
+`YES, God is your GPS but who put in the destination in the first place?`,
+`Worldly riches always promise what they cannot give.`,
+`We need YOU in Church because YOU are the Church and if YOU are at Church we get to have YOU.`,
+`Study the scriptures because the Bible must answer to the Bible in ALL cases`,
+`Try to figure this one out..<br>
+ If you are born once, You will Die twice.<br>
+ If your are born twice, you only need to Die once`,
+`Doing smart things can add years to your life,
+ Doing wise things will add life to your years. Do Both!`,
+`If you focus on your Goliaths, You will stumble.<br>
+ If you focus on God, your Goliaths will tumble`,
+`If you fear a Giant, Remember the Lion and the Bear.<br>
+Don't look forward in fear, Look back in appreciation`,
+`Greg's Anthem<br>
+ Without your Love there is no hope for my tomorrow<br>
+ I Live because you Live<br>
+ I Have because you Give<br>
+ You are the Heartbeat of all I do<br>
+ I Can't Live one day without YOU!!!`,
+`The size of your Hope determines the size of your Blessing`,
+`My Friend, you will never know everything about anything. But don't let your confusion disrupt your obedience to God's Plan.`,
+`Helloooo....Your Silence is Reputational Suicide for the Faith. Allow GOD'S TRUTH to speak through YOU.`,
+`Choose to LOVE`,
+`Walk in the light of what you know to be right`,
+`<b>Keep simple things simple:</b>: Regarding Jesus: Love, commit, follow`,
+`<b>Keep simple things simple:</b>: Pray your way through the entire day`,
+`Never give up what you want most for what you want now`,
+`Salvation is not a goal to achieve, It is a gift to receive`,
+`Your choices in life are not: Good or Evil or Right or Wrong<br>
+ Your choices in life are: Life or Death and God or Satan`,
+`Do not ever let past failures tell you that you have failed. You are ALWAYS reconciled and renewed in Christ`,
+`As long as Jesus is one of your many options, He is not an option for you.`,
+`Faith doesn't show the entire stairwell. It just shows enough to take the next step`,
+`When you are a Mess, apply “UGLY” trust<br>
+<ul>
+ <li>U-Until</li>
+ <li>G-God</li>
+ <li>L-Lifts</li>
+ <li>Y-You</li>
+</ul>`,
+`Don't chase what you already have, Don't fear something Christ has already defeated`,
+`Going from the 'why' question to the 'what' question is a sign of spiritual maturity`,
+`OH2OH is “Open Hand to Open Hand” — God's formula for success`,
+`Before I can do what I love, I must know what I hate`,
+`You cannot trust others better than you think or talk about them`,
+`The place of conflict is the place of calling`,
+`We must always 'fight not to fight' because the battle is the Lord's`,
+`Delivery from ( fill in ) comes from occupying your mind on ALL things Jesus rather than on ALL your problems`,
+`Lord, allow your grace to help me do the right thing at the right time`,
+`Release yourself from the bond of yesterday's decisions`,
+`My sins met my Savior… Ask me what happened? (ask yourself the same question)`,
+`Father, help me to keep looking until I can see the invisible`,
+`Because of God:<br>
+ I don't like what I like anymore<br>
+ I don't want what I want anymore`,
+`Do you serve the God who resides in Heaven or the god who resides in your mind?`,
+`Salvation is not a goal to achieve it is a gift to receive`,
+`True believers don't let their mistakes define them. They let mistakes refine them.`,
+`Because of God:<br>
+ My life never got any easier but my joy and peace increased`,
+`If 'IT' was easy… you wouldn't know 'IT' was God`,
+`While you are crying, what are you confessing (deep thought, meditate on it)`,
+`Salvation has nothing to do with me but everything to do with God's goodness and mercy`,
+`Pray always because victory does not come by accident`,
+`Don't fear the mob. Fear the Master!`,
+`I cannot alter the past, but I can bring my past to the altar`,
+`Don't let others put their “Too” on you:<br>
+<ul>
+ <li>Too young</li>
+ <li>Too inexperienced</li>
+ <li>Too failed</li>
+</ul>`,
+`Be salt and light and know the darker the background the brighter the light`,
+`Hear ye, Hear ye to all in relationships… WE CAN:<br>
+ Have difficulties without being difficult<br>
+ Have unity without being uniform<br>
+ Have harmony without causing harm`,
+`Talk is cheap: Are you professing Jesus with your lips and your lives?`,
+`It is not about the nature of your sins, it is about the nature of God`,
+`Your feelings should follow your actions not precede them<br>
+ DO THIS: Do the right things first in order to feel better: pray, read, church, help others<br>
+ DO NOT DO THIS: Don't do what feels good first in order to feel better: sex, drugs, porn, alcohol`,
+`Don't let your understanding of God dictate your trust in God (deep thought, meditate on it)<br>
+Ask yourself if what you are doing stopping you from doing what God is asking you to do?`,
+`Christians often get lost because they don't go far enough (deep thought, meditate on it)`,
+`This is a tough one…<br>
+ Would you rather experience the miracle of God delivering you from something or experience the grace of God delivering you through something?<br>
+ It should make you wonder…<br>
+ Which is better for you?<br>
+ Which grows your faith?<br>
+ Which makes you depend on God?<br>
+ `,
+`Unresolved anger hurts both the vessel in which it is stored and the vessel upon which it is poured`,
+`Look for God in the 'here and now' not after the 'came and did'`,
+`Fun Fact - If you are a Christian, trouble will most certainly come<br>
+ Funner Fact - If you are a Christian, Jesus most certainly has overcome`,
+`Christians are not sinless, however, maturing Christians sin less than we used to`,
+`What will others see in you today that will make them want to know God?`,
+`Doctrine without application only makes you an educated sinner`,
+`To know and understand the word of God and not apply it is Spiritual Abortion`,
+`You are a slave to whatever you cannot say 'NO' to`,
+`God's power to redeem is far greater than Satan's power to destroy`,
+`<b>Keep simple things simple:</b><br>
+ Everything Jesus whether big or small<br>
+ Receive It<br>
+ Believe It<br>
+ Know It<br>
+ Do It`,
+`You are joined with others in Christ so you can become what you cannot become on your own`,
+`The value of your blessing will exceed the amount of your faith and obedience`,
+`This may be bigger than me but My God is bigger than this`,
+`When overwhelmed, left out, looked over, less than, lost, do you 'tap out' or let Jesus 'tag in'?`,
+`<b>Keep simple things simple:</b>:<br>
+ When the word of God makes sense<br>
+ Seek no other sense`,
+`Take solace in the fact that the things that attack you point to your value`,
+`The solution to grief is gratitude. Thank God for the time and experience you had with what you loved and lost.`,
+`NO may not mean NO<br>
+ No can mean you need to go slow<br>
+ No can mean you need to grow<br>
+ No can mean there is more you need to know`,
+`Lord, thank you for being the reason that I am not the reason.`,
+`<b>Keep simple things simple:</b>:<br>
+ You can't know you need to be saved until you know you are lost.`,
+`You can't know you need salvation until you know you are a sinner.`,
+`BE STILL AND KNOW HE IS GOD. We never submit to suffering`,
+`When you get lost or are trying to find your way, choose to follow Jesus all the way home.`
 ];
 export {
     loadStatement,
