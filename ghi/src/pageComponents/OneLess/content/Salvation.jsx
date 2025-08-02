@@ -62,7 +62,7 @@ const Salvation = ({ user, scrips }) => {
 					2. Believing without seeing.
 					3. Taking God at his Word (the bible).
 					4. Hope with expectations">faith</u> -- and this is not from yourselves, it is the gift of God -- not by works, so that no one can boast.</p>
-					<p >Pray the prayer out loud from Romans 10 sincerely.</p>
+					<p >Pray the prayer out loud from Romans 10:9-13 sincerely.</p>
 					<p ><u className="tipText" data-tooltip-id="tooltip" data-tooltip-content="Confess - CONFESS YOUR SINS:
 					1. To freely agree or acknowledge that you violated God's law by your willful act.
 					2. Display real sorrow over your sin.

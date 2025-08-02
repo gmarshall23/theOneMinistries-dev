@@ -361,9 +361,23 @@ carousel-item {
     word-wrap: break-word !important; */
 
 }
+
+/* Custom dropdown styles for Oneliners component */
+.custom-dropdown {
+    width: 50% !important; /* Button container width */
+    margin: 0 auto !important; /* Center the button container */
+}
+
+.custom-dropdown .btn {
+    width: 100% !important; /* Button takes full width of its container */
+}
+
 .custom-dropdown .dropdown-menu {
-    /* width: 60vw; */
-    margin: 0 auto !important;
+    width: 200% !important; /* Dropdown menu is twice the width of the button */
+    left: 50% !important; /* Center horizontally */
+    top: 50px !important; /* Position below the button */
+    transform: translateX(-50%) !important; /* Adjust for true centering */
+    margin: 0 !important;
     white-space: normal !important;
     overflow-wrap: normal !important;
     word-wrap: break-word !important;
