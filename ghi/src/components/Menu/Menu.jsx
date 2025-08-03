@@ -26,7 +26,6 @@ const Menu = ({ user }) => {
 
   const handleCloseModal = () => setShowLoginModal(false);
 
-  user ? console.log('user logged in: ', user.email) : console.log('user not logged in: ')
   return (
     <Navbar expand="lg" className='nav1' expanded={expanded}>
       <Navbar.Toggle aria-controls="basic-navbar-nav" onClick={handleToggle} />

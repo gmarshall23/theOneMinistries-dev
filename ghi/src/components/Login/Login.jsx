@@ -15,18 +15,16 @@ const Login = ({setUser}) => {
 
 
   useEffect(() => {
-    console.log('Login component mounted');
-    usernameRef.current.focus(); // Set focus to the username input field when the component mounts
+    usernameRef.current.focus();
   }, []);
 
   const handleLogin = async () => {
     try {
       const response = await axios.post('http://localhost:4040/login', { username, password }, { withCredentials: true });
-      console.log('Login response, users stored to localStorage:', response.data.user);
       localStorage.setItem('token', response.data.accessToken);
-      localStorage.setItem('user', JSON.stringify(response.data.user)); // Store user information in local storage
+      localStorage.setItem('user', JSON.stringify(response.data.user));
       setUser(response.data.user);
-      navigate('/'); // Redirect to the landing page after successful login
+      navigate('/');
     } catch (error) {
       setMessage('Login failed: ' + error.response.data);
     }

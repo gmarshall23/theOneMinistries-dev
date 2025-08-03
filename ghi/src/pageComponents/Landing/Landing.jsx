@@ -31,7 +31,7 @@ function Landing({ user }) {
   const handleCloseModal = () => setShowLoginModal(false);
 
   useEffect(() => {
-    console.log("scripts", randomScriptures);
+    // Set an interval to change the scripture every 7 seconds
     const intervalId = setInterval(() => {
       const newIndex = Math.floor(Math.random() * randomScriptures.length);
       // Updating scripture index to a random value

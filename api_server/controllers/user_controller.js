@@ -65,7 +65,8 @@ module.exports = {
                         giftType: user.giftType,
                         giftAmount: user.giftAmount,
                         charities: user.charities,
-                        morals: user.morals
+                        morals: user.morals,
+                        journal: user.journal
                     }))
                 });
             })

@@ -115,7 +115,8 @@ app.post('/login', async (req, res) => {
       email: user.email,
       history: user.history,
       morals: user.morals,
-      studyStartDate: user.studyStartDate
+      studyStartDate: user.studyStartDate,
+      journal: user.journal
     }
   });
 });

@@ -10,7 +10,7 @@ import './content.css'
 
 
 // assume `delta` and `scrips` come in via props
-const WordStudy = ({ content, studyDay, scrips, studies }) => {
+const WordStudy = ({ content, studyDay, scrips, studies, studyTitle }) => {
   console.log('WordStudy loaded', content);
   const [delta, setDelta] = useState({});
   const [displayedContent, setDisplayedContent] = useState({});
@@ -73,7 +73,7 @@ const WordStudy = ({ content, studyDay, scrips, studies }) => {
         <div className="row justify-content-between quillHeader ">
           <Dropdown className="col-lg-6 text-start">
             <Dropdown.Toggle variant="primary" id="dropdown-info">
-              Select another Small Bite Document
+              Select another {studyTitle} Document
             </Dropdown.Toggle>
             <Dropdown.Menu>
               {studies.map((item,idx) => (
@@ -108,15 +108,5 @@ const WordStudy = ({ content, studyDay, scrips, studies }) => {
     </div>
   );
 };
-
-
-
-
-// ------------------------------------------------------------------
-
-
-
-
-
 
 export default WordStudy;

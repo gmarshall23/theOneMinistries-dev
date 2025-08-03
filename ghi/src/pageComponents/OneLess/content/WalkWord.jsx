@@ -60,8 +60,10 @@ const WalkWord = ({ user, studyDay, scrips }) => {
   }, [studies]);
   // useEffect for when currentStudy changes
   useEffect(() => {
-    console.log('Current Study', currentStudy);
-  }, [currentStudy]);
+    console.log('Current user journal entry', newEntry);
+    setNewEntry(user?.journal || []);
+  }, [newEntry, user?.journal]);
+
 
   const submit = event => {
 
@@ -93,19 +95,19 @@ const WalkWord = ({ user, studyDay, scrips }) => {
               Study Group
             </Dropdown.Toggle>
             <Dropdown.Menu className='scrollable-menu'>
-              <Dropdown.Item eventKey="Small Bite">Small Bite (one verse)</Dropdown.Item>
-              <Dropdown.Item eventKey="Big Bite">One Passage of Cohesive Scripture</Dropdown.Item>
+              <Dropdown.Item eventKey="Small Bite" id="Small Bite">Small Bite (one verse)</Dropdown.Item>
+              <Dropdown.Item eventKey="Big Bite" id="Big Bite">One Passage of Cohesive Scripture</Dropdown.Item>
             </Dropdown.Menu>
           </Dropdown>
-          <Dropdown onSelect={handleSelect} id={'bible'} className='col-2'>
+          <Dropdown onSelect={handleSelect} id='bible' className='col-2'>
             <Dropdown.Toggle variant="primary" id="dropdown-basic">
               By Bible
             </Dropdown.Toggle>
 
             <Dropdown.Menu>
-              <Dropdown.Item eventKey="Placeholder" >Placeholder</Dropdown.Item>
-              <Dropdown.Item eventKey="Old Testement" >Old Testement</Dropdown.Item>
-              <Dropdown.Item eventKey="New Testement" >New Testement</Dropdown.Item>
+              <Dropdown.Item eventKey="Placeholder" id="Placeholder">Placeholder</Dropdown.Item>
+              <Dropdown.Item eventKey="Old Testement" id="Old Testement">Old Testement</Dropdown.Item>
+              <Dropdown.Item eventKey="New Testement" id="New Testement">New Testement</Dropdown.Item>
             </Dropdown.Menu>
           </Dropdown>
           <Dropdown onSelect={(eventKey, e) => handleSelect(eventKey, e, 'Theme')} id={'theme'} className='col-2'>
@@ -167,7 +169,7 @@ const WalkWord = ({ user, studyDay, scrips }) => {
       </div>
       <div className='mt-2 studies border border-primary border-4 rounded'>
         {!currentStudy && <h3>Select a Study</h3>}
-        <WordStudy content={currentStudy} studyDay={studyDay} scrips={scrips} studies={studies}/>
+        <WordStudy content={currentStudy} studyDay={studyDay} scrips={scrips} studies={studies.filter(item => item.title === studyTitle)} studyTitle={studyTitle} />
       </div>
 
       <div>
@@ -182,7 +184,7 @@ const WalkWord = ({ user, studyDay, scrips }) => {
               onChange={(e) => setJournalEntry(e.target.value)}
             />
           </Form.Group>
-          <Button type="submit" className="btn btn-secondary mb-2">Save</Button>
+          <Button type="submit" className="btn btn-secondary mb-2 w-25">Save</Button>
         </Form>
       </div>
 

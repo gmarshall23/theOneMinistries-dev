@@ -38,11 +38,9 @@ const OneLess = ({ user, setUser, scrips, setScrips }) => {
   }
   const days = async (date) => {
     // convert date to day of the year
-    user ? console.log("user studyDate: " + user?.studyStartDate) : console.log('user is not defined');
     const startDate = new Date(date).getTime();
     const today = new Date().getTime();
     const day = Math.floor(((((today - startDate) / 1000) / 60) / 60) / 24);
-    console.log(`study day info : ${date}, ${startDate}, ${today}, ${day}`);
     const formattedDate = new Date(user.studyStartDate).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
     setStudyDate(formattedDate);
     setStudyDay(day);
@@ -52,12 +50,11 @@ const OneLess = ({ user, setUser, scrips, setScrips }) => {
   //   getData();
   // }, []);
   useEffect(() => {
-    console.log('OneLess component mounted');
     getData();
     if (user && user.studyStartDate) {
       days(user.studyStartDate);
     }
-  }, [user]); // will run this effect only when the user change.
+  }, [user]);
   useEffect(() => {
     const refLesson = lessonRef.current;
     if (refLesson) {

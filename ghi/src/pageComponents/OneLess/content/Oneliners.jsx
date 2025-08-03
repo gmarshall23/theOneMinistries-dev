@@ -9,14 +9,12 @@ import cross from './one-less-assets/cross.jpeg';
 const Oneliners = () => {
     const [oneLiner, setOneLiner] = useState(loadStatement())
     const handleSelect = (eventkey) => {
-        console.log('Selected statement:', oneLiners[eventkey]);
         setOneLiner(oneLiners[eventkey]);
       };
     const handleShowOne = (e) => {
         e.preventDefault();
         const randNumber = Math.floor(Math.random() * oneLiners.length);
         setOneLiner(oneLiners[randNumber])
-        console.log(oneLiners[randNumber])
     }
 
     const handleClickAll = (e) => {
