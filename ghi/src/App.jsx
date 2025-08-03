@@ -4,6 +4,7 @@ import axios from 'axios';
 import Landing from './pageComponents/Landing';
 import OneLess from './pageComponents/OneLess';
 import Admin from './pageComponents/Admin';
+import ProtectedRoute from './components/ProtectedRoute';
 // import Header from './components/Header';
 import About from './pageComponents/About/About';
 import './App.css';
@@ -29,6 +30,8 @@ import Questions from './pageComponents/OneLess/content/Questions';
 function App() {
   const [user, setUser] = useState(null);
   const [scrips, setScrips] = useState([]);
+  const [isAuthLoading, setIsAuthLoading] = useState(true);
+
   useEffect(() => {
     // This effect runs when the app loads to check for an existing session.
     const verifyUserSession = async () => {
@@ -50,6 +53,7 @@ function App() {
           setUser(null); // Clear the user state on validation failure
         }
       }
+      setIsAuthLoading(false); // Authentication check is complete
     }
     verifyUserSession();
   }, []);
@@ -60,20 +64,25 @@ function App() {
 
         <Routes>
           <Route exact path="/" element={<Landing user={user} />} />
-          <Route exact path="/about" element={<About user={user}/>} />
+          <Route exact path="/about" element={<About user={user} />} />
           {/* <Route exact path="/one-less" element={<OneLess user={user} setUser={setUser} scrips={scrips} setScrips={setScrips}/>} /> */}
           <Route exact path="/news-stories" element={<NewsStories />} />
           <Route exact path='/subscribe' element={<Subscribe />} />
           <Route exact path="/login" element={<Login setUser={setUser} />} />
           <Route exact path="/logout" element={<Logout setUser={setUser} />} />
           <Route exact path="/my-testimony" element={<MyTestimony />} />
-          <Route exact path="/admin/*" element={<Admin user={user} setUser={setUser}/>} />
-          {/* Add other routes here */}
-          <Route path="/one-way" element={<OneLess user={user} setUser={setUser} scrips={scrips} setScrips={setScrips}/>}>
+          <Route exact path="/admin/*" element={<Admin user={user} setUser={setUser} />} />
+          {/* Protected One Way Routes */}
+          <Route path="/one-way" element={
+            <ProtectedRoute user={user} isLoading={isAuthLoading} redirectTo="/">
+              <OneLess user={user} setUser={setUser} scrips={scrips} setScrips={setScrips} />
+            </ProtectedRoute>
+          }>
+            <Route index element={<MeetGod scrips={scrips} />} />
             <Route path="introduction" element={<Introduction />} />
             <Route path="meet-god" element={<MeetGod scrips={scrips} />} />
             <Route path="salvation" element={<Salvation scrips={scrips} />} />
-          <Route path="morals" element={<Morals user={user} setUser={setUser} scrips={scrips} />} />
+            <Route path="morals" element={<Morals user={user} setUser={setUser} scrips={scrips} />} />
             <Route path="confess-sins" element={<ConfessSins scrips={scrips} />} />
             <Route path="walk-word" element={<WalkWord scrips={scrips} />} />
             <Route path="encourage" element={<Encourage scrips={scrips} />} />

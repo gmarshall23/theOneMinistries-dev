@@ -8,6 +8,7 @@ import Header from '../../components/Header'
 
 import Welcome from '../../components/Welcome/'
 import Footer from '../../components/Footer'
+import LoginRequiredModal from '../../components/LoginRequiredModal'
 import { Link } from 'react-router-dom';
 import thoughtOfDay from '../../assets/images/thoughtOfDay.png'
 import Card from 'react-bootstrap/Card';
@@ -18,6 +19,16 @@ import './landing.css'; // make sure to import the CSS
 function Landing({ user }) {
   const randomScriptures = scriptArray.scriptures;
   const [scripture, setScripture] = useState(0);
+  const [showLoginModal, setShowLoginModal] = useState(false);
+
+  const handleOneWayClick = (e) => {
+    if (!user) {
+      e.preventDefault();
+      setShowLoginModal(true);
+    }
+  };
+
+  const handleCloseModal = () => setShowLoginModal(false);
 
   useEffect(() => {
     console.log("scripts", randomScriptures);
@@ -62,7 +73,7 @@ function Landing({ user }) {
             </SwitchTransition>
           </section>
           <section className='one-less-link'>
-            <Link to='/one-way'>
+            <Link to='/one-way/meet-god' onClick={handleOneWayClick}>
               <Card className="ol-card border border-primary p-0 m-4">
                 <Card.Body className="text-white">
                   <Card.Title><h3 className='text-dark'>One Way Lessons</h3></Card.Title>
@@ -119,6 +130,13 @@ function Landing({ user }) {
         </section>
       </main>
       <Footer />
+
+      {/* Login Required Modal */}
+      <LoginRequiredModal
+        show={showLoginModal}
+        onHide={handleCloseModal}
+        message="You must log in to access One Way lessons."
+      />
 
     </div>
 
