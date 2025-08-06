@@ -94,7 +94,7 @@ const OneLess = ({ user, setUser, scrips, setScrips }) => {
       case 'One Liners for meditation (words of Wisdom)':
         return <Oneliners />;
       case 'A Walk':
-        return <WalkWord user={user} studyDay={studyDay} scrips={scrips} />;
+        return <WalkWord user={user} setUser={setUser} studyDay={studyDay} scrips={scrips} />;
       case 'Encourage Me':
         return <Encourage />;
       case 'One Way Event':

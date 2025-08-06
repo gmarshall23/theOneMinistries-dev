@@ -81,17 +81,23 @@ const generateRefreshToken = (user) => {
 // Login route
 app.post('/login', async (req, res) => {
   const { username, password } = req.body;
+  console.log('Login attempt for username:', username);
 
   // const user = users.find(u => u.username === username);
   const user = await User.findOne({username: username});
-  user ? console.log("check", user.firstName) : console.log("no user exists");
+  console.log('User found:', user ? user.firstName : 'No user found');
+
   if (!user) {
+    console.log('Login failed: User not found');
     return res.status(404).send('User not found');
   }
 
+  console.log('Comparing password...');
   const passwordIsValid = bcrypt.compareSync(password, user.password);
+  console.log('Password valid:', passwordIsValid);
 
   if (!passwordIsValid) {
+    console.log('Login failed: Invalid password');
     return res.status(401).send('Invalid password');
   }
 

@@ -20,13 +20,17 @@ const Login = ({setUser}) => {
 
   const handleLogin = async () => {
     try {
+      console.log('Attempting login for:', username);
       const response = await axios.post('http://localhost:4040/login', { username, password }, { withCredentials: true });
+      console.log('Login successful:', response.data);
       localStorage.setItem('token', response.data.accessToken);
       localStorage.setItem('user', JSON.stringify(response.data.user));
       setUser(response.data.user);
       navigate('/');
     } catch (error) {
-      setMessage('Login failed: ' + error.response.data);
+      console.error('Login error:', error);
+      const errorMessage = error.response?.data || error.message || 'Unknown error';
+      setMessage('Login failed: ' + errorMessage);
     }
   };
 

@@ -84,7 +84,7 @@ function App() {
             <Route path="salvation" element={<Salvation scrips={scrips} />} />
             <Route path="morals" element={<Morals user={user} setUser={setUser} scrips={scrips} />} />
             <Route path="confess-sins" element={<ConfessSins scrips={scrips} />} />
-            <Route path="walk-word" element={<WalkWord scrips={scrips} />} />
+            <Route path="walk-word" element={<WalkWord setUser={setUser} user={user} studyDay={0} scrips={scrips} />} />
             <Route path="encourage" element={<Encourage scrips={scrips} />} />
             <Route path="events" element={<Events scrips={scrips} user={user} />} />
             <Route path="living" element={<Living scrips={scrips} />} />

@@ -131,7 +131,9 @@ module.exports = {
                     email: savedUser.email,
                     role: savedUser.role,
                     charities: savedUser.charities,
-                    morals: savedUser.morals
+                    morals: savedUser.morals,
+                    journal: savedUser.journal,
+                    studyStartDate: savedUser.studyStartDate,
                 }
             });
         } catch (err) {

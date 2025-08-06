@@ -28,6 +28,7 @@ app.get('/study_content', study_Controller.getStudyContent)
 app.post('/create_study', study_Controller.createStudy)
 app.put('/update_study/:id', study_Controller.updateStudy)
 app.put('/add_study_info', study_Controller.addStudyInfo)
+
 // app.delete('/delete_study/:id', study_Controller.deleteStudy)
 
 // app.post('/contribution', authenticateToken,contirbution_Controller.createContribution);

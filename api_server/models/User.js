@@ -34,6 +34,12 @@ const userSchema = new mongoose.Schema(
 /*  Hash user password before saving  */
 userSchema.pre('save', function(next) {
     const user = this;
+
+    // Only hash the password if it has been modified (or is new)
+    if (!user.isModified('password')) {
+        return next();
+    }
+
     // Create salt string
     bcrypt.genSalt(SALT, function(err, salt) {
         // If err, return
