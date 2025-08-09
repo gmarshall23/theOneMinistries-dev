@@ -63,7 +63,9 @@ const Prayers = ({user}) => {
                 </Form.Group>
                 <button type="submit" className="btn btn-primary">Submit</button>
             </Form>
-            <h4>As God answers your prayers, Please add your prayers to <span>One Less Events</span>Please also visit our <Link to="/one-less/living">Living</Link> to receive some helpful words regarding your prayer request</h4>
+            <h4>
+                As God answers your prayers, please share your victory on the <span ><Link className="text-danger" to="/one-way/events"><em>One Way</em></Link></span> page so everyone can see all the amazing things that God is doing in the lives of His people
+            </h4>
 
         </>
     )

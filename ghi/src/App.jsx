@@ -2,7 +2,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import Landing from './pageComponents/Landing';
-import OneLess from './pageComponents/OneLess';
+import OneWay from './pageComponents/OneWay';
 import Admin from './pageComponents/Admin';
 import ProtectedRoute from './components/ProtectedRoute';
 // import Header from './components/Header';
@@ -13,19 +13,20 @@ import Subscribe from './pageComponents/Subscribe/Subscribe';
 import Login from './components/Login';
 import Logout from './components/Logout';
 import MyTestimony from './pageComponents/MyTestimony';
-import Introduction from './pageComponents/OneLess/content/Introduction';
-import Oneliners from './pageComponents/OneLess/content/Oneliners';
-import MeetGod from './pageComponents/OneLess/content/MeetGod';
-import Salvation from './pageComponents/OneLess/content/Salvation';
-import Living from './pageComponents/OneLess/content/Living';
-import Morals from './pageComponents/OneLess/content/Morals';
-import ConfessSins from './pageComponents/OneLess/content/ConfessSins';
-import WalkWord from './pageComponents/OneLess/content/WalkWord';
-import Encourage from './pageComponents/OneLess/content/Encourage';
-import Events from './pageComponents/OneLess/content/Events';
-import Prayers from './pageComponents/OneLess/content/Prayers';
-import EternallySecure from './pageComponents/OneLess/content/EternallySecure';
-import Questions from './pageComponents/OneLess/content/Questions';
+import Introduction from './pageComponents/OneWay/content/Introduction';
+import Oneliners from './pageComponents/OneWay/content/Oneliners';
+import MeetGod from './pageComponents/OneWay/content/MeetGod';
+import Salvation from './pageComponents/OneWay/content/Salvation';
+import Living from './pageComponents/OneWay/content/Living';
+import Morals from './pageComponents/OneWay/content/Morals';
+import ConfessSins from './pageComponents/OneWay/content/ConfessSins';
+import WalkWord from './pageComponents/OneWay/content/WalkWord';
+import Encourage from './pageComponents/OneWay/content/Encourage';
+import Events from './pageComponents/OneWay/content/Events';
+import Prayers from './pageComponents/OneWay/content/Prayers';
+import EternallySecure from './pageComponents/OneWay/content/EternallySecure';
+import Questions from './pageComponents/OneWay/content/Questions';
+import Hotline from './components/Hotline/Hotline';
 
 function App() {
   const [user, setUser] = useState(null);
@@ -72,10 +73,11 @@ function App() {
           <Route exact path="/logout" element={<Logout setUser={setUser} />} />
           <Route exact path="/my-testimony" element={<MyTestimony />} />
           <Route exact path="/admin/*" element={<Admin user={user} setUser={setUser} />} />
+          <Route exact path="/hotline" element={<Hotline />} />
           {/* Protected One Way Routes */}
           <Route path="/one-way" element={
             <ProtectedRoute user={user} isLoading={isAuthLoading} redirectTo="/">
-              <OneLess user={user} setUser={setUser} scrips={scrips} setScrips={setScrips} />
+              <OneWay user={user} setUser={setUser} scrips={scrips} setScrips={setScrips} />
             </ProtectedRoute>
           }>
             <Route index element={<MeetGod scrips={scrips} />} />

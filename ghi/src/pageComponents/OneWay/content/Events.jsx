@@ -113,12 +113,12 @@ useEffect(() => {
         </Form>
       </div>
       <hr />
-      {events?events.length>1?<h3><span className='bg-info px-2'>{events.length}</span>Current Events</h3>:<h3><span className='bg-info px-2'>{events.length}</span>Current Event</h3>:<h3>Current Events</h3>}
+      {events?events.length>1?<h4><span className='bg-light px-2'>{events.length} </span>Praise Reports</h4>:<h4><span className='bg-light px-2'>{events.length} </span>Praise Report</h4>:<h4>Praise Reports</h4>}
 
         <div className="row event-header">
-            <h4 className='text-start col-lg-3'>Name: </h4>
-            <h4 className='text-start col-lg-3'>City: </h4>
-            <h4 className='text-start col-lg-5'>Event: </h4>
+            <h5 className='text-start col-lg-3'>Name: </h5>
+            <h5 className='text-start col-lg-3'>City: </h5>
+            <h5 className='text-start col-lg-5'>Event: </h5>
           </div>
           <div className="events-list">
         {events.map((event, index) => (

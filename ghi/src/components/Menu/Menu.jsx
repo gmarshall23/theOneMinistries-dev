@@ -38,6 +38,7 @@ const Menu = ({ user }) => {
           <Nav.Link as={Link} to="/one-way/meet-god" onClick={handleOneWayClick}>One Way</Nav.Link>
           <Nav.Link as={Link} to="/news-stories" onClick={handleLinkClick}>News Stories</Nav.Link>
           <Nav.Link as={Link} to="/subscribe" onClick={handleLinkClick}>Support Us</Nav.Link>
+          <Nav.Link as={Link} to="/hotline" onClick={handleLinkClick}>Crisis Hotline</Nav.Link>
           {user ? <Nav.Link as={Link} to="/logout" onClick={handleLinkClick}>Log Out</Nav.Link> : <Nav.Link as={Link} to="/login" onClick={handleLinkClick}>Log In</Nav.Link>}
         </Nav>
       </Navbar.Collapse>

@@ -3,9 +3,9 @@
 import { useEffect, useState, useRef } from 'react';
 import { Outlet, Link } from 'react-router-dom';
 import axios from 'axios';
-import './one-less.css';
+import './one-way.css';
 import './content/content.css'
-import Menu from '../../components/Menu/'
+import Menu from '../../components/Menu'
 import MeetGod from './content/MeetGod';
 import Salvation from './content/Salvation';
 import Living from './content/Living';
@@ -20,7 +20,7 @@ import Events from './content/Events';
 import Prayers from './content/Prayers';
 
 
-const OneLess = ({ user, setUser, scrips, setScrips }) => {
+const OneWay = ({ user, setUser, scrips, setScrips }) => {
   // const [data, setData] = useState(null);
   // const [loading, setLoading] = useState(true);
   // const [error, setError] = useState(null);
@@ -194,4 +194,4 @@ const OneLess = ({ user, setUser, scrips, setScrips }) => {
   )
 }
 
-export default OneLess
+export default OneWay;
