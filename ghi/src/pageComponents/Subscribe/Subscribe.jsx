@@ -99,7 +99,7 @@ const Subscribe = () => {
     // add contribution data to contribution collection ** Maybe **
     // assign username to email and role to user
     console.log('Form data before submission:', formData);
-    const data = {...formData}
+    const data = { ...formData }
     data.email = formData.username.toLowerCase();
     data.role = 'user'; // Ensure role is set to user
     console.log('Subscribe Form ready to submit', data);
@@ -129,7 +129,15 @@ const Subscribe = () => {
       <h4 className="text-center">WE DO ONLY BECAUSE YOU DO</h4>
       <h4 className="text-center">WE CAN ONLY BECAUSE YOU CARE</h4>
       <blockquote className="blockquote px-4">
-        <p className='text-start px-4'>Become a Partner by completing the form below and choosig a support plan for "The One" Ministries. You will have full access to the website and its features which will hopefully bless you during your on-line experience.</p>
+        <p className='text-start px-4'>Become a Partner by completing the form below and choosig a support plan for "The One" Ministries. You will have full access to the website and its features which will hopefully bless you during your on-line experience. Add to the end of the first paragraph: You get to choose which program  your gift will support and the amount you pay per month prayerfully beyond the minimum gift of $4.99. We are asking you to consider your gift amount as if you are having a meal with your charity.
+          <span><ul>
+            <h5>Average Meal Costs</h5>
+            <li>Breakfast - $10-$15</li>
+            <li>Lunch - $15-$20</li>
+            <li>Dinner - $20-$30</li>
+          </ul></span>
+          Please consider treating yourself to a meal with your faith and put your support behind it. You will be helping to change lives. Thank you for your support. You will receive a contribution statement at the end of each calendar year for tax purposes. You may also change the program you support at any time.
+        </p>
         <p className='text-start px-4'>We are a non-profit ministry where, after expenses, 100% of our revenue goes in support of the program and people you designate. Please sow into one or more of the organizations listed below as the Holy Spirit Guides you.
         </p>
         <h5 className="text-start px-4">God Bless</h5>
@@ -197,18 +205,11 @@ const Subscribe = () => {
           </Col>
           <Col md={6}>
             <h5 className='text-start'>Choose a Gift Type</h5>
-            <Form.Check
-              className='border-primary text-start'
-              type="radio"
-              label="Single Usage. (Suggest: $1.00 to $5.00)"
-              name="giftType"
-              id="singleGift"
-              onClick={() => handleGiftType("Single-gift")}
-            />
+
             <Form.Check
               className="border-primary text-start"
               type="radio"
-              label="Monthly Usage. (Suggest: $15.00 to $20.00)"
+              label="Monthly Usage."
               name="giftType"
               id="monthlyGift"
               onClick={() => handleGiftType("Monthly-gift")}
@@ -217,7 +218,7 @@ const Subscribe = () => {
             <Form.Check
               className='border-primary text-start'
               type="radio"
-              label="One Time Gift. (Suggest: $100.00 to $1000.00)"
+              label="One Time Gift Offering."
               name="giftType"
               id="yearlyGift"
               onClick={() => handleGiftType('Yearly Gift')}
