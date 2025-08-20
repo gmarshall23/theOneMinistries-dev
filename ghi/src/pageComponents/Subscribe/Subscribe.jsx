@@ -5,6 +5,7 @@ import { Form, Button, Row, Col, Modal } from 'react-bootstrap';
 import axios from 'axios';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './subscribe.css';
+import Header from '../../components/Header';
 
 const Subscribe = () => {
   const [formData, setFormData] = useState({
@@ -123,6 +124,10 @@ const Subscribe = () => {
   };
 
   return (
+    <div className="subscribe">
+      <header>
+        <Header />
+      </header>
     <main className="subscribe mt-5">
       <h2 className="text-center bg-warning p-4">Support THE ONE Ministries</h2>
       <h4 className="text-center">WE GO ONLY BECAUSE YOU GIVE</h4>
@@ -293,6 +298,7 @@ const Subscribe = () => {
         </Modal.Footer>
       </Modal>
     </main>
+    </div>
   );
 };
 

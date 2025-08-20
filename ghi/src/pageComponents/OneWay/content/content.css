@@ -6,6 +6,19 @@ ol, ul {
     list-style-position: inside !important;
     margin-left: 0 !important;
   }
+  /* text colors */
+  .text-purple {
+    color: purple !important;
+  }
+  .text-purple:hover {
+    color: darkviolet !important;
+  }
+  .text-red {
+    color: red !important;
+  }
+  .text-red:hover {
+    background-color: darkred !important;
+  }
 #tooltip {
     font-size: 1.25rem !important;
     color:antiquewhite !important;
@@ -409,7 +422,7 @@ carousel-item {
 
 /* +++++++++++++  Encourage.jsx  +++++++++++++ */
 .encourage-content {
-    border: 2px solid red;
+    /* border: 2px solid red; */
     width: 100% !important;
     /* padding: 3rem 0; */
 }
@@ -435,7 +448,7 @@ carousel-item {
 
 }
 .modal-content p {
-    color: red;
+    color: navy;
     font-size: 1rem !important;
 }
 .ql-align-center {
