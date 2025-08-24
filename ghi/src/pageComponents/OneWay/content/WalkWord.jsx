@@ -25,29 +25,25 @@ const WalkWord = ({ user, setUser, studyDay, scrips }) => {
   const handleSelect = async (eventKey, e, parentId) => {
     // handleSelect will assign catagory and title(eventKey) to be passed to WordStudy component
     e.preventDefault();
-    const studyGroup = await studies.filter(item => item.title === eventKey);
-    console.log('Study selected', studyGroup);
-
+    // set study selected to display on page
+    setStudiesGroup(parentId);
+    setStudyTitle(eventKey);
     // await setStudyTitle(eventKey);
     // check for category and title to determine which study to display
     if (parentId === 'Study Group') {
+      const studyGroup = await studies.filter(item => item.title === eventKey);
       const studyByDay = await studyGroup.filter(item => item.content.calendar == studyDay && item.title === eventKey);
-
-      // set study selected to display on page
-      console.log(`Study Group data to send to WordStudy`, currentStudy);
-      setStudiesGroup(studyGroup);
-      setStudyTitle(eventKey);
       setCurrentStudy(studyByDay[0] || studyGroup[0]);
     } else if (parentId === 'Theme') {
       // set study selected to display on page
       console.log(`Theme data to send to WordStudy`, studyGroup);
-
+    } else if (parentId === 'Prophets') {
+      const prophetData = await studies.filter(item => item.title === eventKey);
+      console.log(`Prophets data to send to WordStudy`, prophetData);
     } else {
-      console.log(`study data`, studyGroup);
+      console.log(`study data`, parentId);
     }
   }
-
-  //  end configuration for Dropdown options
 
   const getData = async () => {
     // Get study items from database and puts them on the page: Note: this may be removed later if too large//
@@ -264,12 +260,9 @@ const WalkWord = ({ user, setUser, studyDay, scrips }) => {
             <Dropdown.Toggle variant="primary" id="dropdown-basic">
               By Prophet
             </Dropdown.Toggle>
-
             <Dropdown.Menu className='scrollable-menu'>
-              <Dropdown.Item eventKey="placeholder" className="rojo">PLACEHOLDER</Dropdown.Item>
-              <Dropdown.Item eventKey="isaiah">Isaiah</Dropdown.Item>
-              <Dropdown.Item eventKey="jeremiah">Jeremiah</Dropdown.Item>
-              <Dropdown.Item eventKey="ezekiel">Ezekiel</Dropdown.Item>
+              <Dropdown.Item eventKey="Major Prophets">Major Prophets</Dropdown.Item>
+              <Dropdown.Item eventKey="Minor Prophets">Minor Prophets</Dropdown.Item>
             </Dropdown.Menu>
           </Dropdown>
         </div>
@@ -352,7 +345,7 @@ const WalkWord = ({ user, setUser, studyDay, scrips }) => {
               style={{ cursor: 'pointer', borderBottom: '1px solid #ddd' }}
             >
               <p className="mb-1 "><strong>{entry.subject}:</strong><span>
-              <small className="text-center px-2 ">{entry.date}</small></span></p>
+                <small className="text-center px-2 ">{entry.date}</small></span></p>
             </div>
           ))}
         </aside>

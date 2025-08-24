@@ -4,7 +4,7 @@ import axios from 'axios';
 import { Card, Button, Row, Col } from 'react-bootstrap';
 import "./news-stories.css"
 
-const NewsStories = () => {
+const NewsStories = ({ user, setUser }) => {
   const [stories, setStories] = useState([]);
   const fetchNewsFromFile = async () => {
     axios.get('http://localhost:4040/get_news_file')
@@ -45,7 +45,7 @@ const NewsStories = () => {
 
   return (
     <div className="container news-container mt-4">
-      <Header />
+      <Header user={user} setUser={setUser}/>
       <main className='news-main'>
         <h2 className="text-center mb-4">World News</h2>
         <Row>

@@ -5,7 +5,7 @@ import Landing from './pageComponents/Landing';
 import OneWay from './pageComponents/OneWay';
 import Admin from './pageComponents/Admin';
 import ProtectedRoute from './components/ProtectedRoute';
-// import Header from './components/Header';
+import Header from './components/Header/Header';
 import About from './pageComponents/About/About';
 import './App.css';
 import NewsStories from './pageComponents/NewsStories';
@@ -62,15 +62,15 @@ function App() {
   return (
     <Router>
       <div className="app container-fluid justify-content-start">
-
+        {/* <Header user={user} setUser={setUser} /> */}
         <Routes>
           <Route exact path="/" element={<Landing user={user} />} />
           <Route exact path="/about" element={<About user={user} />} />
           {/* <Route exact path="/one-less" element={<OneLess user={user} setUser={setUser} scrips={scrips} setScrips={setScrips}/>} /> */}
-          <Route exact path="/news-stories" element={<NewsStories />} />
-          <Route exact path='/subscribe' element={<Subscribe />} />
+          <Route exact path="/news-stories" element={<NewsStories user={user} setUser={setUser}/>} />
+          <Route exact path='/subscribe' element={<Subscribe user={user} setUser={setUser}/>} />
           <Route exact path="/login" element={<Login setUser={setUser} />} />
-          <Route exact path="/logout" element={<Logout setUser={setUser} />} />
+          {/* <Route exact path="/logout" element={<Logout setUser={setUser} />} /> */}
           <Route exact path="/my-testimony" element={<MyTestimony />} />
           <Route exact path="/admin/*" element={<Admin user={user} setUser={setUser} />} />
           <Route exact path="/hotline" element={<Hotline />} />

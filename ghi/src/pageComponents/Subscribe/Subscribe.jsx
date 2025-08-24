@@ -7,7 +7,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './subscribe.css';
 import Header from '../../components/Header';
 
-const Subscribe = () => {
+const Subscribe = ({ user, setUser }) => {
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
@@ -126,7 +126,7 @@ const Subscribe = () => {
   return (
     <div className="subscribe">
       <header>
-        <Header />
+        <Header user={user} setUser={setUser}/>
       </header>
     <main className="subscribe mt-5">
       <h2 className="text-center bg-warning p-4">Support THE ONE Ministries</h2>
