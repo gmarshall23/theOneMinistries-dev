@@ -1,8 +1,11 @@
 /* eslint-disable react/prop-types */
 import { useState, useEffect } from 'react';
-import { Button, Dropdown, Form } from 'react-bootstrap';
+import { Button, Dropdown, Navbar, Nav, NavDropdown, Form } from 'react-bootstrap';
+import { DropdownSubmenu, NavDropdownMenu } from "react-bootstrap-submenu";
+import * as DropdownMenu from '@radix-ui/react-dropdown-menu';
 import axios from 'axios';
 import WordStudy from './WordStudy';
+import "react-bootstrap-submenu/dist/index.css";
 
 const WalkWord = ({ user, setUser, studyDay, scrips }) => {
   // variable to hold the study items
@@ -21,25 +24,36 @@ const WalkWord = ({ user, setUser, studyDay, scrips }) => {
   const [studyTitle, setStudyTitle] = useState('Choose an option');
   const [studiesGroup, setStudiesGroup] = useState([]);
   const [currentStudy, setCurrentStudy] = useState({});
+  const [prophets, setProphets] = useState([])
 
-  const handleSelect = async (eventKey, e, parentId) => {
-    // handleSelect will assign catagory and title(eventKey) to be passed to WordStudy component
-    e.preventDefault();
-    // set study selected to display on page
+  const handleSelect = async (e, eventKey, parentId) => {
+    // handleSelect will assign category and title(eventKey) to be passed to WordStudy component
+
     setStudiesGroup(parentId);
     setStudyTitle(eventKey);
-    // await setStudyTitle(eventKey);
     // check for category and title to determine which study to display
     if (parentId === 'Study Group') {
-      const studyGroup = await studies.filter(item => item.title === eventKey);
-      const studyByDay = await studyGroup.filter(item => item.content.calendar == studyDay && item.title === eventKey);
+      const studyGroup = studies.filter(item => item.title === eventKey);
+      const studyByDay = studyGroup.filter(item => item.content.calendar == studyDay && item.title === eventKey);
       setCurrentStudy(studyByDay[0] || studyGroup[0]);
     } else if (parentId === 'Theme') {
       // set study selected to display on page
-      console.log(`Theme data to send to WordStudy`, studyGroup);
+      console.log(`Theme data to send to WordStudy:`);
     } else if (parentId === 'Prophets') {
-      const prophetData = await studies.filter(item => item.title === eventKey);
+      const parentIdTitle = e.currentTarget.closest('.DropdownSubmenu').id;
+
+      const prophetData = studies.filter(item => item.title === eventKey);
       console.log(`Prophets data to send to WordStudy`, prophetData);
+      console.log('prophet to get:', e.currentTarget.innerText);
+      let obj1 = {};
+      for ( const obj of prophetData) {
+
+        if (obj.content.docTitle === e.currentTarget.innerText) {
+          console.log("obj content to use", obj.content)
+          setCurrentStudy(obj);
+        }
+      }
+      // const study = studies.filter(item => item.content.docTitle === e.eventKey);
     } else {
       console.log(`study data`, parentId);
     }
@@ -188,84 +202,92 @@ const WalkWord = ({ user, setUser, studyDay, scrips }) => {
       <div>
         <h2><b>A Walk in the Word</b></h2>
         <h3>Daily Devotionals and Bible Study</h3>
+
       </div>
 
       <div className='study-menu'>
         <p>Study By: {studyTitle} selected</p>
-        <div className='row'>
-          <Dropdown onSelect={(eventKey, e) => handleSelect(eventKey, e, 'Study Group')} id={'study-group'} className='col-2'>
-            <Dropdown.Toggle variant="primary" id="dropdown-basic">
-              Study Group
-            </Dropdown.Toggle>
-            <Dropdown.Menu className='scrollable-menu'>
-              <Dropdown.Item eventKey="Small Bite" id="Small Bite">Small Bite (one verse)</Dropdown.Item>
-              <Dropdown.Item eventKey="Big Bite" id="Big Bite">One Passage of Cohesive Scripture</Dropdown.Item>
-            </Dropdown.Menu>
-          </Dropdown>
-          <Dropdown onSelect={handleSelect} id='bible' className='col-2'>
-            <Dropdown.Toggle variant="primary" id="dropdown-basic">
-              By Bible
-            </Dropdown.Toggle>
+        <Navbar bg="light" expand="lg" className="mb-3">
+          <Nav className="w-100 d-flex flex-row flex-wrap">
+            <NavDropdownMenu
+              title="Study Group"
+              id="study-group"
+              className="col-2"
+            >
+              <NavDropdown.Item eventKey="Small Bite" onClick={(e) => handleSelect(e, 'Small Bite', 'Study Group')}>Small Bite (one verse)</NavDropdown.Item>
+              <NavDropdown.Item eventKey="Big Bite" onClick={(e) => handleSelect(e, 'Big Bite', 'Study Group')}>One Passage of Cohesive Scripture</NavDropdown.Item>
+            </NavDropdownMenu>
+            <NavDropdownMenu
+              title="By Bible"
+              id="bible"
+              className="col-2"
+            >
+              <NavDropdown.Item eventKey="Placeholder" onClick={() => handleSelect('Placeholder', 'By Bible')}>Placeholder</NavDropdown.Item>
+              <NavDropdown.Item eventKey="Old Testement" onClick={() => handleSelect('Old Testement', 'By Bible')}>Old Testement</NavDropdown.Item>
+              <NavDropdown.Item eventKey="New Testement" onClick={() => handleSelect('New Testement', 'By Bible')}>New Testement</NavDropdown.Item>
+            </NavDropdownMenu>
+            <NavDropdownMenu
+              title="By Theme"
+              id="theme"
+              className="col-2"
+            >
+              <NavDropdown.Item eventKey="Need For The New Life" onClick={() => handleSelect('Need For The New Life', 'Theme')}>Need For The New Life</NavDropdown.Item>
+              <NavDropdown.Item eventKey="Sharing Our Faith" onClick={() => handleSelect('Sharing Our Faith', 'Theme')}>Sharing Our Faith</NavDropdown.Item>
+              <NavDropdown.Item eventKey="Suffering" onClick={() => handleSelect('Suffering', 'Theme')}>Suffering</NavDropdown.Item>
+              <NavDropdown.Item eventKey="Human Government" onClick={() => handleSelect('Human Government', 'Theme')}>Human Government</NavDropdown.Item>
+            </NavDropdownMenu>
+            <NavDropdownMenu
+              title="By Book"
+              id="book"
+              className="col-2"
+            >
+              <NavDropdown.Item eventKey="placeholder" className="rojo" onClick={() => handleSelect('placeholder', 'By Book')}>PLACEHOLDER</NavDropdown.Item>
+              <NavDropdown.Divider />
+              <NavDropdown.Header>Old Testament</NavDropdown.Header>
+              <NavDropdown.Item eventKey="genesis" onClick={() => handleSelect('genesis', 'By Book')}>Genesis</NavDropdown.Item>
+              <NavDropdown.Item eventKey="exodus" onClick={() => handleSelect('exodus', 'By Book')}>Exodus</NavDropdown.Item>
+              <NavDropdown.Divider />
+              <NavDropdown.Header>New Testament</NavDropdown.Header>
+              <NavDropdown.Item eventKey="matthew" onClick={() => handleSelect('matthew', 'By Book')}>Matthew</NavDropdown.Item>
+              <NavDropdown.Item eventKey="mark" onClick={() => handleSelect('mark', 'By Book')}>Mark</NavDropdown.Item>
+            </NavDropdownMenu>
+            <NavDropdownMenu
+              title="By Character"
+              id="character"
+              className="col-2"
+            >
+              <NavDropdown.Item eventKey="placeholder" className="rojo" onClick={() => handleSelect('placeholder', 'By Character')}>PLACEHOLDER</NavDropdown.Item>
+              <NavDropdown.Item eventKey="God" onClick={() => handleSelect('God', 'By Character')}>God</NavDropdown.Item>
+              <NavDropdown.Item eventKey="Jesus" onClick={() => handleSelect('Jesus', 'By Character')}>Jesus</NavDropdown.Item>
+              <NavDropdown.Item eventKey="Moses" onClick={() => handleSelect('Moses', 'By Character')}>Moses</NavDropdown.Item>
+              <NavDropdown.Item eventKey="Paul" onClick={() => handleSelect('Paul', 'By Character')}>Paul</NavDropdown.Item>
+              <NavDropdown.Item eventKey="Elijah" onClick={() => handleSelect('Elijah', 'By Character')}>Elijah</NavDropdown.Item>
+              <NavDropdown.Item eventKey="Peter" onClick={() => handleSelect('Peter', 'By Character')}>Peter</NavDropdown.Item>
+            </NavDropdownMenu>
+            <NavDropdownMenu
+              title="By Prophet"
+              id="prophet"
+              className="col-2"
+            >
+              <DropdownSubmenu
+                title="Major Prophets"
+                id="Major-Prophets"
+                className="DropdownSubmenu submenu-left"
 
-            <Dropdown.Menu>
-              <Dropdown.Item eventKey="Placeholder" id="Placeholder">Placeholder</Dropdown.Item>
-              <Dropdown.Item eventKey="Old Testement" id="Old Testement">Old Testement</Dropdown.Item>
-              <Dropdown.Item eventKey="New Testement" id="New Testement">New Testement</Dropdown.Item>
-            </Dropdown.Menu>
-          </Dropdown>
-          <Dropdown onSelect={(eventKey, e) => handleSelect(eventKey, e, 'Theme')} id={'theme'} className='col-2'>
-            <Dropdown.Toggle variant="primary" id="dropdown-basic">
-              By Theme
-            </Dropdown.Toggle>
-            <Dropdown.Menu className='scrollable-menu'>
-              <Dropdown.Item eventKey="Need For The New Life" >Need For The New Life</Dropdown.Item>
-              <Dropdown.Item eventKey="Sharing Our Faith" >Sharing Our Faith</Dropdown.Item>
-              <Dropdown.Item eventKey="Suffering" >Suffering</Dropdown.Item>
-              <Dropdown.Item eventKey="Human Government" >Human Government</Dropdown.Item>
-            </Dropdown.Menu>
-          </Dropdown>
-          <Dropdown onSelect={handleSelect} id={'book'} className='col-2'>
-            <Dropdown.Toggle variant="primary" id="dropdown-basic">
-              By Book
-            </Dropdown.Toggle>
+              >
+                {(studies.filter(item => item.title === 'Major Prophets')).map((prophet) => (<NavDropdown.Item key={prophet._id} eventKey={prophet.content.docTitle} onClick={(e) => handleSelect(e, 'Major Prophets', 'Prophets')}>{prophet.content.docTitle}</NavDropdown.Item>))}
+              </DropdownSubmenu>
+              <DropdownSubmenu
+                title="Minor Prophets"
+                id="Minor-Prophets"
+                className="DropdownSubmenu submenu-left"
 
-            <Dropdown.Menu className='scrollable-menu'>
-
-              <Dropdown.Item eventKey="placeholder" className="rojo">PLACEHOLDER</Dropdown.Item>
-              <Dropdown.Header>Old Testament</Dropdown.Header>
-              <Dropdown.Item eventKey="genesis">Genesis</Dropdown.Item>
-              <Dropdown.Item eventKey="exodus">Exodus</Dropdown.Item>
-              <Dropdown.Header>New Testament</Dropdown.Header>
-              <Dropdown.Item eventKey="matthew">Matthew</Dropdown.Item>
-              <Dropdown.Item eventKey="mark">Mark</Dropdown.Item>
-
-            </Dropdown.Menu>
-          </Dropdown>
-          <Dropdown onSelect={handleSelect} id={'character'} className='col-2'>
-            <Dropdown.Toggle variant="primary" id="dropdown-basic">
-              By Character
-            </Dropdown.Toggle>
-
-            <Dropdown.Menu className='scrollable-menu'>
-              <Dropdown.Item eventKey="placeholder" className="rojo">PLACEHOLDER</Dropdown.Item>
-              <Dropdown.Item eventKey="God">God</Dropdown.Item>
-              <Dropdown.Item eventKey="Jesus">Jesus</Dropdown.Item>
-              <Dropdown.Item eventKey="Moses">Moses</Dropdown.Item>
-              <Dropdown.Item eventKey="Paul">Paul</Dropdown.Item>
-              <Dropdown.Item eventKey="Elijah">Elijah</Dropdown.Item>
-              <Dropdown.Item eventKey="Peter">Peter</Dropdown.Item>
-            </Dropdown.Menu>
-          </Dropdown>
-          <Dropdown onSelect={handleSelect} id={'prophet'} className='col-2'>
-            <Dropdown.Toggle variant="primary" id="dropdown-basic">
-              By Prophet
-            </Dropdown.Toggle>
-            <Dropdown.Menu className='scrollable-menu'>
-              <Dropdown.Item eventKey="Major Prophets">Major Prophets</Dropdown.Item>
-              <Dropdown.Item eventKey="Minor Prophets">Minor Prophets</Dropdown.Item>
-            </Dropdown.Menu>
-          </Dropdown>
-        </div>
+              >
+                {(studies.filter(item => item.title === 'Minor Prophets')).map((prophet) => (<NavDropdown.Item key={prophet._id} eventKey={prophet.content.docTitle} onClick={(e) => handleSelect(e, 'Minor Prophets', 'Prophets')}>{prophet.content.docTitle}</NavDropdown.Item>))}
+              </DropdownSubmenu>
+            </NavDropdownMenu>
+          </Nav>
+        </Navbar>
       </div>
       <div className='mt-2 studies border border-primary border-4 rounded'>
         {!currentStudy && <h3>Select a Study</h3>}

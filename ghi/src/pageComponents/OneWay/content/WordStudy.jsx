@@ -19,16 +19,16 @@ const WordStudy = ({ content, studyDay, scrips, studies, studyTitle }) => {
 
   // Process the content data and update state.
   const dataFunc = async () => {
-    if (content.title === 'Small Bite' || content.title === 'Big Bite') {
+    // if (content.title === 'Small Bite' || content.title === 'Big Bite') {
       let deltaLesson = data.lesson;
       setDelta(deltaLesson);
       setDisplayedContent(content)
       console.log('Delta', deltaLesson);
-    } else if (content.category === 'Theme') {
+    // } else if (content.category === 'Theme') {
       // Process topics if needed.
-      console.log('Topics ready to display', data);
-    }
-    console.log('Content to be displayed in WordStudy', studies);
+      // console.log('Topics ready to display', data);
+    // }
+    // console.log('Content to be displayed in WordStudy', studies);
   };
   const selectStudyItem = async (e) => {
     console.log ('list of study items', studies)
