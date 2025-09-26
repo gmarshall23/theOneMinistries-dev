@@ -218,15 +218,6 @@ const WalkWord = ({ user, setUser, studyDay, scrips }) => {
               <NavDropdown.Item eventKey="Big Bite" onClick={(e) => handleSelect(e, 'Big Bite', 'Study Group')}>One Passage of Cohesive Scripture</NavDropdown.Item>
             </NavDropdownMenu>
             <NavDropdownMenu
-              title="By Bible"
-              id="bible"
-              className="col-2"
-            >
-              <NavDropdown.Item eventKey="Placeholder" onClick={() => handleSelect('Placeholder', 'By Bible')}>Placeholder</NavDropdown.Item>
-              <NavDropdown.Item eventKey="Old Testement" onClick={() => handleSelect('Old Testement', 'By Bible')}>Old Testement</NavDropdown.Item>
-              <NavDropdown.Item eventKey="New Testement" onClick={() => handleSelect('New Testement', 'By Bible')}>New Testement</NavDropdown.Item>
-            </NavDropdownMenu>
-            <NavDropdownMenu
               title="By Theme"
               id="theme"
               className="col-2"
@@ -237,32 +228,17 @@ const WalkWord = ({ user, setUser, studyDay, scrips }) => {
               <NavDropdown.Item eventKey="Human Government" onClick={() => handleSelect('Human Government', 'Theme')}>Human Government</NavDropdown.Item>
             </NavDropdownMenu>
             <NavDropdownMenu
-              title="By Book"
-              id="book"
+              title="Where Is Jesus?"
+              id="whereIsJesus"
               className="col-2"
             >
-              <NavDropdown.Item eventKey="placeholder" className="rojo" onClick={() => handleSelect('placeholder', 'By Book')}>PLACEHOLDER</NavDropdown.Item>
-              <NavDropdown.Divider />
-              <NavDropdown.Header>Old Testament</NavDropdown.Header>
-              <NavDropdown.Item eventKey="genesis" onClick={() => handleSelect('genesis', 'By Book')}>Genesis</NavDropdown.Item>
-              <NavDropdown.Item eventKey="exodus" onClick={() => handleSelect('exodus', 'By Book')}>Exodus</NavDropdown.Item>
-              <NavDropdown.Divider />
-              <NavDropdown.Header>New Testament</NavDropdown.Header>
-              <NavDropdown.Item eventKey="matthew" onClick={() => handleSelect('matthew', 'By Book')}>Matthew</NavDropdown.Item>
-              <NavDropdown.Item eventKey="mark" onClick={() => handleSelect('mark', 'By Book')}>Mark</NavDropdown.Item>
-            </NavDropdownMenu>
-            <NavDropdownMenu
-              title="By Character"
-              id="character"
-              className="col-2"
-            >
-              <NavDropdown.Item eventKey="placeholder" className="rojo" onClick={() => handleSelect('placeholder', 'By Character')}>PLACEHOLDER</NavDropdown.Item>
-              <NavDropdown.Item eventKey="God" onClick={() => handleSelect('God', 'By Character')}>God</NavDropdown.Item>
-              <NavDropdown.Item eventKey="Jesus" onClick={() => handleSelect('Jesus', 'By Character')}>Jesus</NavDropdown.Item>
-              <NavDropdown.Item eventKey="Moses" onClick={() => handleSelect('Moses', 'By Character')}>Moses</NavDropdown.Item>
-              <NavDropdown.Item eventKey="Paul" onClick={() => handleSelect('Paul', 'By Character')}>Paul</NavDropdown.Item>
-              <NavDropdown.Item eventKey="Elijah" onClick={() => handleSelect('Elijah', 'By Character')}>Elijah</NavDropdown.Item>
-              <NavDropdown.Item eventKey="Peter" onClick={() => handleSelect('Peter', 'By Character')}>Peter</NavDropdown.Item>
+              <NavDropdown.Item eventKey="placeholder" className="rojo" onClick={() => handleSelect('placeholder', 'Where Is Jesus')}>PLACEHOLDER</NavDropdown.Item>
+              <NavDropdown.Item eventKey="God" onClick={() => handleSelect('God', 'Where Is Jesus')}>God</NavDropdown.Item>
+              <NavDropdown.Item eventKey="Jesus" onClick={() => handleSelect('Jesus', 'Where Is Jesus')}>Jesus</NavDropdown.Item>
+              <NavDropdown.Item eventKey="Moses" onClick={() => handleSelect('Moses', 'Where Is Jesus')}>Moses</NavDropdown.Item>
+              <NavDropdown.Item eventKey="Paul" onClick={() => handleSelect('Paul', 'Where Is Jesus')}>Paul</NavDropdown.Item>
+              <NavDropdown.Item eventKey="Elijah" onClick={() => handleSelect('Elijah', 'Where Is Jesus')}>Elijah</NavDropdown.Item>
+              <NavDropdown.Item eventKey="Peter" onClick={() => handleSelect('Peter', 'Where Is Jesus')}>Peter</NavDropdown.Item>
             </NavDropdownMenu>
             <NavDropdownMenu
               title="By Prophet"
