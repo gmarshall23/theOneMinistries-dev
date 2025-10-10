@@ -1,8 +1,8 @@
 /* eslint-disable react/prop-types */
 import { useState, useEffect } from 'react';
-import { Button, Dropdown, Navbar, Nav, NavDropdown, Form } from 'react-bootstrap';
+import { Button, Navbar, Nav, NavDropdown, Form } from 'react-bootstrap';
 import { DropdownSubmenu, NavDropdownMenu } from "react-bootstrap-submenu";
-import * as DropdownMenu from '@radix-ui/react-dropdown-menu';
+// import * as DropdownMenu from '@radix-ui/react-dropdown-menu';
 import axios from 'axios';
 import WordStudy from './WordStudy';
 import "react-bootstrap-submenu/dist/index.css";
@@ -22,14 +22,14 @@ const WalkWord = ({ user, setUser, studyDay, scrips }) => {
 
   //  configuration for Dropdown options
   const [studyTitle, setStudyTitle] = useState('Choose an option');
-  const [studiesGroup, setStudiesGroup] = useState([]);
+  // const [studiesGroup, setStudiesGroup] = useState([]);
   const [currentStudy, setCurrentStudy] = useState({});
-  const [prophets, setProphets] = useState([])
+  // const [prophets, setProphets] = useState([])
 
   const handleSelect = async (e, eventKey, parentId) => {
     // handleSelect will assign category and title(eventKey) to be passed to WordStudy component
 
-    setStudiesGroup(parentId);
+    // setStudiesGroup(parentId);
     setStudyTitle(eventKey);
     // check for category and title to determine which study to display
     if (parentId === 'Study Group') {
@@ -38,14 +38,30 @@ const WalkWord = ({ user, setUser, studyDay, scrips }) => {
       setCurrentStudy(studyByDay[0] || studyGroup[0]);
     } else if (parentId === 'Theme') {
       // set study selected to display on page
-      console.log(`Theme data to send to WordStudy:`);
+      const themeData = studies.filter(item => item.title === eventKey);
+      console.log(studies);
+      console.log('theme to get:', themeData[0])
+      setCurrentStudy(themeData[0]);
+
+    } else if (parentId === 'Where Is Jesus') {
+      const whereIsJesusData = studies.filter(item => item.title === eventKey);
+      console.log(`Where Is Jesus data to send to WordStudy`, whereIsJesusData);
+      console.log('whereIsJesus to get:', e.currentTarget.innerText);
+      // let obj1 = {};
+      for ( const obj of whereIsJesusData) {
+
+        if (obj.content.docTitle === e.currentTarget.innerText) {
+          console.log("obj content to use", obj.content)
+          setCurrentStudy(obj);
+        }
+      }
     } else if (parentId === 'Prophets') {
-      const parentIdTitle = e.currentTarget.closest('.DropdownSubmenu').id;
+      // const parentIdTitle = e.currentTarget.closest('.DropdownSubmenu').id;
 
       const prophetData = studies.filter(item => item.title === eventKey);
       console.log(`Prophets data to send to WordStudy`, prophetData);
       console.log('prophet to get:', e.currentTarget.innerText);
-      let obj1 = {};
+      // let obj1 = {};
       for ( const obj of prophetData) {
 
         if (obj.content.docTitle === e.currentTarget.innerText) {
@@ -222,23 +238,20 @@ const WalkWord = ({ user, setUser, studyDay, scrips }) => {
               id="theme"
               className="col-2"
             >
-              <NavDropdown.Item eventKey="Need For The New Life" onClick={() => handleSelect('Need For The New Life', 'Theme')}>Need For The New Life</NavDropdown.Item>
-              <NavDropdown.Item eventKey="Sharing Our Faith" onClick={() => handleSelect('Sharing Our Faith', 'Theme')}>Sharing Our Faith</NavDropdown.Item>
-              <NavDropdown.Item eventKey="Suffering" onClick={() => handleSelect('Suffering', 'Theme')}>Suffering</NavDropdown.Item>
-              <NavDropdown.Item eventKey="Human Government" onClick={() => handleSelect('Human Government', 'Theme')}>Human Government</NavDropdown.Item>
+              {studies&&(studies.filter(item => item.category === 'By Theme')).map((theme) => (<NavDropdown.Item
+              key={theme._id}
+              eventKey={theme.title}
+              onClick={(e) => handleSelect(e, theme.title, 'By Theme')}>{theme.content.docTitle}</NavDropdown.Item>))}
             </NavDropdownMenu>
             <NavDropdownMenu
               title="Where Is Jesus?"
               id="whereIsJesus"
               className="col-2"
             >
-              <NavDropdown.Item eventKey="placeholder" className="rojo" onClick={() => handleSelect('placeholder', 'Where Is Jesus')}>PLACEHOLDER</NavDropdown.Item>
-              <NavDropdown.Item eventKey="God" onClick={() => handleSelect('God', 'Where Is Jesus')}>God</NavDropdown.Item>
-              <NavDropdown.Item eventKey="Jesus" onClick={() => handleSelect('Jesus', 'Where Is Jesus')}>Jesus</NavDropdown.Item>
-              <NavDropdown.Item eventKey="Moses" onClick={() => handleSelect('Moses', 'Where Is Jesus')}>Moses</NavDropdown.Item>
-              <NavDropdown.Item eventKey="Paul" onClick={() => handleSelect('Paul', 'Where Is Jesus')}>Paul</NavDropdown.Item>
-              <NavDropdown.Item eventKey="Elijah" onClick={() => handleSelect('Elijah', 'Where Is Jesus')}>Elijah</NavDropdown.Item>
-              <NavDropdown.Item eventKey="Peter" onClick={() => handleSelect('Peter', 'Where Is Jesus')}>Peter</NavDropdown.Item>
+              {studies&&(studies.filter(item => item.category === 'Where Is Jesus')).map((theme) => (<NavDropdown.Item
+              key={theme._id}
+              eventKey={theme.title}
+              onClick={(e) => handleSelect(e, theme.title, 'Where Is Jesus')}>{theme.content.docTitle}</NavDropdown.Item>))}
             </NavDropdownMenu>
             <NavDropdownMenu
               title="By Prophet"
